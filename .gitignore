@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pdf
-*.aux
 *.midi
 # C extensions
 *.so
