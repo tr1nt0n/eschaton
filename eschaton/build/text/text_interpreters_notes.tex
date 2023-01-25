@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=17in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\vspace*{18\baselineskip}
+
+\begingroup
+\begin{center}
+\huge NOTES FOR THE INTERPRETERS
+\end{center}
+\endgroup
+
+\begingroup
+\textbf{Forces: \circled{1}} This work is to be interpreted by \textbf{five actors}, each made distinct in the text by \textbf{color}. The capitalized text in red is to be \textbf{prerecorded}, per the \textbf{Recording Guide for Flute, Synthesizers, and Red Text}, and played back in dialogue during performance, with each sound file titled \textbf{RED\_TEXT\_( line number between 01 and 23 )}.
+\endgroup
+
+\begingroup
+\textbf{Interpretation: \circled{1} Line breaking} indicates the flow of semantic ideas. \textbf{Unbroken lines}, whether they are shared by several actors or spoken by an actor alone, indicate a \textbf{unified, continuous thought}. \textbf{Broken lines} indicate a \textbf{brief pause}; not a full beat, but a breath. \textbf{Double indents} indicate a kind of non-semantic break, which may be interpreted freely in \textbf{silence}, \textbf{modal change}, \textbf{scene change}, or any others. \textbf{Ellipses} indicate a meaningful silence. \textbf{\circled{2} Text enclosed in parentheses} is not spoken, but the actions described within are \textbf{staged} as the text is projected before the audience. Note the color assignment of character still applies within parenthetical text. 
+\endgroup
+
+\begingroup
+\textbf{Media: \circled{1} Each text projection} is accompanied by the fixed tracks which are prerecorded per the \textbf{Recording Guide}, with each sound file titled after the first \textbf{three to ten words} of its associated text direction.
+\endgroup
+
+\end{document}
