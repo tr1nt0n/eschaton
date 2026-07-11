@@ -87,7 +87,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.bundle(
-                abjad.Markup(r"""\markup { "Meter 2, Attack Limit 1" }"""),
+                abjad.Markup(r"""\markup { "Meter 2, Attack Limit 2" }"""),
                 abjad.Tweak(r"- \tweak font-size 2"),
             ),
         ],

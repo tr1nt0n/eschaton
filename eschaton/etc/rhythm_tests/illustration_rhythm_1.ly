@@ -142,7 +142,7 @@
                         ^ \markup { "Meter 2, Attack Limit 1" }
                         c'8
                         - \tweak font-size 2
-                        ^ \markup { "Meter 2, Attack Limit 1" }
+                        ^ \markup { "Meter 2, Attack Limit 2" }
                         c'8
                         c'16
                         - \tweak font-size 2
