@@ -1,2 +1,2 @@
 # eschaton
-E S C H A T O N  or, ( ihr | wir ) // For five actors, prerecorded flute, five prerecorded synthesizers, and fixed media
+E S C H A T O N  for flute, oboe, saxophone, clarinet, two percussionists, guitar, harp, piano, violin, viola, cello, and contrabass. 
