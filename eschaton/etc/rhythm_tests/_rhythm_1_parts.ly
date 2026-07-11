@@ -144,7 +144,8 @@
                         c'16
                         - \tweak font-size 2
                         ^ \markup { "Meter 2, Attack Limit 4" }
-                        c'8
+                        c'16
+                        c'16
                         c'16
                         c'4.
                         - \tweak font-size 2
