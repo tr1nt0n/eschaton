@@ -338,33 +338,33 @@ afterGraceFraction = #(cons 15 16)
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
 
-    % evenFooterMarkup = \markup
-    %     \fill-line {
-    %         \concat {
-    %             \override #'(font-name . "Bodoni72 Book Italic")
-    %             "E S C H A T O N"
-    %             \override #'(font-name . "Bodoni72 Book")
-    %             " - Trinity Hlynn Prater"
-    %         }
-    %         \concat {
-    %             \fontsize #1
-    %             \override #'(font-name . "Bodoni72 Book")
-    %                 \fromproperty #'page:page-number-string
-    %         }
-    %     }
-    %
-    %     oddFooterMarkup = \markup
-    %         \fill-line {
-    %             \concat {
-    %                 \fontsize #1
-    %                 \override #'(font-name . "Bodoni72 Book")
-    %                     \fromproperty #'page:page-number-string
-    %             }
-    %             \concat {
-    %                 \override #'(font-name . "Bodoni72 Book Italic")
-    %                 "E S C H A T O N"
-    %                 \override #'(font-name . "Bodoni72 Book")
-    %                 " - Trinity Hlynn Prater"
-    %             }
-    %         }
+    evenFooterMarkup = \markup
+        \fill-line {
+            \concat {
+                \override #'(font-name . "Bodoni72 Book Italic")
+                "E S C H A T O N"
+                \override #'(font-name . "Bodoni72 Book")
+                " - Trinity Hlynn Prater"
+            }
+            \concat {
+                \fontsize #1
+                \override #'(font-name . "Bodoni72 Book")
+                    \fromproperty #'page:page-number-string
+            }
+        }
+
+        oddFooterMarkup = \markup
+            \fill-line {
+                \concat {
+                    \fontsize #1
+                    \override #'(font-name . "Bodoni72 Book")
+                        \fromproperty #'page:page-number-string
+                }
+                \concat {
+                    \override #'(font-name . "Bodoni72 Book Italic")
+                    "E S C H A T O N"
+                    \override #'(font-name . "Bodoni72 Book")
+                    " - Trinity Hlynn Prater"
+                }
+            }
 }
