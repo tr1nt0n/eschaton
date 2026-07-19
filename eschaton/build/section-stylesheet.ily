@@ -128,9 +128,10 @@ afterGraceFraction = #(cons 15 16)
 
         \override MeasureSpanner.direction = #UP
         \override MeasureSpanner.thickness = #1.5
-        \override MeasureSpanner.font-size = 7
+        \override MeasureSpanner.font-size = 2
         \override MeasureSpanner.font-name = "Bodoni72 Book"
-        \override MeasureSpanner.padding = 4
+        \override MeasureSpanner.padding = 16
+        \override MeasureSpanner.X-extent = ##f
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t

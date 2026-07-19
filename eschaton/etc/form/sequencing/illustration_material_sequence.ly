@@ -16,9 +16,44 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \tweak text " Section 1 " \startMeasureSpanner
             \override Score.TimeSignature.stencil = ##f
             \time 3/8
             s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 36 beats at 40.0 BPM " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 55 seconds long " }
+            \time 3/8
+            s1 * 3/8
+            \stopMeasureSpanner
+            \tweak text " Section 2 " \startMeasureSpanner
+            \time 3/8
+            s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 277 beats at 60.0 BPM " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 277 seconds long " }
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \stopMeasureSpanner
+            \tweak text " Section 3 " \startMeasureSpanner
+            \time 3/8
+            s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 111 seconds long " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 148 beats at 80.0 BPM " }
             \time 3/8
             s1 * 3/8
             \time 3/8
@@ -27,38 +62,56 @@
             s1 * 3/8
             \time 3/8
             s1 * 3/8
+            \stopMeasureSpanner
+            \tweak text " Section 4 " \startMeasureSpanner
+            \time 3/8
+            s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 222 seconds long " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 370 beats at 100.0 BPM " }
+            \time 3/8
+            s1 * 3/8
+            \stopMeasureSpanner
+            \tweak text " Section 5 " \startMeasureSpanner
+            \time 3/8
+            s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 166 seconds long " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 221 beats at 80.0 BPM " }
             \time 3/8
             s1 * 3/8
             \time 3/8
             s1 * 3/8
             \time 3/8
             s1 * 3/8
+            \stopMeasureSpanner
+            \tweak text " Section 6 " \startMeasureSpanner
+            \time 3/8
+            s1 * 3/8
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 110 beats at 40.0 BPM " }
+            - \tweak font-size 2.5
+            - \tweak padding 8
+            ^ \markup { " 166 seconds long " }
             \time 3/8
             s1 * 3/8
             \time 3/8
             s1 * 3/8
             \time 3/8
             s1 * 3/8
+            - \tweak color white
+            - \tweak padding 18
+            ^ \markup {X}
             \time 3/8
             s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
-            \time 3/8
-            s1 * 3/8
+            \stopMeasureSpanner
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -362,6 +415,7 @@
                             c'16
                         }
                         \stopStaffHighlight
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "oboe staff"
@@ -373,6 +427,12 @@
                         s1 * 3/8
                         - \tweak color darkgreen
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 1 | 1 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 30 beats at 40.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 45 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -387,6 +447,12 @@
                         s1 * 3/8
                         - \tweak color darkred
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 5 | 3 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 30 beats at 40.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 45 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -401,6 +467,12 @@
                         s1 * 3/8
                         - \tweak color darkred
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 5 | 2 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 60 beats at 60.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 60 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -415,6 +487,12 @@
                         s1 * 3/8
                         - \tweak color darkgreen
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 1 | 1 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 30 beats at 60.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 30 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -429,6 +507,12 @@
                         s1 * 3/8
                         - \tweak color cyan
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 2 | 3 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 75 beats at 60.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 75 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -443,6 +527,12 @@
                         s1 * 3/8
                         - \tweak color darkred
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 5 | 2 }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 15 beats at 60.0 BPM " }
+                        - \tweak font-size 2.5
+                        - \tweak padding 8
+                        ^ \markup { " 15 seconds long " }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -662,6 +752,7 @@
                             c'16
                         }
                         \stopStaffHighlight
+                        s1 * 3/8
                     }
                 }
             >>
@@ -692,12 +783,14 @@
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "bassclarinet staff"
                 {
                     \context Voice = "bassclarinet voice"
                     {
+                        s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
@@ -749,12 +842,14 @@
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "percussion 2 staff"
                 {
                     \context Voice = "percussion 2 voice"
                     {
+                        s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
@@ -804,12 +899,14 @@
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
+                    s1 * 3/8
                 }
             }
             \context Staff = "harp staff"
             {
                 \context Voice = "harp voice"
                 {
+                    s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
@@ -860,12 +957,14 @@
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
+                        s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
                         s1 * 3/8
@@ -915,12 +1014,14 @@
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
+                    s1 * 3/8
                 }
             }
             \context Staff = "viola staff"
             {
                 \context Voice = "viola voice"
                 {
+                    s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
@@ -969,12 +1070,14 @@
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
+                    s1 * 3/8
                 }
             }
             \context Staff = "contrabass staff"
             {
                 \context Voice = "contrabass voice"
                 {
+                    s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
                     s1 * 3/8
