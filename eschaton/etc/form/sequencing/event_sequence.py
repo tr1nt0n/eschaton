@@ -280,6 +280,8 @@ def determine_section_lengths(
     piece_duration_in_seconds,
     section_proportional_factors,
     tempo_modulations,
+    direction=abjad.UP,
+    padding=8,
 ):
     for section_first_measure, factor, tempo_modulation in zip(
         section_first_measures, section_proportional_factors, tempo_modulations
@@ -319,16 +321,16 @@ def determine_section_lengths(
                     abjad.bundle(
                         seconds_markup,
                         abjad.Tweak(r"- \tweak font-size 2.5"),
-                        abjad.Tweak(r"- \tweak padding 8"),
+                        abjad.Tweak(rf"- \tweak padding {padding}"),
                     ),
                     abjad.bundle(
                         beat_count_markup,
                         abjad.Tweak(r"- \tweak font-size 2.5"),
-                        abjad.Tweak(r"- \tweak padding 8"),
+                        abjad.Tweak(rf"- \tweak padding {padding}"),
                     ),
                 ],
                 selector=trinton.select_leaves_by_index([0]),
-                direction=abjad.UP,
+                direction=direction,
             ),
             voice=voice,
         )
@@ -346,18 +348,80 @@ for measure_range, section_duration, proportional_factors, tempo in zip(
     [
         list(range(1, 3)),
         list(range(3, 7)),
+        list(range(7, 12)),
+        list(range(12, 14)),
+        list(range(14, 18)),
+        list(range(18, 23)),
     ],
     [
         90,
         181,
+        111,
+        222,
+        166,
+        166,
     ],
     [
-        [3, 3],
-        [4, 2, 5, 1],
+        [1, 5],
+        [2, 4, 3, 3],
+        [1, 5, 2, 4, 3],
+        [3, 1],
+        [5, 2, 4, 3],
+        [3, 1, 5, 2, 4],
     ],
     [
         (2, 3),
         (1, 1),
+        (4, 3),
+        (5, 3),
+        (4, 3),
+        (2, 3),
+    ],
+):
+    tempo_modulations = [tempo for _ in range(len(measure_range))]
+
+    determine_section_lengths(
+        voice=score["altoflute voice"],
+        section_first_measures=measure_range,
+        piece_duration_in_seconds=section_duration,
+        section_proportional_factors=proportional_factors,
+        tempo_modulations=tempo_modulations,
+        direction=abjad.DOWN,
+        padding=2,
+    )
+
+for measure_range, section_duration, proportional_factors, tempo in zip(
+    [
+        list(range(1, 3)),
+        list(range(3, 7)),
+        list(range(7, 12)),
+        list(range(12, 14)),
+        list(range(14, 18)),
+        list(range(18, 23)),
+    ],
+    [
+        90,
+        181,
+        111,
+        222,
+        166,
+        166,
+    ],
+    [
+        [3, 3],
+        [4, 2, 5, 1],
+        [3, 3, 4, 2, 5],
+        [1, 3],
+        [3, 4, 2, 5],
+        [1, 3, 3, 4, 2],
+    ],
+    [
+        (2, 3),
+        (1, 1),
+        (4, 3),
+        (5, 3),
+        (4, 3),
+        (2, 3),
     ],
 ):
     tempo_modulations = [tempo for _ in range(len(measure_range))]
@@ -368,6 +432,8 @@ for measure_range, section_duration, proportional_factors, tempo in zip(
         piece_duration_in_seconds=section_duration,
         section_proportional_factors=proportional_factors,
         tempo_modulations=tempo_modulations,
+        direction=abjad.DOWN,
+        padding=2,
     )
 
 # render file
@@ -386,22 +452,33 @@ trinton.make_music(
 )
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (21,)),
+    lambda _: trinton.select_target(_, (16,)),
     trinton.attachment_command(
         attachments=[
-            abjad.bundle(
-                abjad.Markup(
-                    r"\markup {X}",
-                ),
-                abjad.Tweak(r"- \tweak color white"),
-                abjad.Tweak(r"- \tweak padding 18"),
-            ),
+            abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after"),
         ],
         selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.UP,
     ),
     voice=score["Global Context"],
 )
+
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (21,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.bundle(
+#                 abjad.Markup(
+#                     r"\markup {X}",
+#                 ),
+#                 abjad.Tweak(r"- \tweak color white"),
+#                 abjad.Tweak(r"- \tweak padding 18"),
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([0]),
+#         direction=abjad.UP,
+#     ),
+#     voice=score["Global Context"],
+# )
 
 trinton.render_file(
     score=score,
