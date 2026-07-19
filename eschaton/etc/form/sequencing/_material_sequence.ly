@@ -166,11 +166,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight darkmagenta 
+                        \staffHighlight cyan 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color darkmagenta
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 3 | 3 }
+                        - \tweak color cyan
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 2 | 1 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -208,11 +208,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight cyan 
+                        \staffHighlight darkgreen 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color cyan
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 2 | 2 }
+                        - \tweak color darkgreen
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 1 | 3 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -236,11 +236,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight darkmagenta 
+                        \staffHighlight darkred 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color darkmagenta
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 3 | 3 }
+                        - \tweak color darkred
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 5 | 1 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -466,11 +466,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight cyan 
+                        \staffHighlight darkblue 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color cyan
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 2 | 1 }
+                        - \tweak color darkblue
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 4 | 1 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -494,11 +494,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight darkmagenta 
+                        \staffHighlight darkgreen 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color darkmagenta
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 3 | 2 }
+                        - \tweak color darkgreen
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 1 | 3 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
@@ -522,11 +522,11 @@
                             c'16
                         }
                         \stopStaffHighlight
-                        \staffHighlight darkmagenta 
+                        \staffHighlight cyan 
                         \afterGrace
                         s1 * 3/8
-                        - \tweak color darkmagenta
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 3 | 2 }
+                        - \tweak color cyan
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Material 2 | 3 }
                         {
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f

@@ -4,6 +4,7 @@ import baca
 import evans
 import trinton
 import itertools
+import math
 from eschaton import library
 from eschaton import rhythm
 from eschaton import meter
@@ -90,26 +91,48 @@ def illustrate_sequence(
             starting_superscript += 2
             starting_superscript = starting_superscript % 3
 
-    (
-        move_attachments[0],
-        move_attachments[1],
-        move_attachments[2],
-        move_attachments[3],
-        move_attachments[4],
-        move_attachments[5],
-        move_attachments[6],
-    ) = (
-        move_attachments[0],
-        move_attachments[4],
-        move_attachments[1],
-        move_attachments[5],
-        move_attachments[2],
-        move_attachments[6],
-        move_attachments[3],
-    )
+    # for _ in move_attachments:
+    #     print(_[-1])
+    #     print("")
+    # print("")
+
+    new_order = []
+
+    attachment_length = len(move_attachments)
+    forward_shuffle_step = attachment_length / 2
+    forward_shuffle_step = math.ceil(forward_shuffle_step)
+    forward_shuffle_step = int(forward_shuffle_step)
+    backward_shuffle_step = forward_shuffle_step - 1
+
+    index = 0
+    for _ in range(0, len(move_attachments)):
+        if _ == 0:
+            new_order.append(move_attachments[index])
+            # print(index)
+        else:
+            if _ % 2 == 1:
+                index += forward_shuffle_step
+                new_order.append(move_attachments[index])
+                # print(index)
+            else:
+                index -= backward_shuffle_step
+                new_order.append(move_attachments[index])
+                # print(index)
+    # print("")
+    # print("")
+
+    move_attachments = new_order
 
     if retrograde is True:
         move_attachements = move_attachments[::-1]
+
+    # for _ in move_attachments:
+    #     print(_[-1])
+    #     print("")
+    # print("")
+    # print(len(move_attachments))
+    #
+    # breakpoint()
 
     for measure, literal_markup_bundle in zip(
         list(range(measures[0] - 1, measures[-1])), move_attachments
@@ -153,7 +176,7 @@ illustrate_sequence(
 illustrate_sequence(
     voice=score["altoflute voice"],
     measures=(8, 10),
-    moves=[2, 1, 2, 4, 1, 2, 4],
+    moves=[2, 1, 2],
     transposition=2,
     starting_move=4,
     starting_superscript=2,
@@ -163,7 +186,7 @@ illustrate_sequence(
 illustrate_sequence(
     voice=score["oboe voice"],
     measures=(8, 11),
-    moves=[2, 4, 5, 1, 1, 2, 4],
+    moves=[2, 4, 5, 1],
     transposition=2,
     starting_move=5,
     starting_superscript=2,
@@ -173,7 +196,7 @@ illustrate_sequence(
 illustrate_sequence(
     voice=score["altoflute voice"],
     measures=(11, 14),
-    moves=[2, 1, 2, 4, 1, 2, 4],
+    moves=[2, 1, 2, 4],
     transposition=1,
     starting_move=4,
     starting_superscript=2,
@@ -182,7 +205,7 @@ illustrate_sequence(
 illustrate_sequence(
     voice=score["oboe voice"],
     measures=(12, 14),
-    moves=[1, 2, 4, 2, 4, 5, 1],
+    moves=[1, 2, 4],
     transposition=1,
     starting_move=5,
     starting_superscript=2,
@@ -192,18 +215,18 @@ illustrate_sequence(
     voice=score["altoflute voice"],
     measures=(15, 21),
     moves=[2, 4, 5, 2, 1, 2, 4],
+    transposition=2,
     starting_move=0,
     starting_superscript=0,
-    transposition=2,
 )
 
 illustrate_sequence(
     voice=score["oboe voice"],
     measures=(15, 21),
     moves=[2, 4, 5, 1, 1, 2, 4],
+    transposition=2,
     starting_move=0,
     starting_superscript=0,
-    transposition=2,
 )
 
 
