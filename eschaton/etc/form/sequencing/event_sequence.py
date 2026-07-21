@@ -339,7 +339,7 @@ def determine_section_lengths(
 determine_section_lengths(
     voice=score["Global Context"],
     section_first_measures=[1, 3, 7, 12, 14, 18],
-    piece_duration_in_seconds=999,
+    piece_duration_in_seconds=777,
     section_proportional_factors=[1, 5, 2, 4, 3, 3],
     tempo_modulations=[(2, 3), (1, 1), (4, 3), (5, 3), (4, 3), (2, 3)],
 )
@@ -353,14 +353,7 @@ for measure_range, section_duration, proportional_factors, tempo in zip(
         list(range(14, 18)),
         list(range(18, 23)),
     ],
-    [
-        90,
-        181,
-        111,
-        222,
-        166,
-        166,
-    ],
+    [43, 215, 86, 172, 129, 129],
     [
         [1, 5],
         [2, 4, 3, 3],
@@ -399,14 +392,7 @@ for measure_range, section_duration, proportional_factors, tempo in zip(
         list(range(14, 18)),
         list(range(18, 23)),
     ],
-    [
-        90,
-        181,
-        111,
-        222,
-        166,
-        166,
-    ],
+    [43, 215, 86, 172, 129, 129],
     [
         [3, 3],
         [4, 2, 5, 1],
