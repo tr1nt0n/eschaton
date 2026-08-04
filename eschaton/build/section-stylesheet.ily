@@ -47,7 +47,7 @@ afterGraceFraction = #(cons 15 16)
         \override BarNumber.font-name = "Bodoni72 Book"
         \override MetronomeMark.stencil = ##f
         \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
-        \override TimeSignature.font-size = 7
+        \override TimeSignature.font-size = 8
 		\override TimeSignature.font-name = "Bodoni72 Book"
         \override TimeSignature.X-extent = ##f
         \override TimeSignature.X-offset = -2
@@ -96,8 +96,8 @@ afterGraceFraction = #(cons 15 16)
         \override Beam.breakable = ##t
         % \override Beam.damping = 2
         % \override Beam.concaveness = #10000
-        \override Beam.beam-thickness = #1.15
-        \override Beam.length-fraction = #1.84
+        \override Beam.beam-thickness = #0.75
+        \override Beam.length-fraction = #1.4
 
         \override BendAfter.thickness = #3
 
@@ -115,7 +115,7 @@ afterGraceFraction = #(cons 15 16)
         \override DynamicText.layer = 2
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
-        \override DynamicLineSpanner.staff-padding = 4
+        \override DynamicLineSpanner.staff-padding = 2
 
         \override Glissando.thickness = #4
         \override Glissando.breakable = ##t
@@ -151,15 +151,10 @@ afterGraceFraction = #(cons 15 16)
         \override Stem.details.beamed-lengths = #'(6)
         \override Stem.details.lengths = #'(5.5)
 
-        % \override StemTremolo.stencil = #ly:text-interface::print
-        % \override StemTremolo.text = \markup {
-        %     \fontsize #3.5
-        %     \override #'(font-name . "ekmelos")
-        %     \lower #1
-        %     {
-        %         \char ##xe222
-        %     }
-        % }
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.flag-count = 4
+        \override StemTremolo.slope = 0.5
         \override StemTremolo.whiteout-style = #'outline
         \override StemTremolo.whiteout = 1
         \override StemTremolo.layer = 2
@@ -238,7 +233,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override InstrumentName.self-alignment-X = #CENTER
 
-        \override TimeSignature.font-size = 1
+        \override TimeSignature.font-size = 4
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
         \override TimeSignature.layer = 4
@@ -327,8 +322,8 @@ afterGraceFraction = #(cons 15 16)
 	))
     min-systems-per-page = 1
     % max-systems-per-page = 2
-    % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 25) (minimum-distance . 25) (padding . 0) (stretchability . 25))
+    system-separator-markup = \markup \fontsize #10 { \tremolo-moderato }
+    system-system-spacing = #'((basic-distance . 28) (minimum-distance . 28) (padding . 0) (stretchability . 28))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
