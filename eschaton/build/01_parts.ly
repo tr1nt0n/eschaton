@@ -1332,7 +1332,6 @@
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Tubular bells }
                                     - \tweak stencil #constante-hairpin
                                     \<
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 3 0))
                                     \times 4/5
                                     {
                                         <c' df'>2

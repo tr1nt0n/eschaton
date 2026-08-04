@@ -55,19 +55,13 @@ trinton.make_music(
     evans.RhythmHandler(
         evans.tuplet(
             [
-                (
-                    3,
-                    1,
-                    1,
-                    2,
-                    1,
-                ),
+                (3, 1, 1, 2, 1),
                 (8, 1, -1),
                 (-1,),
             ]
         )
     ),
-    trinton.respell_tuplets_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
     evans.PitchHandler([24]),
     trinton.change_notehead_command(notehead="highest", selector=trinton.pleaves()),
     trinton.attachment_command(
@@ -113,7 +107,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.RhythmHandler(evans.tuplet([(1,), (8, 1, -1), (-1,)])),
-    trinton.respell_tuplets_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
     evans.PitchHandler([["c'", "df'"]]),
     trinton.linear_attachment_command(
         attachments=[
@@ -123,7 +117,6 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
     ),
-    trinton.notehead_bracket_command(),
     trinton.attachment_command(
         attachments=[
             trinton.boxed_markup(
