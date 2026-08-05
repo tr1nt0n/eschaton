@@ -1184,9 +1184,10 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Oboe }
                                       %! +SCORE
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Ob. }
-                                    s1 * 3/2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1276,8 +1277,9 @@
                                         r16
                                     }
                                     r2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1290,9 +1292,10 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Bass Clarinet }
                                       %! +SCORE
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Bcl. }
-                                    s1 * 3/2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1311,9 +1314,10 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Percussion I }
                                       %! +SCORE
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Perc. I }
-                                    s1 * 3/2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1340,8 +1344,9 @@
                                         r16
                                     }
                                     r2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1356,9 +1361,10 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Guitar }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
-                            s1 * 3/2
-                            s1 * 5/4
-                            s1 * 3/4
+                            r1.
+                            r2.
+                            r2
+                            r2.
                         }
                     }
                 }
@@ -1371,7 +1377,7 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Harp }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Hp. }
-                            s1 * 3/2
+                            r1.
                             r4.
                             \ottava 1
                             <es'''' f''''>2..
@@ -1403,9 +1409,10 @@
                                     \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Piano }
                                       %! +SCORE
                                 %%% \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Pno. }
-                                    s1 * 3/2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
@@ -1415,102 +1422,113 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
-                                    s1 * 3/2
-                                    s1 * 5/4
-                                    s1 * 3/4
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
                                 }
                             }
                         }
                     >>
                 }
-                \tag #'voice11
+                \tag #'group6
                 {
-                    \context Staff = "violin staff"
-                    {
-                        \context Voice = "violin voice"
+                    \context GrandStaff = "sub group 5"
+                    <<
+                        \tag #'voice11
                         {
-                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin }
-                              %! +SCORE
-                        %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vn. }
-                            s1 * 3/2
-                            s1 * 5/4
-                            s1 * 3/4
-                        }
-                    }
-                }
-                \tag #'voice12
-                {
-                    \context Staff = "viola staff"
-                    {
-                        \context Voice = "viola voice"
-                        {
-                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
-                              %! +SCORE
-                        %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
-                            s1 * 3/2
-                            s1 * 5/4
-                            s1 * 3/4
-                        }
-                    }
-                }
-                \tag #'voice13
-                {
-                    \context Staff = "cello staff"
-                    {
-                        \context Voice = "cello voice"
-                        {
-                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
-                              %! +SCORE
-                        %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vc. }
-                            s1 * 3/2
-                            s1 * 5/4
-                            s1 * 3/4
-                        }
-                    }
-                }
-                \tag #'voice14
-                {
-                    \context Staff = "contrabass staff"
-                    {
-                        \context Voice = "contrabass voice"
-                        {
-                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Contrabass }
-                              %! +SCORE
-                        %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Cb. }
-                            s1 * 3/2
-                            s1 * 5/4
-                            \staff-line-count 4
-                            \override Staff.Clef.stencil = ##f
-                              %! +SCORE
-                        %%% \revert Staff.BarLine.bar-extent
-                            \clef "percussion"
-                            \afterGrace
-                            f'2.
-                            - \tweak circled-tip ##t
-                            \<
-                            - \tweak padding #4
-                            - \abjad-solid-line-with-arrow
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Norm. } \hspace #0.5 }
-                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Scratch }
-                            \startTextSpanTwo
-                            - \tweak padding #6.5
-                            - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { DP } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -3
-                            \startTextSpanOne
+                            \context Staff = "violin staff"
                             {
-                                \once \override Stem.stencil = ##f
-                                \once \override Flag.stencil = ##f
-                                \once \override NoteHead.no-ledgers = ##t
-                                \once \override Accidental.stencil = ##f
-                                \once \override NoteHead.transparent = ##t
-                                f'16
-                                \fff
-                                \stopTextSpanOne
-                                \stopTextSpanTwo
+                                \context Voice = "violin voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin }
+                                      %! +SCORE
+                                %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vn. }
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
+                                }
                             }
                         }
-                    }
+                        \tag #'voice12
+                        {
+                            \context Staff = "viola staff"
+                            {
+                                \context Voice = "viola voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
+                                      %! +SCORE
+                                %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
+                                }
+                            }
+                        }
+                        \tag #'voice13
+                        {
+                            \context Staff = "cello staff"
+                            {
+                                \context Voice = "cello voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
+                                      %! +SCORE
+                                %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vc. }
+                                    r1.
+                                    r2.
+                                    r2
+                                    r2.
+                                }
+                            }
+                        }
+                        \tag #'voice14
+                        {
+                            \context Staff = "contrabass staff"
+                            {
+                                \context Voice = "contrabass voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Contrabass }
+                                      %! +SCORE
+                                %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Cb. }
+                                    r1.
+                                    r2.
+                                    r2
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = ##f
+                                      %! +SCORE
+                                %%% \revert Staff.BarLine.bar-extent
+                                    \clef "percussion"
+                                    \afterGrace
+                                    f'2.
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    - \tweak padding #4
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Norm. } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Scratch }
+                                    \startTextSpanTwo
+                                    - \tweak padding #6.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { DP } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        f'16
+                                        \fff
+                                        \stopTextSpanOne
+                                        \stopTextSpanTwo
+                                    }
+                                }
+                            }
+                        }
+                    >>
                 }
             >>
         }

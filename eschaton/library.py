@@ -37,16 +37,11 @@ def eschaton_score(time_signatures):
             1,
             1,
             2,
-            1,
-            1,
-            1,
-            1,
+            4,
         ],
-        # staff_types=[
-        #     ["Staff", "disappearingStaff"],
-        # ],
+        inner_staff=["GrandStaff" for _ in range(0, 7)],
         time_signatures=time_signatures,
-        filler=abjad.Skip,
+        filler=abjad.Rest,
     )
 
     return score
