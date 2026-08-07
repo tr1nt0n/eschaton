@@ -393,11 +393,103 @@ trinton.make_music(
 
 # rewrite time signatures
 
+trinton.change_time_signatures(
+    score=score,
+    global_context="Global Context",
+    measure_range=(1, 28),
+    replacement_signatures=[(4, 8), (5, 8), (5, 8), (2, 8), (4, 4), (4, 8)],
+)
+
+trinton.rewrite_meter(target=score)
 
 # pitching and attachments
 
+# oboe pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.PitchHandler(["ef'''"]),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [0, 5, 6, 9, 10, 15, 16, 17, 18, 22, 23, 25]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.BeamCount(left=3, right=1),
+                abjad.BeamCount(left=1, right=2),
+                abjad.BeamCount(left=2, right=1),
+                abjad.BeamCount(left=1, right=3),
+                abjad.BeamCount(left=2, right=1),
+                abjad.BeamCount(left=1, right=2),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index([11, 12, 13, 14, 20, 21]),
+    ),
+    voice=score["oboe voice"],
+)
+
+# violin pitching
+
+# oboe pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.PitchHandler(["ef'''"]),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [0, 5, 6, 9, 10, 15, 16, 17, 18, 22, 23, 25]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.BeamCount(left=3, right=1),
+                abjad.BeamCount(left=1, right=2),
+                abjad.BeamCount(left=2, right=1),
+                abjad.BeamCount(left=1, right=3),
+                abjad.BeamCount(left=2, right=1),
+                abjad.BeamCount(left=1, right=2),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index([11, 12, 13, 14, 20, 21]),
+    ),
+    voice=score["violin voice"],
+)
 
 # globals
+
+# title
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                trinton.boxed_markup(
+                    string=r"II. There is only dance music in times of war.",
+                    column="\center-column",
+                    font_name="Bodoni72 Book",
+                    fontsize=5,
+                    string_only=False,
+                ),
+                abjad.Tweak(r"- \tweak padding 17"),
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
 
 
 # instrument names
@@ -407,21 +499,61 @@ library.write_short_instrument_names(score=score)
 
 # fermate
 
-# trinton.fermata_measures(
-#     score=score,
-#     measures=[7],
-#     fermata="short-fermata",
-#     voice_names=["cello 1 voice", "cello 2 voice", "guitar 1 voice", "guitar 2 voice"],
-#     font_size=14,
-#     clef_whitespace=True,
-#     blank=True,
-#     last_measure=False,
-#     padding=-3,
-#     # extra_offset=2.5,
-#     tag=abjad.Tag("+SCORE"),
-# )
+trinton.fermata_measures(
+    score=score,
+    measures=[7],
+    fermata="middle-fermata",
+    voice_names=[
+        "altoflute voice",
+        "oboe voice",
+        "baritonesaxophone voice",
+        "bassclarinet voice",
+        "percussion 1 voice",
+        "percussion 2 voice",
+        "guitar voice",
+        "harp voice",
+        "piano 1 voice",
+        "piano 2 voice",
+        "violin voice",
+        "viola voice",
+        "cello voice",
+        "contrabass voice",
+    ],
+    font_size=14,
+    clef_whitespace=True,
+    blank=True,
+    last_measure=False,
+    padding=-3,
+    # extra_offset=2.5,
+    tag=abjad.Tag("+SCORE"),
+)
 
 # tempi
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.tempo_markup(
+                note_value=8,
+                tempo=40,
+                padding=10.5,
+                note_head_fontsize=0.5,
+                stem_length=1.5,
+                text_fontsize=5.5,
+                dotted=False,
+                fraction=None,
+                tempo_change=None,
+                site="after",
+                hspace=-0.5,
+                string_only=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
 
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (3, 4)),
@@ -525,6 +657,15 @@ library.write_short_instrument_names(score=score)
 
 # barlines
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    trinton.attachment_command(
+        attachments=[abjad.BarLine("||", site="after")],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
+
 # beautification
 
 trinton.remove_redundant_time_signatures(score=score)
@@ -548,22 +689,22 @@ trinton.remove_redundant_time_signatures(score=score)
 #     voice=score["Global Context"],
 # )
 #
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Markup(r"\markup { S }"),
-                r"- \tweak transparent ##t",
-                r"- \tweak padding #14",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        tag=abjad.Tag("+SCORE"),
-        direction=abjad.UP,
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.bundle(
+#                 abjad.Markup(r"\markup { S }"),
+#                 r"- \tweak transparent ##t",
+#                 r"- \tweak padding #14",
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([0]),
+#         tag=abjad.Tag("+SCORE"),
+#         direction=abjad.UP,
+#     ),
+#     voice=score["Global Context"],
+# )
 
 # extract parts
 
