@@ -270,12 +270,134 @@ trinton.make_music(
     preprocessor=trinton.fuse_eighths_preprocessor((3,)),
 )
 
-# music
+# rhythms
+
+# oboe rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 14)),
+    rhythm.rhythm_1(stage=1, selector=trinton.logical_ties(pitched=True, grace=False)),
+    voice=score["oboe voice"],
+)
+
+# saxophone rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15, 28)),
+    rhythm.rhythm_5(
+        stage=3,
+        voice=1,
+        partitions=[
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            2,
+            1,
+            2,
+            2,
+            2,
+        ],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["baritonesaxophone voice"],
+)
+
+# guitar rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15, 28)),
+    rhythm.rhythm_5(
+        stage=3,
+        voice=2,
+        partitions=[1, 2, 3],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["guitar voice"],
+)
+
+# harp rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15, 28)),
+    rhythm.rhythm_5(
+        stage=3,
+        voice=3,
+        partitions=[3, 3, 4],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["harp voice"],
+)
+
+# violin rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 14)),
+    rhythm.rhythm_1(stage=1, selector=trinton.logical_ties(pitched=True, grace=False)),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (17, 28)),
+    rhythm.rhythm_3(
+        instrument="strings",
+        fuse_partitions=[2],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["violin voice"],
+)
+
+# viola rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13, 26)),
+    rhythm.rhythm_3(
+        instrument="strings",
+        fuse_partitions=[2],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["viola voice"],
+)
+
+# cello rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 22)),
+    rhythm.rhythm_3(
+        instrument="strings",
+        fuse_partitions=[2],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["cello voice"],
+)
+
+# contrabass rhythms
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    evans.RhythmHandler(evans.talea([1000], 8)),
+    voice=score["contrabass voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 20)),
+    rhythm.rhythm_3(
+        instrument="strings",
+        fuse_partitions=[2],
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    voice=score["contrabass voice"],
+)
+
+# rewrite time signatures
+
+
+# pitching and attachments
 
 
 # globals
-
-# rewrite time_signatures
 
 
 # instrument names

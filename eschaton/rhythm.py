@@ -4,259 +4,207 @@ import baca
 import evans
 import trinton
 import itertools
+import random
 from eschaton import library
 from eschaton import meter
 
-# def rhythm_a(index, invert=None, alpha=None, multiply=False, illustrate=False):
-#     def return_rhythms(durations):
-#         integer_sequence = trinton.rotated_sequence(
-#             ts.all_groupings, index % len(ts.all_groupings)
-#         )
-#         integer_sequence = abjad.sequence.flatten(integer_sequence)
-#         trimmed_integer_sequence = trinton.remove_adjacent(integer_sequence)
-#
-#         retrograde_integer_sequence = integer_sequence[::-1]
-#
-#         chords = abjad.select.partition_by_counts(
-#             trimmed_integer_sequence,
-#             retrograde_integer_sequence,
-#             cyclic=True,
-#             overhang=True,
-#         )
-#
-#         if invert is not None:
-#             inverted_chords = trinton.invert(chords=chords, transposition=invert)
-#
-#             new_chords = []
-#
-#             for chord, inverted_chord in zip(chords, inverted_chords):
-#                 new_chords.append(chord)
-#                 new_chords.append(inverted_chord)
-#
-#             chords = new_chords
-#
-#         if alpha is not None:
-#             alpha_chords = []
-#
-#             for chord in chords:
-#                 sequence = evans.Sequence(chord)
-#                 alpha_chord = sequence.alpha(category=alpha)
-#                 alpha_chord = [_ for _ in alpha_chord]
-#                 alpha_chords.append(alpha_chord)
-#
-#             new_chords = []
-#
-#             for chord, alpha_chord in zip(chords, alpha_chords):
-#                 new_chords.append(chord)
-#                 new_chords.append(alpha_chord)
-#
-#             chords = new_chords
-#
-#         if multiply is True:
-#             multiplied_chords = []
-#
-#             for chord in chords:
-#                 multiplied_chord = [pitch * 5 for pitch in chord]
-#                 multiplied_chord = [pitch % 12 for pitch in multiplied_chord]
-#                 multiplied_chords.append(multiplied_chord)
-#
-#             new_chords = []
-#
-#             for chord, multiplied_chord in zip(chords, multiplied_chords):
-#                 new_chords.append(chord)
-#                 new_chords.append(multiplied_chord)
-#
-#             chords = new_chords
-#
-#         tuplet_ratios = []
-#         illustration_markups = []
-#
-#         for chord in chords:
-#             pulse_amount = chord.sort()
-#             pulse_amount = chord[-1]
-#
-#             if illustrate is True:
-#                 markup = abjad.bundle(
-#                     abjad.Markup(
-#                         rf"""\markup {{ {[_ - 1 for _ in trinton.remove_adjacent(chord)]} }}"""
-#                     ),
-#                     abjad.Tweak(r"- \tweak padding 2.5"),
-#                     abjad.Tweak(r"- \tweak font-size 3"),
-#                     abjad.Tweak(r"- \tweak color #magenta"),
-#                 )
-#
-#                 illustration_markups.append(markup)
-#
-#             note_indices = [_ - 1 for _ in chord]
-#             tuplet = [-1 for _ in range(0, pulse_amount)]
-#
-#             for note_index in note_indices:
-#                 tuplet[note_index] = 1
-#
-#             if illustrate is True:
-#                 final_tuplet = tuple(tuplet)
-#                 tuplet_ratios.append(final_tuplet)
-#
-#             else:
-#                 final_tuplet = []
-#
-#                 rest_counter = 0
-#                 attack_counter = 0
-#                 for i, _ in enumerate(tuplet):
-#                     if attack_counter == 0:
-#                         if _ == -1:
-#                             rest_counter -= 1
-#                         else:
-#                             attack_counter += 1
-#                             final_tuplet.append(rest_counter)
-#                             rest_counter = 0
-#                     else:
-#                         if _ == -1:
-#                             rest_counter -= 1
-#                         else:
-#                             attack_counter += 1
-#                             note_addition = rest_counter * -1
-#                             tuplet_ratio = note_addition + _
-#                             final_tuplet.append(tuplet_ratio)
-#                             rest_counter = 0
-#
-#                     last_index = len(tuplet) - 1
-#                     if i == last_index and _ == 1:
-#                         final_tuplet.append(1)
-#
-#                 final_tuplet = [_ for _ in final_tuplet if _ != 0]
-#
-#                 tuplet = tuple(final_tuplet)
-#                 tuplet_ratios.append(tuplet)
-#
-#         container = abjad.Container()
-#         rhythm_selections = rmakers.tuplet(durations, tuplet_ratios)
-#         container.extend(rhythm_selections)
-#
-#         if illustrate is True:
-#             for tuplet, markup in zip(
-#                 abjad.select.tuplets(container), illustration_markups
-#             ):
-#                 abjad.attach(markup, abjad.select.leaf(tuplet, 0), direction=abjad.UP)
-#
-#                 for i, tie in enumerate(abjad.select.logical_ties(tuplet)):
-#                     first_leaf = abjad.select.leaf(tie, 0)
-#                     markup = abjad.Markup(rf"""\markup {{ {i} }}""")
-#                     if isinstance(first_leaf, abjad.Note):
-#                         markup = abjad.bundle(
-#                             markup, abjad.Tweak(r"- \tweak color #magenta")
-#                         )
-#                     abjad.attach(markup, first_leaf, direction=abjad.DOWN)
-#
-#         rhythm_selections = abjad.mutate.eject_contents(container)
-#         return rhythm_selections
-#
-#     return return_rhythms
-#
-#
-# def rhythm_b(
-#     score,
-#     voice_name,
-#     measures,
-#     index=0,
-#     extra_voice="",
-#     preprocessor=None,
-# ):
-#     integer_sequence = abjad.sequence.flatten(ts.all_groupings)
-#     integer_sequence = trinton.rotated_sequence(
-#         integer_sequence, index % len(integer_sequence)
-#     )
-#
-#     retrograde_integer_sequence = integer_sequence[::-1]
-#     retrograde_integer_sequence = trinton.rotated_sequence(
-#         retrograde_integer_sequence, index % len(retrograde_integer_sequence)
-#     )
-#
-#     prograde_tuplet_ratios = []
-#
-#     for attack_amount in integer_sequence:
-#         tuplet = [1 for _ in range(0, attack_amount)]
-#         tuplet = tuple(tuplet)
-#         prograde_tuplet_ratios.append(tuplet)
-#
-#     retrograde_tuplet_ratios = []
-#
-#     for attack_amount in retrograde_integer_sequence:
-#         tuplet = [1 for _ in range(0, attack_amount)]
-#         tuplet = tuple(tuplet)
-#         retrograde_tuplet_ratios.append(tuplet)
-#
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, measures),
-#         evans.RhythmHandler(evans.tuplet(prograde_tuplet_ratios, treat_tuplets=False)),
-#         trinton.IntermittentVoiceHandler(
-#             evans.RhythmHandler(
-#                 evans.tuplet(retrograde_tuplet_ratios, treat_tuplets=False),
-#             ),
-#             direction=abjad.DOWN,
-#             voice_name=f"{voice_name} polyrhythm {extra_voice}",
-#             temp_name=f"temp {extra_voice}",
-#             preprocessor=preprocessor,
-#         ),
-#         voice=score[voice_name],
-#         preprocessor=preprocessor,
-#     )
-#
-#
-# def rhythm_c(index, nesting_level=None, nesting_selector=None, duration_filter=True):
-#     def return_rhythms(durations):
-#         integer_sequence = abjad.sequence.flatten(ts.all_groupings)
-#         integer_sequence = trinton.rotated_sequence(
-#             integer_sequence, index % len(integer_sequence)
-#         )
-#         integer_sequence = [_ % 3 for _ in integer_sequence]
-#         integer_sequence = [_ + 3 for _ in integer_sequence]
-#
-#         tuplet_ratios = []
-#         for subdivision, duration in zip(integer_sequence, durations):
-#             duration_denominator = duration.denominator
-#             duration_numerator = duration.numerator
-#
-#             duration_modulus = 4 / duration_denominator
-#             pulse_group = duration_numerator * duration_modulus
-#             pulse_group = int(pulse_group)
-#
-#             while subdivision > pulse_group:
-#                 pulse_group = pulse_group * 2
-#
-#             proportion = [1 for _ in range(0, subdivision)]
-#
-#             partition = abjad.Ratio(proportion).partition_integer(pulse_group)
-#             partition = tuple(partition)
-#             tuplet_ratios.append(partition)
-#
-#         container = abjad.Container()
-#         rhythm_selections = rmakers.tuplet(durations, tuplet_ratios)
-#         container.extend(rhythm_selections)
-#
-#         if nesting_level is not None:
-#             sub_ratios = []
-#             for tuplet_ratio in tuplet_ratios:
-#                 tuplet_list = [_ for _ in tuplet_ratio]
-#                 tuplet_permutations = list(itertools.permutations(tuplet_list))
-#                 for permutation in tuplet_permutations:
-#                     tuplet = tuple(permutation)
-#                     sub_ratios.append(tuplet)
-#
-#             for _ in range(0, nesting_level):
-#                 relevant_ties = nesting_selector(container)
-#                 for tie, sub_ratio in zip(relevant_ties, itertools.cycle(sub_ratios)):
-#                     tie_duration = abjad.get.duration(tie, preprolated=True)
-#                     if (
-#                         tie_duration < abjad.Duration((1, 2))
-#                         and duration_filter is True
-#                     ):
-#                         pass
-#                     else:
-#                         tuplet = rmakers.tuplet([tie_duration], [sub_ratio])
-#                         abjad.mutate.replace(tie, tuplet)
-#
-#         rhythm_selections = abjad.mutate.eject_contents(container)
-#         return rhythm_selections
-#
-#     return return_rhythms
+
+def rhythm_1(stage, selector=trinton.logical_ties(pitched=True, grace=False)):
+    def make_rhythm_1(argument):
+        subdivisions = selector(argument)
+        tuplet_durations = [
+            abjad.get.duration(_, preprolated=True) for _ in subdivisions
+        ]
+        if stage == 1:
+            tuplet_ratio = (-1, 1)
+        if stage == 2:
+            tuplet_ratio = (-1, 2)
+        if stage == 3:
+            tuplet_ratio = (-1, 3)
+
+        container = abjad.Container()
+        tuplets = rmakers.tuplet(tuplet_durations, [tuplet_ratio])
+        container.extend(tuplets)
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        rmakers.rewrite_sustained(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        rmakers.trivialize(abjad.select.tuplets(container))
+        rmakers.extract_trivial(abjad.select.tuplets(container))
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        abjad.mutate.replace(argument, rhythm_selections)
+
+    return make_rhythm_1
+
+
+def rhythm_3(
+    instrument,
+    fuse_partitions=[2, 3, 3, 2],
+    selector=trinton.logical_ties(pitched=True, grace=False),
+):
+    def make_rhythm_3(argument):
+        subdivisions = selector(argument)
+        if instrument == "piano":
+            talea_counts = []
+
+            for subdivision in subdivisions:
+                subdivision_duration = abjad.get.duration(subdivision, preprolated=True)
+                numerator = subdivision_duration.numerator
+                denominator = subdivision_duration.denominator
+
+                if denominator != 16:
+                    modulator = 16 / denominator
+                    modulated_numerator = numerator * modulator
+                    modulated_numerator = int(modulated_numerator)
+                    talea_counts.append(1)
+                    rest_count = modulated_numerator - 1
+                    rest_count = rest_count * -1
+                    talea_counts.append(rest_count)
+
+                else:
+                    if numerator == 1:
+                        talea_counts.append(1)
+                    else:
+                        talea_counts.append(1)
+                        rest_count = numerator - 1
+                        rest_count = rest_count * -1
+                        talea_counts.append(rest_count)
+
+            container = abjad.Container()
+            talea = rmakers.talea(
+                [abjad.get.duration(argument, preprolated=True)], talea_counts, 16
+            )
+            container.extend(talea)
+            rmakers.rewrite_dots(abjad.select.tuplets(container))
+            rmakers.rewrite_sustained(abjad.select.tuplets(container))
+            trinton.respell_tuplets(
+                abjad.select.tuplets(container), rewrite_brackets=False
+            )
+            rmakers.trivialize(abjad.select.tuplets(container))
+            rmakers.extract_trivial(abjad.select.tuplets(container))
+            rhythm_selections = abjad.mutate.eject_contents(container)
+            abjad.mutate.replace(argument, rhythm_selections)
+
+        if instrument == "strings":
+            partitioned_subdivisions = abjad.select.partition_by_counts(
+                argument,
+                fuse_partitions,
+                cyclic=True,
+                overhang=True,
+            )
+
+            for partition in partitioned_subdivisions:
+                abjad.mutate.fuse(partition)
+
+    return make_rhythm_3
+
+
+def rhythm_5(
+    stage,
+    voice,
+    partitions=[3, 4],
+    selector=trinton.logical_ties(pitched=True, grace=False),
+):
+    def make_rhythm_5(argument):
+        subdivisions = selector(argument)
+
+        tuplet_durations = [
+            abjad.get.duration(_, preprolated=True) for _ in subdivisions
+        ]
+
+        partitioned_subdivisions = abjad.select.partition_by_counts(
+            subdivisions,
+            partitions,
+            cyclic=True,
+            overhang=True,
+        )
+
+        tuplet_ratios = []
+
+        for partition in partitioned_subdivisions:
+            tuplet_ratio = []
+            for tie in abjad.select.logical_ties(partition):
+                tie_duration = abjad.get.duration(tie, preprolated=True)
+                numerator = tie_duration.numerator
+                denominator = tie_duration.denominator
+
+                if denominator != 16:
+                    modulator = 16 / denominator
+                    modulated_numerator = numerator * modulator
+                    modulated_numerator = int(modulated_numerator)
+                    tuplet_ratio.append(modulated_numerator)
+
+                else:
+                    tuplet_ratio.append(numerator)
+
+            retrograde_tuplet = tuplet_ratio[::-1]
+            inverted_tuplet = trinton.rotated_sequence(tuplet_ratio, 1)
+
+            tuplet_ratio = tuple(tuplet_ratio)
+            retrograde_tuplet_ratio = tuple(retrograde_tuplet)
+            inverted_tuplet_ratio = tuple(inverted_tuplet)
+
+            if stage == 1:
+                tuplet_ratios.append(tuplet_ratio)
+                tuplet_ratios.append(retrograde_tuplet_ratio)
+            if stage == 2 or stage == 3:
+                if voice == 1:
+                    tuplet_ratios.append(tuplet_ratio)
+                    tuplet_ratios.append(inverted_tuplet_ratio)
+                    tuplet_ratios.append(retrograde_tuplet_ratio)
+                if voice == 2:
+                    tuplet_ratios.append(inverted_tuplet_ratio)
+                    tuplet_ratios.append(retrograde_tuplet_ratio)
+                    tuplet_ratios.append(tuplet_ratio)
+                if voice == 3:
+                    tuplet_ratios.append(retrograde_tuplet_ratio)
+                    tuplet_ratios.append(tuplet_ratio)
+                    tuplet_ratios.append(inverted_tuplet_ratio)
+
+        container = abjad.Container()
+        tuplets = rmakers.tuplet(tuplet_durations, tuplet_ratios)
+        container.extend(tuplets)
+
+        if stage == 1:
+            rest_indices = [0, 3, 4]
+
+        if stage == 2:
+            rest_indices = [0, 2]
+
+        if stage == 3:
+            rest_indices = [4]
+
+        patterned_tuplet_index_selector = trinton.patterned_index_selector(
+            preselector=abjad.select.tuplets, indices=rest_indices, period=5
+        )
+
+        rest_tuplets = patterned_tuplet_index_selector(container)
+        rmakers.force_rest(rest_tuplets)
+
+        if stage == 3:
+            tie_selector = trinton.patterned_tie_index_selector(
+                indices=[2], period=7, pitched=True, grace=False
+            )
+
+            relevant_ties = tie_selector(container)
+
+            for tie in relevant_ties:
+                tie_duration = abjad.get.duration(tie, preprolated=True)
+                if tie_duration >= abjad.Duration((1, 16)):
+                    tuplet = rmakers.tuplet(
+                        [abjad.get.duration(tie, preprolated=True)], [(1, 1, 1)]
+                    )
+                    rmakers.rewrite_dots(tuplet)
+                    trinton.respell_tuplets(tuplet, rewrite_brackets=False)
+                    abjad.mutate.replace(tie, tuplet)
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        rmakers.rewrite_sustained(abjad.select.tuplets(container))
+        rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        rmakers.trivialize(abjad.select.tuplets(container))
+        rmakers.extract_trivial(abjad.select.tuplets(container))
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        abjad.mutate.replace(argument, rhythm_selections)
+
+    return make_rhythm_5
