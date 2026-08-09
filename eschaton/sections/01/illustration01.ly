@@ -1510,7 +1510,8 @@
                                     r2.
                                     r2
                                     \staff-line-count 4
-                                    \override Staff.Clef.stencil = ##f
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
                                       %! +SCORE
                                     \revert Staff.BarLine.bar-extent
                                     \clef "percussion"

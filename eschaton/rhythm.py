@@ -165,22 +165,6 @@ def rhythm_5(
         tuplets = rmakers.tuplet(tuplet_durations, tuplet_ratios)
         container.extend(tuplets)
 
-        if stage == 1:
-            rest_indices = [0, 3, 4]
-
-        if stage == 2:
-            rest_indices = [0, 2]
-
-        if stage == 3:
-            rest_indices = [4]
-
-        patterned_tuplet_index_selector = trinton.patterned_index_selector(
-            preselector=abjad.select.tuplets, indices=rest_indices, period=5
-        )
-
-        rest_tuplets = patterned_tuplet_index_selector(container)
-        rmakers.force_rest(rest_tuplets)
-
         if stage == 3:
             tie_selector = trinton.patterned_tie_index_selector(
                 indices=[2], period=7, pitched=True, grace=False
@@ -196,7 +180,34 @@ def rhythm_5(
                     )
                     rmakers.rewrite_dots(tuplet)
                     trinton.respell_tuplets(tuplet, rewrite_brackets=False)
+                    for actual_tuplet in abjad.select.tuplets(tuplet):
+                        if actual_tuplet.multiplier != (2, 3):
+                            abjad.override(
+                                actual_tuplet
+                            ).TupletNumber.text = r"\markup { 3:2 }"
                     abjad.mutate.replace(tie, tuplet)
+
+        if stage == 1:
+            rest_indices = [0, 3, 4]
+
+        if stage == 2:
+            rest_indices = [0, 2]
+
+        if stage == 3:
+            rest_indices = [2]
+
+        patterned_tie_index_selector = trinton.patterned_tie_index_selector(
+            indices=rest_indices,
+            period=7,
+            first=False,
+            last=False,
+            pitched=True,
+            grace=False,
+            exclude=None,
+        )
+
+        rest_notes = patterned_tie_index_selector(container)
+        rmakers.force_rest(rest_notes)
 
         rmakers.rewrite_dots(abjad.select.tuplets(container))
         rmakers.rewrite_sustained(abjad.select.tuplets(container))

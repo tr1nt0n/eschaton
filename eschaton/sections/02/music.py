@@ -7,6 +7,7 @@ import itertools
 from eschaton import library
 from eschaton import rhythm
 from eschaton import meter
+from eschaton import pitch
 
 # score
 
@@ -431,12 +432,174 @@ trinton.make_music(
         ),
         selector=trinton.select_leaves_by_index([11, 12, 13, 14, 20, 21]),
     ),
+    library.vibrato_spanner(
+        selector=trinton.logical_ties(pitched=True, grace=False),
+        index=0,
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("ppp"), abjad.StartHairpin("<"), abjad.Dynamic("p")],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, 4], first=True, pitched=True, grace=False
+        ),
+    ),
     voice=score["oboe voice"],
 )
 
-# violin pitching
+# percussion 1 pitching
 
-# oboe pitching
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    trinton.change_lines(
+        lines=1,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(">")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=library.return_dynamic_sequence(index=0, effort_dynamics=True),
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string=r"Newspaper",
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.tremolo_command(selector=trinton.pleaves()),
+    voice=score["percussion 1 voice"],
+    beam_meter=True,
+)
+
+# percussion 2 pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    trinton.change_lines(
+        lines=1,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(">")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=library.return_dynamic_sequence(index=3, effort_dynamics=True),
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string=r"Grass bundle",
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.tremolo_command(selector=trinton.pleaves()),
+    voice=score["percussion 2 voice"],
+    beam_meter=True,
+)
+
+# guitar pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 6)),
+    evans.PitchHandler(
+        pitch_list=pitch.return_material_5_pitches(index=6, guitar=True)
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            [1, 2, 3, 4, 5], pitched=True, grace=False
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_logical_ties_by_index(
+            [9, 11, 12, 13, 14, 15, 16], pitched=True, grace=False
+        ),
+    ),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                10,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(grace=False)),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartBeam(),
+                abjad.StopBeam(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [2, 5, 6, 7, 8, 11, 12, 13, 14, 16, 17, 19, 20, 22]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartSlur(),
+                abjad.StopSlur(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [0, 2, 3, 9, 10, 15, 16, 18], pitched=True, grace=False
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("p")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(r"""\markup { \hspace #1.5 { "legatissimo" } }"""),
+                abjad.Tweak(r"""- \tweak font-name "Bodoni72 Book Italic" """),
+                abjad.Tweak(r"- \tweak font-size 0"),
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        direction=abjad.DOWN,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"MSP",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=6,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=2,
+    ),
+    voice=score["guitar voice"],
+)
+
+# violin pitching
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 3)),
@@ -463,7 +626,260 @@ trinton.make_music(
         ),
         selector=trinton.select_leaves_by_index([11, 12, 13, 14, 20, 21]),
     ),
+    library.vibrato_spanner(
+        selector=trinton.logical_ties(pitched=True, grace=False),
+        index=3,
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("ppp"), abjad.StartHairpin("<"), abjad.Dynamic("p")],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, 4], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Flaut. moltiss.",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=11,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=2.5,
+    ),
     voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    evans.PitchHandler([["d'", "b"]]),
+    trinton.change_lines(
+        lines=4,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \stringing-clef",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("twist-bow"), abjad.Articulation("tenuto")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, -1], first=True, pitched=True, grace=False
+        ),
+    ),
+    voice=score["violin voice"],
+    beam_meter=True,
+)
+
+# viola pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3, 6)),
+    evans.PitchHandler([["d'", "b"]]),
+    trinton.change_lines(
+        lines=4,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \stringing-clef",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("twist-bow"), abjad.Articulation("tenuto")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("p"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, 2, 2, -1], first=True, pitched=True, grace=False
+        ),
+    ),
+    voice=score["viola voice"],
+    beam_meter=True,
+)
+
+# cello pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 5)),
+    evans.PitchHandler([["d'", "b"]]),
+    trinton.change_lines(
+        lines=4,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \stringing-clef",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("twist-bow"), abjad.Articulation("tenuto")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, 3, 3, -1], first=True, pitched=True, grace=False
+        ),
+    ),
+    voice=score["cello voice"],
+    beam_meter=True,
+)
+
+# contrabass pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    evans.PitchHandler(["f'"]),
+    trinton.change_lines(
+        lines=4, clef="percussion", selector=trinton.select_leaves_by_index([0])
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \stringing-clef",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["contrabass voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 5)),
+    evans.PitchHandler(["f'"]),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("twist-bow"), abjad.Articulation("tenuto")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 4, 4, -1], first=True, pitched=True, grace=False
+        ),
+    ),
+    voice=score["contrabass voice"],
+    beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 2)),
+    trinton.spanner_command(
+        strings=[
+            trinton.boxed_markup(
+                string=[
+                    r"Scratch",
+                    r"Gradually pressing harder until",
+                    r"the continuous scratch becomes disparate clicks,",
+                    r"simultaneously incorporating gradually",
+                    r"more twisting motion to the bowing.",
+                ],
+                column="\column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=True,
+            ),
+            trinton.boxed_markup(
+                string=r"( Twist )",
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=0,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        command="Two",
+        tweaks=[
+            r"""- \tweak bound-details.left.Y #11""",
+            r"""- \tweak bound-details.right.Y #3.5""",
+        ],
+    ),
+    voice=score["contrabass voice"],
+    beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 5)),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"DP",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=4,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=2,
+        command="One",
+    ),
+    voice=score["contrabass voice"],
 )
 
 # globals
@@ -672,23 +1088,63 @@ trinton.remove_redundant_time_signatures(score=score)
 
 # breaking
 
+for measure in [1, 3, 5, 6]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [2]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\break", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [1, 2, 3, 5, 6]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noPageBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [4, 7]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
 # # spacing
-#
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (1 30 33 26.5)))",
-#                 site="absolute_before",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         tag=abjad.Tag("+SCORE"),
-#     ),
-#     voice=score["Global Context"],
-# )
-#
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 25 16 27)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (1,)),
 #     trinton.attachment_command(

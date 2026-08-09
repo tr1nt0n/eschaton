@@ -182,7 +182,13 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(r"\override Staff.Clef.stencil = ##f", site="before"),
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \stringing-clef",
+                ],
+                site="before",
+            ),
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),

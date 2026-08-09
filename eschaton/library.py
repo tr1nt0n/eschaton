@@ -47,7 +47,23 @@ def eschaton_score(time_signatures):
     return score
 
 
-# markups
+# immutables
+
+
+def return_dynamic_sequence(index, effort_dynamics=False):
+    if effort_dynamics is True:
+        string_list = ['"p"', '"mf"', '"f"', '"mp"', '"p"', '"pp"', '"p"', '"mf"']
+    else:
+        string_list = ["p", "mf", "f", "mp", "p", "pp", "p", "mf"]
+
+    dynamic_list = [abjad.Dynamic(_) for _ in string_list]
+
+    dynamic_list = trinton.rotated_sequence(dynamic_list, index % len(dynamic_list))
+
+    dynamic_list = itertools.cycle(dynamic_list)
+
+    return dynamic_list
+
 
 # markups
 
@@ -271,6 +287,81 @@ def write_short_instrument_names(score):
 
 
 # notation tools
+
+
+def guitar_note_heads(selector):
+    def note_heads(argument):
+        selections = selector(argument)
+        for selection in selections:
+            notes = abjad.select.leaves(selection)
+            for note in notes:
+                pitch = note.written_pitch.number
+                if pitch == int(pitch):
+                    pass
+                else:
+                    notehead_command = trinton.change_notehead_command(
+                        notehead="half-harmonic", selector=trinton.pleaves()
+                    )
+                    notehead_command(note)
+
+    return note_heads
+
+
+def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), index=0):
+    def vibrato(argument):
+        selections = selector(argument)
+
+        peak_amounts = [2, 4, 5, 3, 2, 1, 2, 4]
+        peak_amounts = trinton.rotated_sequence(peak_amounts, index % len(peak_amounts))
+
+        amplitude_sequence = peak_amounts[::-1]
+
+        amplitude_sequence_index = 0
+        for selection, peak_amount in zip(selections, itertools.cycle(peak_amounts)):
+            amplitudes = []
+            rotated_amplitude_sequence = trinton.rotated_sequence(
+                amplitude_sequence, amplitude_sequence_index % len(amplitude_sequence)
+            )
+            for _ in range(0, peak_amount):
+                amplitudes.append(rotated_amplitude_sequence[_])
+            amplitude_sequence_index += peak_amount
+
+            amplitudes_string = r"("
+
+            for amplitude in amplitudes:
+                amplitudes_string += rf"{amplitude}"
+                amplitudes_string += " "
+
+            amplitudes_string += r")"
+
+            vibrato_spanner = abjad.LilyPondLiteral(
+                rf"\vibrato #'{amplitudes_string} #{amplitudes[-1]}  #0.2",
+                site="before",
+            )
+
+            aftergrace_container = abjad.AfterGraceContainer("c'16")
+            abjad.override(
+                abjad.select.leaf(aftergrace_container, 0)
+            ).NoteHead.transparent = True
+            invisible_literal = abjad.LilyPondLiteral(
+                [
+                    r"\once \override Stem.stencil = ##f",
+                    r"\once \override Flag.stencil = ##f",
+                    r"\once \override NoteHead.no-ledgers = ##t",
+                    r"\once \override Accidental.stencil = ##f",
+                ],
+                site="before",
+            )
+            abjad.attach(invisible_literal, abjad.select.leaf(aftergrace_container, 0))
+            abjad.attach(
+                abjad.StopTrillSpan(), abjad.select.leaf(aftergrace_container, 0)
+            )
+
+            abjad.attach(vibrato_spanner, abjad.select.leaf(selection, 0))
+            abjad.attach(abjad.StartTrillSpan(), abjad.select.leaf(selection, 0))
+            abjad.attach(aftergrace_container, abjad.select.leaf(selection, -1))
+
+    return vibrato
 
 
 def flute_flageolets(selector=trinton.pleaves()):

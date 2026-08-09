@@ -166,9 +166,9 @@ bow-clef = \markup {
     }
 }
 
-seven-string-clef = \markup {
+stringing-clef = \markup {
     \fontsize #-5
-    \raise #2.75
+    \raise #1.1
     \override #'(baseline-skip . 1)
     {
         \center-column {
@@ -176,33 +176,6 @@ seven-string-clef = \markup {
             \line { II }
             \line { III }
             \line { IV }
-            \line { V }
-            \line { VI }
-            \line { VII }
-        }
-    }
-}
-
-fourteen-string-clef = \markup {
-    \fontsize #-6
-    \raise #6
-    \override #'(baseline-skip . 1)
-    {
-        \center-column {
-            \line { I }
-            \line { II }
-            \line { III }
-            \line { IV }
-            \line { V }
-            \line { VI }
-            \line { VII }
-            \line { VIII }
-            \line { IX }
-            \line { X }
-            \line { XI }
-            \line { XII }
-            \line { XIII }
-            \line { XIV }
         }
     }
 }

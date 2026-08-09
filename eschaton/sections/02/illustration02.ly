@@ -16,22 +16,35 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 25 16 27)))
             \time 4/8
             s1 * 1/2
             - \tweak padding 17
             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { II. There is only dance music in times of war. }
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 40" } } }
+            \noBreak
+            \noPageBreak
             \time 5/8
             s1 * 5/8
+            \break
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/8
             s1 * 5/8
+            \noBreak
+            \noPageBreak
             \time 2/8
             s1 * 1/4
+            \pageBreak
             \time 4/4
             s1 * 1
+            \noBreak
+            \noPageBreak
             \time 4/8
             s1 * 1/2
+            \noBreak
+            \noPageBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
             \once \override Score.TimeSignature.stencil = ##f
@@ -42,6 +55,7 @@
             _ \middle-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
+            \pageBreak
         }
         \tag #'group1
         {
@@ -91,57 +105,180 @@
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Ob. }
                                     r32
                                     [
+                                    \vibrato #'(4 2 ) #2  #0.2
+                                    \afterGrace
                                     ef'''32
+                                    \ppp
+                                    \<
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r32
+                                    \vibrato #'(1 2 3 5 ) #5  #0.2
+                                    \afterGrace
                                     ef'''32
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
+                                    \vibrato #'(4 2 4 2 1 ) #1  #0.2
+                                    \afterGrace
                                     ef'''16
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
                                     [
+                                    \vibrato #'(2 3 5 ) #5  #0.2
+                                    \afterGrace
                                     ef'''16
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
+                                    \vibrato #'(4 2 ) #2  #0.2
+                                    \afterGrace
                                     ef'''16
+                                    \p
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16.
                                     [
                                     \set stemLeftBeamCount = 3
                                     \set stemRightBeamCount = 1
+                                    \vibrato #'(4 ) #4  #0.2
                                     ef'''32
                                     ~
+                                    \startTrillSpan
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
+                                    \afterGrace
                                     ef'''16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     r16
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
                                     r32
+                                    \vibrato #'(2 1 ) #1  #0.2
+                                    \afterGrace
                                     ef'''16.
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r8
                                     [
+                                    \vibrato #'(2 3 5 4 ) #4  #0.2
+                                    \afterGrace
                                     ef'''8
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r8
                                     [
                                     r32
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
+                                    \vibrato #'(2 4 ) #4  #0.2
                                     ef'''16.
                                     ~
+                                    \startTrillSpan
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
+                                    \afterGrace
                                     ef'''16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
                                     ]
                                     r16.
                                     [
+                                    \vibrato #'(2 1 2 3 ) #3  #0.2
                                     ef'''32
                                     ~
+                                    \startTrillSpan
+                                    \afterGrace
                                     ef'''8
                                     ]
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r4
                                     r1
                                     r2
@@ -186,7 +323,7 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
-                                        c'16
+                                        r16
                                         c'16
                                         c'16
                                         c'8.
@@ -197,15 +334,21 @@
                                     \times 6/5
                                     {
                                         c'16
-                                        c'32.
+                                        r32.
                                         c'32.
                                     }
-                                    r8.
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        c'64
+                                        c'64
+                                        c'64
+                                        c'32.
+                                        c'16
+                                    }
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'32
-                                        c'32
+                                        r16.
                                         c'16.
                                         c'8
                                     }
@@ -218,14 +361,21 @@
                                     \times 2/3
                                     {
                                         c'64
-                                        c'64
+                                        r64
                                         c'16
                                     }
                                     \times 2/3
                                     {
                                         c'32
                                         c'32
-                                        c'8
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            c'16
+                                            c'16
+                                            c'16
+                                        }
+                                        \revert TupletNumber.text
                                     }
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
@@ -291,15 +441,162 @@
                                     r4
                                     r4
                                     r8
+                                    \staff-line-count 1
+                                      %! +SCORE
+                                    \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'16
+                                    :128
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Newspaper }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'16
+                                    :128
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8.
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
                                     c'8.
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -329,15 +626,162 @@
                                     r4
                                     r4
                                     r8
+                                    \staff-line-count 1
+                                      %! +SCORE
+                                    \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'16
+                                    :128
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Grass bundle }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'16
+                                    :128
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'8.
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
                                     c'8.
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    \revert Staff.Stem.stemlet-length
                                     c'8
+                                    :64
+                                    - \accent
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -367,32 +811,67 @@
                             r4.
                             r4
                             c'4
-                            c'4
+                            \p
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            _ \markup { \hspace #1.5 { "legatissimo" } }
+                            (
+                            - \tweak padding #6
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            fs4
                             ~
-                            c'16
-                            \tweak text #tuplet-number::calc-fraction-text
+                            fs16
+                            )
+                            [
+                            \override TupletNumber.text = \markup { 3:2 }
                             \times 5/6
                             {
-                                c'8
-                                c'8
-                                c'8
+                                r8
+                                bf8
+                                (
+                                af8
+                                ]
                             }
-                            c'16
-                            c'16
-                            r8.
-                            c'16
+                            \revert TupletNumber.text
+                            b16
+                            [
+                            fs16
+                            ]
+                            cs'16.
+                            [
+                            fs'32
                             ~
-                            c'32
-                            c'16.
-                            c'32.
-                            c'32.
-                            c'32
-                            c'32.
-                            c'32.
-                            c'32
-                            c'32
-                            c'32.
-                            c'32.
+                            fs'16
+                            )
+                            r16
+                            ]
+                            r32
+                            [
+                            b'16.
+                            ]
+                            (
+                            g''32.
+                            [
+                            c'''32.
+                            a''32
+                            ]
+                            bf''32.
+                            [
+                            af''32.
+                            )
+                            r32
+                            ]
+                            a''32
+                            [
+                            (
+                            bf''32.
+                            a''32.
+                            )
+                            \stopTextSpan
+                            ]
                               %! +SCORE
                             \once \override MultiMeasureRest.transparent = ##t
                               %! +SCORE
@@ -423,12 +902,14 @@
                             {
                                 c'8
                                 c'8
+                                \override TupletNumber.text = \markup { 3:2 }
                                 \times 2/3
                                 {
-                                    c'16
+                                    r16
                                     c'16
                                     c'16
                                 }
+                                \revert TupletNumber.text
                             }
                             \times 2/3
                             {
@@ -439,8 +920,8 @@
                             \times 2/3
                             {
                                 c'8
+                                r8
                                 c'8
-                                c'8
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
@@ -451,8 +932,20 @@
                                 c'16
                                 c'16.
                             }
-                            r16
-                            r16
+                            r32.
+                            c'64
+                            ~
+                            c'64
+                            c'32.
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 3/4
+                            {
+                                c'16
+                                c'32
+                                c'32
+                                c'32
+                                r16.
+                            }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
@@ -463,18 +956,16 @@
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16
-                                c'32
-                                c'32
-                                c'32
-                                c'16.
-                            }
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \times 3/4
-                            {
                                 c'16.
                                 c'16.
-                                c'16
+                                \override TupletNumber.text = \markup { 3:2 }
+                                \times 4/6
+                                {
+                                    c'32
+                                    r32
+                                    c'32
+                                }
+                                \revert TupletNumber.text
                             }
                             c'32.
                             c'64
@@ -569,69 +1060,225 @@
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vn. }
                                     r32
                                     [
+                                    \vibrato #'(5 4 2 ) #2  #0.2
+                                    \afterGrace
                                     ef'''32
+                                    \ppp
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Flaut. moltiss. } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2.5
+                                    \startTextSpan
+                                    \<
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r32
+                                    \vibrato #'(4 2 ) #2  #0.2
+                                    \afterGrace
                                     ef'''32
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
+                                    \vibrato #'(1 ) #1  #0.2
+                                    \afterGrace
                                     ef'''16
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
                                     [
+                                    \vibrato #'(2 3 ) #3  #0.2
+                                    \afterGrace
                                     ef'''16
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
+                                    \vibrato #'(5 4 2 4 ) #4  #0.2
+                                    \afterGrace
                                     ef'''16
+                                    \p
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16.
                                     [
                                     \set stemLeftBeamCount = 3
                                     \set stemRightBeamCount = 1
+                                    \vibrato #'(2 1 ) #1  #0.2
                                     ef'''32
                                     ~
+                                    \startTrillSpan
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
+                                    \afterGrace
                                     ef'''16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     r16
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
                                     r32
+                                    \vibrato #'(2 3 5 4 ) #4  #0.2
+                                    \afterGrace
                                     ef'''16.
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r8
                                     [
+                                    \vibrato #'(2 4 2 1 2 ) #2  #0.2
+                                    \afterGrace
                                     ef'''8
                                     ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r8
                                     [
                                     r32
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
+                                    \vibrato #'(3 5 4 ) #4  #0.2
                                     ef'''16.
                                     ~
+                                    \startTrillSpan
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
+                                    \afterGrace
                                     ef'''16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                     r16
                                     ]
                                     r16.
                                     [
+                                    \vibrato #'(2 4 ) #4  #0.2
                                     ef'''32
                                     ~
+                                    \startTrillSpan
+                                    \afterGrace
                                     ef'''8
                                     ]
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTextSpan
+                                        \stopTrillSpan
+                                    }
                                     r4
-                                    c'8
-                                    c'8
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    \mp
+                                    [
+                                    \>
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'8.
-                                    c'16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8.
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>16
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'4
-                                    c'4
+                                    <b d'>4
+                                    <b d'>4
+                                    - \tenuto
+                                    - \twist-bow
                                     ~
-                                    c'4
-                                    c'4
+                                    <b d'>4
+                                    <b d'>4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \ppp
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -657,22 +1304,61 @@
                                     r4.
                                     r4
                                     r4.
-                                    c'8
-                                    c'8
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    \p
+                                    [
+                                    \<
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'8.
-                                    c'16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8.
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>16
+                                    - \tenuto
+                                    - \twist-bow
+                                    \mp
+                                    ]
+                                    \>
                                     ~
-                                    c'4
+                                    <b d'>4
                                     ~
-                                    c'8
-                                    c'8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'8.
-                                    c'16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8.
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>16
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'4
-                                    c'4
+                                    <b d'>4
+                                    <b d'>4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \ppp
                                     r4
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
@@ -697,21 +1383,58 @@
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vc. }
                                     r2
                                     r4.
-                                    c'4
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
+                                    \clef "percussion"
+                                    <b d'>4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \pp
+                                    \<
                                     ~
-                                    c'4
-                                    c'8
+                                    <b d'>4
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
                                     ~
-                                    c'8
-                                    c'8
-                                    c'8
-                                    c'8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    \mp
+                                    [
+                                    \>
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'8
-                                    c'8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b d'>8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <b d'>8
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
                                     ~
-                                    c'4
-                                    c'4
+                                    <b d'>4
+                                    <b d'>4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \ppp
                                     r4
                                     r2
                                       %! +SCORE
@@ -732,25 +1455,72 @@
                             {
                                 \context Voice = "contrabass voice"
                                 {
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Contrabass }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Cb. }
-                                    c'2
-                                    c'4
+                                    \clef "percussion"
+                                    f'2
+                                    - \tweak bound-details.left.Y #11
+                                    - \tweak bound-details.right.Y #3.5
+                                    - \tweak padding #0
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Scratch } \line { Gradually pressing harder until } \line { the continuous scratch becomes disparate clicks, } \line { simultaneously incorporating gradually } \line { more twisting motion to the bowing. }  } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ( Twist ) }
+                                    \startTextSpanTwo
+                                    - \tweak padding #4
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { DP } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpanOne
+                                    f'4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \pp
+                                    \stopTextSpanTwo
                                     ~
-                                    c'16
-                                    c'16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f'16
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    f'16
+                                    - \tenuto
+                                    - \twist-bow
+                                    ]
+                                    \<
                                     ~
-                                    c'4
-                                    c'4.
-                                    c'4
-                                    c'4
-                                    c'4
+                                    f'4
+                                    f'4.
+                                    - \tenuto
+                                    - \twist-bow
+                                    f'4
+                                    - \tenuto
+                                    - \twist-bow
+                                    f'4
+                                    - \tenuto
+                                    - \twist-bow
+                                    \mp
+                                    \>
+                                    f'4
+                                    - \tenuto
+                                    - \twist-bow
                                     ~
-                                    c'8
-                                    c'8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f'8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    f'8
+                                    - \tenuto
+                                    - \twist-bow
+                                    \ppp
+                                    ]
                                     ~
-                                    c'4
+                                    f'4
+                                    \stopTextSpanOne
                                     r4
                                     r2
                                       %! +SCORE
