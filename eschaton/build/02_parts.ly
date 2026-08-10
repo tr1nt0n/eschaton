@@ -299,66 +299,110 @@
                                     r4
                                     r4.
                                     r4
-                                    c'8
+                                    aqs'8
+                                    \p
+                                    - \tweak font-name "Bodoni72 Book Italic" 
+                                    - \tweak font-size 0
+                                    _ \markup { \hspace #1.5 { "legatissimo" } }
+                                    [
+                                    (
                                     ~
-                                    c'32
-                                    c'16.
+                                    aqs'32
+                                    af'16.
+                                    ]
                                     ~
-                                    c'16
+                                    af'16
+                                    )
+                                    [
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
                                         r16
-                                        c'16
-                                        c'16
-                                        c'8.
+                                        a'16
+                                        (
+                                        g'16
+                                        b'8.
+                                        )
                                     }
-                                    c'8
-                                    c'8
+                                    gqf'8
+                                    ]
+                                    (
+                                    a'8
+                                    [
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
-                                        c'16
+                                        aqf'16
+                                        )
                                         r32.
-                                        c'32.
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        dqs''32.
+                                        (
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
-                                        c'64
-                                        c'64
-                                        c'64
-                                        c'32.
-                                        c'16
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 4
+                                        gqf''64
+                                        eqs''64
+                                        af''64
+                                        dqs'''32.
+                                        bf''16
+                                        )
+                                        ]
                                     }
                                     \times 4/5
                                     {
                                         r16.
-                                        c'16.
-                                        c'8
+                                        [
+                                        ef''16.
+                                        (
+                                        af''8
+                                        )
+                                        ]
                                     }
                                     \times 2/3
                                     {
-                                        c'16
-                                        c'64
-                                        c'64
+                                        e''16
+                                        [
+                                        (
+                                        aqf''64
+                                        \set stemLeftBeamCount = 4
+                                        \set stemRightBeamCount = 1
+                                        fqs''64
                                     }
                                     \times 2/3
                                     {
-                                        c'64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 4
+                                        g''64
+                                        )
                                         r64
-                                        c'16
+                                        f''16
+                                        ]
+                                        (
                                     }
                                     \times 2/3
                                     {
-                                        c'32
-                                        c'32
+                                        fs''32
+                                        [
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        g''32
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
-                                            c'16
-                                            c'16
-                                            c'16
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 2
+                                            fqs''16
+                                            f''16
+                                            gqs''16
+                                            )
+                                            ]
                                         }
                                         \revert TupletNumber.text
                                     }
@@ -811,7 +855,7 @@
                             fs16
                             )
                             [
-                            \override TupletNumber.text = \markup { 3:2 }
+                            \override TupletNumber.text = \markup { 6:5 }
                             \times 5/6
                             {
                                 r8
@@ -883,112 +927,141 @@
                             r4
                             r4.
                             r4
+                            ^ \markup { \harp-pedal "-v-|^v-^" }
                             \times 2/3
                             {
+                                \ottava -1
                                 \clef "bass"
-                                ef,,,8
+                                ef,,8
                                 \p
-                                ^ \markup 0
-                                cs,,,8
-                                ^ \markup 1
+                                - \tweak font-name "Bodoni72 Book Italic" 
+                                - \tweak font-size 0
+                                _ \markup { \hspace #1 { "legatissimo" } }
+                                [
+                                (
+                                - \tweak padding #10.5
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { With nails, very close to the neck } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -2.5
+                                \startTextSpan
+                                cs,,8
+                                )
                                 \override TupletNumber.text = \markup { 3:2 }
                                 \times 2/3
                                 {
                                     r16
-                                    d,,,16
-                                    ^ \markup 2
-                                    cs,,,16
-                                    ^ \markup 3
+                                    d,,16
+                                    (
+                                    cs,,16
+                                    ]
                                 }
                                 \revert TupletNumber.text
                             }
                             \times 2/3
                             {
-                                ef,,,8
-                                ^ \markup 4
-                                b'8
-                                ^ \markup 5
-                                cs'8
-                                ^ \markup 6
+                                ef,,8
+                                [
+                                \ottava 0
+                                b,,8
+                                cs,8
+                                ]
                             }
                             \times 2/3
                             {
-                                b'8
-                                ^ \markup 7
+                                b,8
+                                )
+                                [
                                 r8
-                                ef'8
-                                ^ \markup 8
+                                ef8
+                                ]
+                                (
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
+                                cs32
+                                [
+                                \clef "treble"
+                                b32
                                 cs'32
-                                ^ \markup 9
-                                b'32
-                                ^ \markup 10
-                                cs'32
-                                ^ \markup 11
                                 b'16
-                                ^ \markup 12
-                                d'16.
-                                ^ \markup 13
+                                \set stemLeftBeamCount = 2
+                                \set stemRightBeamCount = 1
+                                d''16.
+                                )
                             }
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 3
                             r32.
                             af'64
-                            ^ \markup 14
+                            ]
+                            (
                             ~
                             af'64
-                            cs'32.
-                            ^ \markup 15
+                            [
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            cs''32.
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                b'16
-                                ^ \markup 16
-                                fs'32
-                                ^ \markup 17
-                                af'32
-                                ^ \markup 18
-                                g'32
-                                ^ \markup 19
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 2
+                                b''16
+                                fs''32
+                                af''32
+                                g''32
+                                )
                                 r16.
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                b'16
-                                ^ \markup 20
-                                fs'16.
-                                ^ \markup 21
-                                cs'16.
-                                ^ \markup 22
+                                \ottava 1
+                                b''16
+                                [
+                                (
+                                fs'''16.
+                                cs''''16.
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                fs'16.
-                                ^ \markup 23
-                                b'16.
-                                ^ \markup 24
+                                fs'''16.
+                                [
+                                \set stemLeftBeamCount = 2
+                                \set stemRightBeamCount = 1
+                                b'''16.
                                 \override TupletNumber.text = \markup { 3:2 }
                                 \times 4/6
                                 {
-                                    g'32
-                                    ^ \markup 25
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 3
+                                    g''''32
+                                    )
                                     r32
-                                    b'32
-                                    ^ \markup 26
+                                    b'''32
+                                    ]
+                                    (
                                 }
                                 \revert TupletNumber.text
                             }
-                            af'32.
-                            ^ \markup 27
-                            b'64
-                            ^ \markup 28
+                            af'''32.
+                            [
+                            \set stemLeftBeamCount = 4
+                            \set stemRightBeamCount = 1
+                            b'''64
                             ~
-                            b'64
-                            af'32.
-                            ^ \markup 29
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 4
+                            b'''64
+                            af'''32.
+                            )
+                            \stopTextSpan
+                            ]
+                            \ottava 0
                               %! +SCORE
                         %%% \once \override MultiMeasureRest.transparent = ##t
                               %! +SCORE

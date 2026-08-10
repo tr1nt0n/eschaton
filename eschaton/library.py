@@ -289,6 +289,23 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def transposition(instrument, selector=trinton.logical_ties(pitched=True)):
+    def transpose(argument):
+        selections = selector(argument)
+        _instrument_to_transposition = {"baritone saxophone": 21, "bass clarinet": 14}
+
+        interval_of_transposition = _instrument_to_transposition[instrument]
+
+        for selection in selections:
+            leaves = abjad.select.leaves(selection)
+            for leaf in leaves:
+                pitch = leaf.written_pitch.number
+                new_pitch = pitch + interval_of_transposition
+                leaf.written_pitch = new_pitch
+
+    return transpose
+
+
 def guitar_note_heads(selector):
     def note_heads(argument):
         selections = selector(argument)
