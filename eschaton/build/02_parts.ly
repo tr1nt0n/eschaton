@@ -25,8 +25,7 @@
             \pageBreak
             \time 4/4
             s1 * 1
-            \noBreak
-            \noPageBreak
+            \pageBreak
             \time 4/8
             s1 * 1/2
             \noBreak
@@ -886,78 +885,110 @@
                             r4
                             \times 2/3
                             {
-                                c'8
-                                c'8
+                                \clef "bass"
+                                ef,,,8
+                                \p
+                                ^ \markup 0
+                                cs,,,8
+                                ^ \markup 1
                                 \override TupletNumber.text = \markup { 3:2 }
                                 \times 2/3
                                 {
                                     r16
-                                    c'16
-                                    c'16
+                                    d,,,16
+                                    ^ \markup 2
+                                    cs,,,16
+                                    ^ \markup 3
                                 }
                                 \revert TupletNumber.text
                             }
                             \times 2/3
                             {
-                                c'8
-                                c'8
-                                c'8
+                                ef,,,8
+                                ^ \markup 4
+                                b'8
+                                ^ \markup 5
+                                cs'8
+                                ^ \markup 6
                             }
                             \times 2/3
                             {
-                                c'8
+                                b'8
+                                ^ \markup 7
                                 r8
-                                c'8
+                                ef'8
+                                ^ \markup 8
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'32
-                                c'32
-                                c'32
-                                c'16
-                                c'16.
+                                cs'32
+                                ^ \markup 9
+                                b'32
+                                ^ \markup 10
+                                cs'32
+                                ^ \markup 11
+                                b'16
+                                ^ \markup 12
+                                d'16.
+                                ^ \markup 13
                             }
                             r32.
-                            c'64
+                            af'64
+                            ^ \markup 14
                             ~
-                            c'64
-                            c'32.
+                            af'64
+                            cs'32.
+                            ^ \markup 15
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16
-                                c'32
-                                c'32
-                                c'32
+                                b'16
+                                ^ \markup 16
+                                fs'32
+                                ^ \markup 17
+                                af'32
+                                ^ \markup 18
+                                g'32
+                                ^ \markup 19
                                 r16.
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16
-                                c'16.
-                                c'16.
+                                b'16
+                                ^ \markup 20
+                                fs'16.
+                                ^ \markup 21
+                                cs'16.
+                                ^ \markup 22
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16.
-                                c'16.
+                                fs'16.
+                                ^ \markup 23
+                                b'16.
+                                ^ \markup 24
                                 \override TupletNumber.text = \markup { 3:2 }
                                 \times 4/6
                                 {
-                                    c'32
+                                    g'32
+                                    ^ \markup 25
                                     r32
-                                    c'32
+                                    b'32
+                                    ^ \markup 26
                                 }
                                 \revert TupletNumber.text
                             }
-                            c'32.
-                            c'64
+                            af'32.
+                            ^ \markup 27
+                            b'64
+                            ^ \markup 28
                             ~
-                            c'64
-                            c'32.
+                            b'64
+                            af'32.
+                            ^ \markup 29
                               %! +SCORE
                         %%% \once \override MultiMeasureRest.transparent = ##t
                               %! +SCORE

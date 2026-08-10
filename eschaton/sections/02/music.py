@@ -599,6 +599,97 @@ trinton.make_music(
     voice=score["guitar voice"],
 )
 
+# harp pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 6)),
+    evans.PitchHandler(
+        pitch_list=pitch.return_material_5_pitches(index=-10, harp=True)
+    ),
+    trinton.annotate_leaves_locally(
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False)
+    ),
+    trinton.octavation(
+        octave=-4,
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 2, 3, 4], pitched=True, grace=False
+        ),
+    ),
+    # trinton.octavation(
+    #     octave=1,
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [9, 11, 12, 13, 14, 15, 16], pitched=True, grace=False
+    #     ),
+    # ),
+    # trinton.octavation(
+    #     octave=2,
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [
+    #             10,
+    #         ],
+    #         pitched=True,
+    #         grace=False,
+    #     ),
+    # ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(grace=False)),
+    # trinton.linear_attachment_command(
+    #     attachments=itertools.cycle(
+    #         [
+    #             abjad.StartBeam(),
+    #             abjad.StopBeam(),
+    #         ]
+    #     ),
+    #     selector=trinton.select_leaves_by_index(
+    #         [2, 5, 6, 7, 8, 11, 12, 13, 14, 16, 17, 19, 20, 22]
+    #     ),
+    # ),
+    # trinton.linear_attachment_command(
+    #     attachments=itertools.cycle(
+    #         [
+    #             abjad.StartSlur(),
+    #             abjad.StopSlur(),
+    #         ]
+    #     ),
+    #     selector=trinton.select_leaves_by_index(
+    #         [0, 2, 3, 9, 10, 15, 16, 18], pitched=True, grace=False
+    #     ),
+    # ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("p")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.bundle(
+    #             abjad.Markup(r"""\markup { \hspace #1.5 { "legatissimo" } }"""),
+    #             abjad.Tweak(r"""- \tweak font-name "Bodoni72 Book Italic" """),
+    #             abjad.Tweak(r"- \tweak font-size 0"),
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0], pitched=True),
+    #     direction=abjad.DOWN,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=trinton.boxed_markup(
+    #         string=r"With nails, very close to the neck",
+    #         column="\center-column",
+    #         font_name="Bodoni72 Book Italic",
+    #         fontsize=0,
+    #         string_only=True,
+    #     ),
+    #     full_string=True,
+    #     padding=6,
+    #     style="dashed-line-with-hook",
+    #     selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    #     right_padding=2,
+    # ),
+    voice=score["harp voice"],
+)
+
 # violin pitching
 
 trinton.make_music(
@@ -1088,7 +1179,7 @@ trinton.remove_redundant_time_signatures(score=score)
 
 # breaking
 
-for measure in [1, 3, 5, 6]:
+for measure in [1, 3, 6]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1108,7 +1199,7 @@ for measure in [2]:
         voice=score["Global Context"],
     )
 
-for measure in [1, 2, 3, 5, 6]:
+for measure in [1, 2, 3, 6]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1118,7 +1209,7 @@ for measure in [1, 2, 3, 5, 6]:
         voice=score["Global Context"],
     )
 
-for measure in [4, 7]:
+for measure in [4, 5, 7]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1128,7 +1219,7 @@ for measure in [4, 7]:
         voice=score["Global Context"],
     )
 
-# # spacing
+# spacing
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
