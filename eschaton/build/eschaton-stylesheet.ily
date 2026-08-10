@@ -327,7 +327,7 @@ afterGraceFraction = #(cons 15 16)
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
-    left-margin = 10\mm
+    left-margin = 15\mm
     right-margin = 10\mm
     top-margin = 10\mm
 

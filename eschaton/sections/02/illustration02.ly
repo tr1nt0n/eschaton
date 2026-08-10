@@ -29,6 +29,8 @@
             s1 * 5/8
             \break
             \noPageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 15 17 24 17 12 16 16)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/8
             s1 * 5/8
@@ -37,11 +39,27 @@
             \time 2/8
             s1 * 1/4
             \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 18 18 22 22 19 15 15 15)))
             \time 4/4
             s1 * 1
+              %! +SCORE
+            - \tweak padding #30
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 18 18 22 22 19 15 15 15)))
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+            - \tweak padding #45
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \noBreak
             \noPageBreak
             \once \override Score.BarLine.transparent = ##f
@@ -50,7 +68,7 @@
             \time 1/8
             R1 * 1/8
             - \tweak font-size #'14
-            - \tweak padding -3
+            - \tweak padding -8
             _ \middle-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
@@ -313,6 +331,7 @@
                                     r4
                                     r4.
                                     r4
+                                    \big-half-harmonic
                                     aqs'8
                                     \p
                                     - \tweak font-name "Bodoni72 Book Italic" 
@@ -320,11 +339,19 @@
                                     _ \markup { \hspace #1.5 { "legatissimo" } }
                                     [
                                     (
+                                    - \tweak padding #8.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
                                     ~
+                                    \big-half-harmonic
                                     aqs'32
+                                    \big-half-harmonic
                                     af'16.
                                     ]
                                     ~
+                                    \big-half-harmonic
                                     af'16
                                     )
                                     [
@@ -334,23 +361,30 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         r16
+                                        \big-half-harmonic
                                         a'16
                                         (
+                                        \big-half-harmonic
                                         g'16
+                                        \big-half-harmonic
                                         b'8.
                                         )
                                     }
+                                    \big-half-harmonic
                                     gqf'8
                                     ]
                                     (
+                                    \big-half-harmonic
                                     a'8
                                     [
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
+                                        \big-half-harmonic
                                         aqf'16
                                         )
                                         r32.
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         dqs''32.
@@ -359,12 +393,17 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 4
                                         gqf''64
+                                        \big-half-harmonic
                                         eqs''64
+                                        \big-half-harmonic
                                         af''64
+                                        \big-half-harmonic
                                         dqs'''32.
+                                        \big-half-harmonic
                                         bf''16
                                         )
                                         ]
@@ -373,49 +412,62 @@
                                     {
                                         r16.
                                         [
+                                        \big-half-harmonic
                                         ef''16.
                                         (
+                                        \big-half-harmonic
                                         af''8
                                         )
                                         ]
                                     }
                                     \times 2/3
                                     {
+                                        \big-half-harmonic
                                         e''16
                                         [
                                         (
+                                        \big-half-harmonic
                                         aqf''64
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 4
                                         \set stemRightBeamCount = 1
                                         fqs''64
                                     }
                                     \times 2/3
                                     {
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 4
                                         g''64
                                         )
                                         r64
+                                        \big-half-harmonic
                                         f''16
                                         ]
                                         (
                                     }
                                     \times 2/3
                                     {
+                                        \big-half-harmonic
                                         fs''32
                                         [
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         g''32
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
+                                            \big-half-harmonic
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 2
                                             fqs''16
+                                            \big-half-harmonic
                                             f''16
+                                            \big-half-harmonic
                                             gqs''16
                                             )
+                                            \stopTextSpan
                                             ]
                                         }
                                         \revert TupletNumber.text
