@@ -1129,7 +1129,7 @@ trinton.make_music(
         attachments=[
             abjad.bundle(
                 trinton.boxed_markup(
-                    string=r"II. There is only dance music in times of war.",
+                    string=r"II. interpenetration ( i )",
                     column="\center-column",
                     font_name="Bodoni72 Book",
                     fontsize=5,
