@@ -17,7 +17,6 @@ def eschaton_score(time_signatures):
         instruments=[
             abjad.AltoFlute(),
             abjad.Oboe(),
-            abjad.BaritoneSaxophone(),
             abjad.BassClarinet(),
             abjad.Percussion(),
             abjad.Percussion(),
@@ -31,8 +30,7 @@ def eschaton_score(time_signatures):
             abjad.Contrabass(),
         ],
         groups=[
-            2,
-            2,
+            3,
             2,
             1,
             1,
@@ -78,12 +76,6 @@ all_instrument_names = [
         context="Staff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { Oboe }'
-        ),
-    ),
-    abjad.InstrumentName(
-        context="Staff",
-        markup=abjad.Markup(
-            '\markup \\fontsize #-1.5 \override #\'(font-name . "Bodoni72 Book") { Baritone Saxophone }'
         ),
     ),
     abjad.InstrumentName(
@@ -164,12 +156,6 @@ all_short_instrument_names = [
     abjad.ShortInstrumentName(
         context="Staff",
         markup=abjad.Markup(
-            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Bari. Sax. }'
-        ),
-    ),
-    abjad.ShortInstrumentName(
-        context="Staff",
-        markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Bcl. }'
         ),
     ),
@@ -235,7 +221,6 @@ def write_instrument_names(score):
         [
             "altoflute voice",
             "oboe voice",
-            "baritonesaxophone voice",
             "bassclarinet voice",
             "percussion 1 voice",
             "percussion 2 voice",
@@ -261,7 +246,6 @@ def write_short_instrument_names(score):
         [
             "altoflute voice",
             "oboe voice",
-            "baritonesaxophone voice",
             "bassclarinet voice",
             "percussion 1 voice",
             "percussion 2 voice",

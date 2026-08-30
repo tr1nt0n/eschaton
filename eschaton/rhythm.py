@@ -219,3 +219,43 @@ def rhythm_5(
         abjad.mutate.replace(argument, rhythm_selections)
 
     return make_rhythm_5
+
+
+def return_section_1_bow_speed_talea(index):
+    talea = []
+
+    for _ in itertools.cycle([3, 3, 3, 2, 3, 3, 2, 2, 3, 3, 2, 2, 2, 3]):
+        if sum(talea) < 105:
+            talea.append(_)
+        else:
+            break
+
+    for _ in itertools.cycle([6, 6, 6, 4, 6, 6, 4, 4, 6, 6, 4, 4, 4, 6]):
+        if sum(talea) < 210:
+            talea.append(_)
+        else:
+            break
+
+    for _ in itertools.cycle([12, 12, 12, 8, 12, 12, 8, 8, 12, 12, 8, 8, 8, 12]):
+        if sum(talea) < 315:
+            talea.append(_)
+        else:
+            break
+
+    for _ in itertools.cycle([12, 12, 12, 16, 12, 12, 16, 16, 12, 12, 16, 16, 16, 12]):
+        if sum(talea) < 420:
+            talea.append(_)
+        else:
+            break
+
+    for _ in itertools.cycle([24, 24, 24, 32, 24, 24, 32, 32, 24, 24, 32, 32, 32, 24]):
+        if sum(talea) < 525:
+            talea.append(_)
+        else:
+            break
+
+    talea_counts = trinton.rotated_sequence(talea, index % len(talea))
+
+    rhythm_maker = evans.talea(talea_counts, 32)
+
+    return rhythm_maker
