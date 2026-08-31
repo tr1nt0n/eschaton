@@ -273,6 +273,96 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def half_note_signifier(
+    selector=trinton.pleaves(grace=False),
+    direction=abjad.UP,
+    padding=None,
+):
+    def attach_markups(argument):
+        selections = selector(argument)
+
+        for selection in selections:
+            note_duration = abjad.get.duration(selection, preprolated=True)
+
+            if note_duration > abjad.Duration(
+                (15, 32)
+            ) and note_duration < abjad.Duration(abjad.Duration((1, 1))):
+                _numerator_to_dot_amount = {1: 0, 3: 1, 7: 2, 15: 3}
+
+                dots = []
+
+                numerator = note_duration.numerator
+
+                dot_amount = _numerator_to_dot_amount[numerator]
+
+                for _ in range(0, dot_amount):
+                    dots.append(".")
+
+                dots = "".join(dots)
+
+                note_markup_string = (
+                    rf"""\markup {{ \hspace #-2 {{ ( \note {{2}} #2 {dots} ) }} }}"""
+                )
+
+                note_markup = abjad.Markup(note_markup_string)
+
+                if padding is not None:
+                    note_markup = abjad.bundle(
+                        note_markup, rf"- \tweak padding {padding}"
+                    )
+
+                abjad.attach(
+                    note_markup, abjad.select.leaf(selection, 0), direction=direction
+                )
+
+    return attach_markups
+
+
+def bow_contact_staff(selector):
+    def attach_literals(argument):
+        selections = selector(argument)
+        start_literal = abjad.LilyPondLiteral(
+            [
+                r"\override Accidental.stencil = ##f",
+                r"\override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)",
+                r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                r"\override Staff.Clef.text = \bow-clef",
+                r"\override Glissando.bound-details.left.padding = #0.5",
+                r"\override Glissando.bound-details.right.padding = #0.5",
+                r"\override Staff.NoteHead.no-ledgers = ##t",
+                r"\override Staff.StaffSymbol.line-count = #3",
+                r"\override Staff.StaffSymbol.line-positions = #'(9 0 -9)",
+            ],
+            site="before",
+        )
+
+        stop_literal = abjad.LilyPondLiteral(
+            [
+                r"\revert Accidental.stencil",
+                r"\revert Staff.Clef.stencil",
+                r"\revert Glissando.bound-details.left.padding",
+                r"\revert Glissando.bound-details.right.padding",
+                r"\revert Staff.NoteHead.no-ledgers",
+                r"\revert Staff.StaffSymbol.line-count",
+                r"\revert Staff.StaffSymbol.line-positions",
+            ],
+            site="absolute_after",
+        )
+
+        barline_literal = abjad.LilyPondLiteral(
+            [
+                r"\revert Staff.BarLine.bar-extent",
+            ],
+            site="absolute_after",
+        )
+
+        abjad.attach(start_literal, selections[0])
+        abjad.attach(stop_literal, selections[-2])
+        abjad.attach(barline_literal, selections[-1])
+
+    return attach_literals
+
+
 def transposition(instrument, selector=trinton.logical_ties(pitched=True)):
     def transpose(argument):
         selections = selector(argument)

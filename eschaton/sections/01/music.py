@@ -345,6 +345,33 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (14, 16)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=3)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    evans.PitchHandler(pitch_list=["b", "a''"]),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Bowing the side of the bridge",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=11,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=0,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic('"pp"')],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
     voice=score["cello voice"],
     beam_meter=True,
 )
@@ -353,6 +380,14 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (23, 33)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=30)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
     voice=score["cello voice"],
     beam_meter=True,
 )
@@ -361,8 +396,22 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (37, 44)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=67)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
     voice=score["cello voice"],
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 45)),
+    library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
+    voice=score["cello voice"],
 )
 
 # contrabass music
@@ -371,6 +420,33 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (14, 16)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=0)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    evans.PitchHandler(pitch_list=["b", "a''"]),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Bowing the side of the bridge",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=11,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=0,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic('"pp"')],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
     voice=score["contrabass voice"],
     beam_meter=True,
 )
@@ -379,6 +455,14 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (23, 33)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=27)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
     voice=score["contrabass voice"],
     beam_meter=True,
 )
@@ -387,8 +471,22 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (37, 44)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=71)),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index(
+            [-1], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    library.half_note_signifier(),
     voice=score["contrabass voice"],
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 45)),
+    library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
+    voice=score["contrabass voice"],
 )
 
 # globals
