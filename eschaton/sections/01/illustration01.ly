@@ -2320,11 +2320,28 @@
                                     r2.
                                     \override Dots.staff-position = #2
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
+                                    b16.
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     [
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    c'32
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
+                                    \startTextSpan
+                                    \<
+                                    a''32
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2338,7 +2355,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'32
+                                    a''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2348,12 +2365,12 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    b16.
                                     ]
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
+                                    a''16.
                                     [
                                     - \abjad-zero-padding-glissando
                                     \glissando
@@ -2380,11 +2397,64 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
+                                    g''16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
                                     c'16
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    g''16
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    g''32
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    d'16
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    f''32
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2400,7 +2470,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    f''32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -2410,7 +2480,10 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16
+                                    d'16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    f''32
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2424,7 +2497,13 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'32
+                                    \revert Staff.Stem.stemlet-length
+                                    f''8
+                                    ]
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f''32
+                                    [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2433,11 +2512,31 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16
+                                    d'16.
+                                      %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
                                     \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    d'16.
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    e''32
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2453,63 +2552,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    e''8
                                     [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    c'32
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16.
+                                    e''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2519,7 +2565,19 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    e'16.
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2535,10 +2593,31 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    e'32
                                     [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e''16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
                                     ~
-                                    c'32
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e''16.
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2548,7 +2627,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    e'32
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2564,31 +2643,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    e'8
                                     [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16.
+                                    e'32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2598,7 +2656,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    e''16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2614,10 +2672,31 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    e''32
                                     [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e'16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
                                     ~
-                                    c'32
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e'32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2627,7 +2706,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    e''16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2643,7 +2722,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    e''16.
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -2653,7 +2732,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16.
+                                    e'32
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2667,7 +2746,36 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'32
+                                    \revert Staff.Stem.stemlet-length
+                                    e'8
+                                    ]
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'32
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e''16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2677,7 +2785,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    e'16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2693,7 +2801,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
+                                    e'32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -2703,7 +2811,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'32
+                                    e''16.
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2717,36 +2825,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'32
+                                    e''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2756,7 +2835,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    e'16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2772,7 +2851,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    e'16.
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -2782,7 +2861,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16.
+                                    e''32
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2796,7 +2875,36 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'32
+                                    \revert Staff.Stem.stemlet-length
+                                    e''8
+                                    ]
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e''32
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e'16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e'16.
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2806,7 +2914,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    e''32
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2822,60 +2930,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
+                                    e''8
                                     [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'32
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16.
+                                    e''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2885,7 +2943,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    f'16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2901,10 +2959,32 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    f'32
                                     [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e''16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    \<
                                     ~
-                                    c'32
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e''16.
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2914,7 +2994,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    f'32
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2930,8 +3010,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    f'8
                                     [
+                                    ~
+                                    f'32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2940,7 +3022,9 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16.
+                                    \revert Staff.Stem.stemlet-length
+                                    d''16.
+                                    ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -2954,7 +3038,11 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'16.
+                                    d''4
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d''32
+                                    [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2964,7 +3052,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'32
+                                    g'8..
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -2980,10 +3068,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    g'8
                                     [
                                     ~
-                                    c'32
+                                    g'32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2993,7 +3081,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    d''16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3008,10 +3096,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    d''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    d''32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3022,65 +3110,19 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8..
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
-                                    ~
-                                    c'32
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16.
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8..
+                                    g'8..
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3096,7 +3138,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    g'32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3107,7 +3149,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8..
+                                    d''8..
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3123,10 +3165,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    d''8
                                     [
                                     ~
-                                    c'32
+                                    d''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -3136,7 +3178,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    g'16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3151,10 +3193,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    g'4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    g'32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3165,34 +3207,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8..
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8..
+                                    d''8..
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3208,7 +3223,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    d''32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3219,7 +3234,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8..
+                                    g'8..
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3235,38 +3250,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
-                                    ~
-                                    c'32
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16.
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
+                                    g'32
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3277,7 +3261,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8..
+                                    d''8..
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3293,10 +3277,10 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    d''8
                                     [
                                     ~
-                                    c'32
+                                    d''32
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -3306,7 +3290,65 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16.
+                                    g'16.
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    g'4
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'32
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    d''8..
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d''8
+                                    [
+                                    ~
+                                    d''32
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    g'16.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3322,7 +3364,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \afterGrace
-                                    c'4
+                                    g'4
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
@@ -3338,69 +3380,36 @@
                                         \revert NoteHead.no-ledgers
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
-                                        c'16
+                                        d''16
+                                        \stopTextSpan
                                     }
                                     r2.
                                     r2.
                                     r2.
                                     \override Dots.staff-position = #2
-                                    c'4
+                                    g'4
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    c'4
+                                    - \tweak padding #6.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
+                                    \startTextSpan
+                                    d''4
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    c'4
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'4
+                                    b'4
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -3415,7 +3424,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    b'8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3426,7 +3435,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    f''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3441,7 +3450,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    f''4
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -3450,7 +3459,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'4
+                                    d''4
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -3465,7 +3474,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    d''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3476,7 +3485,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    a''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3491,11 +3500,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
+                                    a''4
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -3504,32 +3509,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'4
+                                    f''4
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -3544,7 +3524,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    f''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3555,12 +3535,13 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    \<
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -3570,10 +3551,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    c'''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    c'''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3584,7 +3565,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    g''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3599,10 +3580,60 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    g''4
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    c'''4
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'''8
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    g''8
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    g''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    g''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3613,7 +3644,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3628,11 +3659,52 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'2
+                                    c'''4
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'''8
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    g''8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "fff"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    g''2
                                     ^ \markup { \hspace #-2 { ( \note {2} #2  ) } }
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    g''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -3643,7 +3715,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -3659,7 +3731,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \afterGrace
-                                    c'2
+                                    c'''2
                                     ^ \markup { \hspace #-2 { ( \note {2} #2  ) } }
                                     {
                                         \once \override Stem.stencil = ##f
@@ -3676,7 +3748,8 @@
                                         \revert NoteHead.no-ledgers
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
-                                        c'16
+                                        g''16
+                                        \stopTextSpan
                                         \revert Accidental.stencil
                                         \revert Staff.Clef.stencil
                                         \revert Glissando.bound-details.left.padding
@@ -4161,11 +4234,127 @@
                                     r2.
                                     \override Dots.staff-position = #2
                                     \override Staff.Stem.stemlet-length = 0.75
+                                    b16.
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
+                                    \startTextSpan
+                                    \<
+                                    a''32
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    a''16
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    b16
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b32
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    a''16.
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    c'16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    g''16
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''32
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
                                     c'16.
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    g''16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    d'16
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f''16.
                                     [
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    c'32
+                                    d'32
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -4179,7 +4368,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'16
+                                    d'16
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -4189,7 +4378,32 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    f''16
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d'16
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    e''16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    e'8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4205,119 +4419,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    c'16
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'32
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16.
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    c'16
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
-                                    [
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    c'32
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
-                                    [
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    c'16
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    e'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4328,17 +4430,17 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    e''8.
                                     ]
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    e'8.
                                     [
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    e''16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4354,94 +4456,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8.
-                                    ]
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
-                                    [
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    e''16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4452,7 +4467,17 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    e'8.
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e''8.
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4468,7 +4493,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    e'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4478,7 +4503,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'16
+                                    e''16
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -4492,7 +4517,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'16
+                                    e''16
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -4502,7 +4527,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    e'16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4518,57 +4543,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    c'16
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'16
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    e'8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4579,7 +4554,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    e''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4595,7 +4570,107 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    e''16
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e'16
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e'16
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    e''16
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e''16
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    e'16
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    e'16
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    e''16
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4606,17 +4681,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
-                                    ]
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
-                                    [
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    f'8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4632,7 +4697,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    f'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4643,46 +4708,18 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    e''8.
                                     ]
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    \<
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    f'8.
                                     [
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    d''16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4698,7 +4735,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    d''16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4709,7 +4746,29 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    g'8.
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d''8.
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    g'16
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4724,10 +4783,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    g'4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    g'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4738,7 +4797,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    d''8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4754,7 +4813,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    d''8.
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4765,7 +4824,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    g'16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4780,8 +4839,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
+                                    g'4
+                                    ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    g'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4792,7 +4853,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    d''8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4807,10 +4868,8 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    d''16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4821,7 +4880,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    g'8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4837,7 +4896,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    g'8.
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4848,7 +4907,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    d''16
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4863,8 +4922,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
+                                    d''4
+                                    ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    d''16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4875,7 +4936,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    g'8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4891,7 +4952,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    g'16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4902,7 +4963,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'16
+                                    d''8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4917,10 +4978,8 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    d''16
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4931,7 +4990,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8.
+                                    g'8.
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -4947,7 +5006,63 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    g'8.
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    d''16
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    d''4
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d''16
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    g'8.
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'8.
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -4959,7 +5074,7 @@
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
                                     \afterGrace
-                                    c'16
+                                    d''16
                                     ]
                                     - \abjad-zero-padding-glissando
                                     \glissando
@@ -4970,17 +5085,34 @@
                                         \once \override Accidental.stencil = ##f
                                         \revert Dots.staff-position
                                         \once \override NoteHead.transparent = ##t
-                                        c'16
+                                        g'16
+                                        \stopTextSpan
                                     }
                                     r2.
                                     r2.
                                     r2.
                                     \override Dots.staff-position = #2
-                                    c'4
+                                    b'4
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    - \tweak padding #6.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
+                                    \startTextSpan
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -4991,7 +5123,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    b'8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5002,7 +5134,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    f''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5017,7 +5149,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    f''4
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -5026,7 +5158,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'4
+                                    d''4
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -5041,7 +5173,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    d''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5052,7 +5184,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    a''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5067,10 +5199,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    a''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    a''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5081,7 +5213,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    f''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5096,7 +5228,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    f''4
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -5105,7 +5237,7 @@
                                     \revert NoteHead.no-ledgers
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
-                                    c'4
+                                    c'''4
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -5120,7 +5252,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    c'''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5131,7 +5263,37 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    g''8
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    \<
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    g''4
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''8
+                                    [
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5146,10 +5308,10 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    c'''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    c'''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5160,7 +5322,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    g''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5175,10 +5337,12 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    g''4
+                                    ~
+                                    g''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    g''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5189,7 +5353,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5204,12 +5368,12 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    c'''4
                                     ~
-                                    c'4
+                                    c'''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    c'''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5220,7 +5384,19 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    g''8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "fff"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5235,12 +5411,12 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    g''4
                                     ~
-                                    c'4
+                                    g''4
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
+                                    g''8
                                     [
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
@@ -5251,38 +5427,7 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
-                                    ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                    ~
-                                    c'4
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'''8
                                     ]
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -5298,7 +5443,7 @@
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
                                     \afterGrace
-                                    c'4
+                                    c'''4
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
@@ -5314,7 +5459,8 @@
                                         \revert NoteHead.no-ledgers
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
-                                        c'16
+                                        g''16
+                                        \stopTextSpan
                                         \revert Accidental.stencil
                                         \revert Staff.Clef.stencil
                                         \revert Glissando.bound-details.left.padding

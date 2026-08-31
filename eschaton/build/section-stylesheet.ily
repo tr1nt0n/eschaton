@@ -39,9 +39,9 @@ afterGraceFraction = #(cons 15 16)
 		\consists Text_spanner_engraver
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
-        \override BarNumber.Y-offset = 5
+        \override BarNumber.Y-offset = 7
         \override BarNumber.X-extent = ##f
-        \override BarNumber.X-offset = -4
+        \override BarNumber.X-offset = -5.5
         \override BarNumber.font-size = 1
         \override BarNumber.padding = 1
         \override BarNumber.font-name = "Bodoni72 Book"
