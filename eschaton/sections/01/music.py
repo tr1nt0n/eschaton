@@ -485,7 +485,10 @@ trinton.make_music(
     evans.RhythmHandler(evans.tuplet([(1,), (8, 1, -1), (-1,)])),
     evans.PitchHandler(["g", "f'"]),
     trinton.change_lines(
-        lines=1, clef="percussion", selector=trinton.select_leaves_by_index([0])
+        lines=1,
+        clef="percussion",
+        selector=trinton.select_leaves_by_index([0]),
+        invisible_barlines=False,
     ),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
     trinton.attachment_command(
@@ -639,12 +642,35 @@ trinton.make_music(
 # guitar music
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("percussion")],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Staff.BarLine.bar-extent = #'(-2.5 . 2.5)",
+                    r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                    r"\override Staff.Clef.text = \guitar-stringing-clef",
+                    r"\staff-line-count 6",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["guitar voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (3, 4)),
     evans.RhythmHandler(
         evans.talea([-5, 1000], 8),
     ),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    evans.PitchHandler([["e", "a"]]),
+    evans.PitchHandler([["e", "g"]]),
     trinton.change_notehead_command(notehead="xcircle", selector=trinton.pleaves()),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
@@ -655,10 +681,10 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=4,
+        padding=6,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=7,
+        right_padding=12,
     ),
     trinton.tremolo_command(selector=trinton.pleaves()),
     trinton.linear_attachment_command(
@@ -775,7 +801,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=r"w/ ribbed rebar, SP",
+            string=r"w/ rebar, SP",
             column="\center-column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
@@ -829,7 +855,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=r"w/ ribbed rebar, SP",
+            string=r"w/ rebar, SP",
             column="\center-column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
@@ -1535,7 +1561,19 @@ trinton.remove_redundant_time_signatures(score=score)
 
 # breaking
 
-for measure in [1, 2]:
+for measure in [
+    3,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [1, 2, 4]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(

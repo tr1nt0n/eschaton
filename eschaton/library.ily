@@ -180,6 +180,22 @@ stringing-clef = \markup {
     }
 }
 
+guitar-stringing-clef = \markup {
+    \fontsize #-5
+    \raise #2.1
+    \override #'(baseline-skip . 1)
+    {
+        \center-column {
+            \line { I }
+            \line { II }
+            \line { III }
+            \line { IV }
+            \line { V }
+            \line { VI }
+        }
+    }
+}
+
 % U+E06B
 
 body-clef = \markup {

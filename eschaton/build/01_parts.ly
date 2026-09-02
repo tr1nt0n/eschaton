@@ -16,9 +16,11 @@
             \pageBreak
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -1542,8 +1544,6 @@
                                         {
                                             \override Dots.staff-position = #2
                                             \staff-line-count 1
-                                              %! +SCORE
-                                        %%% \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
                                             \override Staff.NoteHead.no-ledgers = ##t
                                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Percussion II }
                                               %! +SCORE
@@ -1913,9 +1913,14 @@
                     {
                         \context Voice = "guitar voice"
                         {
+                            \override Staff.BarLine.bar-extent = #'(-2.5 . 2.5)
+                            \override Staff.Clef.stencil = #ly:text-interface::print
+                            \override Staff.Clef.text = \guitar-stringing-clef
+                            \staff-line-count 6
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Guitar }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
+                            \clef "percussion"
                             r1.
                             r2.
                             r2
@@ -1925,22 +1930,22 @@
                                 \tweak style #'xcircle
                                 e
                                 \tweak style #'xcircle
-                                a
+                                g
                             >8
                             :64
                             - \tweak circled-tip ##t
                             \<
-                            - \tweak padding #4
+                            - \tweak padding #6
                             - \abjad-dashed-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { crossed string rasg., SP } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -7
+                            - \tweak bound-details.right.padding -12
                             \startTextSpan
                             ~
                             <
                                 \tweak style #'xcircle
                                 e
                                 \tweak style #'xcircle
-                                a
+                                g
                             >2.
                             :32
                             \pp
@@ -2308,7 +2313,7 @@
                                         (
                                         - \tweak padding #11
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ ribbed rebar, SP } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -9
                                         \startTextSpan
                                         \<
@@ -2416,7 +2421,7 @@
                                     \startTextSpanTwo
                                     - \tweak padding #9
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ ribbed rebar, SP } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -2
                                     \startTextSpanOne
                                     ~

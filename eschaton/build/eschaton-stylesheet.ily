@@ -325,10 +325,10 @@ afterGraceFraction = #(cons 15 16)
     % max-systems-per-page = 2
     system-separator-markup = \markup \fontsize #10 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 28) (minimum-distance . 28) (padding . 0) (stretchability . 28))
-    indent = 20\mm
+    indent = 25\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
-    left-margin = 15\mm
+    left-margin = 10\mm
     right-margin = 10\mm
     top-margin = 10\mm
 
