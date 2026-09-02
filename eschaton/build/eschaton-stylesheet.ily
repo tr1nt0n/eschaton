@@ -5,6 +5,7 @@
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
+\include "/Users/trintonprater/baca/baca/scm/baca.ily"
 \include "/Users/trintonprater/evans/lilypond/evans.ily"
 \include "/Users/trintonprater/trinton/lilypond/trinton-markups.ily"
 \include "/Users/trintonprater/trinton/lilypond/trinton-spanners.ily"

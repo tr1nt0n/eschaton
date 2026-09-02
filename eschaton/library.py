@@ -318,7 +318,7 @@ def half_note_signifier(
     return attach_markups
 
 
-def bow_contact_staff(selector):
+def bow_contact_staff(selector, reversion_line_count=5):
     def attach_literals(argument):
         selections = selector(argument)
         start_literal = abjad.LilyPondLiteral(
@@ -330,7 +330,7 @@ def bow_contact_staff(selector):
                 r"\override Glissando.bound-details.left.padding = #0.5",
                 r"\override Glissando.bound-details.right.padding = #0.5",
                 r"\override Staff.NoteHead.no-ledgers = ##t",
-                r"\override Staff.StaffSymbol.line-count = #3",
+                r"\staff-line-count 3",
                 r"\override Staff.StaffSymbol.line-positions = #'(9 0 -9)",
             ],
             site="before",
@@ -343,10 +343,16 @@ def bow_contact_staff(selector):
                 r"\revert Glissando.bound-details.left.padding",
                 r"\revert Glissando.bound-details.right.padding",
                 r"\revert Staff.NoteHead.no-ledgers",
-                r"\revert Staff.StaffSymbol.line-count",
                 r"\revert Staff.StaffSymbol.line-positions",
             ],
             site="absolute_after",
+        )
+
+        line_count_reversion = abjad.LilyPondLiteral(
+            [
+                rf"\staff-line-count {reversion_line_count}",
+            ],
+            site="before",
         )
 
         barline_literal = abjad.LilyPondLiteral(
@@ -356,9 +362,11 @@ def bow_contact_staff(selector):
             site="absolute_after",
         )
 
+        abjad.attach(abjad.Clef("treble"), selections[0])
         abjad.attach(start_literal, selections[0])
         abjad.attach(stop_literal, selections[-2])
         abjad.attach(barline_literal, selections[-1])
+        abjad.attach(line_count_reversion, selections[-1])
 
     return attach_literals
 
