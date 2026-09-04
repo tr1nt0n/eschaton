@@ -273,6 +273,46 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def smorzando(selector, angles=1, padding=0, direction=abjad.UP):
+    def smorz(argument):
+        selections = selector(argument)
+        markup_string = r"""\markup {
+            \hspace #-0.5
+            \override #'(font-name . "ekmelos")
+            \fontsize #7
+            {
+                {
+                    \char ##xe610
+                }
+                \hspace #-0.77
+                {
+                    \char ##xe611
+                }"""
+
+        for _ in range(0, angles):
+
+            markup_string += r"""
+                    \hspace #-0.77
+                    {
+                        \char ##xe610
+                    }
+                    \hspace #-0.77
+                    {
+                        \char ##xe611
+                    }"""
+
+        markup_string += r"""
+            }
+        }"""
+
+        markup = abjad.Markup(markup_string)
+        markup = abjad.bundle(markup, abjad.Tweak(rf"- \tweak padding {padding}"))
+
+        abjad.attach(markup, selections[0], direction=direction)
+
+    return smorz
+
+
 def half_note_signifier(
     selector=trinton.pleaves(grace=False),
     direction=abjad.UP,

@@ -32,9 +32,11 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -1202,16 +1204,227 @@
                                     \times 4/5
                                     {
                                         r16
-                                        \slow-fast-smorzando
                                         a'4
                                         \mp
+                                        - \tweak padding 6
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
                                         ~
                                     }
                                     a'8
                                     r8
-                                    \stopTrillSpan
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8.
+                                    b'16
+                                    \mp
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    ~
+                                    b'4
+                                    ~
+                                    b'4
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -1466,8 +1679,42 @@
                                     }
                                     r4
                                     \!
-                                    r2.
-                                    r2.
+                                    r2
+                                    \times 4/5
+                                    {
+                                        r16
+                                        \override Dots.staff-position = #2
+                                        \big-half-harmonic
+                                        f'4
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        - \tweak padding #8.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
+                                    }
+                                    \big-half-harmonic
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    eqs'8
+                                    \p
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \>
+                                    \big-half-harmonic
+                                    \revert Dots.staff-position
+                                    \revert Staff.Stem.stemlet-length
+                                    f'16
+                                    \ppp
+                                    )
+                                    \stopTextSpan
+                                    ]
+                                    r16
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -2726,8 +2973,47 @@
                             }
                             r2.
                             r2.
-                            r2.
-                            r2.
+                            r2
+                            \times 4/5
+                            {
+                                r16
+                                \override Dots.staff-position = #2
+                                <ef'' b'' a'''>4
+                                :32
+                                - \tenuto
+                                \ppp
+                                - \abjad-zero-padding-glissando
+                                \glissando
+                                - \tweak padding #11
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { bisbig. } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -3
+                                \startTextSpanOne
+                                \<
+                                ^ (
+                            }
+                            \clef "bass"
+                            \override Staff.Stem.stemlet-length = 0.75
+                            <a,, b,, ef,>8
+                            :64
+                            - \tenuto
+                            \p
+                            [
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \>
+                            \revert Dots.staff-position
+                            \clef "treble"
+                            \revert Staff.Stem.stemlet-length
+                            <ef'' b'' a'''>16
+                            :128
+                            - \tenuto
+                            \ppp
+                            )
+                            \stopTextSpanOne
+                            ]
+                            r16
+                            r2
                             r2.
                             r2.
                             r2.
@@ -2791,8 +3077,39 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    r2
+                                    \times 4/5
+                                    {
+                                        r16
+                                        [
+                                        \override Stem.direction = #UP
+                                        ef''32
+                                        ^ (
+                                        b'32
+                                        a'32
+                                        ef'32
+                                        \change Staff = "piano 2 staff"
+                                        b32
+                                        a32
+                                        ef32
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        b,32
+                                    }
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 3
+                                    a32
+                                    \change Staff = "piano 1 staff"
+                                    ef'32
+                                    b'32
+                                    a''32
+                                    ef'''32
+                                    b'''32
+                                    )
+                                    \revert Stem.direction
+                                    r16
+                                    ]
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -2842,6 +3159,7 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
+                                    \clef "bass"
                                     r1.
                                     r2.
                                     r2
@@ -2849,8 +3167,76 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    \once \override Dots.transparent = ##t
+                                    \once \override Rest.transparent = ##t
+                                    r2
+                                    \once \override TupletBracket.stencil = ##f
+                                    \once \override TupletNumber.stencil = ##f
+                                    \times 4/5
+                                    {
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Rest.transparent = ##t
+                                        r16
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override RepeatTie.transparent = ##t
+                                        \once \override Beam.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override Dots.stencil = ##f
+                                        \once \override Tie.stencil = ##f
+                                        \once \override NoteHead.duration-log = 2
+                                        \once \override Stem.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'4
+                                        ^ \ppp
+                                        \sustainOn
+                                        ^ \<
+                                    }
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override RepeatTie.transparent = ##t
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Dots.stencil = ##f
+                                    \once \override Tie.stencil = ##f
+                                    \once \override NoteHead.duration-log = 2
+                                    \once \override Stem.stencil = ##f
+                                    \once \override NoteHead.transparent = ##t
+                                    c'8
+                                    ^ \p
+                                    ^ \>
+                                    ~
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override RepeatTie.transparent = ##t
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Dots.stencil = ##f
+                                    \once \override Tie.stencil = ##f
+                                    \once \override NoteHead.duration-log = 2
+                                    \once \override Stem.stencil = ##f
+                                    \once \override NoteHead.transparent = ##t
+                                    c'32
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override RepeatTie.transparent = ##t
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Dots.stencil = ##f
+                                    \once \override Tie.stencil = ##f
+                                    \once \override NoteHead.duration-log = 2
+                                    \once \override Stem.stencil = ##f
+                                    \once \override NoteHead.transparent = ##t
+                                    c'32
+                                    ^ \ppp
+                                    \sustainOff
+                                    \once \override Dots.transparent = ##t
+                                    \once \override Rest.transparent = ##t
+                                    r16
+                                    \once \override Dots.transparent = ##t
+                                    \once \override Rest.transparent = ##t
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -2923,19 +3309,50 @@
                                         \p
                                         - \tweak circled-tip ##t
                                         \>
+                                        - \tweak padding #12.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
+                                        - \tweak bound-details.right.padding 5.5
+                                        \startTextSpanTwo
                                         - \tweak padding #9.5
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, MST } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -9
-                                        \startTextSpan
+                                        \startTextSpanOne
                                         ~
                                     }
                                     a'8
-                                    \stopTextSpan
+                                    \stopTextSpanOne
                                     r8
                                     \!
-                                    r2.
-                                    r2.
+                                    \stopTextSpanTwo
+                                    r4
+                                    r8.
+                                    a'16
+                                    \pp
+                                    - \tweak padding #10
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                    \startTextSpanTwo
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    ~
+                                    a'4
+                                    ~
+                                    a'4
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
+                                    - \tweak padding #10
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP }
+                                    \startTextSpanTwo
+                                    r2
+                                    \stopTextSpanTwo
                                     r2.
                                     r2.
                                     r2.
@@ -3066,8 +3483,43 @@
                                         }
                                     }
                                     r4
-                                    r2.
-                                    r2.
+                                    r2
+                                    \times 4/5
+                                    {
+                                        r16
+                                        [
+                                        \times 2/3
+                                        {
+                                            ef'8
+                                            \ppp
+                                            - \tweak padding #13.5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -3
+                                            \startTextSpan
+                                            \<
+                                            _ (
+                                            b8
+                                            a8
+                                            )
+                                            ]
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                        }
+                                    }
+                                    ef16
+                                    \p
+                                    [
+                                    \>
+                                    _ (
+                                    b16
+                                    a'16
+                                    \ppp
+                                    )
+                                    \stopTextSpan
+                                    r16
+                                    ]
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -3156,23 +3608,60 @@
                                         \>
                                         - \tweak padding #11.5
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -9
+                                        \startTextSpanTwo
+                                        - \tweak padding #14.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
+                                        - \tweak bound-details.right.padding 5.5
                                         \startTextSpanOne
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanTwo
+                                        - \tweak bound-details.right.padding -9
+                                        \startTextSpanThree
                                         ~
                                     }
                                     <c, a,>8
-                                    \stopTextSpanOne
+                                    \stopTextSpanThree
                                     \stopTextSpanTwo
                                     r8
                                     \!
-                                    r2.
-                                    r2.
+                                    \stopTextSpanOne
+                                    r4
+                                    r8.
+                                    <c, a,>16
+                                    \p
+                                    - \tweak padding #12
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanThree
+                                    - \tweak padding #9
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    ~
+                                    <c, a,>4
+                                    ~
+                                    <c, a,>4
+                                    \stopTextSpanOne
+                                    \stopTextSpanThree
+                                    \stopTextSpanTwo
+                                    - \tweak padding #12
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP }
+                                    \startTextSpanOne
+                                    r2
+                                    \stopTextSpanOne
                                     r2.
                                     r2.
                                     r2.
@@ -5005,8 +5494,21 @@
                                     \stopTextSpanTwo
                                     r8
                                     \!
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8.
+                                    <e,>16
+                                    \mp
+                                    - \tweak padding #4.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    ~
+                                    <e,>4
+                                    ~
+                                    <e,>4
+                                    \stopTextSpanTwo
+                                    r2
                                     r2.
                                     r2.
                                     r2.
