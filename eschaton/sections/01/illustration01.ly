@@ -1881,10 +1881,10 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <c' df'>16.
                                     [
-                                    <c' df'>8
+                                    <c' df'>32
                                     ~
                                     \revert Staff.Stem.stemlet-length
-                                    <c' df'>32
+                                    <c' df'>8
                                     ]
                                     ~
                                     \times 4/5
@@ -1919,10 +1919,10 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <c' df'>16.
                                     [
-                                    <c' df' b'>8
+                                    <c' df' b'>32
                                     ~
                                     \revert Staff.Stem.stemlet-length
-                                    <c' df' b'>32
+                                    <c' df' b'>8
                                     ]
                                     r2.
                                     r2.

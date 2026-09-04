@@ -621,6 +621,7 @@ trinton.make_music(
         )
     ),
     trinton.respell_tuplets_command(rewrite_brackets=False),
+    trinton.rewrite_meter_command(boundary_depth=-1),
     evans.PitchHandler([["c'", "df'"]]),
     trinton.pitch_with_selector_command(
         selector=trinton.patterned_tie_index_selector(
