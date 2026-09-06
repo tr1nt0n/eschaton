@@ -259,3 +259,69 @@ def return_section_1_bow_speed_talea(index):
     rhythm_maker = evans.talea(talea_counts, 32)
 
     return rhythm_maker
+
+
+def return_section_1_figures(instrument, index=0, stage=1):
+    initial_figure = [3, 1, 1, 2, 1]
+
+    figure_permutations = list(itertools.permutations(initial_figure))
+    trimmed_permutations = []
+    [
+        trimmed_permutations.append(_)
+        for _ in figure_permutations
+        if _ not in trimmed_permutations
+    ]
+
+    figure_permutations = trinton.rotated_sequence(
+        trimmed_permutations, index % len(trimmed_permutations)
+    )
+
+    if stage == 1:
+        figure_permutations = figure_permutations
+
+    if stage == 2:
+        new_permutations = []
+
+        expansion_counter = 1
+        for figure in figure_permutations:
+            new_figure = []
+
+            for _ in figure:
+                if _ == 3 or _ == 2:
+                    new_beat = _ + expansion_counter
+                    new_figure.append(new_beat)
+                else:
+                    new_figure.append(_)
+
+            new_permutations.append(new_figure)
+            expansion_counter += 1
+
+        figure_permutations = new_permutations
+
+    if stage == 3:
+        figure_permutations = [[10, 1, -1]]
+
+    final_tuplet_list = []
+
+    for _ in figure_permutations:
+        tuplet = tuple(_)
+        final_tuplet_list.append(_)
+
+    if instrument == "clarinet":
+        return final_tuplet_list
+
+    else:
+        final_final_tuplet_list = []
+
+        for tuplet in figure_permutations:
+            new_tuplet = []
+            for _ in tuplet:
+                if _ == 1:
+                    new_tuplet.append(-1)
+                else:
+                    new_tuplet.append(_)
+
+            new_tuplet = tuple(new_tuplet)
+            final_final_tuplet_list.append(new_tuplet)
+
+        return final_final_tuplet_list
