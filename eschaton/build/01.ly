@@ -2617,163 +2617,145 @@
                                     \revert Staff.Stem.stemlet-length
                                     <c' df' b'>8
                                     ]
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>8
                                     [
                                     ~
                                     <c' df' b'>32
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>16.
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>32
                                         [
                                         <c' df' b'>8
+                                    }
+                                    \times 4/5
+                                    {
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>32
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>16.
                                     [
                                     <c' df' b'>32
                                     ~
                                     <c' df' b'>16.
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>32
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>16.
                                         [
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>16.
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>32
                                     [
                                     <c' df' b'>16.
                                     ~
                                     <c' df' b'>32
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>16.
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>32
                                         [
                                         <c' df' b'>8
+                                    }
+                                    \times 4/5
+                                    {
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>32
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>16.
                                     [
                                     <c' df' b'>32
                                     ~
                                     <c' df' b'>16.
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>32
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>16.
                                         [
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>16.
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>32
                                     [
                                     <c' df' b'>16.
                                     ~
                                     <c' df' b'>32
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>16.
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>32
                                         [
                                         <c' df' b'>8
+                                    }
+                                    \times 4/5
+                                    {
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>32
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>16.
                                     [
                                     <c' df' b'>32
                                     ~
                                     <c' df' b'>16.
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>32
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>16.
                                         [
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>16.
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>32
                                     [
                                     <c' df' b'>16.
                                     ~
                                     <c' df' b'>32
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>16.
                                     ]
                                     ~
                                     \times 4/5
                                     {
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         <c' df' b'>32
                                         [
                                         <c' df' b'>8
+                                    }
+                                    \times 4/5
+                                    {
                                         <c' df' b'>8
-                                        \revert Staff.Stem.stemlet-length
                                         <c' df' b'>32
                                         ]
                                         ~
                                     }
-                                    \override Staff.Stem.stemlet-length = 0.75
                                     <c' df' b'>16.
                                     [
                                     <c' df' b'>32
                                     ~
                                     <c' df' b'>16.
-                                    \revert Staff.Stem.stemlet-length
                                     <c' df' b'>32
                                     ]
                                     r2.
