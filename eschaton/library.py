@@ -273,6 +273,90 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def attach_oboe_double_harmonic_markups(
+    selector, padding=11.25, right_padding=1.5, command="One"
+):
+    def attach(argument):
+        selections = selector(argument)
+        grouped_selections = []
+
+        pitch_group = []
+        target_pitch_index = 0
+        selection_counter = 1
+        for selection in selections:
+            selection_noteheads = selection.note_heads
+            first_notehead = selection_noteheads[0]
+            first_notehead_pitch = first_notehead.written_pitch
+            target_pitches = [abjad.NamedPitch("eqs''"), abjad.NamedPitch("f''")]
+
+            target_pitch = target_pitches[target_pitch_index]
+            if first_notehead_pitch == target_pitch:
+                # print(target_pitch)
+                pitch_group.append(selection)
+
+            else:
+                # print("")
+                new_group = [_ for _ in pitch_group]
+                grouped_selections.append(new_group)
+                pitch_group.clear()
+                pitch_group.append(selection)
+                target_pitch_index += 1
+                target_pitch_index = target_pitch_index % 2
+                target_pitch = target_pitches[target_pitch_index]
+
+            if selection_counter >= len(selections):
+                new_group = [_ for _ in pitch_group]
+                grouped_selections.append(new_group)
+
+            selection_counter += 1
+
+        # for group in grouped_selections:
+        #     print(group)
+        #
+        # breakpoint()
+
+        for selection_group in grouped_selections:
+            first_leaf = abjad.select.leaf(selection_group, 0, pitched=True)
+            # print("first leaf:")
+            # print(first_leaf)
+            # print("")
+            first_noteheads = first_leaf.note_heads
+            first_notehead = first_noteheads[0]
+            first_notehead_pitch = first_notehead.written_pitch
+            # print("first notehead's pitch:")
+            # print(first_notehead_pitch)
+            # print("")
+            # print("")
+
+            if first_notehead_pitch == abjad.NamedPitch("eqs''"):
+                markup_string = r"\markup \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) }"
+
+            if first_notehead_pitch == abjad.NamedPitch("f''"):
+                markup_string = r"\markup \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) }"
+
+            if len(selection_group) > 1:
+                spanner_command = trinton.hooked_spanner_command(
+                    string=markup_string,
+                    full_string=True,
+                    padding=padding,
+                    style="dashed-line-with-hook",
+                    selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+                    right_padding=right_padding,
+                    command=command,
+                )
+
+                spanner_command(selection_group)
+
+            else:
+                markup = abjad.Markup(markup_string)
+                markup = abjad.bundle(
+                    markup, abjad.Tweak(rf"- \tweak padding {padding}")
+                )
+                abjad.attach(markup, first_leaf, direction=abjad.UP)
+
+    return attach
+
+
 def smorzando(selector, angles=1, padding=0, direction=abjad.UP):
     def smorz(argument):
         selections = selector(argument)

@@ -90,3 +90,48 @@ def return_material_5_pitches(index=0, guitar=False, harp=False):
         pitch_list = initial_pitch_list
 
     return pitch_list
+
+
+def pitch_section_1_oboe_double_harmonics(selector):
+    def pitch_double_harmonics(argument):
+        selections = selector(argument)
+
+        grouped_selections = abjad.select.group_by_contiguity(selections)
+
+        multi_group_counter = 0
+        for group in grouped_selections:
+            # print(group)
+            # print("")
+            if len(group) > 1:
+                if multi_group_counter % 2 == 0:
+                    pitch_list = [
+                        ["eqs''", "bqs''"],
+                        ["f''", "cqf'''"],
+                    ]
+                else:
+                    pitch_list = [
+                        ["f''", "cqf'''"],
+                        ["eqs''", "bqs''"],
+                    ]
+
+                pitch_handler = evans.PitchHandler(pitch_list=pitch_list)
+
+                pitch_handler(group)
+                multi_group_counter += 1
+
+            else:
+                if multi_group_counter % 2 == 0:
+                    pitch_list = [
+                        ["eqs''", "bqs''"],
+                    ]
+                else:
+                    pitch_list = [
+                        ["f''", "cqf'''"],
+                    ]
+
+                pitch_handler = evans.PitchHandler(pitch_list=pitch_list)
+
+                pitch_handler(group)
+        # breakpoint()
+
+    return pitch_double_harmonics

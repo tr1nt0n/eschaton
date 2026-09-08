@@ -5,6 +5,7 @@ import evans
 import trinton
 import itertools
 from eschaton import library
+from eschaton import pitch
 from eschaton import rhythm
 from eschaton import meter
 
@@ -413,6 +414,13 @@ trinton.make_music(
     ),
     trinton.respell_tuplets_command(rewrite_brackets=False),
     trinton.rewrite_meter_command(boundary_depth=-1),
+    pitch.pitch_section_1_oboe_double_harmonics(
+        selector=trinton.logical_ties(pitched=True, grace=False)
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.pleaves(grace=False)
+    ),
+    library.attach_oboe_double_harmonic_markups(selector=trinton.pleaves()),
     # trinton.annotate_leaves_locally(selector=abjad.select.leaves),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
@@ -450,6 +458,10 @@ trinton.make_music(
                 65,
             ]
         ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     voice=score["oboe voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
@@ -650,6 +662,7 @@ trinton.make_music(
         attachments=[abjad.Dynamic("pp")],
         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
     ),
+    trinton.tremolo_command(selector=trinton.pleaves()),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
             string=r"Rapid, random pressing of buttons + teeth on reed",
