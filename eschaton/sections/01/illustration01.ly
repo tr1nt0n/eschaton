@@ -4956,7 +4956,98 @@
                             r2.
                             r2.
                             r2.
-                            r2.
+                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                {
+                                    \context Score = "Score"
+                                    \with
+                                    {
+                                        \override SpacingSpanner.spacing-increment = 0.5
+                                        proportionalNotationDuration = ##f
+                                    }
+                                    <<
+                                        \context RhythmicStaff = "Rhythmic_Staff"
+                                        \with
+                                        {
+                                            \remove Time_signature_engraver
+                                            \remove Staff_symbol_engraver
+                                            \override Stem.direction = #up
+                                            \override Stem.length = 5
+                                            \override TupletBracket.bracket-visibility = ##t
+                                            \override TupletBracket.direction = #up
+                                            \override TupletBracket.minimum-length = 4
+                                            \override TupletBracket.padding = 1.25
+                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                            \override TupletNumber.font-size = 0
+                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                            tupletFullLength = ##t
+                                        }
+                                        {
+                                            c'16.
+                                        }
+                                    >>
+                                    \layout
+                                    {
+                                        indent = 0
+                                        ragged-right = ##t
+                                    }
+                                }
+                            \times 6/7
+                            {
+                                \my-hack-slash
+                                \once \override Beam.beam-thickness = #0.4
+                                \ottava 1
+                                \revert Staff.BarLine.bar-extent
+                                \revert Staff.Clef.stencil
+                                \staff-line-count 5
+                                \set stemLeftBeamCount = 0
+                                \set stemRightBeamCount = 1
+                                \clef "treble"
+                                \override Staff.Stem.stemlet-length = 0.75
+                                \tweak style #'harmonic
+                                bf'''64
+                                \p
+                                [
+                                (
+                                - \tweak padding #9
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum, MSP } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -2
+                                \startTextSpan
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                a'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c''''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 0
+                                \revert Staff.Stem.stemlet-length
+                                \tweak style #'harmonic
+                                gs''64
+                                )
+                                \stopTextSpan
+                                ]
+                                \ottava 0
+                            }
+                            \revert TupletNumber.text
+                            r32
+                            r8
+                            r2
                             r2.
                             r2.
                             r2.
@@ -5100,7 +5191,39 @@
                             ]
                             r16
                             r2
-                            r2.
+                            \override Dots.staff-position = #2
+                            \ottava 1
+                            \override Staff.Stem.stemlet-length = 0.75
+                            b'''16
+                            \p
+                            [
+                            (
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpanTwo
+                            - \tweak padding #7.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpanOne
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \revert Dots.staff-position
+                            \revert Staff.Stem.stemlet-length
+                            ef'''32
+                            \!
+                            )
+                            \stopTextSpanOne
+                            \stopTextSpanTwo
+                            ]
+                            \ottava 0
+                            r32
+                            r8
+                            r2
                             r2.
                             r2.
                             r2.
@@ -5995,7 +6118,34 @@
                                     \startTextSpanOne
                                     r2
                                     \stopTextSpanOne
-                                    r2.
+                                    \override Dots.staff-position = #2
+                                    \ottava 1
+                                    \vibrato #'(2 4 5 3 2) #2 #0.2
+                                    \clef "treble"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    \tweak style #'harmonic
+                                    b'''16
+                                    \pp
+                                    [
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    \startTrillSpan
+                                    \revert Dots.staff-position
+                                    \revert Staff.Stem.stemlet-length
+                                    \tweak style #'harmonic
+                                    a'''32
+                                    - \stop-on-string
+                                    \!
+                                    )
+                                    \stopTrillSpan
+                                    ]
+                                    \ottava 0
+                                    r32
+                                    r8
+                                    r2
                                     r2.
                                     r2.
                                     r2.
