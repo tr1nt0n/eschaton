@@ -5182,7 +5182,81 @@
                                     r16
                                     ]
                                     r2
-                                    r2.
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'16.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 6/7
+                                    {
+                                        \my-hack-slash
+                                        \once \override Beam.beam-thickness = #0.4
+                                        \ottava 2
+                                        \set stemLeftBeamCount = 0
+                                        \set stemRightBeamCount = 1
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <bf'''' c'''''>64
+                                        \p
+                                        [
+                                        (
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <ef'''' b''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <fs'''' a''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <d'''' c'''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <b''' ef''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <c'''' a''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 0
+                                        \revert Staff.Stem.stemlet-length
+                                        gs''''64
+                                        )
+                                        ]
+                                        \ottava 0
+                                    }
+                                    \revert TupletNumber.text
+                                    r32
+                                    r8
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -5425,7 +5499,97 @@
                                     \startTextSpanTwo
                                     r2
                                     \stopTextSpanTwo
-                                    r2.
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'16.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 6/5
+                                    {
+                                        \my-hack-slash
+                                        \once \override Beam.beam-thickness = #0.4
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 0
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        c''''64
+                                        \p
+                                        [
+                                        - \tweak padding #11.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -10
+                                        \startTextSpanOne
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        a'''64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        d'''64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 0
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        \revert Staff.Stem.stemlet-length
+                                        e'''64
+                                        \stopTextSpanOne
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    r32
+                                    r8
+                                    r2
                                     r2.
                                     r2.
                                     r2.
@@ -5592,7 +5756,90 @@
                                     r16
                                     ]
                                     r2
-                                    r2.
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'16.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 3/2
+                                    {
+                                        \my-hack-slash
+                                        \once \override Beam.beam-thickness = #0.4
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 0
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a''64
+                                        \p
+                                        [
+                                        - \tweak padding #11
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -10
+                                        \startTextSpanOne
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        b''64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        f''64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 0
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        \revert Staff.Stem.stemlet-length
+                                        c'''64
+                                        \stopTextSpanOne
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    r32
+                                    r8
+                                    r2
                                     r2.
                                     r2.
                                     r2.
