@@ -620,7 +620,7 @@ def flute_flageolets(selector=trinton.pleaves()):
                 leaf,
             )
 
-        abjad.attach(abjad.LilyPondLiteral(r"\set fontSize = #-0.25", "after"), leaf)
+        abjad.attach(abjad.LilyPondLiteral(r"\set fontSize = #-1", "after"), leaf)
 
         abjad.attach(abjad.Ottava(n=0, site="after"), selections[-1])
 

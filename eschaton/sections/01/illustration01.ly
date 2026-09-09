@@ -831,7 +831,7 @@
                                     \!
                                     )
                                     \ottava 0
-                                    \set fontSize = #-0.25
+                                    \set fontSize = #-1
                                     r8
                                     r16
                                     [
@@ -1241,7 +1241,7 @@
                                     - \flageolet
                                     )
                                     \ottava 0
-                                    \set fontSize = #-0.25
+                                    \set fontSize = #-1
                                     r2.
                                     r4
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Bass }
@@ -1263,6 +1263,14 @@
                                                         {
                                                             \char ##xe611
                                                         }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
                                                             \hspace #-0.77
                                                             {
                                                                 \char ##xe610
@@ -1342,6 +1350,14 @@
                                                     {
                                                         \char ##xe611
                                                     }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
                                                         \hspace #-0.77
                                                         {
                                                             \char ##xe610
@@ -5000,6 +5016,7 @@
                                 \revert Staff.BarLine.bar-extent
                                 \revert Staff.Clef.stencil
                                 \staff-line-count 5
+                                \set fontSize = #-3
                                 \set stemLeftBeamCount = 0
                                 \set stemRightBeamCount = 1
                                 \clef "treble"
@@ -5009,7 +5026,7 @@
                                 \p
                                 [
                                 (
-                                - \tweak padding #9
+                                - \tweak padding #8.5
                                 - \abjad-dashed-line-with-hook
                                 - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum, MSP } \hspace #0.5 }
                                 - \tweak bound-details.right.padding -2
@@ -5043,12 +5060,198 @@
                                 \stopTextSpan
                                 ]
                                 \ottava 0
+                                \set fontSize = #-1
                             }
                             \revert TupletNumber.text
                             r32
                             r8
                             r2
-                            r2.
+                            \times 4/5
+                            {
+                                r8..
+                                \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                    {
+                                        \context Score = "Score"
+                                        \with
+                                        {
+                                            \override SpacingSpanner.spacing-increment = 0.5
+                                            proportionalNotationDuration = ##f
+                                        }
+                                        <<
+                                            \context RhythmicStaff = "Rhythmic_Staff"
+                                            \with
+                                            {
+                                                \remove Time_signature_engraver
+                                                \remove Staff_symbol_engraver
+                                                \override Stem.direction = #up
+                                                \override Stem.length = 5
+                                                \override TupletBracket.bracket-visibility = ##t
+                                                \override TupletBracket.direction = #up
+                                                \override TupletBracket.minimum-length = 4
+                                                \override TupletBracket.padding = 1.25
+                                                \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                \override TupletNumber.font-size = 0
+                                                \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                tupletFullLength = ##t
+                                            }
+                                            {
+                                                c'16.
+                                            }
+                                        >>
+                                        \layout
+                                        {
+                                            indent = 0
+                                            ragged-right = ##t
+                                        }
+                                    }
+                                \times 6/7
+                                {
+                                    \my-hack-slash
+                                    \once \override Beam.beam-thickness = #0.4
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \set stemLeftBeamCount = 0
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    bf'''64
+                                    [
+                                    (
+                                    - \tweak padding #8.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum, MSP } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    ef'''64
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    a'''64
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    c''''64
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    ef'''64
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    c'''64
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 1
+                                    \tweak style #'harmonic
+                                    gs''64
+                                }
+                                \revert TupletNumber.text
+                            }
+                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                {
+                                    \context Score = "Score"
+                                    \with
+                                    {
+                                        \override SpacingSpanner.spacing-increment = 0.5
+                                        proportionalNotationDuration = ##f
+                                    }
+                                    <<
+                                        \context RhythmicStaff = "Rhythmic_Staff"
+                                        \with
+                                        {
+                                            \remove Time_signature_engraver
+                                            \remove Staff_symbol_engraver
+                                            \override Stem.direction = #up
+                                            \override Stem.length = 5
+                                            \override TupletBracket.bracket-visibility = ##t
+                                            \override TupletBracket.direction = #up
+                                            \override TupletBracket.minimum-length = 4
+                                            \override TupletBracket.padding = 1.25
+                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                            \override TupletNumber.font-size = 0
+                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                            tupletFullLength = ##t
+                                        }
+                                        {
+                                            c'8.
+                                        }
+                                    >>
+                                    \layout
+                                    {
+                                        indent = 0
+                                        ragged-right = ##t
+                                    }
+                                }
+                            \times 6/7
+                            {
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                bf'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                a'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c''''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                gs''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                bf'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                a'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c''''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                ef'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 1
+                                \tweak style #'harmonic
+                                c'''64
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 0
+                                \tweak style #'harmonic
+                                gs''64
+                                )
+                                \stopTextSpan
+                                ]
+                                \ottava 0
+                                \set fontSize = #-1
+                            }
+                            \revert TupletNumber.text
+                            r16
+                            r4
                             r2.
                             r2.
                             r2.
@@ -5360,6 +5563,7 @@
                                         \my-hack-slash
                                         \once \override Beam.beam-thickness = #0.4
                                         \ottava 2
+                                        \set fontSize = #-3
                                         \set stemLeftBeamCount = 0
                                         \set stemRightBeamCount = 1
                                         \override Staff.Stem.stemlet-length = 0.75
@@ -5389,6 +5593,7 @@
                                         )
                                         ]
                                         \ottava 0
+                                        \set fontSize = #-1
                                     }
                                     \revert TupletNumber.text
                                     r32
@@ -5677,6 +5882,7 @@
                                         \my-hack-slash
                                         \once \override Beam.beam-thickness = #0.4
                                         \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set fontSize = #-3
                                         \set stemLeftBeamCount = 0
                                         \set stemRightBeamCount = 1
                                         \once \override NoteHead.no-ledgers = ##t
@@ -5686,7 +5892,7 @@
                                         c''''64
                                         \p
                                         [
-                                        - \tweak padding #11.5
+                                        - \tweak padding #11
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -10
@@ -5722,6 +5928,7 @@
                                         e'''64
                                         \stopTextSpanOne
                                         ]
+                                        \set fontSize = #-1
                                     }
                                     \revert TupletNumber.text
                                     r32
@@ -5934,6 +6141,7 @@
                                         \my-hack-slash
                                         \once \override Beam.beam-thickness = #0.4
                                         \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set fontSize = #-3
                                         \set stemLeftBeamCount = 0
                                         \set stemRightBeamCount = 1
                                         \once \override NoteHead.no-ledgers = ##t
@@ -5943,7 +6151,7 @@
                                         a''64
                                         \p
                                         [
-                                        - \tweak padding #11
+                                        - \tweak padding #10.5
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -10
@@ -5972,6 +6180,7 @@
                                         c'''64
                                         \stopTextSpanOne
                                         ]
+                                        \set fontSize = #-1
                                     }
                                     \revert TupletNumber.text
                                     r32
