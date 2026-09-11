@@ -5486,7 +5486,29 @@
                             r4
                             r2.
                             r2.
-                            r2.
+                            r16.
+                            ef'''32
+                            \pp
+                            [
+                            (
+                            \<
+                            b''32
+                            a''32
+                            ef''32
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            b'32
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 3
+                            a'32
+                            ef'32
+                            b32
+                            a32
+                            \mf
+                            )
+                            ]
+                            r8
+                            r4
                             r2.
                             r2.
                             r2.
@@ -5701,7 +5723,27 @@
                             r4
                             r2.
                             r2.
-                            r2.
+                            r8.
+                            \clef "bass"
+                            b32
+                            \pp
+                            [
+                            (
+                            \<
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            a32
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 3
+                            ef32
+                            b,32
+                            a,32
+                            ef,32
+                            \mf
+                            )
+                            ]
+                            r8
+                            r4
                             r2.
                             r2.
                             r2.
@@ -7036,8 +7078,28 @@
                                     r8
                                     r4
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8
+                                    \clef "bass"
+                                    <c, a,>16.
+                                    - \stop-on-string
+                                    \p
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    r32
+                                    r8.
+                                    <c, a,>16
+                                    ~
+                                    <c, a,>4
+                                    ~
+                                    <c, a,>8
+                                    - \stop-on-string
+                                    \stopTextSpanTwo
+                                    r8
+                                    r4
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
@@ -8899,8 +8961,26 @@
                                     r16
                                     r4
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8
+                                    e,16.
+                                    - \stop-on-string
+                                    - \tweak padding #4.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    r32
+                                    r8.
+                                    e,16
+                                    ~
+                                    e,4
+                                    ~
+                                    e,8
+                                    - \stop-on-string
+                                    \stopTextSpanTwo
+                                    r8
+                                    r4
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)

@@ -1727,6 +1727,33 @@ trinton.make_music(
     preprocessor=trinton.fuse_thirty_seconds_preprocessor((8, 6, 1000)),
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    evans.RhythmHandler(evans.talea([-3, 1, 1, 1, 1, 1, 1, 1, 1, 1, -100], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["ef'''", "b''", "a''", "ef''", "b'", "a'", "ef'", "b", "a"]),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartBeam(), abjad.StopBeam()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartSlur(), abjad.StopSlur()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=3),
+        ],
+        selector=trinton.select_leaves_by_index([4, 5], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("pp"), abjad.StartHairpin("<"), abjad.Dynamic("mf")],
+        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    ),
+    voice=score["guitar voice"],
+)
+
 
 # harp music
 
@@ -1955,6 +1982,37 @@ trinton.make_music(
     voice=score["harp voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1, 2)),
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    evans.RhythmHandler(evans.talea([-6, 1, 1, 1, 1, 1, 1, -100], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["b", "a", "ef", "b,", "a,", "ef,"]),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartBeam(), abjad.StopBeam()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartSlur(), abjad.StopSlur()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=3),
+        ],
+        selector=trinton.select_leaves_by_index([1, 2], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("pp"), abjad.StartHairpin("<"), abjad.Dynamic("mf")],
+        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    ),
+    voice=score["harp voice"],
 )
 
 # piano music
@@ -3193,6 +3251,37 @@ trinton.make_music(
 )
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (12, 13)),
+    evans.RhythmHandler(evans.talea([-12, 3, -7, 14, -1000], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler([["c,", "a,"]]),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"III + IV",
+            column="\center-column",
+            font_name="Bodoni72 Book",
+            fontsize=1,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=6,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=3,
+        command="Two",
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("p"), abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("stop-on-string")],
+        selector=trinton.select_leaves_by_index([0, 3], pitched=True),
+    ),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (14, 16)),
     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=3)),
     trinton.rewrite_meter_command(boundary_depth=-1),
@@ -3543,6 +3632,33 @@ trinton.make_music(
     ),
     voice=score["contrabass voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1, 2)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12, 13)),
+    evans.RhythmHandler(evans.talea([-12, 3, -7, 14, -1000], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["e,"]),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"IV",
+            column="\center-column",
+            font_name="Bodoni72 Book",
+            fontsize=1,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=4.5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=3,
+        command="Two",
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("stop-on-string")],
+        selector=trinton.select_leaves_by_index([0, 3], pitched=True),
+    ),
+    voice=score["contrabass voice"],
 )
 
 trinton.make_music(
