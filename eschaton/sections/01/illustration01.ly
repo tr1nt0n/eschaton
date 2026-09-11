@@ -1608,8 +1608,120 @@
                                     r16
                                     r4
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Alto }
+                                    r16
+                                    [
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        r32
+                                        ef'32
+                                        \p
+                                        (
+                                        \<
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        b'32
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        a''32
+                                        \mf
+                                        \>
+                                        b'32
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        ef'32
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        b'32
+                                        \p
+                                        )
+                                        r16
+                                        ]
+                                    }
+                                    \once \override Rest.staff-position = #0
+                                    r8.
+                                    - \tweak Beam.positions #'(-4 . -6)
+                                    [
+                                    \times 2/3
+                                    {
+                                        a''32
+                                        (
+                                        \<
+                                        b'32
+                                        ef'32
+                                        ]
+                                    }
+                                    \times 2/3
+                                    {
+                                        b'32
+                                        [
+                                        a''32
+                                        \mf
+                                        \>
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        b'32
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        ef'32
+                                        \p
+                                        \<
+                                        b'32
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        a''32
+                                        \mf
+                                        \>
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        b'32
+                                        ef'32
+                                        \p
+                                        \<
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        b'32
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        a''32
+                                        \mf
+                                        \>
+                                        b'32
+                                        ef'32
+                                        \p
+                                        ]
+                                        \<
+                                    }
+                                    \times 2/3
+                                    {
+                                        b'32
+                                        [
+                                        a''32
+                                        b'32
+                                        \mf
+                                        )
+                                    }
+                                    r8.
+                                    ]
+                                    r4
                                     r2.
                                     r2.
                                     r2.
@@ -5837,8 +5949,110 @@
                                     }
                                     r2
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'16.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 6/7
+                                    {
+                                        \my-hack-slash
+                                        \once \override Beam.beam-thickness = #0.4
+                                        \ottava 2
+                                        \set fontSize = #-3
+                                        \set stemLeftBeamCount = 0
+                                        \set stemRightBeamCount = 1
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <bf'''' c'''''>64
+                                        \pp
+                                        [
+                                        (
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <ef'''' b''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <fs'''' a''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <d'''' c'''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <b''' ef''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        <c'''' a''''>64
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 0
+                                        \revert Staff.Stem.stemlet-length
+                                        gs''''64
+                                        )
+                                        ]
+                                        \ottava 0
+                                        \set fontSize = #-1
+                                    }
+                                    \revert TupletNumber.text
+                                    r32
+                                    r4
+                                    \ottava 2
+                                    <d'''' c'''''>32
+                                    [
+                                    (
+                                    \<
+                                    <b''' ef''''>32
+                                    <c'''' a''''>32
+                                    gs''''32
+                                    ef''''32
+                                    b'''32
+                                    a'''32
+                                    \ottava 0
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    ef'''32
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 3
+                                    b''32
+                                    a''32
+                                    ef''32
+                                    b'32
+                                    \mf
+                                    )
+                                    ]
+                                    r8
+                                    r4
                                     r2.
                                     r2.
                                     r2.
