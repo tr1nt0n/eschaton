@@ -9,64 +9,26 @@
             - \tweak padding 17
             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { I. Back. ( ii ) }
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 72" } } }
-            \break
-            \noPageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5 13 12 21 20 18 15)))
             \time 5/4
             s1 * 5/4
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 48" } } }
-            \pageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 24 20 20 20 23.5 20 20 20)))
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #25
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \noBreak
-            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            \pageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 21 21 21 27 25 26 21)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #27
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \noBreak
-            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            \pageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20 20 20 20 30 10 20 20 23 17)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #13
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \noBreak
-            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -1229,485 +1191,14 @@
                                     \ottava 0
                                     \set fontSize = #-1
                                     r2.
-                                    r4
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Bass }
-                                    \times 4/5
-                                    {
-                                        r16
-                                        a'4
-                                        \mp
-                                        - \tweak padding 6
-                                        ^ \markup {
-                                                    \hspace #-0.5
-                                                    \override #'(font-name . "ekmelos")
-                                                    \fontsize #7
-                                                    {
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                    }
-                                                }
-                                        ~
-                                    }
-                                    a'8
-                                    r8
-                                    r4
-                                    r8.
-                                    b'16
-                                    \mp
-                                    - \tweak padding 0
-                                    ^ \markup {
-                                                \hspace #-0.5
-                                                \override #'(font-name . "ekmelos")
-                                                \fontsize #7
-                                                {
-                                                    {
-                                                        \char ##xe610
-                                                    }
-                                                    \hspace #-0.77
-                                                    {
-                                                        \char ##xe611
-                                                    }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                }
-                                            }
-                                    ~
-                                    b'4
-                                    ~
-                                    b'4
-                                    r2
                                     r2.
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        ef'16.
-                                        \mp
-                                        - \tweak padding 0
-                                        ^ \markup {
-                                                    \hspace #-0.5
-                                                    \override #'(font-name . "ekmelos")
-                                                    \fontsize #7
-                                                    {
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                    }
-                                                }
-                                        ~
-                                    }
-                                    ef'8.
-                                    r16
-                                    r4
                                     r2.
-                                    r4
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Alto }
-                                    r16
-                                    [
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        r32
-                                        ef'32
-                                        \p
-                                        (
-                                        \<
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        b'32
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        a''32
-                                        \mf
-                                        \>
-                                        b'32
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        ef'32
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        b'32
-                                        \p
-                                        )
-                                        r16
-                                        ]
-                                    }
-                                    \once \override Rest.staff-position = #0
-                                    r8.
-                                    - \tweak Beam.positions #'(-4 . -6)
-                                    [
-                                    \times 2/3
-                                    {
-                                        a''32
-                                        (
-                                        \<
-                                        b'32
-                                        ef'32
-                                        ]
-                                    }
-                                    \times 2/3
-                                    {
-                                        b'32
-                                        [
-                                        a''32
-                                        \mf
-                                        \>
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        b'32
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        ef'32
-                                        \p
-                                        \<
-                                        b'32
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        a''32
-                                        \mf
-                                        \>
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        b'32
-                                        ef'32
-                                        \p
-                                        \<
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        b'32
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        a''32
-                                        \mf
-                                        \>
-                                        b'32
-                                        ef'32
-                                        \p
-                                        ]
-                                        \<
-                                    }
-                                    \times 2/3
-                                    {
-                                        b'32
-                                        [
-                                        a''32
-                                        b'32
-                                        \mf
-                                        )
-                                    }
-                                    r8.
-                                    ]
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -2220,111 +1711,13 @@
                                     }
                                     r2
                                     r2.
-                                    r4
-                                    r8
-                                    \big-half-harmonic
-                                    fqs'8
-                                    \pp
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    ~
-                                    \big-half-harmonic
-                                    fqs'4
-                                    ~
-                                    \big-half-harmonic
-                                    fqs'16
-                                    \stopTextSpan
-                                    r8.
-                                    r4
+                                    r2
                                     r2.
                                     r2.
-                                    r8.
-                                    \override Dots.staff-position = #2
-                                    \big-half-harmonic
-                                    gf'16
-                                    (
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #8
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \big-half-harmonic
-                                          %! abjad.glissando(1)
-                                        \hide NoteHead
-                                          %! abjad.glissando(1)
-                                        \override Accidental.stencil = ##f
-                                          %! abjad.glissando(1)
-                                        \override NoteColumn.glissando-skip = ##t
-                                          %! abjad.glissando(1)
-                                        \override NoteHead.no-ledgers = ##t
-                                        gf'16
-                                        \big-half-harmonic
-                                        \revert Dots.staff-position
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        fqs'4
-                                        \pp
-                                        )
-                                        \stopTextSpan
-                                        - \tweak circled-tip ##t
-                                        \>
-                                    }
-                                    r4
-                                    \!
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r16
-                                        \override Dots.staff-position = #2
-                                        \big-half-harmonic
-                                        f'4
-                                        (
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                        - \tweak circled-tip ##t
-                                        \<
-                                        - \tweak padding #8.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpan
-                                    }
-                                    \big-half-harmonic
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    eqs'8
-                                    \p
-                                    [
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \>
-                                    \big-half-harmonic
-                                    \revert Dots.staff-position
-                                    \revert Staff.Stem.stemlet-length
-                                    f'16
-                                    \ppp
-                                    )
-                                    \stopTextSpan
-                                    ]
-                                    r16
-                                    r2
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
                                     \once \override NoteHead.no-ledgers = ##t
                                     \once \override NoteHead.stem-attachment = #'(0 . 0.75)
@@ -3047,7 +2440,7 @@
                                     <c' df'>2
                                     _ \accent
                                     _ \mp
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Crotales w/ hard yarn mallets }
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Crotales w/ soft yarn mallets }
                                     - \tweak stencil #constante-hairpin
                                     _ \<
                                     \times 4/5
@@ -3369,34 +2762,28 @@
                                     <<
                                         \context Voice = "percussion 2 voice temp 1"
                                         {
-                                            \override Dots.staff-position = #2
-                                            \staff-line-count 1
-                                            \override Staff.NoteHead.no-ledgers = ##t
                                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Percussion II }
                                               %! +SCORE
                                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Perc. II }
-                                            \clef "percussion"
                                             \voiceTwo
-                                            g2
+                                            f2
                                             \p
-                                            - \tweak padding 4
-                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Windchimes w/ triangle beater }
-                                            - \abjad-zero-padding-glissando
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Vibraphone } \line { w/ soft yarn mallets }  } }
                                             \glissando
+                                            \sustainOn
                                             \times 4/5
                                             {
-                                                f'2
-                                                - \abjad-zero-padding-glissando
+                                                f'''2
                                                 \glissando
-                                                \revert Dots.staff-position
-                                                g16
+                                                f16
+                                                \sustainOff
                                                 \once \override Rest.staff-position = #0
                                                 r16
                                             }
                                             \once \override Rest.staff-position = #0
                                             r2
                                         }
-                                        \context Voice = "windchimes muting voice"
+                                        \context Voice = "vibraphone muting voice"
                                         {
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3421,21 +2808,9 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #2.5
+                                            - \tweak padding #6
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Motor ON } \line { ( 100% ) }  } } \hspace #0.5 }
                                             \startTextSpan
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3448,7 +2823,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'4
-                                            \p
                                             \stopTextSpan
                                             ~
                                             \once \override Accidental.stencil = ##f
@@ -3474,21 +2848,9 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #2.5
+                                            - \tweak padding #4
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
                                             \startTextSpan
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3524,17 +2886,12 @@
                                             \once \override Rest.staff-position = #0
                                             \voiceTwo
                                             r4
-                                            \override Dots.staff-position = #2
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g8.
-                                            \p
+                                            f8.
                                             [
-                                            - \abjad-zero-padding-glissando
                                             \glissando
-                                            \revert Dots.staff-position
                                             \revert Staff.Stem.stemlet-length
-                                            f'16
-                                            ^ \coda
+                                            f'''16
                                             ]
                                             \once \override Rest.staff-position = #0
                                             r4
@@ -3542,10 +2899,7 @@
                                             r4
                                             \once \override Rest.staff-position = #0
                                             r16
-                                            \override Dots.staff-position = #2
-                                            g8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f8.
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -3558,7 +2912,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g16
+                                            f16
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -3568,21 +2922,17 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            f'16
-                                            - \abjad-zero-padding-glissando
+                                            f'''16
                                             \glissando
-                                            g16
-                                            - \abjad-zero-padding-glissando
+                                            f16
                                             \glissando
-                                            \revert Dots.staff-position
                                             \revert Staff.Stem.stemlet-length
-                                            f'16
-                                            ^ \coda
+                                            f'''16
                                             ]
                                             \once \override Rest.staff-position = #0
                                             r2
                                         }
-                                        \context Voice = "windchimes muting voice 2"
+                                        \context Voice = "vibraphone muting voice 2"
                                         {
                                             \once \override Dots.transparent = ##t
                                             \once \override Rest.transparent = ##t
@@ -3602,22 +2952,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #2
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                            \startTextSpan
+                                            ^ \markup 0
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3629,8 +2964,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16
-                                            \p
-                                            \stopTextSpan
+                                            ^ \markup 1
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3642,23 +2976,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #3
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding 1.5
-                                            \startTextSpan
+                                            ^ \markup 2
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3670,8 +2988,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            \p
-                                            \stopTextSpan
+                                            ^ \markup 3
                                             \once \override Dots.transparent = ##t
                                             \once \override Rest.transparent = ##t
                                             r2
@@ -3688,53 +3005,37 @@
                                     <<
                                         \context Voice = "percussion 2 voice temp 3"
                                         {
-                                            \override Dots.staff-position = #2
                                             \voiceTwo
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
                                             \afterGrace
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
                                             {
                                                 \once \override RepeatTie.transparent = ##t
@@ -3748,12 +3049,11 @@
                                                 \once \override Flag.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
                                                 \once \override NoteHead.transparent = ##t
-                                                g16
+                                                f16
                                             }
                                         }
-                                        \context Voice = "windchimes muting voice 3"
+                                        \context Voice = "vibraphone muting voice 3"
                                         {
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3771,22 +3071,7 @@
                                                 \once \override NoteHead.transparent = ##t
                                                 \voiceOne
                                                 c'8.
-                                                _ #(make-dynamic-script
-                                                    (markup
-                                                        #:whiteout
-                                                        #:line (
-                                                            #:general-align Y -2 #:normal-text #:larger "“"
-                                                            #:hspace -0.4
-                                                            #:dynamic "f"
-                                                            #:hspace -0.2
-                                                            #:general-align Y -2 #:normal-text #:larger "”"
-                                                            )
-                                                        )
-                                                    )
-                                                - \tweak padding #3.5
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                                \startTextSpan
+                                                ^ \markup 0
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3798,6 +3083,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 1
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3823,6 +3109,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 2
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3851,6 +3138,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8.
+                                                ^ \markup 3
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3876,6 +3164,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
+                                            ^ \markup 4
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3904,8 +3193,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'4
-                                                \p
-                                                \stopTextSpan
+                                                ^ \markup 5
                                             }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3918,22 +3206,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'4
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #3.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                            \startTextSpan
+                                            ^ \markup 6
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
                                             \times 4/5
@@ -3949,6 +3222,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8..
+                                                ^ \markup 7
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3960,6 +3234,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
+                                                ^ \markup 8
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3985,6 +3260,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 9
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4013,8 +3289,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8..
-                                                \p
-                                                \stopTextSpan
+                                                ^ \markup 10
                                             }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -4027,6 +3302,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
+                                            ^ \markup 11
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4038,22 +3314,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #3.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                            \startTextSpan
+                                            ^ \markup 12
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4082,6 +3343,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8.
+                                                ^ \markup 13
                                             }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -4094,6 +3356,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
+                                            ^ \markup 14
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4105,8 +3368,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16
-                                            \p
-                                            \stopTextSpan
+                                            ^ \markup 15
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4135,23 +3397,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                _ #(make-dynamic-script
-                                                    (markup
-                                                        #:whiteout
-                                                        #:line (
-                                                            #:general-align Y -2 #:normal-text #:larger "“"
-                                                            #:hspace -0.4
-                                                            #:dynamic "f"
-                                                            #:hspace -0.2
-                                                            #:general-align Y -2 #:normal-text #:larger "”"
-                                                            )
-                                                        )
-                                                    )
-                                                - \tweak padding #3.5
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding -60
-                                                \startTextSpan
+                                                ^ \markup 16
                                                 ~
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
@@ -4176,7 +3422,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16
-                                                \stopTextSpan
+                                                ^ \markup 17
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4206,24 +3452,18 @@
                                     <<
                                         \context Voice = "percussion 2 voice temp 4"
                                         {
-                                            \override Dots.staff-position = #2
                                             \voiceTwo
-                                            g4
-                                            - \abjad-zero-padding-glissando
+                                            f4
                                             \glissando
-                                            f'4
-                                            - \abjad-zero-padding-glissando
+                                            f'''4
                                             \glissando
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g8..
+                                            f8..
                                             [
-                                            - \abjad-zero-padding-glissando
                                             \glissando
                                             \revert Staff.Stem.stemlet-length
-                                            f'32
+                                            f'''32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4236,7 +3476,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'8.
+                                            f'''8.
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4247,10 +3487,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            g16
+                                            f16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4263,10 +3501,10 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g8
+                                            f8
                                             [
                                             ~
-                                            g32
+                                            f32
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
                                               %! abjad.glissando(6)
@@ -4276,10 +3514,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            f'16.
+                                            f'''16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4292,7 +3528,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'8
+                                            f'''8
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4303,10 +3539,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            g8
+                                            f8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4319,7 +3553,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g16.
+                                            f16.
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4329,9 +3563,7 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            f'32
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f'''32
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4344,11 +3576,11 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            f'8
+                                            f'''8
                                             ]
                                             ~
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
+                                            f'''32
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4358,9 +3590,7 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            g16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f16.
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4372,7 +3602,7 @@
                                             \override NoteColumn.glissando-skip = ##t
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
-                                            g16.
+                                            f16.
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
                                               %! abjad.glissando(6)
@@ -4382,10 +3612,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            f'32
+                                            f'''32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4398,10 +3626,10 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'8
+                                            f'''8
                                             [
                                             ~
-                                            f'32
+                                            f'''32
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
                                               %! abjad.glissando(6)
@@ -4411,10 +3639,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            g16.
+                                            f16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4427,7 +3653,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g16.
+                                            f16.
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4437,9 +3663,7 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            f'32
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f'''32
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4452,11 +3676,11 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            f'8
+                                            f'''8
                                             ]
                                             ~
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
+                                            f'''32
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4466,9 +3690,7 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            g16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f16.
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4480,7 +3702,7 @@
                                             \override NoteColumn.glissando-skip = ##t
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
-                                            g16
+                                            f16
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
                                               %! abjad.glissando(6)
@@ -4490,10 +3712,8 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             \revert Staff.Stem.stemlet-length
-                                            f'16
+                                            f'''16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4506,7 +3726,7 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'16.
+                                            f'''16.
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -4516,9 +3736,7 @@
                                             \revert NoteHead.no-ledgers
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
-                                            g32
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            f32
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
@@ -4532,22 +3750,10 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \revert Staff.Stem.stemlet-length
                                             \afterGrace
-                                            g8
+                                            f8
                                             ]
                                             {
-                                                \once \override RepeatTie.transparent = ##t
-                                                \once \override Beam.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override Dots.stencil = ##f
-                                                \once \override Tie.stencil = ##f
-                                                \once \override NoteHead.duration-log = 2
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
+                                                \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
                                                 \revert Accidental.stencil
                                                   %! abjad.glissando(6)
@@ -4556,10 +3762,10 @@
                                                 \revert NoteHead.no-ledgers
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
-                                                f'16
+                                                f'''16
                                             }
                                         }
-                                        \context Voice = "windchimes muting voice 4"
+                                        \context Voice = "vibraphone muting voice 4"
                                         {
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4577,7 +3783,7 @@
                                                 \once \override NoteHead.transparent = ##t
                                                 \voiceOne
                                                 c'16.
-                                                \p
+                                                ^ \markup 0
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4589,6 +3795,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 1
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4600,23 +3807,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
-                                                _ #(make-dynamic-script
-                                                    (markup
-                                                        #:whiteout
-                                                        #:line (
-                                                            #:general-align Y -2 #:normal-text #:larger "“"
-                                                            #:hspace -0.4
-                                                            #:dynamic "f"
-                                                            #:hspace -0.2
-                                                            #:general-align Y -2 #:normal-text #:larger "”"
-                                                            )
-                                                        )
-                                                    )
-                                                - \tweak padding #3.5
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding 0.5
-                                                \startTextSpan
+                                                ^ \markup 2
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4642,6 +3833,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 3
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4653,6 +3845,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
+                                            ^ \markup 4
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4681,6 +3874,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 5
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4692,6 +3886,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 6
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4703,6 +3898,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
+                                                ^ \markup 7
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4728,6 +3924,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 8
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4739,6 +3936,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
+                                            ^ \markup 9
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4767,6 +3965,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 10
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4778,6 +3977,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
+                                                ^ \markup 11
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4803,6 +4003,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 12
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4814,6 +4015,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
+                                            ^ \markup 13
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4842,6 +4044,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 14
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4853,6 +4056,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 15
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4864,6 +4068,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
+                                                ^ \markup 16
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4889,8 +4094,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            \p
-                                            \stopTextSpan
+                                            ^ \markup 17
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4902,23 +4106,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
-                                            - \tweak padding #3.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding 0.5
-                                            \startTextSpan
+                                            ^ \markup 18
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4947,6 +4135,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 19
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4958,8 +4147,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
-                                                \p
-                                                \stopTextSpan
+                                                ^ \markup 20
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4985,6 +4173,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 21
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4996,6 +4185,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
+                                            ^ \markup 22
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -5024,6 +4214,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
+                                                ^ \markup 23
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -5035,23 +4226,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                _ #(make-dynamic-script
-                                                    (markup
-                                                        #:whiteout
-                                                        #:line (
-                                                            #:general-align Y -2 #:normal-text #:larger "“"
-                                                            #:hspace -0.4
-                                                            #:dynamic "f"
-                                                            #:hspace -0.2
-                                                            #:general-align Y -2 #:normal-text #:larger "”"
-                                                            )
-                                                        )
-                                                    )
-                                                - \tweak padding #3.5
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding -2
-                                                \startTextSpan
+                                                ^ \markup 24
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -5063,6 +4238,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
+                                                ^ \markup 25
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -5088,6 +4264,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
+                                            ^ \markup 26
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -5099,7 +4276,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            \stopTextSpan
+                                            ^ \markup 27
                                         }
                                     >>
                                     \oneVoice
@@ -5149,40 +4326,25 @@
                     {
                         \context Voice = "guitar voice"
                         {
-                            \override Staff.BarLine.bar-extent = #'(-2.5 . 2.5)
-                            \override Staff.Clef.stencil = #ly:text-interface::print
-                            \override Staff.Clef.text = \guitar-stringing-clef
-                            \staff-line-count 6
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Guitar }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
-                            \clef "percussion"
                             r1.
                             r2.
                             r2
                             r2
                             r8
-                            <
-                                \tweak style #'xcircle
-                                e
-                                \tweak style #'xcircle
-                                g
-                            >8
+                            c'8
                             :64
                             - \tweak circled-tip ##t
                             \<
                             - \tweak padding #6
                             - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { crossed string rasg., SP } \hspace #0.5 }
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { rasg., SP } \hspace #0.5 }
                             - \tweak bound-details.right.padding -12
                             \startTextSpan
                             ~
-                            <
-                                \tweak style #'xcircle
-                                e
-                                \tweak style #'xcircle
-                                g
-                            >2.
+                            c'2.
                             :32
                             \pp
                             \stopTextSpan
@@ -5190,311 +4352,11 @@
                             r2.
                             r2.
                             r2.
-                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                {
-                                    \context Score = "Score"
-                                    \with
-                                    {
-                                        \override SpacingSpanner.spacing-increment = 0.5
-                                        proportionalNotationDuration = ##f
-                                    }
-                                    <<
-                                        \context RhythmicStaff = "Rhythmic_Staff"
-                                        \with
-                                        {
-                                            \remove Time_signature_engraver
-                                            \remove Staff_symbol_engraver
-                                            \override Stem.direction = #up
-                                            \override Stem.length = 5
-                                            \override TupletBracket.bracket-visibility = ##t
-                                            \override TupletBracket.direction = #up
-                                            \override TupletBracket.minimum-length = 4
-                                            \override TupletBracket.padding = 1.25
-                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                            \override TupletNumber.font-size = 0
-                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                            tupletFullLength = ##t
-                                        }
-                                        {
-                                            c'16.
-                                        }
-                                    >>
-                                    \layout
-                                    {
-                                        indent = 0
-                                        ragged-right = ##t
-                                    }
-                                }
-                            \times 6/7
-                            {
-                                \my-hack-slash
-                                \once \override Beam.beam-thickness = #0.4
-                                \ottava 1
-                                \revert Staff.BarLine.bar-extent
-                                \revert Staff.Clef.stencil
-                                \staff-line-count 5
-                                \set fontSize = #-3
-                                \set stemLeftBeamCount = 0
-                                \set stemRightBeamCount = 1
-                                \clef "treble"
-                                \override Staff.Stem.stemlet-length = 0.75
-                                \tweak style #'harmonic
-                                bf'''64
-                                \p
-                                [
-                                (
-                                - \tweak padding #8.5
-                                - \abjad-dashed-line-with-hook
-                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum, MSP } \hspace #0.5 }
-                                - \tweak bound-details.right.padding -2
-                                \startTextSpan
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                a'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c''''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 0
-                                \revert Staff.Stem.stemlet-length
-                                \tweak style #'harmonic
-                                gs''64
-                                )
-                                \stopTextSpan
-                                ]
-                                \ottava 0
-                                \set fontSize = #-1
-                            }
-                            \revert TupletNumber.text
-                            r32
-                            r8
-                            r2
-                            \times 4/5
-                            {
-                                r8..
-                                \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                    {
-                                        \context Score = "Score"
-                                        \with
-                                        {
-                                            \override SpacingSpanner.spacing-increment = 0.5
-                                            proportionalNotationDuration = ##f
-                                        }
-                                        <<
-                                            \context RhythmicStaff = "Rhythmic_Staff"
-                                            \with
-                                            {
-                                                \remove Time_signature_engraver
-                                                \remove Staff_symbol_engraver
-                                                \override Stem.direction = #up
-                                                \override Stem.length = 5
-                                                \override TupletBracket.bracket-visibility = ##t
-                                                \override TupletBracket.direction = #up
-                                                \override TupletBracket.minimum-length = 4
-                                                \override TupletBracket.padding = 1.25
-                                                \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                \override TupletNumber.font-size = 0
-                                                \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                tupletFullLength = ##t
-                                            }
-                                            {
-                                                c'16.
-                                            }
-                                        >>
-                                        \layout
-                                        {
-                                            indent = 0
-                                            ragged-right = ##t
-                                        }
-                                    }
-                                \times 6/7
-                                {
-                                    \my-hack-slash
-                                    \once \override Beam.beam-thickness = #0.4
-                                    \ottava 1
-                                    \set fontSize = #-3
-                                    \set stemLeftBeamCount = 0
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    gs''64
-                                    [
-                                    (
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum, MSP } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    c'''64
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    ef'''64
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    c''''64
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    a'''64
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    ef'''64
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'harmonic
-                                    bf'''64
-                                }
-                                \revert TupletNumber.text
-                            }
-                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                {
-                                    \context Score = "Score"
-                                    \with
-                                    {
-                                        \override SpacingSpanner.spacing-increment = 0.5
-                                        proportionalNotationDuration = ##f
-                                    }
-                                    <<
-                                        \context RhythmicStaff = "Rhythmic_Staff"
-                                        \with
-                                        {
-                                            \remove Time_signature_engraver
-                                            \remove Staff_symbol_engraver
-                                            \override Stem.direction = #up
-                                            \override Stem.length = 5
-                                            \override TupletBracket.bracket-visibility = ##t
-                                            \override TupletBracket.direction = #up
-                                            \override TupletBracket.minimum-length = 4
-                                            \override TupletBracket.padding = 1.25
-                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                            \override TupletNumber.font-size = 0
-                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                            tupletFullLength = ##t
-                                        }
-                                        {
-                                            c'8.
-                                        }
-                                    >>
-                                    \layout
-                                    {
-                                        indent = 0
-                                        ragged-right = ##t
-                                    }
-                                }
-                            \times 6/7
-                            {
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                gs''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c''''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                a'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                bf'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                gs''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                c''''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                a'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 1
-                                \tweak style #'harmonic
-                                ef'''64
-                                \set stemLeftBeamCount = 1
-                                \set stemRightBeamCount = 0
-                                \tweak style #'harmonic
-                                bf'''64
-                                )
-                                \stopTextSpan
-                                ]
-                                \ottava 0
-                                \set fontSize = #-1
-                            }
-                            \revert TupletNumber.text
-                            r16
-                            r4
                             r2.
                             r2.
-                            r16.
-                            ef'''32
-                            \pp
-                            [
-                            (
-                            \<
-                            b''32
-                            a''32
-                            ef''32
-                            \set stemLeftBeamCount = 3
-                            \set stemRightBeamCount = 1
-                            b'32
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 3
-                            a'32
-                            ef'32
-                            b32
-                            a32
-                            \mf
-                            )
-                            ]
-                            r8
-                            r4
+                            r2.
+                            r2.
+                            r2.
                             r2.
                             r2.
                             r2.
@@ -5593,143 +4455,13 @@
                             }
                             r2.
                             r2.
-                            r2
-                            \times 4/5
-                            {
-                                r16
-                                \override Dots.staff-position = #2
-                                <ef'' b'' a'''>4
-                                :32
-                                - \tenuto
-                                \ppp
-                                - \abjad-zero-padding-glissando
-                                \glissando
-                                - \tweak padding #11
-                                - \abjad-dashed-line-with-hook
-                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { bisbig. } \hspace #0.5 }
-                                - \tweak bound-details.right.padding -3
-                                \startTextSpanOne
-                                \<
-                                ^ (
-                            }
-                            \clef "bass"
-                            \override Staff.Stem.stemlet-length = 0.75
-                            <a,, b,, ef,>8
-                            :64
-                            - \tenuto
-                            \p
-                            [
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \>
-                            \revert Dots.staff-position
-                            \clef "treble"
-                            \revert Staff.Stem.stemlet-length
-                            <ef'' b'' a'''>16
-                            :128
-                            - \tenuto
-                            \ppp
-                            )
-                            \stopTextSpanOne
-                            ]
-                            r16
-                            r2
-                            \override Dots.staff-position = #2
-                            \ottava 1
-                            \override Staff.Stem.stemlet-length = 0.75
-                            b'''16
-                            \p
-                            [
-                            (
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            - \tweak padding #10.5
-                            - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -2
-                            \startTextSpanTwo
-                            - \tweak padding #7.5
-                            - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -2
-                            \startTextSpanOne
-                            - \tweak stencil #constante-hairpin
-                            \<
-                            \revert Dots.staff-position
-                            \revert Staff.Stem.stemlet-length
-                            ef'''32
-                            \!
-                            )
-                            \stopTextSpanOne
-                            \stopTextSpanTwo
-                            ]
-                            \ottava 0
-                            r32
-                            r8
-                            r2
-                            \times 4/5
-                            {
-                                r8..
-                                \override Dots.staff-position = #2
-                                \ottava 1
-                                b''16.
-                                \p
-                                (
-                                - \abjad-zero-padding-glissando
-                                \glissando
-                                - \tweak padding #12.5
-                                - \abjad-dashed-line-with-hook
-                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ plectrum } \hspace #0.5 }
-                                - \tweak bound-details.right.padding -2
-                                \startTextSpanTwo
-                                - \tweak padding #9.5
-                                - \abjad-dashed-line-with-hook
-                                - \tweak bound-details.left.text \markup \concat { \fontsize #9 \override #'(font-name . "ekmelos") { { \char ##xe638 } } \hspace #0.5 }
-                                - \tweak bound-details.right.padding -2
-                                \startTextSpanOne
-                                - \tweak stencil #constante-hairpin
-                                \<
-                            }
-                            \override Staff.Stem.stemlet-length = 0.75
-                            a'''16
-                            [
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \revert Dots.staff-position
-                            \revert Staff.Stem.stemlet-length
-                            ef''''32
-                            \!
-                            )
-                            \stopTextSpanOne
-                            \stopTextSpanTwo
-                            ]
-                            \ottava 0
-                            r32
-                            r8
-                            r4
                             r2.
                             r2.
-                            r8.
-                            \clef "bass"
-                            b32
-                            \pp
-                            [
-                            (
-                            \<
-                            \set stemLeftBeamCount = 3
-                            \set stemRightBeamCount = 1
-                            a32
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 3
-                            ef32
-                            b,32
-                            a,32
-                            ef,32
-                            \mf
-                            )
-                            ]
-                            r8
-                            r4
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
                             r2.
                             r2.
                             r2.
@@ -5788,299 +4520,13 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r16
-                                        [
-                                        \override Stem.direction = #UP
-                                        ef''32
-                                        ^ (
-                                        b'32
-                                        a'32
-                                        ef'32
-                                        \change Staff = "piano 2 staff"
-                                        b32
-                                        a32
-                                        ef32
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        b,32
-                                    }
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 3
-                                    a32
-                                    \change Staff = "piano 1 staff"
-                                    ef'32
-                                    b'32
-                                    a''32
-                                    ef'''32
-                                    b'''32
-                                    )
-                                    \revert Stem.direction
-                                    r16
-                                    ]
-                                    r2
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'16.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 6/7
-                                    {
-                                        \my-hack-slash
-                                        \once \override Beam.beam-thickness = #0.4
-                                        \ottava 2
-                                        \set fontSize = #-3
-                                        \set stemLeftBeamCount = 0
-                                        \set stemRightBeamCount = 1
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        <bf'''' c'''''>64
-                                        \p
-                                        [
-                                        (
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <ef'''' b''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <fs'''' a''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <d'''' c'''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <b''' ef''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <c'''' a''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 0
-                                        \revert Staff.Stem.stemlet-length
-                                        gs''''64
-                                        )
-                                        ]
-                                        \ottava 0
-                                        \set fontSize = #-1
-                                    }
-                                    \revert TupletNumber.text
-                                    r32
-                                    r8
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                            {
-                                                \context Score = "Score"
-                                                \with
-                                                {
-                                                    \override SpacingSpanner.spacing-increment = 0.5
-                                                    proportionalNotationDuration = ##f
-                                                }
-                                                <<
-                                                    \context RhythmicStaff = "Rhythmic_Staff"
-                                                    \with
-                                                    {
-                                                        \remove Time_signature_engraver
-                                                        \remove Staff_symbol_engraver
-                                                        \override Stem.direction = #up
-                                                        \override Stem.length = 5
-                                                        \override TupletBracket.bracket-visibility = ##t
-                                                        \override TupletBracket.direction = #up
-                                                        \override TupletBracket.minimum-length = 4
-                                                        \override TupletBracket.padding = 1.25
-                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                        \override TupletNumber.font-size = 0
-                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                        tupletFullLength = ##t
-                                                    }
-                                                    {
-                                                        c'16.
-                                                    }
-                                                >>
-                                                \layout
-                                                {
-                                                    indent = 0
-                                                    ragged-right = ##t
-                                                }
-                                            }
-                                        \times 6/7
-                                        {
-                                            \my-hack-slash
-                                            \once \override Beam.beam-thickness = #0.4
-                                            \ottava 2
-                                            \set fontSize = #-3
-                                            \set stemLeftBeamCount = 0
-                                            \set stemRightBeamCount = 1
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            gs''''64
-                                            [
-                                            (
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            <c'''' a''''>64
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            <b''' ef''''>64
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            <d'''' c'''''>64
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            <fs'''' a''''>64
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            <ef'''' b''''>64
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 0
-                                            \revert Staff.Stem.stemlet-length
-                                            <bf'''' c'''''>64
-                                            )
-                                            ]
-                                            \ottava 0
-                                            \set fontSize = #-1
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    r2
                                     r2.
-                                    r4
-                                    r8
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'16.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 6/7
-                                    {
-                                        \my-hack-slash
-                                        \once \override Beam.beam-thickness = #0.4
-                                        \ottava 2
-                                        \set fontSize = #-3
-                                        \set stemLeftBeamCount = 0
-                                        \set stemRightBeamCount = 1
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        <bf'''' c'''''>64
-                                        \pp
-                                        [
-                                        (
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <ef'''' b''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <fs'''' a''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <d'''' c'''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <b''' ef''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        <c'''' a''''>64
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 0
-                                        \revert Staff.Stem.stemlet-length
-                                        gs''''64
-                                        )
-                                        ]
-                                        \ottava 0
-                                        \set fontSize = #-1
-                                    }
-                                    \revert TupletNumber.text
-                                    r32
-                                    r4
-                                    \ottava 2
-                                    <d'''' c'''''>32
-                                    [
-                                    (
-                                    \<
-                                    <b''' ef''''>32
-                                    <c'''' a''''>32
-                                    gs''''32
-                                    ef''''32
-                                    b'''32
-                                    a'''32
-                                    \ottava 0
-                                    \set stemLeftBeamCount = 3
-                                    \set stemRightBeamCount = 1
-                                    ef'''32
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 3
-                                    b''32
-                                    a''32
-                                    ef''32
-                                    b'32
-                                    \mf
-                                    )
-                                    ]
-                                    r8
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -6133,76 +4579,8 @@
                                     r2.
                                     r2.
                                     r2.
-                                    \once \override Dots.transparent = ##t
-                                    \once \override Rest.transparent = ##t
-                                    r2
-                                    \once \override TupletBracket.stencil = ##f
-                                    \once \override TupletNumber.stencil = ##f
-                                    \times 4/5
-                                    {
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Rest.transparent = ##t
-                                        r16
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'4
-                                        ^ \ppp
-                                        \sustainOn
-                                        ^ \<
-                                    }
-                                    \once \override Accidental.stencil = ##f
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    \once \override NoteHead.transparent = ##t
-                                    c'8
-                                    ^ \p
-                                    ^ \>
-                                    ~
-                                    \once \override Accidental.stencil = ##f
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    \once \override NoteHead.transparent = ##t
-                                    c'32
-                                    \once \override Accidental.stencil = ##f
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    \once \override NoteHead.transparent = ##t
-                                    c'32
-                                    ^ \ppp
-                                    \sustainOff
-                                    \once \override Dots.transparent = ##t
-                                    \once \override Rest.transparent = ##t
-                                    r16
-                                    \once \override Dots.transparent = ##t
-                                    \once \override Rest.transparent = ##t
-                                    r2
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -6267,245 +4645,11 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r4
-                                    \times 4/5
-                                    {
-                                        r16
-                                        a'4
-                                        \p
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        - \tweak padding #12.5
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
-                                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
-                                        - \tweak bound-details.right.padding 5.5
-                                        \startTextSpanTwo
-                                        - \tweak padding #9.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -9
-                                        \startTextSpanOne
-                                        ~
-                                    }
-                                    a'8
-                                    \stopTextSpanOne
-                                    r8
-                                    \!
-                                    \stopTextSpanTwo
-                                    r4
-                                    r8.
-                                    a'16
-                                    \pp
-                                    - \tweak padding #10
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
-                                    \startTextSpanTwo
-                                    - \tweak padding #7
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanOne
-                                    ~
-                                    a'4
-                                    ~
-                                    a'4
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    - \tweak padding #10
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP }
-                                    \startTextSpanTwo
-                                    r2
-                                    \stopTextSpanTwo
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'16.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 6/5
-                                    {
-                                        \my-hack-slash
-                                        \once \override Beam.beam-thickness = #0.4
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set fontSize = #-3
-                                        \set stemLeftBeamCount = 0
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        c''''64
-                                        \p
-                                        [
-                                        - \tweak padding #11
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -10
-                                        \startTextSpanOne
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        e'''64
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        a'''64
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        d'''64
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 0
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        \revert Staff.Stem.stemlet-length
-                                        e'''64
-                                        \stopTextSpanOne
-                                        ]
-                                        \set fontSize = #-1
-                                    }
-                                    \revert TupletNumber.text
-                                    r32
-                                    r8
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                            {
-                                                \context Score = "Score"
-                                                \with
-                                                {
-                                                    \override SpacingSpanner.spacing-increment = 0.5
-                                                    proportionalNotationDuration = ##f
-                                                }
-                                                <<
-                                                    \context RhythmicStaff = "Rhythmic_Staff"
-                                                    \with
-                                                    {
-                                                        \remove Time_signature_engraver
-                                                        \remove Staff_symbol_engraver
-                                                        \override Stem.direction = #up
-                                                        \override Stem.length = 5
-                                                        \override TupletBracket.bracket-visibility = ##t
-                                                        \override TupletBracket.direction = #up
-                                                        \override TupletBracket.minimum-length = 4
-                                                        \override TupletBracket.padding = 1.25
-                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                        \override TupletNumber.font-size = 0
-                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                        tupletFullLength = ##t
-                                                    }
-                                                    {
-                                                        c'16.
-                                                    }
-                                                >>
-                                                \layout
-                                                {
-                                                    indent = 0
-                                                    ragged-right = ##t
-                                                }
-                                            }
-                                        \times 6/5
-                                        {
-                                            \my-hack-slash
-                                            \once \override Beam.beam-thickness = #0.4
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set fontSize = #-3
-                                            \set stemLeftBeamCount = 0
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'''64
-                                            [
-                                            - \tweak padding #11
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding -10
-                                            \startTextSpanOne
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            d'''64
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            a'''64
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            e'''64
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 0
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            \revert Staff.Stem.stemlet-length
-                                            c''''64
-                                            \stopTextSpanOne
-                                            ]
-                                            \set fontSize = #-1
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    r2
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -6558,292 +4702,16 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
                                     \clef "alto"
                                     r1.
-                                    r4
-                                    \times 2/3
-                                    {
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        ef8
-                                        \pp
-                                        [
-                                        (
-                                        - \tweak padding #11
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -9
-                                        \startTextSpan
-                                        \<
-                                        b8
-                                        \mp
-                                        \>
-                                        \revert Staff.Stem.stemlet-length
-                                        a'8
-                                        \pp
-                                        )
-                                        ]
-                                    }
-                                    r4
-                                    r4
-                                    r8
-                                    \times 2/3
-                                    {
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-                                        (
-                                        \<
-                                        \override Dots.staff-position = #2
-                                        \big-half-harmonic
-                                        a'8
-                                        \mp
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                        \big-half-harmonic
-                                        \revert Dots.staff-position
-                                        \revert Staff.Stem.stemlet-length
-                                        ef8
-                                        )
-                                        \stopTextSpan
-                                        ]
-                                    }
-                                    r8
+                                    r2.
                                     r2
                                     r2.
                                     r2.
-                                    r4
-                                    \times 4/5
-                                    {
-                                        r16
-                                        [
-                                        \times 2/3
-                                        {
-                                            ef'8
-                                            \p
-                                            - \tweak padding #13.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding -9
-                                            \startTextSpan
-                                            \>
-                                            _ (
-                                            b8
-                                            a8
-                                            \ppp
-                                            )
-                                            \stopTextSpan
-                                            ]
-                                        }
-                                    }
-                                    r4
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r16
-                                        [
-                                        \times 2/3
-                                        {
-                                            ef'8
-                                            \ppp
-                                            - \tweak padding #13.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding -3
-                                            \startTextSpan
-                                            \<
-                                            _ (
-                                            b8
-                                            a8
-                                            )
-                                            ]
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                        }
-                                    }
-                                    ef16
-                                    \p
-                                    [
-                                    \>
-                                    _ (
-                                    b16
-                                    a'16
-                                    \ppp
-                                    )
-                                    \stopTextSpan
-                                    r16
-                                    ]
-                                    r2
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'16.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 3/2
-                                    {
-                                        \my-hack-slash
-                                        \once \override Beam.beam-thickness = #0.4
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set fontSize = #-3
-                                        \set stemLeftBeamCount = 0
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        a''64
-                                        \p
-                                        [
-                                        - \tweak padding #10.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -10
-                                        \startTextSpanOne
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        b''64
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 1
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        f''64
-                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 0
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                        \revert Staff.Stem.stemlet-length
-                                        c'''64
-                                        \stopTextSpanOne
-                                        ]
-                                        \set fontSize = #-1
-                                    }
-                                    \revert TupletNumber.text
-                                    r32
-                                    r8
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                            {
-                                                \context Score = "Score"
-                                                \with
-                                                {
-                                                    \override SpacingSpanner.spacing-increment = 0.5
-                                                    proportionalNotationDuration = ##f
-                                                }
-                                                <<
-                                                    \context RhythmicStaff = "Rhythmic_Staff"
-                                                    \with
-                                                    {
-                                                        \remove Time_signature_engraver
-                                                        \remove Staff_symbol_engraver
-                                                        \override Stem.direction = #up
-                                                        \override Stem.length = 5
-                                                        \override TupletBracket.bracket-visibility = ##t
-                                                        \override TupletBracket.direction = #up
-                                                        \override TupletBracket.minimum-length = 4
-                                                        \override TupletBracket.padding = 1.25
-                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                        \override TupletNumber.font-size = 0
-                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                        tupletFullLength = ##t
-                                                    }
-                                                    {
-                                                        c'16.
-                                                    }
-                                                >>
-                                                \layout
-                                                {
-                                                    indent = 0
-                                                    ragged-right = ##t
-                                                }
-                                            }
-                                        \times 9/6
-                                        {
-                                            \my-hack-slash
-                                            \once \override Beam.beam-thickness = #0.4
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set fontSize = #-3
-                                            \set stemLeftBeamCount = 0
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'''64
-                                            [
-                                            - \tweak padding #10.5
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Tap w/ triangle beater } \line { SP }  } } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding -10
-                                            \startTextSpanOne
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            f''64
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            b''64
-                                            \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 0
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                            \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                            \revert Staff.Stem.stemlet-length
-                                            a''64
-                                            \stopTextSpanOne
-                                            ]
-                                            \set fontSize = #-1
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    r2
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -6896,196 +4764,19 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vc. }
                                     \clef "bass"
                                     r1.
-                                    r1
-                                    <c, a,>4
-                                    \p
-                                    - \tweak padding #6
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanTwo
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar, SP } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanOne
-                                    ~
-                                    <c, a,>4
-                                    ~
-                                    <c, a,>16
-                                    - \stop-on-string
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    r8.
-                                    r4
                                     r2.
-                                    r2.
-                                    r4
-                                    \times 4/5
-                                    {
-                                        r16
-                                        <c, a,>4
-                                        \p
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        - \tweak padding #11.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -9
-                                        \startTextSpanTwo
-                                        - \tweak padding #14.5
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
-                                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
-                                        - \tweak bound-details.right.padding 5.5
-                                        \startTextSpanOne
-                                        - \tweak padding #8.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -9
-                                        \startTextSpanThree
-                                        ~
-                                    }
-                                    <c, a,>8
-                                    \stopTextSpanThree
-                                    \stopTextSpanTwo
-                                    r8
-                                    \!
-                                    \stopTextSpanOne
-                                    r4
-                                    r8.
-                                    <c, a,>16
-                                    \p
-                                    - \tweak padding #12
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
-                                    \startTextSpanOne
-                                    - \tweak padding #6
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanThree
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ rebar } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
-                                    ~
-                                    <c, a,>4
-                                    ~
-                                    <c, a,>4
-                                    \stopTextSpanOne
-                                    \stopTextSpanThree
-                                    \stopTextSpanTwo
-                                    - \tweak padding #12
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP }
-                                    \startTextSpanOne
                                     r2
-                                    \stopTextSpanOne
-                                    \override Dots.staff-position = #2
-                                    \ottava 1
-                                    \vibrato #'(2 4 5 3 2) #2 #0.2
-                                    \clef "treble"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    \tweak style #'harmonic
-                                    b'''16
-                                    \pp
-                                    [
-                                    (
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    \startTrillSpan
-                                    \revert Dots.staff-position
-                                    \revert Staff.Stem.stemlet-length
-                                    \tweak style #'harmonic
-                                    a'''32
-                                    - \stop-on-string
-                                    \!
-                                    )
-                                    \stopTrillSpan
-                                    ]
-                                    \ottava 0
-                                    r32
-                                    r8
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        \override Dots.staff-position = #2
-                                        \ottava 1
-                                        \vibrato #'(2 4 5 3 2) #2 #0.2
-                                        \tweak style #'harmonic
-                                        b'''16.
-                                        \pp
-                                        (
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-                                        - \tweak stencil #constante-hairpin
-                                        \<
-                                        ~
-                                        \startTrillSpan
-                                    }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    \tweak style #'harmonic
-                                    b'''16.
-                                    [
-                                    \revert Dots.staff-position
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    \tweak style #'harmonic
-                                    a'''32
-                                    - \stop-on-string
-                                    \!
-                                    )
-                                    \stopTrillSpan
-                                    ]
-                                    \ottava 0
-                                    r8
-                                    r4
                                     r2.
-                                    r4
-                                    r8
-                                    \clef "bass"
-                                    <c, a,>16.
-                                    - \stop-on-string
-                                    \p
-                                    - \tweak padding #6
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { III + IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
-                                    r32
-                                    r8.
-                                    <c, a,>16
-                                    ~
-                                    <c, a,>4
-                                    ~
-                                    <c, a,>8
-                                    - \stop-on-string
-                                    \stopTextSpanTwo
-                                    r8
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
@@ -8870,103 +6561,18 @@
                                     \clef "bass"
                                     r1.
                                     r2.
-                                    r8
-                                    e,8
-                                    \p
-                                    - \tweak padding #4.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    ~
-                                    e,4
-                                    ~
-                                    e,4
-                                    ~
-                                    e,16
-                                    - \stop-on-string
-                                    \stopTextSpan
-                                    r8.
-                                    r4
-                                    r2.
-                                    r2.
-                                    r8
-                                    <e,>8
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanTwo
-                                    ~
-                                    \times 4/5
-                                    {
-                                        <e,>16
-                                        <e,>4
-                                        \p
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        ~
-                                    }
-                                    <e,>8
-                                    \stopTextSpanTwo
-                                    r8
-                                    \!
-                                    r4
-                                    r8.
-                                    <e,>16
-                                    \mp
-                                    - \tweak padding #4.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
-                                    ~
-                                    <e,>4
-                                    ~
-                                    <e,>4
-                                    \stopTextSpanTwo
                                     r2
                                     r2.
-                                    \times 4/5
-                                    {
-                                        r8..
-                                        <e,>16.
-                                        \mp
-                                        - \tweak padding #7
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -3
-                                        \startTextSpanTwo
-                                        ~
-                                    }
-                                    <e,>8.
-                                    - \stop-on-string
-                                    \stopTextSpanTwo
-                                    r16
-                                    r4
                                     r2.
-                                    r4
-                                    r8
-                                    e,16.
-                                    - \stop-on-string
-                                    - \tweak padding #4.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #1 \box \line { IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
-                                    r32
-                                    r8.
-                                    e,16
-                                    ~
-                                    e,4
-                                    ~
-                                    e,8
-                                    - \stop-on-string
-                                    \stopTextSpanTwo
-                                    r8
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
