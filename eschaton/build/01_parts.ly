@@ -3,17 +3,23 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 17 15 17)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 19 17 19)))
             \time 3/2
             s1 * 3/2
             - \tweak padding 17
             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { I. Back. ( ii ) }
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 72" } } }
+            \break
+            \noPageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (4.5 17 28 15)))
             \time 5/4
             s1 * 5/4
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 48" } } }
+            \pageBreak
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -787,11 +793,66 @@
                                     ef'8.
                                     :64
                                     \p
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
                                     ]
-                                    - \tweak padding #7.5
+                                    - \tweak padding #9.25
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 2
+                                    - \tweak bound-details.right.padding 1
                                     \startTextSpan
                                     r8
                                     \stopTextSpan
@@ -1162,7 +1223,64 @@
                                     \ottava 0
                                     \set fontSize = #-1
                                     r2.
-                                    r2.
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Bass }
+                                    \times 4/5
+                                    {
+                                        r8
+                                        [
+                                        \tweak style #'la
+                                        b'8.
+                                        :64
+                                        \p
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        ]
+                                        - \tweak padding #6.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                    }
+                                    r4
+                                    \stopTextSpan
                                     r2.
                                     r2.
                                     r2.
@@ -2996,7 +3114,9 @@
                                         {
                                             \voiceTwo
                                             f'''4
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 100% }
                                             \glissando
+                                            \sustainOn
                                             f4
                                             \glissando
                                             f'''4
@@ -3008,6 +3128,7 @@
                                             f4
                                             \glissando
                                             f'''4
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% }
                                             \glissando
                                             f4
                                             \glissando
@@ -3040,6 +3161,7 @@
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 f16
+                                                \sustainOff
                                             }
                                         }
                                         \context Voice = "vibraphone muting voice 3"
@@ -3060,7 +3182,6 @@
                                                 \once \override NoteHead.transparent = ##t
                                                 \voiceOne
                                                 c'8.
-                                                ^ \markup 0
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3072,7 +3193,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 1
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3098,7 +3218,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 2
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3127,7 +3246,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8.
-                                                ^ \markup 3
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3153,7 +3271,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8.
-                                            ^ \markup 4
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3182,7 +3299,10 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'4
-                                                ^ \markup 5
+                                                - \tweak padding #7
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                                \startTextSpanOne
                                             }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3194,14 +3314,27 @@
                                             \once \override NoteHead.duration-log = 2
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
-                                            c'4
-                                            ^ \markup 6
+                                            c'8..
+                                            \stopTextSpanOne
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
+                                            ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
                                             \times 4/5
                                             {
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
                                                 \once \override Beam.stencil = ##f
                                                 \once \override Flag.stencil = ##f
@@ -3210,8 +3343,7 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'8..
-                                                ^ \markup 7
+                                                c'8.
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3222,8 +3354,7 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'16.
-                                                ^ \markup 8
+                                                c'8
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3237,7 +3368,7 @@
                                             \once \override NoteHead.duration-log = 2
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
-                                            c'8
+                                            c'16.
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3249,7 +3380,19 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 9
+                                            ~
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3266,61 +3409,7 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'16.
-                                                \once \override Accidental.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override RepeatTie.transparent = ##t
-                                                \once \override Beam.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override Dots.stencil = ##f
-                                                \once \override Tie.stencil = ##f
-                                                \once \override NoteHead.duration-log = 2
-                                                \once \override Stem.stencil = ##f
-                                                \once \override NoteHead.transparent = ##t
-                                                c'8..
-                                                ^ \markup 10
-                                            }
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'8.
-                                            ^ \markup 11
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \markup 12
-                                            ~
-                                            \once \override TupletBracket.stencil = ##f
-                                            \once \override TupletNumber.stencil = ##f
-                                            \times 4/5
-                                            {
-                                                \once \override Accidental.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override RepeatTie.transparent = ##t
-                                                \once \override Beam.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override Dots.stencil = ##f
-                                                \once \override Tie.stencil = ##f
-                                                \once \override NoteHead.duration-log = 2
-                                                \once \override Stem.stencil = ##f
-                                                \once \override NoteHead.transparent = ##t
-                                                c'8
+                                                c'16
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3332,10 +3421,26 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8.
-                                                ^ \markup 13
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                c'16
+                                                - \tweak padding #7
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                                \startTextSpanOne
+                                                ~
                                             }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
                                             \once \override Beam.stencil = ##f
                                             \once \override Flag.stencil = ##f
@@ -3344,8 +3449,7 @@
                                             \once \override NoteHead.duration-log = 2
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
-                                            c'8.
-                                            ^ \markup 14
+                                            c'8
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3356,8 +3460,8 @@
                                             \once \override NoteHead.duration-log = 2
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \markup 15
+                                            c'8
+                                            \stopTextSpanOne
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3374,7 +3478,7 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'16.
+                                                c'16
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3385,9 +3489,105 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'8
-                                                ^ \markup 16
+                                                c'8.
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                c'16
                                                 ~
+                                            }
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16.
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'8
+                                            - \tweak padding #7
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                            \startTextSpanOne
+                                            - \tweak padding #9.75
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 80% }
+                                            \startTextSpanTwo
+                                            ~
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'8
+                                            ~
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16.
+                                            ~
+                                            \once \override TupletBracket.stencil = ##f
+                                            \once \override TupletNumber.stencil = ##f
+                                            \times 4/5
+                                            {
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override NoteHead.no-ledgers = ##t
@@ -3410,8 +3610,31 @@
                                                 \once \override NoteHead.duration-log = 2
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
-                                                c'16
-                                                ^ \markup 17
+                                                c'8
+                                                \stopTextSpanOne
+                                                \stopTextSpanTwo
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                c'8
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                c'32
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3426,15 +3649,28 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            \once \override Dots.transparent = ##t
-                                            \once \override Rest.transparent = ##t
-                                            r8
-                                            \once \override Dots.transparent = ##t
-                                            \once \override Rest.transparent = ##t
-                                            r32
-                                            \once \override Dots.transparent = ##t
-                                            \once \override Rest.transparent = ##t
-                                            r4
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'8
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override RepeatTie.transparent = ##t
+                                            \once \override Beam.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override Dots.stencil = ##f
+                                            \once \override Tie.stencil = ##f
+                                            \once \override NoteHead.duration-log = 2
+                                            \once \override Stem.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
                                         }
                                     >>
                                     \oneVoice
@@ -3444,6 +3680,7 @@
                                             \voiceTwo
                                             f4
                                             \glissando
+                                            \sustainOn
                                             f'''4
                                             \glissando
                                             \override Staff.Stem.stemlet-length = 0.75
@@ -3543,6 +3780,7 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
                                             f16.
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% }
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -3643,6 +3881,7 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
                                             f16.
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 100% }
                                             [
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -3752,6 +3991,7 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 f'''16
+                                                \sustainOff
                                             }
                                         }
                                         \context Voice = "vibraphone muting voice 4"
@@ -3772,7 +4012,7 @@
                                                 \once \override NoteHead.transparent = ##t
                                                 \voiceOne
                                                 c'16.
-                                                ^ \markup 0
+                                                ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% }
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3784,7 +4024,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 1
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3796,7 +4035,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
-                                                ^ \markup 2
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3822,7 +4060,15 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 3
+                                            - \tweak padding #10.25
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 80% }
+                                            \startTextSpanTwo
+                                            - \tweak padding #7.5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                            \startTextSpanOne
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3834,7 +4080,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            ^ \markup 4
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3863,7 +4108,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 5
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3875,7 +4119,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 6
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3887,7 +4130,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
-                                                ^ \markup 7
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3913,7 +4155,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 8
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -3925,7 +4166,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            ^ \markup 9
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -3954,7 +4194,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 10
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -3966,7 +4205,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
-                                                ^ \markup 11
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -3992,7 +4230,8 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 12
+                                            \stopTextSpanOne
+                                            \stopTextSpanTwo
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4004,7 +4243,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            ^ \markup 13
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4033,7 +4271,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 14
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4045,7 +4282,14 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 15
+                                                - \tweak padding #10.25
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 20% } \hspace #0.5 }
+                                                \startTextSpanTwo
+                                                - \tweak padding #7.5
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                                \startTextSpanOne
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4057,7 +4301,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
-                                                ^ \markup 16
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4083,7 +4326,12 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 17
+                                            \stopTextSpanTwo
+                                            - \tweak padding #10.25
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 80% } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 10% }
+                                            \startTextSpanTwo
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4095,7 +4343,8 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            ^ \markup 18
+                                            \stopTextSpanOne
+                                            \stopTextSpanTwo
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4124,7 +4373,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 19
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4136,7 +4384,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16.
-                                                ^ \markup 20
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4162,7 +4409,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 21
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4174,7 +4420,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            ^ \markup 22
                                             ~
                                             \once \override TupletBracket.stencil = ##f
                                             \once \override TupletNumber.stencil = ##f
@@ -4203,7 +4448,6 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 23
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4215,7 +4459,10 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'8
-                                                ^ \markup 24
+                                                - \tweak padding #7.5
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                                \startTextSpanOne
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override RepeatTie.transparent = ##t
@@ -4227,7 +4474,7 @@
                                                 \once \override Stem.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'32
-                                                ^ \markup 25
+                                                \stopTextSpanOne
                                                 ~
                                             }
                                             \once \override Accidental.stencil = ##f
@@ -4253,7 +4500,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'8
-                                            ^ \markup 26
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -4265,7 +4511,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            ^ \markup 27
                                         }
                                     >>
                                     \oneVoice
@@ -4717,12 +4962,95 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
                                     \clef "alto"
                                     r1.
-                                    r2.
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Con sordino }
+                                    r16
+                                    [
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'!
+                                        a'!
+                                    >8.
+                                    \ppp
+                                    ]
+                                    - \tweak padding #5.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1.5
+                                    \startTextSpan
+                                    r4
+                                    \stopTextSpan
+                                    r4
+                                    r8
+                                    [
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'!
+                                        a'!
+                                    >8
+                                    ]
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    - \tweak padding #5.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1.5
+                                    \startTextSpan
+                                    ~
+                                    \afterGrace
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'
+                                        a'
+                                    >4
+                                    \pp
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        - \stop-on-string
+                                    }
                                     r2
+                                    \stopTextSpan
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \times 4/5
+                                    {
+                                        r8
+                                        [
+                                        \afterGrace
+                                        <
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \one-eighth-flat-markup
+                                            af'!
+                                            a'!
+                                        >8.
+                                        \pp
+                                        ]
+                                        - \tweak padding #5.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -0.5
+                                        \startTextSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            - \stop-on-string
+                                            \stopTextSpan
+                                        }
+                                    }
+                                    r4
                                     r2.
                                     r2.
                                     r2.
