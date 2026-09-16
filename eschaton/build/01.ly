@@ -783,47 +783,18 @@
                                     r8
                                     r16
                                     [
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        ef'32
-                                        \p
-                                        (
-                                        \<
-                                        b'32
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        a''32
-                                        \mf
-                                        \>
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        b'32
-                                        ef'32
-                                        \p
-                                        \<
-                                        \set stemLeftBeamCount = 3
-                                        \set stemRightBeamCount = 1
-                                        b'32
-                                    }
-                                    \times 2/3
-                                    {
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 3
-                                        a''32
-                                        \mf
-                                        \>
-                                        b'32
-                                        ef'32
-                                        \p
-                                        )
-                                        ]
-                                    }
+                                    \tweak style #'la
+                                    ef'8.
+                                    :64
+                                    \p
+                                    ]
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 2
+                                    \startTextSpan
                                     r8
+                                    \stopTextSpan
                                     \ottava 1
                                     \set fontSize = #-3
                                     g''''64
@@ -2886,12 +2857,21 @@
                                             \once \override Rest.staff-position = #0
                                             \voiceTwo
                                             r4
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 40% }
                                             \override Staff.Stem.stemlet-length = 0.75
                                             f8.
                                             [
+                                            - \tweak padding #7
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -2
+                                            \startTextSpan
                                             \glissando
+                                            \sustainOn
                                             \revert Staff.Stem.stemlet-length
                                             f'''16
+                                            \stopTextSpan
+                                            \sustainOff
                                             ]
                                             \once \override Rest.staff-position = #0
                                             r4
@@ -2902,6 +2882,7 @@
                                             f8.
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \sustainOn
                                             ~
                                               %! abjad.glissando(1)
                                             \hide NoteHead
@@ -2928,6 +2909,7 @@
                                             \glissando
                                             \revert Staff.Stem.stemlet-length
                                             f'''16
+                                            \sustainOff
                                             ]
                                             \once \override Rest.staff-position = #0
                                             r2
@@ -2952,7 +2934,6 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            ^ \markup 0
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -2964,7 +2945,10 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16
-                                            ^ \markup 1
+                                            - \tweak padding #5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \center-column { \line { Motor } \line { ON }  } } \hspace #0.5 }
+                                            \startTextSpan
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -2976,7 +2960,7 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16.
-                                            ^ \markup 2
+                                            \stopTextSpan
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -2988,10 +2972,15 @@
                                             \once \override Stem.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'32
-                                            ^ \markup 3
+                                            - \tweak padding #8
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -14
+                                            \startTextSpan
                                             \once \override Dots.transparent = ##t
                                             \once \override Rest.transparent = ##t
                                             r2
+                                            \stopTextSpan
                                             \once \override Dots.transparent = ##t
                                             \once \override Rest.transparent = ##t
                                             r8
@@ -4334,20 +4323,46 @@
                             r2
                             r2
                             r8
-                            c'8
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
                             :64
                             - \tweak circled-tip ##t
                             \<
-                            - \tweak padding #6
+                            - \tweak padding #8
                             - \abjad-dashed-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { rasg., SP } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -12
                             \startTextSpan
                             ~
-                            c'2.
+                            \afterGrace
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2.
                             :32
                             \pp
-                            \stopTextSpan
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.transparent = ##t
+                                c'16
+                                \stopTextSpan
+                            }
                             r2.
                             r2.
                             r2.
