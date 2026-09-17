@@ -320,7 +320,6 @@ trinton.make_music(
         attachments=[abjad.StartBeam(), abjad.StopBeam()],
         selector=trinton.select_leaves_by_index([0, 1]),
     ),
-    trinton.tremolo_command(selector=trinton.select_leaves_by_index([0], pitched=True)),
     trinton.change_notehead_command(
         notehead="la", selector=trinton.select_leaves_by_index([0], pitched=True)
     ),
@@ -337,7 +336,7 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=9.25,
+        padding=8,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([1, 2]),
         right_padding=-1,
@@ -376,7 +375,6 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index([1, 2]),
     ),
-    trinton.tremolo_command(selector=trinton.select_leaves_by_index([0], pitched=True)),
     trinton.change_notehead_command(
         notehead="la", selector=trinton.select_leaves_by_index([0], pitched=True)
     ),

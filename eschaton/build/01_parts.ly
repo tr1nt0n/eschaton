@@ -791,7 +791,6 @@
                                     [
                                     \tweak style #'la
                                     ef'8.
-                                    :64
                                     \p
                                     - \tweak padding 0
                                     ^ \markup {
@@ -849,7 +848,7 @@
                                                 }
                                             }
                                     ]
-                                    - \tweak padding #9.25
+                                    - \tweak padding #8
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1
@@ -1231,7 +1230,6 @@
                                         [
                                         \tweak style #'la
                                         b'8.
-                                        :64
                                         \p
                                         - \tweak padding 0
                                         ^ \markup {
