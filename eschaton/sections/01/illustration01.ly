@@ -1287,7 +1287,7 @@
                                                     }
                                                 }
                                         ]
-                                        - \tweak padding #6.5
+                                        - \tweak padding #6
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1
@@ -4980,6 +4980,7 @@
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Con sordino }
                                     r16
                                     [
+                                    \afterGrace
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \one-eighth-flat-markup
@@ -4991,10 +4992,19 @@
                                     - \tweak padding #5.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1.5
+                                    - \tweak bound-details.right.padding -1.75
                                     \startTextSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        ^ \stop-on-string
+                                        \stopTextSpan
+                                    }
                                     r4
-                                    \stopTextSpan
                                     r4
                                     r8
                                     [
@@ -5010,7 +5020,7 @@
                                     - \tweak padding #5.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1.5
+                                    - \tweak bound-details.right.padding -1.75
                                     \startTextSpan
                                     ~
                                     \afterGrace
@@ -5028,10 +5038,10 @@
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.transparent = ##t
                                         c'16
-                                        - \stop-on-string
+                                        ^ \stop-on-string
+                                        \stopTextSpan
                                     }
                                     r2
-                                    \stopTextSpan
                                     r2.
                                     r2.
                                     r4
@@ -5051,7 +5061,7 @@
                                         - \tweak padding #5.5
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -0.5
+                                        - \tweak bound-details.right.padding -1.5
                                         \startTextSpan
                                         {
                                             \once \override Stem.stencil = ##f
@@ -5060,7 +5070,7 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.transparent = ##t
                                             c'16
-                                            - \stop-on-string
+                                            ^ \stop-on-string
                                             \stopTextSpan
                                         }
                                     }

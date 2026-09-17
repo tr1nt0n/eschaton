@@ -1603,7 +1603,9 @@ trinton.make_music(
     ),
     trinton.aftergrace_command(
         invisible=True,
-        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+        selector=trinton.select_logical_ties_by_index(
+            [0, -1], pitched=True, grace=False
+        ),
     ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
@@ -1613,7 +1615,8 @@ trinton.make_music(
                 2,
                 5,
                 6,
-            ]
+            ],
+            grace=False,
         ),
     ),
     trinton.linear_attachment_command(
@@ -1621,9 +1624,15 @@ trinton.make_music(
             abjad.Dynamic("ppp"),
             abjad.StartHairpin("o<"),
             abjad.Dynamic("pp"),
+        ],
+        selector=trinton.select_leaves_by_index([0, 2, 3], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
             abjad.Articulation("stop-on-string"),
         ],
-        selector=trinton.select_leaves_by_index([0, 1, 2, -1], pitched=True),
+        selector=trinton.select_leaves_by_index([1, -1], pitched=True),
+        direction=abjad.UP,
     ),
     trinton.attachment_command(
         attachments=[
@@ -1649,8 +1658,10 @@ trinton.make_music(
         full_string=True,
         padding=5.5,
         style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([2, 3, 6, 9]),
-        right_padding=-1.5,
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 2, 3], first=True, pitched=True
+        ),
+        right_padding=1.75,
     ),
     voice=score["viola voice"],
 )
@@ -1672,8 +1683,15 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([1, 2]),
     ),
     trinton.linear_attachment_command(
-        attachments=[abjad.Dynamic("pp"), abjad.Articulation("stop-on-string")],
+        attachments=[abjad.Dynamic("pp")],
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Articulation("stop-on-string"),
+        ],
+        selector=trinton.select_leaves_by_index([-1], pitched=True),
+        direction=abjad.UP,
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
@@ -1687,7 +1705,7 @@ trinton.make_music(
         padding=5.5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0.5,
+        right_padding=1.5,
     ),
     voice=score["viola voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
