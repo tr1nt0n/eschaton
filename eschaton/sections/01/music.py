@@ -1846,6 +1846,47 @@ trinton.make_music(
     preprocessor=trinton.fuse_eighths_preprocessor((2, 1)),
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    evans.RhythmHandler(evans.talea([-19, 22, -1000], 32)),
+    evans.PitchHandler(["eqf'"]),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.pleaves(grace=False)
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([1, 3]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartHairpin("o<"), abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0, 2], pitched=True, grace=False),
+    ),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"IV, MST",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=6,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=1,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("stop-on-string")],
+        selector=trinton.select_leaves_by_index([0], grace=True, pitched=True),
+    ),
+    voice=score["violin voice"],
+)
+
 # viola music
 
 trinton.make_music(
@@ -2048,6 +2089,50 @@ trinton.make_music(
     preprocessor=trinton.fuse_eighths_preprocessor((2, 1)),
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    evans.RhythmHandler(evans.talea([-14, 27, -1000], 32)),
+    evans.PitchHandler([[fractions.Fraction(35, 4), 9]]),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.force_accidentals_command(
+        selector=trinton.logical_ties(first=True, pitched=True)
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([1, 2], grace=False),
+    ),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Articulation("stop-on-string"),
+        ],
+        selector=trinton.select_leaves_by_index([-1], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"ST",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=5.5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=1.5,
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartHairpin("o<"), abjad.Dynamic("p")],
+        selector=trinton.select_leaves_by_index([0, 2], pitched=True, grace=False),
+    ),
+    voice=score["viola voice"],
+)
+
 # cello music
 
 trinton.make_music(
@@ -2080,6 +2165,12 @@ trinton.make_music(
         attachments=[abjad.Articulation("stop-on-string")],
         selector=trinton.select_leaves_by_index([0], grace=True, pitched=True),
         direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_logical_ties_by_index(
+            [0], first=True, pitched=True, grace=False
+        ),
     ),
     voice=score["cello voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
@@ -2118,6 +2209,44 @@ trinton.make_music(
     ),
     voice=score["cello voice"],
     preprocessor=trinton.fuse_eighths_preprocessor((2, 1)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    evans.RhythmHandler(evans.talea([-16, 25, -1000], 32)),
+    evans.PitchHandler(["eqf''"]),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.pleaves(grace=False)
+    ),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartHairpin("o<"), abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0, 1], pitched=True, grace=False),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"III, MSP",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=1.5,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("stop-on-string")],
+        selector=trinton.select_leaves_by_index([0], grace=True, pitched=True),
+        direction=abjad.UP,
+    ),
+    voice=score["cello voice"],
 )
 
 trinton.make_music(
@@ -2920,6 +3049,53 @@ trinton.make_music(
         attachments=[
             abjad.LilyPondLiteral(
                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (4.5 17 28 15)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 13 15 17 21 15)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(r"\markup { S }"),
+                r"- \tweak transparent ##t",
+                r"- \tweak padding #16",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 22 17 24 16)))",
                 site="absolute_before",
             ),
         ],

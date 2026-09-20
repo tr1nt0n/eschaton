@@ -17,13 +17,23 @@
             s1 * 5/4
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 48" } } }
             \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 13 15 17 21 15)))
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+            - \tweak padding #16
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \noPageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 22 17 23 16)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -5425,8 +5435,41 @@
                                     }
                                     r8
                                     r4
-                                    r2.
-                                    r2.
+                                    r2
+                                    r16.
+                                    [
+                                    \tweak style #'harmonic
+                                    eqf'32
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
+                                    ~
+                                    \tweak style #'harmonic
+                                    eqf'8
+                                    ]
+                                    ~
+                                    \tweak style #'harmonic
+                                    eqf'2
+                                    \pp
+                                    ~
+                                    \afterGrace
+                                    \tweak style #'harmonic
+                                    eqf'32
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        - \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r8..
                                     r2.
                                     r2.
                                     r2.
@@ -5648,8 +5691,57 @@
                                     }
                                     r8
                                     r4
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8.
+                                    [
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'!
+                                        a'!
+                                    >16
+                                    ]
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    - \tweak padding #5.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpan
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'
+                                        a'
+                                    >4
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'
+                                        a'
+                                    >2
+                                    \p
+                                    ~
+                                    \afterGrace
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'
+                                        a'
+                                    >32
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        ^ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r8..
                                     r2.
                                     r2.
                                     r2.
@@ -5712,6 +5804,7 @@
                                         r4
                                         \tweak style #'harmonic
                                         eqf''16
+                                        \pp
                                         - \tweak padding #5.5
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
@@ -5761,8 +5854,35 @@
                                     }
                                     r8
                                     r4
-                                    r2.
-                                    r2.
+                                    r2
+                                    \tweak style #'harmonic-mixed
+                                    eqf''4
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    - \tweak padding #5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpan
+                                    ~
+                                    \tweak style #'harmonic
+                                    eqf''2
+                                    \pp
+                                    ~
+                                    \afterGrace
+                                    \tweak style #'harmonic
+                                    eqf''32
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        ^ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r8..
                                     r2.
                                     r2.
                                     \override Dots.staff-position = #2
