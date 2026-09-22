@@ -11,29 +11,18 @@
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 72" } } }
             \break
             \noPageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (4.5 17 28 15)))
             \time 5/4
             s1 * 5/4
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-0.5 \raise #10.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #5.5 { "= 48" } } }
             \pageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 13 15 17 21 15)))
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #16
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \noPageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 22 17 24 16)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -42,73 +31,27 @@
             \time 3/4
             s1 * 3/4
             \pageBreak
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 26 26 26 26 26 26)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #22
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 24 24 24 24 24 24 24 24)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #16
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 24 22 20 24 24 22 20 20 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #14
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 24 20 20 22 25 22 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #18
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 17 15 16 23 18)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #12
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
-            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -846,74 +789,7 @@
                                     \ottava 0
                                     \set fontSize = #-1
                                     r8
-                                    r16
-                                    [
-                                    \tweak style #'la
-                                    ef'8.
-                                    \p
-                                    - \tweak padding 0
-                                    ^ \markup {
-                                                \hspace #-0.5
-                                                \override #'(font-name . "ekmelos")
-                                                \fontsize #7
-                                                {
-                                                    {
-                                                        \char ##xe610
-                                                    }
-                                                    \hspace #-0.77
-                                                    {
-                                                        \char ##xe611
-                                                    }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                }
-                                            }
-                                    ]
-                                    - \tweak padding #8
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1
-                                    \startTextSpan
-                                    r8
-                                    \stopTextSpan
+                                    r4.
                                     \ottava 1
                                     \set fontSize = #-3
                                     g''''64
@@ -1281,590 +1157,13 @@
                                     \ottava 0
                                     \set fontSize = #-1
                                     r2.
-                                    r4
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Bass }
-                                    \times 4/5
-                                    {
-                                        r8
-                                        [
-                                        \tweak style #'la
-                                        b'8.
-                                        \p
-                                        - \tweak padding 0
-                                        ^ \markup {
-                                                    \hspace #-0.5
-                                                    \override #'(font-name . "ekmelos")
-                                                    \fontsize #7
-                                                    {
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                    }
-                                                }
-                                        ]
-                                        - \tweak padding #6
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding 1
-                                        \startTextSpan
-                                    }
-                                    r4
-                                    \stopTextSpan
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r4
-                                        \tweak style #'la
-                                        b'16
-                                        - \tweak padding 0
-                                        ^ \markup {
-                                                    \hspace #-0.5
-                                                    \override #'(font-name . "ekmelos")
-                                                    \fontsize #7
-                                                    {
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
-                                                    }
-                                                }
-                                        - \tweak padding #6
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding 1
-                                        \startTextSpan
-                                        ~
-                                    }
-                                    \tweak style #'la
-                                    b'8
-                                    r8
-                                    \stopTextSpan
-                                    r2
-                                    r8
-                                    [
-                                    \tweak style #'la
-                                    ef'8
-                                    \mp
-                                    - \tweak padding 0
-                                    ^ \markup {
-                                                \hspace #-0.5
-                                                \override #'(font-name . "ekmelos")
-                                                \fontsize #7
-                                                {
-                                                    {
-                                                        \char ##xe610
-                                                    }
-                                                    \hspace #-0.77
-                                                    {
-                                                        \char ##xe611
-                                                    }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                }
-                                            }
-                                    ]
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1
-                                    \startTextSpan
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \tweak style #'la
-                                        ef'32
-                                        r8
-                                        \stopTextSpan
-                                    }
-                                    r8
-                                    r4
-                                    r4
-                                    r32
-                                    [
-                                    \tweak style #'la
-                                    ef'8..
-                                    - \tweak padding 0
-                                    ^ \markup {
-                                                \hspace #-0.5
-                                                \override #'(font-name . "ekmelos")
-                                                \fontsize #7
-                                                {
-                                                    {
-                                                        \char ##xe610
-                                                    }
-                                                    \hspace #-0.77
-                                                    {
-                                                        \char ##xe611
-                                                    }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                }
-                                            }
-                                    ]
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #7.75
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1
-                                    \startTextSpan
-                                    ~
-                                    \tweak style #'la
-                                    ef'4
-                                    ~
-                                    \tweak style #'la
-                                    ef'2
-                                    \mp
-                                    ~
-                                    \tweak style #'la
-                                    ef'32
-                                    r8..
-                                    \stopTextSpan
-                                    r8
-                                    [
-                                    \tweak style #'la
-                                    a'8
-                                    \p
-                                    - \tweak padding 0
-                                    ^ \markup {
-                                                \hspace #-0.5
-                                                \override #'(font-name . "ekmelos")
-                                                \fontsize #7
-                                                {
-                                                    {
-                                                        \char ##xe610
-                                                    }
-                                                    \hspace #-0.77
-                                                    {
-                                                        \char ##xe611
-                                                    }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                }
-                                            }
-                                    ]
-                                    - \tweak padding #8.75
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1
-                                    \startTextSpan
-                                    ~
-                                    \tweak style #'la
-                                    a'8..
-                                    [
-                                    r32
-                                    \stopTextSpan
-                                    ]
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -5355,8 +4654,143 @@
                                     r2.
                                     r2
                                     r2.
-                                    r2.
-                                    r2.
+                                    \ottava 2
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >4
+                                    :32
+                                    - \accent
+                                    - \stopped
+                                    \p
+                                    \unaCorda
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    [
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    r16
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    ]
+                                    r16
+                                    [
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    r8
+                                    ]
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    [
+                                    \>
+                                    r16
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    r16
+                                    ]
+                                    r16
+                                    [
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    r8
+                                    ]
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    [
+                                    r16
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    \ppp
+                                    \treCorde
+                                    \ottava 0
+                                    r16
+                                    ]
                                     r2.
                                     r2.
                                     r2.
@@ -5420,48 +4854,9 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r4
-                                    r8
-                                    [
-                                    \ottava -1
-                                    <ef,, b,,>8
-                                    :64
-                                    \arpeggio
-                                    ]
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    \sustainOn
-                                    ~
-                                    <ef,, b,,>4
-                                    :32
-                                    ~
-                                    <ef,, b,,>2
-                                    :32
-                                    \pp
-                                    ~
-                                    <ef,, b,,>32
-                                    :256
-                                    \sustainOff
-                                    \ottava 0
-                                    r8..
-                                    r8
-                                    [
-                                    \ottava -1
-                                    <ef,, b,,>8
-                                    :64
-                                    \arpeggio
-                                    \pp
-                                    ]
-                                    \sustainOn
-                                    ~
-                                    <ef,, b,,>8..
-                                    :64
-                                    \sustainOff
-                                    [
-                                    \ottava 0
-                                    r32
-                                    ]
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -5522,174 +4917,14 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r4
-                                    \times 4/5
-                                    {
-                                        r8
-                                        [
-                                        \afterGrace
-                                        \tweak style #'harmonic
-                                        eqf'8.
-                                        \pp
-                                        ]
-                                        - \tweak padding #8.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1
-                                        \startTextSpan
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            - \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                    }
-                                    r4
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r4
-                                        \tweak style #'harmonic
-                                        eqf'16
-                                        - \tweak padding #7.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1
-                                        \startTextSpan
-                                        ~
-                                    }
-                                    \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf'8
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        - \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
-                                    r2
-                                    r16
-                                    [
-                                    \tweak style #'harmonic
-                                    eqf'8.
-                                    ]
-                                    - \tweak padding #7.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1
-                                    \startTextSpan
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \afterGrace
-                                        \tweak style #'harmonic
-                                        eqf'32
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            - \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r8
-                                    }
-                                    r8
-                                    r4
-                                    r2
-                                    r16.
-                                    [
-                                    \tweak style #'harmonic
-                                    eqf'32
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #6
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1
-                                    \startTextSpan
-                                    ~
-                                    \tweak style #'harmonic
-                                    eqf'8
-                                    ]
-                                    ~
-                                    \tweak style #'harmonic
-                                    eqf'2
-                                    \pp
-                                    ~
-                                    \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf'32
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        - \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8..
-                                    r4
-                                    \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf'8..
-                                    \pp
-                                    - \tweak padding #5.75
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1
-                                    \startTextSpan
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        - \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r32
-                                    r4
-                                    r4
-                                    r8
-                                    \times 4/5
-                                    {
-                                        \afterGrace
-                                        \tweak style #'harmonic
-                                        eqf'8
-                                        \pp
-                                        - \tweak padding #7.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV, MST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1
-                                        \startTextSpan
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            - \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r32
-                                    }
-                                    r4
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -5739,227 +4974,17 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
                                     \clef "alto"
                                     r1.
-                                    r4
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Con sordino }
-                                    r16
-                                    [
-                                    \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'!
-                                        a'!
-                                    >8.
-                                    \ppp
-                                    ]
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.75
-                                    \startTextSpan
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r4
-                                    r4
-                                    r8
-                                    [
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'!
-                                        a'!
-                                    >8
-                                    ]
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.75
-                                    \startTextSpan
-                                    ~
-                                    \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'
-                                        a'
-                                    >4
-                                    \pp
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
+                                    r2.
                                     r2
                                     r2.
                                     r2.
-                                    r4
-                                    \times 4/5
-                                    {
-                                        r8
-                                        [
-                                        \afterGrace
-                                        <
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \one-eighth-flat-markup
-                                            af'!
-                                            a'!
-                                        >8.
-                                        \pp
-                                        ]
-                                        - \tweak padding #5.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
-                                        \startTextSpan
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                    }
-                                    r4
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r4
-                                        <
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \one-eighth-flat-markup
-                                            af'!
-                                            a'!
-                                        >16
-                                        - \tweak padding #5.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
-                                        \startTextSpan
-                                        ~
-                                    }
-                                    \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'
-                                        a'
-                                    >8
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
-                                    r2
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'!
-                                        a'!
-                                    >4
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \afterGrace
-                                        <
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \one-eighth-flat-markup
-                                            af'
-                                            a'
-                                        >32
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r8
-                                    }
-                                    r8
-                                    r4
-                                    r4
-                                    r8.
-                                    [
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'!
-                                        a'!
-                                    >16
-                                    ]
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #5.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'
-                                        a'
-                                    >4
-                                    ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'
-                                        a'
-                                    >2
-                                    \p
-                                    ~
-                                    \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \one-eighth-flat-markup
-                                        af'
-                                        a'
-                                    >32
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8..
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -6014,148 +5039,300 @@
                                     r2
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2
-                                    \times 4/5
-                                    {
-                                        r4
-                                        \tweak style #'harmonic
-                                        eqf''16
-                                        \pp
-                                        - \tweak padding #5.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
-                                        \startTextSpan
-                                        ~
-                                    }
-                                    \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf''8
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
-                                    r2
-                                    \tweak style #'harmonic-mixed
-                                    eqf''4
-                                    - \tweak padding #5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \afterGrace
-                                        \tweak style #'harmonic
-                                        eqf''32
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r8
-                                    }
-                                    r8
-                                    r4
-                                    r2
-                                    \tweak style #'harmonic-mixed
-                                    eqf''4
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
-                                    \tweak style #'harmonic
-                                    eqf''2
-                                    \pp
-                                    ~
-                                    \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf''32
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8..
-                                    r8.
+                                    \override Accidental.stencil = ##f
+                                    \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \bow-clef
+                                    \override Glissando.bound-details.left.padding = #0.5
+                                    \override Glissando.bound-details.right.padding = #0.5
+                                    \override Staff.NoteHead.no-ledgers = ##t
+                                    \staff-line-count 3
+                                    \override Staff.StaffSymbol.line-positions = #'(9 0 -9)
+                                    \clef "treble"
+                                    r32
                                     [
-                                    \tweak style #'harmonic
-                                    eqf''16
-                                    \pp
-                                    ]
-                                    - \tweak padding #5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
+                                    \override Dots.staff-position = #2
                                     \afterGrace
-                                    \tweak style #'harmonic
-                                    eqf''8..
-                                    [
+                                    a''16.
+                                    - \tenuto
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
+                                    \startTextSpan
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
                                         \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        ^ \stop-on-string
-                                        \stopTextSpan
+                                        b16
                                     }
                                     r32
+                                    \override Dots.staff-position = #2
+                                    a''16.
+                                    - \tenuto
                                     ]
-                                    r4
-                                    r4
-                                    r8
-                                    \times 4/5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''16
+                                    [
                                     {
-                                        \afterGrace
-                                        \tweak style #'harmonic
-                                        eqf''8
-                                        \pp
-                                        - \tweak padding #9
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { III, MSP } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
-                                        \startTextSpan
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            ^ \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r32
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
                                     }
-                                    r4
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''32
+                                    - \tenuto
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''8
+                                    ]
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    [
+                                    \override Dots.staff-position = #2
+                                    \afterGrace
+                                    a''16.
+                                    - \tenuto
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    \afterGrace
+                                    a''16.
+                                    - \tenuto
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b16
+                                    }
+                                    r32
+                                    [
+                                    \override Dots.staff-position = #2
+                                    \afterGrace
+                                    a''16.
+                                    - \tenuto
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''16.
+                                    - \tenuto
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''16
+                                    [
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''32
+                                    - \tenuto
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''8
+                                    ]
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    [
+                                    \override Dots.staff-position = #2
+                                    \afterGrace
+                                    a''16.
+                                    - \tenuto
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    \afterGrace
+                                    a''16.
+                                    - \tenuto
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b16
+                                        \stopTextSpan
+                                        \revert Accidental.stencil
+                                        \revert Staff.Clef.stencil
+                                        \revert Glissando.bound-details.left.padding
+                                        \revert Glissando.bound-details.right.padding
+                                        \revert Staff.NoteHead.no-ledgers
+                                        \revert Staff.StaffSymbol.line-positions
+                                    }
+                                    \staff-line-count 5
+                                    r2.
+                                    \revert Staff.BarLine.bar-extent
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
@@ -7943,78 +7120,310 @@
                                     r2
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Con sordino }
-                                    r16.
+                                    \override Accidental.stencil = ##f
+                                    \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \bow-clef
+                                    \override Glissando.bound-details.left.padding = #0.5
+                                    \override Glissando.bound-details.right.padding = #0.5
+                                    \override Staff.NoteHead.no-ledgers = ##t
+                                    \staff-line-count 3
+                                    \override Staff.StaffSymbol.line-positions = #'(9 0 -9)
+                                    \clef "treble"
+                                    r16
                                     [
-                                    <a, bqs,>32
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #9
+                                    \override Dots.staff-position = #2
+                                    a''16
+                                    - \tenuto
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    - \tweak padding #7
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { IV ( B \raise #0.75 \accidental #1/4 \raise #0 ) + III } \line { ST }  } } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
                                     \startTextSpan
                                     ~
-                                    <a, bqs,>8
-                                    ]
-                                    ~
-                                    <a, bqs,>4
-                                    \p
-                                    ~
-                                    \times 4/5
-                                    {
-                                        \afterGrace
-                                        <a, bqs,>32
-                                        {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            _ \stop-on-string
-                                            \stopTextSpan
-                                        }
-                                        r8
-                                    }
-                                    r8
-                                    r4
-                                    r4
-                                    r32
-                                    [
-                                    <a, bqs,>8..
-                                    ]
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    - \tweak padding #8
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { IV + III } \line { ST }  } } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1.5
-                                    \startTextSpan
-                                    ~
-                                    <a, bqs,>4
-                                    ~
-                                    <a, bqs,>2
-                                    \mp
-                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
                                     \afterGrace
-                                    <a, bqs,>32
+                                    a''32
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
                                         \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        _ \stop-on-string
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''16
+                                    - \tenuto
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''16.
+                                    [
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''8
+                                    - \tenuto
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''32
+                                    [
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''16
+                                    - \tenuto
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''32
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''16
+                                    - \tenuto
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''32
+                                    [
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r16
+                                    \override Dots.staff-position = #2
+                                    a''32
+                                    - \tenuto
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
+                                    }
+                                    r32
+                                    \override Dots.staff-position = #2
+                                    a''32
+                                    - \tenuto
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    a''8
+                                    [
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        b16
                                         \stopTextSpan
                                     }
-                                    r8..
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Senza sordino }
+                                    r8
+                                    ]
+                                    r4
+                                    \revert Accidental.stencil
+                                    \revert Staff.Clef.stencil
+                                    \revert Glissando.bound-details.left.padding
+                                    \revert Glissando.bound-details.right.padding
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \staff-line-count 5
+                                    r2.
+                                    \revert Staff.BarLine.bar-extent
+                                    r2.
+                                    r2.
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     \override Dots.staff-position = #2
