@@ -23,7 +23,7 @@
             s1 * 3/4
             \break
             \pageBreak
-            \tweak text " ×3 " \startMeasureSpanner
+            \tweak text " ×7 " \startMeasureSpanner
             \bar ".|:"
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
@@ -1164,7 +1164,133 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
+                                    r8
+                                    \tweak style #'la
+                                    bf'8
+                                    \p
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    - \tweak padding #9.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpan
+                                    ~
+                                    \tweak style #'la
+                                    bf'16
+                                    [
+                                    r16
+                                    \tweak style #'la
+                                    d'16
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    (
+                                    \tweak style #'la
+                                    aqs'16
+                                    ]
+                                    \tweak style #'la
+                                    c'16
+                                    )
+                                    r8.
+                                    \stopTextSpan
                                     r2.
                                     r2.
                                     r2.
@@ -1814,7 +1940,34 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
+                                    r8
+                                    \big-half-harmonic
+                                    cs''8
+                                    :64
+                                    \p
+                                    - \tweak padding #8.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpan
+                                    _ (
+                                    ~
+                                    \big-half-harmonic
+                                    cs''16
+                                    :128
+                                    [
+                                    \big-half-harmonic
+                                    d'16
+                                    :128
+                                    ~
+                                    \big-half-harmonic
+                                    d'32
+                                    :256
+                                    )
+                                    r16.
+                                    \stopTextSpan
+                                    ]
+                                    r4
                                     \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
                                     \once \override NoteHead.no-ledgers = ##t
                                     \once \override NoteHead.stem-attachment = #'(0 . 0.75)
