@@ -36,7 +36,9 @@
             \time 3/4
             s1 * 3/4
             \break
-            \noPageBreak
+            \pageBreak
+            \tweak text " ×3 " \startMeasureSpanner
+            \bar ".|:"
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -44,7 +46,10 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \bar ":|."
+            \break
             \pageBreak
+            \stopMeasureSpanner
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -1233,7 +1238,133 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
+                                    \times 2/3
+                                    {
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak style #'harmonic
+                                            f''
+                                            \tweak style #'harmonic
+                                            cqf'''
+                                        >2
+                                        \pp
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak padding #11.25
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1.5
+                                        \startTextSpan
+                                        \once \override Accidental.stencil = ##f
+                                        \override NoteHead.X-extent = #'(0 . 0)
+                                        \override NoteHead.transparent = ##t
+                                        \override NoteHead.no-ledgers = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <
+                                            \tweak style #'harmonic
+                                            d''
+                                            \tweak style #'harmonic
+                                            a''
+                                        >8
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Staff.Stem.stemlet-length
+                                        <
+                                            \tweak style #'harmonic
+                                            g''
+                                            \tweak style #'harmonic
+                                            d'''
+                                        >8
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/5
+                                    {
+                                        \once \override Accidental.stencil = ##f
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <
+                                            \tweak style #'harmonic
+                                            d''
+                                            \tweak style #'harmonic
+                                            a''
+                                        >32
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <
+                                            \tweak style #'harmonic
+                                            g''
+                                            \tweak style #'harmonic
+                                            d'''
+                                        >16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <
+                                            \tweak style #'harmonic
+                                            d''
+                                            \tweak style #'harmonic
+                                            a''
+                                        >16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <
+                                            \tweak style #'harmonic
+                                            g''
+                                            \tweak style #'harmonic
+                                            d'''
+                                        >8
+                                          %! abjad.glissando(7)
+                                        - \abjad-zero-padding-glissando
+                                          %! abjad.glissando(7)
+                                        \glissando
+                                        ~
+                                        \once \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        \afterGrace
+                                        <
+                                            \tweak style #'harmonic
+                                            g''
+                                            \tweak style #'harmonic
+                                            d'''
+                                        >32
+                                        ]
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                              %! abjad.glissando(6)
+                                            \revert Accidental.stencil
+                                              %! abjad.glissando(6)
+                                            \revert NoteColumn.glissando-skip
+                                              %! abjad.glissando(6)
+                                            \revert NoteHead.no-ledgers
+                                              %! abjad.glissando(6)
+                                            \undo \hide NoteHead
+                                            <d'' a''>16
+                                            \stopTextSpan
+                                        }
+                                        \revert NoteHead.X-extent
+                                        \revert NoteHead.transparent
+                                        \revert NoteHead.no-ledgers
+                                    }
                                     r2.
                                     <
                                         \tweak style #'harmonic
@@ -4477,7 +4608,6 @@
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { rasg., SP } \hspace #0.5 }
                             \startTextSpan
                             ~
-                            \afterGrace
                             <
                                 \tweak style #'harmonic
                                 ef''
@@ -4490,6 +4620,19 @@
                             >2.
                             :32
                             \pp
+                            ~
+                            \afterGrace
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2.
+                            :32
                             {
                                 \once \override Stem.stencil = ##f
                                 \once \override Flag.stencil = ##f
@@ -4499,7 +4642,6 @@
                                 c'16
                                 \stopTextSpan
                             }
-                            r2.
                             r2.
                             r2.
                             r2.
@@ -4591,9 +4733,15 @@
                             <es'''' f''''>2
                             :32
                             ~
-                            \afterGrace
                             <es'''' f''''>2.
                             :32
+                            ~
+                            <es'''' f''''>4
+                            :32
+                            ~
+                            \afterGrace
+                            <es'''' f''''>8
+                            :64
                             {
                                 \once \override Stem.stencil = ##f
                                 \once \override Flag.stencil = ##f
@@ -4604,7 +4752,8 @@
                                 \stopTextSpan
                                 \ottava 0
                             }
-                            r2.
+                            r8
+                            r4
                             r2.
                             r2.
                             r2.
@@ -4931,8 +5080,119 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \times 4/5
+                                    {
+                                        r8
+                                        \tweak style #'harmonic
+                                        eqf'8.
+                                        \ppp
+                                        (
+                                        - \tweak padding #11
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { IV } \line { MST }  } } \hspace #0.5 }
+                                        \startTextSpan
+                                        \<
+                                    }
+                                    \times 2/3
+                                    {
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                            \tweak Accidental.font-size #-2.5
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-2.5
+                                            \tweak style #'harmonic
+                                            df'
+                                            \tweak style #'harmonic
+                                            eqf'
+                                        >4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \override NoteHead.X-extent = #'(0 . 0)
+                                        \override NoteHead.transparent = ##t
+                                        \override NoteHead.no-ledgers = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <e'' f''>16
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Staff.Stem.stemlet-length
+                                        <c'' d''>16
+                                        )
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/5
+                                    {
+                                        \once \override Accidental.stencil = ##f
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <f'' g''>8.
+                                        \p
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <f''' g'''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <d''' e'''>32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Staff.Stem.stemlet-length
+                                        <a''' b'''>32
+                                        )
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 8/7
+                                    {
+                                        \once \override Accidental.stencil = ##f
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <f''' g'''>8.
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <d'''' e''''>8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        <a''' b'''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Staff.Stem.stemlet-length
+                                        \afterGrace
+                                        <d'''' e''''>16
+                                        )
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                            <a''' b'''>16
+                                            \stopTextSpan
+                                        }
+                                        \revert NoteHead.X-extent
+                                        \revert NoteHead.transparent
+                                        \revert NoteHead.no-ledgers
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -4986,15 +5246,189 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
-                                    \clef "alto"
                                     r1.
                                     r2.
                                     r2
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \times 4/5
+                                    {
+                                        r8
+                                        \tweak style #'harmonic
+                                        eqf'8.
+                                        \ppp
+                                        (
+                                        - \tweak padding #11
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III } \line { MST }  } } \hspace #0.5 }
+                                        \startTextSpan
+                                        \<
+                                    }
+                                    \times 4/6
+                                    {
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                            \tweak Accidental.font-size #-2.5
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-2.5
+                                            \tweak style #'harmonic
+                                            df'
+                                            \tweak style #'harmonic
+                                            eqf'
+                                        >16
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \override NoteHead.X-extent = #'(0 . 0)
+                                        \override NoteHead.transparent = ##t
+                                        \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <e'' f''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <c'' d''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <f'' g''>8.
+                                        )
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/5
+                                    {
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <f''' g'''>32
+                                        \p
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <d''' e'''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <a''' b'''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <f''' g'''>8
+                                          %! abjad.glissando(7)
+                                        - \abjad-zero-padding-glissando
+                                          %! abjad.glissando(7)
+                                        \glissando
+                                        ~
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        <f''' g'''>32
+                                        )
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 8/7
+                                    {
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        <d'''' e''''>16
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <a''' b'''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <d'''' e''''>16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        <a''' b'''>8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \afterGrace
+                                        <d'''' e''''>8
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                            <a''' b'''>16
+                                            )
+                                            \stopTextSpan
+                                        }
+                                        \revert NoteHead.X-extent
+                                        \revert NoteHead.transparent
+                                        \revert NoteHead.no-ledgers
+                                    }
                                     r2.
                                     r2.
                                     r2.

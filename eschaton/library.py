@@ -273,6 +273,56 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def multiple_muting(
+    selector=abjad.select.chords, closed_fundamental=False, forgo_notehead_change=False
+):
+    def change_noteheads(argument):
+        selections = selector(argument)
+
+        for chord in abjad.select.chords(selections):
+            for leaf in abjad.select.leaves(chord):
+                leaf_duration = abjad.get.duration(leaf, preprolated=True)
+                if leaf_duration > abjad.Duration((7, 16)):
+                    head_shape = "harmonic-mixed"
+                else:
+                    head_shape = "harmonic"
+
+                if closed_fundamental is False:
+                    for head in leaf.note_heads:
+                        if forgo_notehead_change is False:
+                            abjad.tweak(head, rf"\tweak style #'{head_shape}")
+                else:
+                    noteheads = leaf.note_heads
+                    notehead_pitches = [head.named_pitch.number for head in noteheads]
+                    notehead_pitches.sort()
+                    lowest_pitch = notehead_pitches[0]
+
+                    for head in noteheads:
+                        if head.named_pitch.number != lowest_pitch:
+                            if forgo_notehead_change is False:
+                                abjad.tweak(head, rf"\tweak style #'{head_shape}")
+
+                noteheads = leaf.note_heads
+                notehead_pitches = [head.named_pitch.number for head in noteheads]
+                notehead_pitches.sort()
+                highest_pitch = notehead_pitches[-1]
+
+                for notehead in noteheads:
+                    if notehead.named_pitch.number != highest_pitch:
+                        abjad.tweak(notehead, r"\tweak Accidental.font-size #-2.5")
+                        abjad.tweak(
+                            notehead,
+                            r"\tweak Accidental.color #(x11-color 'LightSlateBlue)",
+                        )
+                        # abjad.tweak(notehead, r"\tweak Accidental.parenthesized ##t")
+                        abjad.tweak(
+                            notehead, r"\tweak color #(x11-color 'LightSlateBlue)"
+                        )
+                        abjad.tweak(notehead, r"\tweak font-size #-2.5")
+
+    return change_noteheads
+
+
 def attach_oboe_double_harmonic_markups(
     selector, padding=11.25, right_padding=1.5, command="One"
 ):

@@ -129,9 +129,9 @@ afterGraceFraction = #(cons 15 16)
 
         \override MeasureSpanner.direction = #UP
         \override MeasureSpanner.thickness = #1.5
-        \override MeasureSpanner.font-size = 2
+        \override MeasureSpanner.font-size = 6
         \override MeasureSpanner.font-name = "Bodoni72 Book"
-        \override MeasureSpanner.padding = 16
+        \override MeasureSpanner.padding = 14
         \override MeasureSpanner.X-extent = ##f
 
         \override NoteCollision.merge-differently-dotted = ##t
@@ -331,7 +331,7 @@ afterGraceFraction = #(cons 15 16)
     left-margin = 10\mm
     right-margin = 10\mm
     top-margin = 10\mm
-    
+
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
 
