@@ -273,6 +273,32 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def stop_on_string(selector, direction=abjad.UP):
+    def attach_articulation(argument):
+        selections = selector(argument)
+        for selection in selections:
+            aftergrace_container = abjad.AfterGraceContainer("c'16")
+            literal = abjad.LilyPondLiteral(
+                [
+                    r"\once \override Stem.stencil = ##f",
+                    r"\once \override Flag.stencil = ##f",
+                    r"\once \override NoteHead.no-ledgers = ##t",
+                    r"\once \override Accidental.stencil = ##f",
+                    r"\once \override NoteHead.transparent = ##t",
+                ],
+                site="before",
+            )
+            abjad.attach(literal, abjad.select.leaf(aftergrace_container, 0))
+            abjad.attach(
+                abjad.Articulation("stop-on-string"),
+                abjad.select.leaf(aftergrace_container, 0),
+                direction=direction,
+            )
+            abjad.attach(aftergrace_container, selection)
+
+    return attach_articulation
+
+
 def multiple_muting(
     selector=abjad.select.chords, closed_fundamental=False, forgo_notehead_change=False
 ):

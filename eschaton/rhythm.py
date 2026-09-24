@@ -261,7 +261,7 @@ def return_section_1_bow_speed_talea(index):
     return rhythm_maker
 
 
-def return_section_1_figures(instrument, index=0, stage=1):
+def return_section_1_figures(accent=None, index=0, stage=1):
     initial_figure = [3, 1, 1, 2, 1]
 
     figure_permutations = list(itertools.permutations(initial_figure))
@@ -307,7 +307,7 @@ def return_section_1_figures(instrument, index=0, stage=1):
         tuplet = tuple(_)
         final_tuplet_list.append(_)
 
-    if instrument == "clarinet":
+    if accent is None:
         return final_tuplet_list
 
     else:
@@ -316,10 +316,17 @@ def return_section_1_figures(instrument, index=0, stage=1):
         for tuplet in figure_permutations:
             new_tuplet = []
             for _ in tuplet:
-                if _ == 1:
-                    new_tuplet.append(-1)
-                else:
-                    new_tuplet.append(_)
+                if accent == "long":
+                    if _ == 1:
+                        new_tuplet.append(-1)
+                    else:
+                        new_tuplet.append(_)
+                if accent == "short":
+                    if _ != 1:
+                        new_integer = _ * -1
+                        new_tuplet.append(new_integer)
+                    else:
+                        new_tuplet.append(_)
 
             new_tuplet = tuple(new_tuplet)
             final_final_tuplet_list.append(new_tuplet)
