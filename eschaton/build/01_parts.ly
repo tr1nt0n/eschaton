@@ -6358,11 +6358,106 @@
                                     r2.
                                     \revert Staff.BarLine.bar-extent
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    \clef "bass"
+                                    \afterGrace
+                                    <c, a,>8.
+                                    \fff
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III + IV } \line { Senza vib. }  } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        _ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r2
+                                    r16
+                                    r2
+                                    ^ \markup 0
+                                    c'4
+                                    ^ \markup 1
+                                    ~
+                                    c'4
+                                    ^ \markup 2
+                                    ~
+                                    c'8
+                                    ^ \markup 3
+                                    r32
+                                    ^ \markup 4
+                                    c'16
+                                    ^ \markup 5
+                                    r32
+                                    ^ \markup 6
+                                    r16
+                                    ^ \markup 7
+                                    c'16
+                                    ^ \markup 8
+                                    ~
+                                    c'32
+                                    ^ \markup 9
+                                    r32
+                                    ^ \markup 10
+                                    c'16
+                                    ^ \markup 11
+                                    r16
+                                    ^ \markup 12
+                                    c'16
+                                    ^ \markup 13
+                                    c'16.
+                                    ^ \markup 14
+                                    c'32
+                                    ^ \markup 15
+                                    ~
+                                    c'8
+                                    ^ \markup 16
+                                    ~
+                                    c'32
+                                    ^ \markup 17
+                                    r16.
+                                    ^ \markup 18
+                                    r16.
+                                    ^ \markup 19
+                                    c'32
+                                    ^ \markup 20
+                                    ~
+                                    c'16
+                                    ^ \markup 21
+                                    c'16
+                                    ^ \markup 22
+                                    r16.
+                                    ^ \markup 23
+                                    c'32
+                                    ^ \markup 24
+                                    ~
+                                    c'32
+                                    ^ \markup 25
+                                    c'16.
+                                    ^ \markup 26
+                                    r32
+                                    ^ \markup 27
+                                    c'16
+                                    ^ \markup 28
+                                    r32
+                                    ^ \markup 29
+                                    c'8
+                                    ^ \markup 30
+                                    r32
+                                    ^ \markup 31
+                                    c'16
+                                    ^ \markup 32
+                                    r32
+                                    ^ \markup 33
+                                    c'16.
+                                    ^ \markup 34
+                                    r32
+                                    ^ \markup 35
                                     \override Dots.staff-position = #2
                                     \override Accidental.stencil = ##f
                                     \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
