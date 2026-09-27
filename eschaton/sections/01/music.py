@@ -2234,6 +2234,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (9,)),
     evans.RhythmHandler(evans.talea([3, -100], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
     evans.PitchHandler([["c,", "a,"]]),
     library.stop_on_string(
         selector=trinton.select_logical_ties_by_index(

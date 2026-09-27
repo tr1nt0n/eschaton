@@ -6377,8 +6377,8 @@
                                         _ \stop-on-string
                                         \stopTextSpan
                                     }
-                                    r2
                                     r16
+                                    r2
                                     r2
                                     ^ \markup 0
                                     c'4
