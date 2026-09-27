@@ -99,6 +99,102 @@ def rhythm_3(
     return make_rhythm_3
 
 
+def rhythm_4(stage, index, selector=trinton.logical_ties(pitched=True, grace=False)):
+    def make_rhythm_4(argument):
+        subdivisions = selector(argument)
+        partitioned_subdivisions = abjad.select.partition_by_counts(
+            subdivisions,
+            [2, 1],
+            cyclic=True,
+            overhang=True,
+        )
+
+        container = abjad.Container()
+
+        if stage == 1:
+            tuplet_durations = [
+                abjad.get.duration(partition) for partition in partitioned_subdivisions
+            ]
+            tuplets = rmakers.tuplet(tuplet_durations, [(1,)])
+            container.extend(tuplets)
+
+        if stage == 2:
+            base_tuplets = [
+                [4, 1, 1],
+                [1, 1, 1, 2, 2],
+                [6, 2, 1, 1],
+                [1, 2, 2, 5],
+                [3, 2, 1, 1],
+                [1, 1, 1, 3],
+            ]
+
+            tuplet_ratios = [_ for _ in base_tuplets]
+
+            for tuplet in base_tuplets:
+                tuplet_permutations = list(itertools.permutations(tuplet))
+                trimmed_tuplets = []
+                [
+                    trimmed_tuplets.append(_)
+                    for _ in tuplet_permutations
+                    if _ not in trimmed_tuplets
+                ]
+
+                for _ in trimmed_tuplets:
+                    tuplet_ratios.append(_)
+
+            tuplet_ratios = [tuple(_) for _ in tuplet_ratios]
+            tuplet_ratios = trinton.rotated_sequence(
+                tuplet_ratios, index % len(tuplet_ratios)
+            )
+
+            tuplet_durations = [
+                abjad.get.duration(partition) for partition in partitioned_subdivisions
+            ]
+
+            tuplets = rmakers.tuplet(tuplet_durations, tuplet_ratios)
+
+            container.extend(tuplets)
+
+        if stage == 3:
+            run_counts = [3, 5, 7]
+            run_permutations = list(itertools.permutations(run_counts))
+            trimmed_counts = []
+            [
+                trimmed_counts.append(_)
+                for _ in run_permutations
+                if _ not in trimmed_counts
+            ]
+
+            trimmed_counts = abjad.sequence.flatten(trimmed_counts)
+
+            tuplet_ratios = []
+
+            for count in trimmed_counts:
+                tuplet = [1 for _ in range(0, count)]
+                tuplet = tuple(tuplet)
+                tuplet_ratios.append(tuplet)
+
+            tuplet_ratios = trinton.rotated_sequence(
+                tuplet_ratios, index % len(tuplet_ratios)
+            )
+            tuplet_durations = [
+                abjad.get.duration(partition) for partition in partitioned_subdivisions
+            ]
+            tuplets = rmakers.tuplet(tuplet_durations, tuplet_ratios)
+
+            container.extend(tuplets)
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        rmakers.rewrite_sustained(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        rmakers.trivialize(abjad.select.tuplets(container))
+        rmakers.extract_trivial(abjad.select.tuplets(container))
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        abjad.mutate.replace(argument, rhythm_selections)
+
+    return make_rhythm_4
+
+
 def rhythm_5(
     stage,
     voice,

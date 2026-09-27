@@ -14,7 +14,7 @@ from eschaton import meter
 
 time_signatures = [(3, 2), (5, 4)]
 
-for _ in range(0, 46):
+for _ in range(0, 11):
     time_signatures.append((3, 4))
 
 score = library.eschaton_score(time_signatures)
@@ -1428,7 +1428,7 @@ trinton.make_music(
 )
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (10, 15)),
+    lambda _: trinton.select_target(_, (10, 13)),
     trinton.noteheads_only(selector=trinton.pleaves()),
     trinton.transparent_noteheads(selector=trinton.pleaves()),
     trinton.invisible_rests(selector=abjad.select.rests),
@@ -1531,7 +1531,7 @@ trinton.make_music(
 )
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (10, 15)),
+    lambda _: trinton.select_target(_, (10, 13)),
     trinton.aftergrace_command(
         slash=True,
         selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
@@ -1877,6 +1877,201 @@ trinton.make_music(
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11, 13)),
+    evans.RhythmHandler(
+        evans.talea(
+            [
+                -5,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+            ],
+            32,
+            extra_counts=[0, 1, 1, 0, 2],
+        )
+    ),
+    evans.PitchHandler([["c'''''", "b''''", "as''''"]]),
+    # trinton.linear_attachment_command(
+    #     attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+    #     selector=trinton.select_leaves_by_index([1, 5, 6, 8, 9, 12, 13, 15, 16, 19]),
+    # ),
+    trinton.ottava_command(
+        octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("stopped"), abjad.Articulation(">")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.change_notehead_command(
+        notehead="cross", selector=trinton.pleaves(grace=False)
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartPianoPedal("corda"),
+            abjad.StopPianoPedal("corda"),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
+    ),
+    voice=score["piano 1 voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor((2, 1, 1, 2, 2)),
+    beam_meter=True,
+)
+
 # violin music
 
 trinton.make_music(
@@ -2015,6 +2210,128 @@ trinton.make_music(
     voice=score["violin voice"],
     preprocessor=trinton.fuse_sixteenths_preprocessor((2, 3, 3, 1, 1, 2)),
 )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    evans.RhythmHandler(evans.talea([3, -1000], 16)),
+    evans.PitchHandler([[9, fractions.Fraction(35, 4)]]),
+    trinton.force_accidentals_command(
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False)
+    ),
+    library.stop_on_string(
+        selector=trinton.select_logical_ties_by_index(
+            [0], last=True, pitched=True, grace=False
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("f")],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="Senza vib.",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=7,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index([0, 1], first=True, grace=False),
+        right_padding=0,
+    ),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 13)),
+    evans.RhythmHandler(
+        meter.write_meter(index=0, attack_limit=5),
+    ),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    rhythm.rhythm_4(
+        stage=1,
+        index=0,
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12,)),
+    rhythm.rhythm_4(
+        stage=2,
+        index=0,
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    rhythm.rhythm_4(
+        stage=3,
+        index=0,
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    trinton.replace_with_rhythm_selection(
+        rhythmhandler=evans.RhythmHandler(evans.talea([-1, 10, -100], 16)),
+        selector=trinton.select_leaves_by_index([4, 5, 6, 7, 8]),
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 13)),
+    trinton.pitch_with_selector_command(
+        pitch_list=[[9, fractions.Fraction(35, 4)]],
+        selector=trinton.select_logical_ties_by_index([2], pitched=True, grace=False),
+    ),
+    trinton.force_accidentals_command(
+        selector=trinton.select_logical_ties_by_index([2], pitched=True, grace=False)
+    ),
+    library.stop_on_string(
+        selector=trinton.select_logical_ties_by_index(
+            [2], last=True, pitched=True, grace=False
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("f")],
+        selector=trinton.select_logical_ties_by_index(
+            [2], first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="Senza vib.",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=7,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index([3, 4], first=True, grace=False),
+        right_padding=0,
+    ),
+    voice=score["violin voice"],
+    beam_meter=True,
+)
+
 
 # viola music
 
@@ -2302,415 +2619,393 @@ trinton.make_music(
         ),
     ),
     trinton.replace_with_rhythm_selection(
-        rhythmhandler=evans.RhythmHandler(evans.talea([3, -1000], 16)),
+        rhythmhandler=evans.RhythmHandler(evans.talea([5, -1000], 32)),
         selector=trinton.select_leaves_by_index([15, 16, 17, 18, 19, 20]),
     ),
     trinton.replace_with_rhythm_selection(
-        rhythmhandler=evans.RhythmHandler(evans.talea([-1, 4, -1000], 32)),
+        rhythmhandler=evans.RhythmHandler(evans.talea([-3, 4, -1000], 32)),
         selector=trinton.select_leaves_by_index([29, 30, 31, 32]),
     ),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.annotate_leaves_locally(
-        selector=abjad.select.leaves
-        # selector=trinton.logical_ties(pitched=True, first=True)
+    trinton.pitch_with_selector_command(
+        pitch_list=[["c,", "a,"]],
+        selector=trinton.select_logical_ties_by_index([0, 6, 11], pitched=True),
     ),
-    # trinton.pitch_with_selector_command(
-    #     pitch_list=[["c,", "a,"]],
-    #     selector=trinton.select_logical_ties_by_index([0, 11, 18, 26], pitched=True),
+    # trinton.annotate_leaves_locally(
+    #     # selector=abjad.select.leaves
+    #     selector=trinton.logical_ties(first=True)
     # ),
-    # trinton.change_lines(
-    #     lines=1,
-    #     clef="percussion",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [1, 12, 19, 27], first=True, pitched=True
-    #     ),
-    #     invisible_barlines=False,
-    # ),
-    # trinton.change_lines(
-    #     lines=5,
-    #     clef="bass",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [11, 18, 26], first=True, pitched=True
-    #     ),
-    #     invisible_barlines=False,
-    # ),
-    # trinton.change_notehead_command(
-    #     notehead="cross",
-    #     selector=trinton.logical_ties(exclude=[0, 11, 18, 26], pitched=True),
-    # ),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle(
-    #         [
-    #             abjad.LilyPondLiteral(
-    #                 r"\override Staff.Clef.stencil = ##f", site="before"
-    #             ),
-    #             abjad.LilyPondLiteral(r"\revert Staff.Clef.stencil", site="before"),
-    #         ]
-    #     ),
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [1, 11, 12, 18, 19, 26, 27, -1], first=True, pitched=True
-    #     ),
-    # ),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
-    #     selector=trinton.select_leaves_by_index(
-    #         [
-    #             2,
-    #             6,
-    #             7,
-    #             11,
-    #             12,
-    #             16,
-    #             21,
-    #             23,
-    #             24,
-    #             29,
-    #             30,
-    #             34,
-    #             37,
-    #             41,
-    #             42,
-    #             46,
-    #             47,
-    #             49,
-    #             50,
-    #             53,
-    #         ]
-    #     ),
-    # ),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle([abjad.Dynamic("fff"), abjad.Dynamic("pp")]),
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [0, 1, 11, 12, 18, 19, 26, 27], first=True, pitched=True, grace=False
-    #     ),
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string=[r"III + IV", "Senza vib."],
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=7.5,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [0, 1, 19, 20], first=True, grace=False
-    #     ),
-    #     right_padding=0,
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string=[r"III + IV", "Senza vib."],
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=8.5,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [32, 33, 46, 47], first=True, grace=False
-    #     ),
-    #     right_padding=0,
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string=["CLB", "on side", "of bridge"],
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=6.5,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [48, 50], first=True, grace=False
-    #     ),
-    #     right_padding=2,
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string="CLB on side of bridge",
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=3,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index([3, 18], first=True, grace=False),
-    #     right_padding=0,
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string="CLB on side of bridge",
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=7.5,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [21, 30], first=True, grace=False
-    #     ),
-    #     right_padding=0,
-    # ),
-    # trinton.hooked_spanner_command(
-    #     string=trinton.boxed_markup(
-    #         string="CLB on side of bridge",
-    #         column="\column",
-    #         font_name="Bodoni72 Book Italic",
-    #         fontsize=0,
-    #         string_only=True,
-    #     ),
-    #     full_string=True,
-    #     padding=6.75,
-    #     style="dashed-line-with-hook",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [34, 45], first=True, grace=False
-    #     ),
-    #     right_padding=0,
-    # ),
-    # library.stop_on_string(
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [0, 11, 18, 26], last=True, pitched=True, grace=False
-    #     ),
-    #     direction=abjad.DOWN,
-    # ),
+    trinton.change_lines(
+        lines=1,
+        clef="percussion",
+        selector=trinton.select_logical_ties_by_index(
+            [1, 7, 12], first=True, pitched=True
+        ),
+        invisible_barlines=False,
+    ),
+    trinton.change_lines(
+        lines=5,
+        clef="bass",
+        selector=trinton.select_logical_ties_by_index(
+            [6, 11], first=True, pitched=True
+        ),
+        invisible_barlines=False,
+    ),
+    trinton.change_notehead_command(
+        notehead="cross",
+        selector=trinton.logical_ties(exclude=[0, 6, 11], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.LilyPondLiteral(
+                    r"\override Staff.Clef.stencil = ##f", site="before"
+                ),
+                abjad.LilyPondLiteral(r"\revert Staff.Clef.stencil", site="before"),
+            ]
+        ),
+        selector=trinton.select_logical_ties_by_index(
+            [1, 6, 7, 11, 12], first=True, pitched=True
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                3,
+                6,
+                7,
+                11,
+                12,
+                15,
+                18,
+                21,
+                22,
+                25,
+                26,
+                27,
+                28,
+                32,
+            ]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.Dynamic("fff"), abjad.Dynamic("pp")]),
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 6, 7, 11, 12], first=True, pitched=True
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=[r"III + IV", "Senza vib."],
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=7.5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index(
+            [1, 2, 21, 22], first=True, grace=False
+        ),
+        right_padding=0,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=[r"III + IV", "Senza vib."],
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=9,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index(
+            [12, 13], first=True, grace=False
+        ),
+        right_padding=0,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="CLB on side of bridge",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=8,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index([3, 12], first=True, grace=False),
+        right_padding=-2,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="CLB on side of bridge",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=3,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index(
+            [15, 20], first=True, grace=False
+        ),
+        right_padding=0,
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="CLB on side of bridge",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=4,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index(
+            [23, 26], first=True, grace=False
+        ),
+        right_padding=1,
+    ),
+    library.stop_on_string(
+        selector=trinton.select_logical_ties_by_index(
+            [0, 6, 11], last=True, pitched=True
+        ),
+        direction=abjad.DOWN,
+    ),
     voice=score["cello voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
 )
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (14, 16)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=3)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(pitch_list=["b", "a''"]),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=11,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Dynamic('"pp"')],
-        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
-    ),
-    voice=score["cello voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (23, 33)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=30)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(
-        [
-            "b",
-            "a''",
-            "b",
-            "a''",
-            "c'",
-            "g''",
-            "c'",
-            "g''",
-            "d'",
-            "f''",
-            "d'",
-            "f''",
-            "d'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "f'",
-            "e''",
-            "f'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-        ]
-    ),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=11,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic('"pp"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"mp"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"mf"'),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 14, 29, 34], first=True, pitched=True
-        ),
-    ),
-    voice=score["cello voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (37, 44)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=67)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(
-        [
-            "g'",
-            "d''",
-            "b'",
-            "f''",
-            "d''",
-            "a''",
-            "f''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-        ]
-    ),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=6.5,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic('"mf"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"fff"'),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 7, 12], first=True, pitched=True
-        ),
-    ),
-    voice=score["cello voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (14, 45)),
-    library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
-    voice=score["cello voice"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (14, 16)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=3)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(pitch_list=["b", "a''"]),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=11,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.attachment_command(
+#         attachments=[abjad.Dynamic('"pp"')],
+#         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+#     ),
+#     voice=score["cello voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (23, 33)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=30)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(
+#         [
+#             "b",
+#             "a''",
+#             "b",
+#             "a''",
+#             "c'",
+#             "g''",
+#             "c'",
+#             "g''",
+#             "d'",
+#             "f''",
+#             "d'",
+#             "f''",
+#             "d'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "f'",
+#             "e''",
+#             "f'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#         ]
+#     ),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=11,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.Dynamic('"pp"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"mp"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"mf"'),
+#         ],
+#         selector=trinton.select_logical_ties_by_index(
+#             [0, 0, 14, 29, 34], first=True, pitched=True
+#         ),
+#     ),
+#     voice=score["cello voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (37, 44)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=67)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(
+#         [
+#             "g'",
+#             "d''",
+#             "b'",
+#             "f''",
+#             "d''",
+#             "a''",
+#             "f''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#         ]
+#     ),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=6.5,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.Dynamic('"mf"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"fff"'),
+#         ],
+#         selector=trinton.select_logical_ties_by_index(
+#             [0, 7, 12], first=True, pitched=True
+#         ),
+#     ),
+#     voice=score["cello voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (14, 45)),
+#     library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
+#     voice=score["cello voice"],
+# )
 
 # contrabass music
 
@@ -2978,244 +3273,244 @@ trinton.make_music(
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
 )
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (14, 16)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=0)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(pitch_list=["b", "a''"]),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=11,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Dynamic('"pp"')],
-        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
-    ),
-    voice=score["contrabass voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (23, 33)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=27)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(
-        [
-            "b",
-            "a''",
-            "b",
-            "a''",
-            "c'",
-            "g''",
-            "c'",
-            "g''",
-            "d'",
-            "f''",
-            "d'",
-            "f''",
-            "d'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "e'",
-            "e''",
-            "f'",
-            "e''",
-            "f'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-            "g'",
-            "d''",
-        ]
-    ),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=11,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic('"pp"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"mp"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"mf"'),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 14, 29, 34], first=True, pitched=True
-        ),
-    ),
-    voice=score["contrabass voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (37, 44)),
-    evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=71)),
-    trinton.rewrite_meter_command(boundary_depth=-1),
-    trinton.aftergrace_command(
-        invisible=True,
-        selector=trinton.select_logical_ties_by_index(
-            [-1], first=True, pitched=True, grace=False
-        ),
-    ),
-    evans.PitchHandler(
-        [
-            "b'",
-            "f''",
-            "d''",
-            "a''",
-            "f''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-            "g''",
-            "c'''",
-        ]
-    ),
-    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    library.half_note_signifier(),
-    # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
-    trinton.hooked_spanner_command(
-        string=trinton.boxed_markup(
-            string=r"Bowing the side of the bridge",
-            column="\center-column",
-            font_name="Bodoni72 Book Italic",
-            fontsize=0,
-            string_only=True,
-        ),
-        full_string=True,
-        padding=6.5,
-        style="dashed-line-with-hook",
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=0,
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic('"mf"'),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic('"fff"'),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 6, 10], first=True, pitched=True
-        ),
-    ),
-    voice=score["contrabass voice"],
-    beam_meter=True,
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (14, 45)),
-    library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
-    voice=score["contrabass voice"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (14, 16)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=0)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(pitch_list=["b", "a''"]),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=11,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.attachment_command(
+#         attachments=[abjad.Dynamic('"pp"')],
+#         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+#     ),
+#     voice=score["contrabass voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (23, 33)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=27)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(
+#         [
+#             "b",
+#             "a''",
+#             "b",
+#             "a''",
+#             "c'",
+#             "g''",
+#             "c'",
+#             "g''",
+#             "d'",
+#             "f''",
+#             "d'",
+#             "f''",
+#             "d'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "e'",
+#             "e''",
+#             "f'",
+#             "e''",
+#             "f'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#             "g'",
+#             "d''",
+#         ]
+#     ),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=11,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.Dynamic('"pp"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"mp"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"mf"'),
+#         ],
+#         selector=trinton.select_logical_ties_by_index(
+#             [0, 0, 14, 29, 34], first=True, pitched=True
+#         ),
+#     ),
+#     voice=score["contrabass voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (37, 44)),
+#     evans.RhythmHandler(rhythm.return_section_1_bow_speed_talea(index=71)),
+#     trinton.rewrite_meter_command(boundary_depth=-1),
+#     trinton.aftergrace_command(
+#         invisible=True,
+#         selector=trinton.select_logical_ties_by_index(
+#             [-1], first=True, pitched=True, grace=False
+#         ),
+#     ),
+#     evans.PitchHandler(
+#         [
+#             "b'",
+#             "f''",
+#             "d''",
+#             "a''",
+#             "f''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#             "g''",
+#             "c'''",
+#         ]
+#     ),
+#     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+#     library.half_note_signifier(),
+#     # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
+#     trinton.hooked_spanner_command(
+#         string=trinton.boxed_markup(
+#             string=r"Bowing the side of the bridge",
+#             column="\center-column",
+#             font_name="Bodoni72 Book Italic",
+#             fontsize=0,
+#             string_only=True,
+#         ),
+#         full_string=True,
+#         padding=6.5,
+#         style="dashed-line-with-hook",
+#         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+#         right_padding=0,
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.Dynamic('"mf"'),
+#             abjad.StartHairpin("<"),
+#             abjad.Dynamic('"fff"'),
+#         ],
+#         selector=trinton.select_logical_ties_by_index(
+#             [0, 6, 10], first=True, pitched=True
+#         ),
+#     ),
+#     voice=score["contrabass voice"],
+#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (14, 45)),
+#     library.bow_contact_staff(selector=trinton.select_leaves_by_index([0, -2, -1])),
+#     voice=score["contrabass voice"],
+# )
 
 # globals
 
@@ -3394,14 +3689,14 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (48,)),
-    trinton.attachment_command(
-        attachments=[abjad.BarLine("||", site="after")],
-        selector=trinton.select_leaves_by_index([0]),
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (48,)),
+#     trinton.attachment_command(
+#         attachments=[abjad.BarLine("||", site="after")],
+#         selector=trinton.select_leaves_by_index([0]),
+#     ),
+#     voice=score["Global Context"],
+# )
 
 # beautification
 
@@ -3696,9 +3991,9 @@ trinton.extract_parts(score=score)
 
 trinton.render_file(
     score=score,
-    segment_path="/Users/trintonprater/scores/eschaton/eschaton/sections/01",
+    segment_path="/Users/trintonprater/scores/eschaton/eschaton/sections/01a",
     build_path="/Users/trintonprater/scores/eschaton/eschaton/build",
-    segment_name="01",
+    segment_name="01a",
     includes=[
         "/Users/trintonprater/scores/eschaton/eschaton/build/eschaton-stylesheet.ily",
         "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
