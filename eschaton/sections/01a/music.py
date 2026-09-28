@@ -2467,7 +2467,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=[r"III", r"MST"],
+            string=[r"IV", r"MST"],
             column="\column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
@@ -2852,7 +2852,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=[r"IV", r"MST"],
+            string=[r"III", r"MST"],
             column="\column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
