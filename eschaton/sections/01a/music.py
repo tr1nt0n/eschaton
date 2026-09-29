@@ -403,7 +403,7 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [0], first=True, pitched=True, grace=False
         ),
-        angles=39,
+        angles=35,
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(

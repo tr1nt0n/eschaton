@@ -467,6 +467,7 @@ def smorzando(selector, angles=1, padding=0, direction=abjad.UP):
 
         markup = abjad.Markup(markup_string)
         markup = abjad.bundle(markup, abjad.Tweak(rf"- \tweak padding {padding}"))
+        markup = abjad.bundle(markup, abjad.Tweak(rf"- \tweak X-extent ##f"))
 
         abjad.attach(markup, selections[0], direction=direction)
 

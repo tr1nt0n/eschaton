@@ -1132,6 +1132,7 @@
                                         \tweak style #'la
                                         bf'16.
                                         \p
+                                        - \tweak X-extent ##f
                                         - \tweak padding 0
                                         ^ \markup {
                                                     \hspace #-0.5
@@ -1260,6 +1261,7 @@
                                         [
                                         \tweak style #'la
                                         aqs'32
+                                        - \tweak X-extent ##f
                                         - \tweak padding 0
                                         ^ \markup {
                                                     \hspace #-0.5
@@ -1320,6 +1322,7 @@
                                     \tweak style #'la
                                     ef'16.
                                     \mp
+                                    - \tweak X-extent ##f
                                     - \tweak padding 0
                                     ^ \markup {
                                                 \hspace #-0.5
@@ -1333,38 +1336,6 @@
                                                     {
                                                         \char ##xe611
                                                     }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe610
-                                                        }
-                                                        \hspace #-0.77
-                                                        {
-                                                            \char ##xe611
-                                                        }
                                                         \hspace #-0.77
                                                         {
                                                             \char ##xe610
