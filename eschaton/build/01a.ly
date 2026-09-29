@@ -1852,7 +1852,7 @@
                                         - \tweak padding #11.25
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
+                                        - \tweak bound-details.right.padding -0.5
                                         \startTextSpan
                                         \once \override Accidental.stencil = ##f
                                         \override NoteHead.X-extent = #'(0 . 0)
@@ -6166,9 +6166,9 @@
                                         c'16
                                         _ \stop-on-string
                                     }
-                                    r2
-                                    \stopTextSpan
                                     r16
+                                    \stopTextSpan
+                                    r2
                                     \override Dots.staff-position = #2
                                     <
                                         \tweak Accidental.color #(x11-color 'LightSlateBlue)

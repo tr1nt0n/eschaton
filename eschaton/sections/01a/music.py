@@ -472,7 +472,7 @@ trinton.make_music(
         padding=11.25,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        right_padding=1.5,
+        right_padding=0.5,
     ),
     voice=score["oboe voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((2, 1)),
@@ -2274,6 +2274,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (9,)),
     evans.RhythmHandler(evans.talea([3, -1000], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
     evans.PitchHandler([["a'", "aqs'"]]),
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(first=True, pitched=True, grace=False)
