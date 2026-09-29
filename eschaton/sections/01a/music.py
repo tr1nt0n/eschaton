@@ -399,7 +399,12 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
     ),
-    trinton.tremolo_command(selector=trinton.pleaves()),
+    library.smorzando(
+        selector=trinton.select_logical_ties_by_index(
+            [0], first=True, pitched=True, grace=False
+        ),
+        angles=39,
+    ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
             string=r"Air",
@@ -409,7 +414,7 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=8,
+        padding=7.5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
         right_padding=1,
@@ -1488,9 +1493,26 @@ trinton.make_music(
         padding=7.5,
         style="dashed-line-with-hook",
         selector=trinton.select_logical_ties_by_index(
-            [3, 12, 15, 18, 24, 25], first=True, pitched=True, grace=False
+            [3, 12, 15, 18], first=True, pitched=True, grace=False
         ),
         right_padding=0,
+        command="One",
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Motor ON",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=7.5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_logical_ties_by_index(
+            [24, 25], first=True, pitched=True, grace=False
+        ),
+        right_padding=2,
         command="One",
     ),
     trinton.spanner_command(
@@ -4040,83 +4062,83 @@ trinton.make_music(
 
 # barlines
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (4,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.transparent = ##f", site="after"
-            ),
-            abjad.LilyPondLiteral(
-                r"""\once \override Score.BarLine.glyph-name = ".|:" """,
-                site="absolute_after",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([-1]),
-    ),
-    voice=score["Global Context"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (5, 6)),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.BarLine(".|:", site="before"),
-            abjad.BarLine(":|.", site="after"),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r'\tweak text " ×7 " \startMeasureSpanner', site="absolute_before"
-            ),
-            abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-        direction=abjad.UP,
-    ),
-    voice=score["Global Context"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (9,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.transparent = ##f", site="after"
-            ),
-            abjad.LilyPondLiteral(
-                r"""\once \override Score.BarLine.glyph-name = ".|:" """,
-                site="absolute_after",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([-1]),
-    ),
-    voice=score["Global Context"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (10, 11)),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.BarLine(".|:", site="before"),
-            abjad.BarLine(":|.", site="after"),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-    ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r'\tweak text " ×5 " \startMeasureSpanner', site="absolute_before"
-            ),
-            abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-        direction=abjad.UP,
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (4,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"\once \override Score.BarLine.transparent = ##f", site="after"
+#             ),
+#             abjad.LilyPondLiteral(
+#                 r"""\once \override Score.BarLine.glyph-name = ".|:" """,
+#                 site="absolute_after",
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([-1]),
+#     ),
+#     voice=score["Global Context"],
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (5, 6)),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.BarLine(".|:", site="before"),
+#             abjad.BarLine(":|.", site="after"),
+#         ],
+#         selector=trinton.select_leaves_by_index([0, -1]),
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r'\tweak text " ×7 " \startMeasureSpanner', site="absolute_before"
+#             ),
+#             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+#         ],
+#         selector=trinton.select_leaves_by_index([0, -1]),
+#         direction=abjad.UP,
+#     ),
+#     voice=score["Global Context"],
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (9,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"\once \override Score.BarLine.transparent = ##f", site="after"
+#             ),
+#             abjad.LilyPondLiteral(
+#                 r"""\once \override Score.BarLine.glyph-name = ".|:" """,
+#                 site="absolute_after",
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([-1]),
+#     ),
+#     voice=score["Global Context"],
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (10, 11)),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.BarLine(".|:", site="before"),
+#             abjad.BarLine(":|.", site="after"),
+#         ],
+#         selector=trinton.select_leaves_by_index([0, -1]),
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r'\tweak text " ×5 " \startMeasureSpanner', site="absolute_before"
+#             ),
+#             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+#         ],
+#         selector=trinton.select_leaves_by_index([0, -1]),
+#         direction=abjad.UP,
+#     ),
+#     voice=score["Global Context"],
+# )
 
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (48,)),
