@@ -273,6 +273,30 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def left_beam(selector=None):
+    def beam(argument):
+        if selector is not None:
+            for tuplet in selector(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.LEFT
+        else:
+            for tuplet in abjad.select.tuplets(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.LEFT
+
+    return beam
+
+
+def right_beam(selector=None):
+    def beam(argument):
+        if selector is not None:
+            for tuplet in selector(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.RIGHT
+        else:
+            for tuplet in abjad.select.tuplets(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.RIGHT
+
+    return beam
+
+
 def stop_on_string(selector, direction=abjad.UP):
     def attach_articulation(argument):
         selections = selector(argument)
@@ -664,46 +688,61 @@ def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), in
     return vibrato
 
 
-def flute_flageolets(selector=trinton.pleaves()):
+def flute_flageolets(selector=trinton.pleaves(), ametric=True, ottava=True):
     def attach(argument):
         selections = selector(argument)
 
-        all_but_first = abjad.select.exclude(selections, [0])
+        selection_groups = abjad.select.group_by_contiguity(selections)
 
-        handler = evans.PitchHandler(["g''''", "a''''", "b''''", "a''''"])
+        for group in selection_groups:
+            all_but_first = abjad.select.exclude(group, [0])
 
-        abjad.attach(
-            abjad.LilyPondLiteral(r"\set fontSize = #-3", "before"), selections[0]
-        )
+            handler = evans.PitchHandler(["g''''", "a''''", "b''''", "a''''"])
 
-        abjad.attach(abjad.Ottava(n=1), selections[0])
-
-        abjad.slur(selections)
-
-        for leaf in selections:
-            abjad.attach(abjad.Articulation("flageolet"), leaf)
-
-        for leaf in all_but_first:
             abjad.attach(
-                abjad.LilyPondLiteral(r"\once \override Stem.stencil = ##f", "before"),
-                leaf,
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\once \override Beam.stencil = ##f", "before"),
-                leaf,
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\once \override Flag.stencil = ##f", "before"),
-                leaf,
+                abjad.LilyPondLiteral(r"\set fontSize = #-3", "before"), group[0]
             )
 
-        abjad.attach(abjad.LilyPondLiteral(r"\set fontSize = #-1", "after"), leaf)
+            if ottava is True:
+                abjad.attach(abjad.Ottava(n=1), group[0])
 
-        abjad.attach(abjad.Ottava(n=0, site="after"), selections[-1])
+            abjad.slur(group)
 
-        abjad.beam(selections[0:2])
+            for leaf in abjad.select.leaves(group):
+                abjad.attach(abjad.Articulation("flageolet"), leaf)
 
-        handler(selections)
+            if ametric is True:
+                for leaf in all_but_first:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(
+                            r"\once \override Stem.stencil = ##f", "before"
+                        ),
+                        leaf,
+                    )
+                    abjad.attach(
+                        abjad.LilyPondLiteral(
+                            r"\once \override Beam.stencil = ##f", "before"
+                        ),
+                        leaf,
+                    )
+                    abjad.attach(
+                        abjad.LilyPondLiteral(
+                            r"\once \override Flag.stencil = ##f", "before"
+                        ),
+                        leaf,
+                    )
+
+            abjad.attach(
+                abjad.LilyPondLiteral(r"\set fontSize = #-1", "after"), group[-1]
+            )
+
+            if ottava is True:
+                abjad.attach(abjad.Ottava(n=0, site="after"), group[-1])
+
+            if ametric is True:
+                abjad.beam(group[0:2])
+
+            handler(group)
 
     return attach
 

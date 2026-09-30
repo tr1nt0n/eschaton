@@ -18,6 +18,66 @@ score = library.eschaton_score(time_signatures)
 
 ## MUSIC ##
 
+# flute music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    evans.RhythmHandler(evans.talea([1], 64)),
+    trinton.replace_with_rhythm_selection(
+        rhythmhandler=evans.RhythmHandler(
+            evans.accelerando([(1, 64), (1, 16), (1, 64)])
+        ),
+        selector=trinton.select_leaves_by_index(list(range(24, 48))),
+    ),
+    trinton.invisible_tuplet_brackets(),
+    library.flute_flageolets(
+        selector=trinton.pleaves(exclude=list(range(24, 37))), ottava=False
+    ),
+    library.flute_flageolets(
+        selector=trinton.select_leaves_by_index(list(range(24, 37))),
+        ametric=False,
+        ottava=False,
+    ),
+    trinton.call_rmaker(rmaker=rmakers.beam, selector=abjad.select.tuplets),
+    library.left_beam(),
+    trinton.ottava_command(
+        octave=1, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")], selector=trinton.select_leaves_by_index([0])
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } }""",
+            r"\markup {}",
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [24, -1], first=True, pitched=True, grace=False
+        ),
+        style="solid-line-with-arrow",
+        padding=12.5,
+        right_padding=4,
+        direction=None,
+        full_string=True,
+        command="One",
+    ),
+    voice=score["altoflute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 5)),
+    evans.RhythmHandler(
+        evans.talea([1, 1, 1, 1, 1, -3, 1, 1, 1, 1, -5, 1, 1, 1, 1, 1, -2], 16)
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    library.flute_flageolets(
+        selector=trinton.pleaves(),
+        ametric=False,
+    ),
+    voice=score["altoflute voice"],
+    beam_meter=True,
+)
+
 # oboe music
 
 trinton.make_music(

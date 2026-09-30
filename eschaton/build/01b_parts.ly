@@ -49,9 +49,282 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Fl. }
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    g''''64
+                                    - \flageolet
+                                    \pp
+                                    [
+                                    (
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    ]
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    g''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    g''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    g''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    g''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    g''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    b''''64
+                                    - \flageolet
+                                    \once \override Beam.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override Stem.stencil = ##f
+                                    a''''64
+                                    - \flageolet
+                                    )
+                                    \set fontSize = #-1
+                                    \once \override TupletBracket.stencil = ##f
+                                    \once \override TupletNumber.stencil = ##f
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 1/1
+                                    {
+                                        \set fontSize = #-3
+                                        \once \override Beam.grow-direction = #left
+                                        g''''64 * 15/16
+                                        - \flageolet
+                                          %! rmakers.beam()
+                                        [
+                                        (
+                                        - \tweak padding #12.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } } \hspace #0.5 }
+                                        - \tweak bound-details.right.text \markup {}
+                                        - \tweak bound-details.right.padding -4
+                                        \startTextSpanOne
+                                        a''''64 * 15/16
+                                        - \flageolet
+                                        b''''64 * 1
+                                        - \flageolet
+                                        a''''64 * 17/16
+                                        - \flageolet
+                                        g''''64 * 19/16
+                                        - \flageolet
+                                        a''''64 * 21/16
+                                        - \flageolet
+                                        b''''64 * 3/2
+                                        - \flageolet
+                                        a''''64 * 27/16
+                                        - \flageolet
+                                        g''''64 * 2
+                                        - \flageolet
+                                        a''''64 * 39/16
+                                        - \flageolet
+                                        b''''64 * 23/8
+                                        - \flageolet
+                                        a''''64 * 27/8
+                                        - \flageolet
+                                        g''''64 * 59/16
+                                        - \flageolet
+                                        )
+                                        \stopTextSpanOne
+                                          %! rmakers.beam()
+                                        ]
+                                        \ottava 0
+                                        \set fontSize = #-1
+                                    }
+                                    \revert TupletNumber.text
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    - \flageolet
+                                    [
+                                    (
+                                    a''''16
+                                    - \flageolet
+                                    b''''16
+                                    - \flageolet
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    ]
+                                    g''''16
+                                    - \flageolet
+                                    )
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r8.
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    - \flageolet
+                                    [
+                                    (
+                                    a''''16
+                                    - \flageolet
+                                    b''''16
+                                    - \flageolet
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    )
+                                    ]
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r4
+                                    r16
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    - \flageolet
+                                    [
+                                    (
+                                    a''''16
+                                    - \flageolet
+                                    \revert Staff.Stem.stemlet-length
+                                    b''''16
+                                    - \flageolet
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a''''16
+                                    - \flageolet
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    g''''16
+                                    - \flageolet
+                                    )
+                                    ]
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r8
                                     r2.
                                     r2.
                                     r2.
