@@ -69,6 +69,7 @@ afterGraceFraction = #(cons 15 16)
         \remove Bar_number_engraver
         proportionalNotationDuration = #(ly:make-moment 1 40)
         pedalSustainStyle = #'mixed
+        pedalUnaCordaStyle = #'mixed
 
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))

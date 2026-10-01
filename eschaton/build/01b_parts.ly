@@ -5,15 +5,19 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -737,8 +741,148 @@
                             r2.
                             r2.
                             r2.
-                            r2.
-                            r2.
+                            r16
+                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                {
+                                    \context Score = "Score"
+                                    \with
+                                    {
+                                        \override SpacingSpanner.spacing-increment = 0.5
+                                        proportionalNotationDuration = ##f
+                                    }
+                                    <<
+                                        \context RhythmicStaff = "Rhythmic_Staff"
+                                        \with
+                                        {
+                                            \remove Time_signature_engraver
+                                            \remove Staff_symbol_engraver
+                                            \override Stem.direction = #up
+                                            \override Stem.length = 5
+                                            \override TupletBracket.bracket-visibility = ##t
+                                            \override TupletBracket.direction = #up
+                                            \override TupletBracket.minimum-length = 4
+                                            \override TupletBracket.padding = 1.25
+                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                            \override TupletNumber.font-size = 0
+                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                            tupletFullLength = ##t
+                                        }
+                                        {
+                                            c'4.
+                                        }
+                                    >>
+                                    \layout
+                                    {
+                                        indent = 0
+                                        ragged-right = ##t
+                                    }
+                                }
+                            \times 1/1
+                            {
+                                \once \override Beam.grow-direction = #left
+                                \tweak style #'harmonic
+                                ef'''64 * 15/16
+                                \pp
+                                  %! rmakers.beam()
+                                [
+                                (
+                                - \tweak padding #12.5
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                                \startTextSpanTwo
+                                - \tweak padding #16
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup {}
+                                \startTextSpanOne
+                                - \tweak padding #9
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                \startTextSpanThree
+                                \tweak style #'harmonic
+                                b''64 * 15/16
+                                \tweak style #'harmonic
+                                a''64 * 1
+                                \tweak style #'harmonic
+                                ef''64 * 17/16
+                                \tweak style #'harmonic
+                                a''64 * 19/16
+                                \tweak style #'harmonic
+                                b''64 * 21/16
+                                \tweak style #'harmonic
+                                ef'''64 * 3/2
+                                \tweak style #'harmonic
+                                b''64 * 27/16
+                                \tweak style #'harmonic
+                                a''64 * 2
+                                \stopTextSpanThree
+                                - \tweak padding #9
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP }
+                                \startTextSpanThree
+                                \tweak style #'harmonic
+                                ef''64 * 39/16
+                                \tweak style #'harmonic
+                                a''64 * 23/8
+                                \tweak style #'harmonic
+                                b''64 * 27/8
+                                \tweak style #'harmonic
+                                ef'''64 * 59/16
+                                )
+                                \stopTextSpanOne
+                                \stopTextSpanThree
+                                  %! rmakers.beam()
+                                ]
+                            }
+                            \revert TupletNumber.text
+                            r16
+                            r4
+                            r16
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'harmonic
+                            b''16
+                            \stopTextSpanTwo
+                            [
+                            (
+                            - \tweak padding #12.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Slow rasg. } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -3
+                            \startTextSpanTwo
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                            \startTextSpanThree
+                            \tweak style #'harmonic
+                            a''16
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'harmonic
+                            ef''16
+                            ]
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'harmonic
+                            a''16
+                            \stopTextSpanThree
+                            [
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
+                            \startTextSpanThree
+                            \tweak style #'harmonic
+                            b''16
+                            \tweak style #'harmonic
+                            ef'''16
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'harmonic
+                            b''16
+                            )
+                            \stopTextSpanThree
+                            \stopTextSpanTwo
+                            ]
+                            r4
                             r2.
                             r2.
                             r2.
@@ -758,8 +902,96 @@
                             r2.
                             r2.
                             r2.
-                            r2.
-                            r2.
+                            r4
+                            r8
+                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                {
+                                    \context Score = "Score"
+                                    \with
+                                    {
+                                        \override SpacingSpanner.spacing-increment = 0.5
+                                        proportionalNotationDuration = ##f
+                                    }
+                                    <<
+                                        \context RhythmicStaff = "Rhythmic_Staff"
+                                        \with
+                                        {
+                                            \remove Time_signature_engraver
+                                            \remove Staff_symbol_engraver
+                                            \override Stem.direction = #up
+                                            \override Stem.length = 5
+                                            \override TupletBracket.bracket-visibility = ##t
+                                            \override TupletBracket.direction = #up
+                                            \override TupletBracket.minimum-length = 4
+                                            \override TupletBracket.padding = 1.25
+                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                            \override TupletNumber.font-size = 0
+                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                            tupletFullLength = ##t
+                                        }
+                                        {
+                                            c'4.
+                                        }
+                                    >>
+                                    \layout
+                                    {
+                                        indent = 0
+                                        ragged-right = ##t
+                                    }
+                                }
+                            \times 1/1
+                            {
+                                \ottava 1
+                                \once \override Beam.grow-direction = #left
+                                es''''64 * 15/16
+                                \pp
+                                  %! rmakers.beam()
+                                [
+                                (
+                                - \tweak padding #10.5
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ triangle beater between strings } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -3
+                                \startTextSpan
+                                - \tweak padding #14.5
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup {}
+                                \startTextSpanOne
+                                f''''64 * 15/16
+                                es''''64 * 1
+                                f''''64 * 17/16
+                                es''''64 * 19/16
+                                f''''64 * 21/16
+                                es''''64 * 3/2
+                                f''''64 * 27/16
+                                es''''64 * 2
+                                f''''64 * 39/16
+                                es''''64 * 23/8
+                                f''''64 * 27/8
+                                es''''64 * 59/16
+                                )
+                                \stopTextSpanOne
+                                  %! rmakers.beam()
+                                ]
+                            }
+                            \revert TupletNumber.text
+                            r4
+                            r8.
+                            f''''16
+                            (
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''16
+                            [
+                            f''''16
+                            es''''16
+                            \revert Staff.Stem.stemlet-length
+                            f''''16
+                            )
+                            \stopTextSpan
+                            ]
+                            \ottava 0
                             r2.
                             r2.
                             r2.
@@ -784,7 +1016,44 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
+                                    \ottava 2
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    \p
+                                    \unaCorda
+                                    r8.
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    r8.
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >16
+                                    - \accent
+                                    - \stopped
+                                    \treCorde
+                                    \ottava 0
+                                    r8.
                                     r2.
                                     r2.
                                     r2.
@@ -1194,7 +1463,34 @@
                                     \staff-line-count 5
                                     r2.
                                     \revert Staff.BarLine.bar-extent
-                                    r2.
+                                    \staff-line-count 1
+                                    \override Staff.Clef.stencil = ##f
+                                    \clef "percussion"
+                                    r16
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    \p
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r8
+                                    ]
+                                    r16
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    r8
+                                    ]
+                                    r16
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    \stopTextSpan
+                                    r8
+                                    ]
                                     r2.
                                     r2.
                                     r2.
@@ -1658,7 +1954,33 @@
                                     \staff-line-count 5
                                     r2.
                                     \revert Staff.BarLine.bar-extent
-                                    r2.
+                                    \staff-line-count 1
+                                    \override Staff.Clef.stencil = ##f
+                                    \clef "percussion"
+                                    r8
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    \p
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r16
+                                    ]
+                                    r8.
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    ]
+                                    r8
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    \stopTextSpan
+                                    r16
+                                    ]
                                     r2.
                                     r2.
                                     r2.
