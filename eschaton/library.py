@@ -2,6 +2,7 @@ import abjad
 import baca
 import evans
 import trinton
+from abjadext import rmakers
 import itertools
 import numpy
 import eschaton
@@ -271,6 +272,46 @@ def write_short_instrument_names(score):
 
 
 # notation tools
+
+
+def bracket_grace_command(selector=abjad.select.tuplets):
+    def grace_command(argument):
+        selections = selector(argument)
+        tuplet_leaves = abjad.select.leaves(selections)
+
+        for selection in selections:
+            rmakers.duration_bracket(selection)
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                [
+                    r"\set fontSize = #-3",
+                    r"\my-hack-slash",
+                    r"\override Staff.Beam.beam-thickness = #0.45",
+                ],
+                site="before",
+            ),
+            tuplet_leaves[0],
+        )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                [r"\set fontSize = #-1", r"\revert Staff.Beam.beam-thickness"],
+                site="before",
+            ),
+            tuplet_leaves[-1],
+        )
+
+        abjad.attach(abjad.BeamCount(left=0, right=1), tuplet_leaves[0])
+
+        abjad.attach(abjad.BeamCount(left=1, right=0), tuplet_leaves[-1])
+
+        center_leaves_only = abjad.select.exclude(tuplet_leaves, [0, -1])
+
+        for leaf in center_leaves_only:
+            abjad.attach(abjad.BeamCount(left=1, right=1), leaf)
+
+    return grace_command
 
 
 def left_beam(selector=None):
@@ -606,9 +647,16 @@ def transposition(instrument, selector=trinton.logical_ties(pitched=True)):
         for selection in selections:
             leaves = abjad.select.leaves(selection)
             for leaf in leaves:
-                pitch = leaf.written_pitch.number
-                new_pitch = pitch + interval_of_transposition
-                leaf.written_pitch = new_pitch
+                if isinstance(leaf, abjad.Chord):
+                    note_heads = leaf.note_heads
+                    for note_head in note_heads:
+                        pitch = note_head.written_pitch.number
+                        new_pitch = pitch + interval_of_transposition
+                        note_head.written_pitch = new_pitch
+                else:
+                    pitch = leaf.written_pitch.number
+                    new_pitch = pitch + interval_of_transposition
+                    leaf.written_pitch = new_pitch
 
     return transpose
 

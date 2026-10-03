@@ -35,15 +35,19 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -344,8 +348,256 @@
                                     \set fontSize = #-1
                                     r8
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bass }
+                                    r8
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'1
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 32/33
+                                    {
+                                        \set fontSize = #-3
+                                        \my-hack-slash
+                                        \override Staff.Beam.beam-thickness = #0.45
+                                        \set stemLeftBeamCount = 0
+                                        \set stemRightBeamCount = 1
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.1
+                                                    #:dynamic "p"
+                                                    #:hspace -0.25
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        [
+                                        (
+                                        \<
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        ds''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        aqs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        cs'''''32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.4
+                                                    #:dynamic "ff"
+                                                    #:hspace -0.2
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        \>
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        aqs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        ds''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''32
+                                        )
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        b'32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.1
+                                                    #:dynamic "p"
+                                                    #:hspace -0.25
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        (
+                                        \<
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        ds''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        aqs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        cs'''''32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.4
+                                                    #:dynamic "ff"
+                                                    #:hspace -0.2
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        \>
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        aqs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        ds''''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        fs'''32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'harmonic
+                                        b''32
+                                        \set fontSize = #-1
+                                        \revert Staff.Beam.beam-thickness
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 0
+                                        \revert Staff.Stem.stemlet-length
+                                        b'32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.1
+                                                    #:dynamic "p"
+                                                    #:hspace -0.25
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        )
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    r8
                                     r2.
                                 }
                             }
@@ -525,10 +777,193 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r2
+                                    r32
+                                    [
+                                    \vibrato #'(3 5 ) #5  #0.2
+                                    \afterGrace
+                                    ef'''32
+                                    \pp
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r16
+                                    \vibrato #'(4 ) #4  #0.2
+                                    \afterGrace
+                                    ef'''16
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r32
+                                    \vibrato #'(2 4 ) #4  #0.2
+                                    \afterGrace
+                                    ef'''32
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        r8
+                                        \vibrato #'(2 1 2 3 ) #3  #0.2
+                                        \afterGrace
+                                        ef'''4
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    \times 2/3
+                                    {
+                                        r8
+                                        <b'>4
+                                        \f
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        r8
+                                        <b'>4
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        r8
+                                        <b'>4
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        r8
+                                        \vibrato #'(5 4 ) #4  #0.2
+                                        \afterGrace
+                                        ef'''4
+                                        \p
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    r32
+                                    [
+                                    \vibrato #'(2 4 2 1 ) #1  #0.2
+                                    \afterGrace
+                                    ef'''16.
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r32
+                                    \vibrato #'(2 3 5 4 2 ) #2  #0.2
+                                    \afterGrace
+                                    ef'''16.
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 3/4
+                                    {
+                                        r16
+                                        [
+                                        \vibrato #'(4 2 1 ) #1  #0.2
+                                        \afterGrace
+                                        ef'''8.
+                                        ]
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    r32
+                                    [
+                                    \vibrato #'(2 3 ) #3  #0.2
+                                    \afterGrace
+                                    ef'''16.
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 3/4
+                                    {
+                                        r16
+                                        [
+                                        \vibrato #'(5 ) #5  #0.2
+                                        \afterGrace
+                                        ef'''8.
+                                        ]
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -687,9 +1122,26 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r2
+                                    <
+                                        f
+                                        \tweak style #'harmonic
+                                        f''''
+                                    >4
+                                    \mp
+                                    ~
+                                    <
+                                        f
+                                        \tweak style #'harmonic
+                                        f''''
+                                    >2.
+                                    <
+                                        f
+                                        \tweak style #'harmonic
+                                        f''''
+                                    >2
+                                    \pp
+                                    r4
                                 }
                             }
                         }
@@ -2397,13 +2849,32 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
+                                    \clef "bass"
                                     r2.
                                     r2.
                                     r2.
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
+                                    \times 4/5
+                                    {
+                                        r4
+                                        \ottava -1
+                                        <ef,, b,,>16
+                                        \sustainOn
+                                    }
+                                    \afterGrace
+                                    r2
+                                    \ottava 0
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \sustainOff
+                                    }
                                     r2.
                                     r2.
                                 }
@@ -2429,10 +2900,215 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r2
+                                    r32
+                                    [
+                                    \vibrato #'(5 4 2 ) #2  #0.2
+                                    \afterGrace
+                                    ef'''32
+                                    \pp
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r16
+                                    \vibrato #'(4 2 ) #2  #0.2
+                                    \afterGrace
+                                    ef'''16
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r32
+                                    \vibrato #'(1 ) #1  #0.2
+                                    \afterGrace
+                                    ef'''32
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    r16
+                                    [
+                                    \vibrato #'(2 3 ) #3  #0.2
+                                    \afterGrace
+                                    ef'''8.
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/4
+                                    {
+                                        r16
+                                        [
+                                        <a'! aqs'!>8.
+                                        \f
+                                        ]
+                                        - \tweak padding #9.75
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Senza vib. } \hspace #0.5 }
+                                        \startTextSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/4
+                                    {
+                                        r16
+                                        [
+                                        <a'! aqs'!>8.
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/4
+                                    {
+                                        r16
+                                        [
+                                        \afterGrace
+                                        <a'! aqs'!>8.
+                                        ]
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTextSpan
+                                        }
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/4
+                                    {
+                                        r16
+                                        [
+                                        \vibrato #'(5 4 2 4 ) #4  #0.2
+                                        \afterGrace
+                                        ef'''8.
+                                        \p
+                                        ]
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    \times 2/3
+                                    {
+                                        r16
+                                        [
+                                        \vibrato #'(2 1 ) #1  #0.2
+                                        \afterGrace
+                                        ef'''8
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    \times 2/3
+                                    {
+                                        r16
+                                        \vibrato #'(2 3 5 4 ) #4  #0.2
+                                        \afterGrace
+                                        ef'''8
+                                        ]
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    r16
+                                    [
+                                    \vibrato #'(2 4 2 1 2 ) #2  #0.2
+                                    \afterGrace
+                                    ef'''8
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
+                                    \times 2/3
+                                    {
+                                        r16
+                                        [
+                                        \vibrato #'(3 5 4 ) #4  #0.2
+                                        \afterGrace
+                                        ef'''8
+                                        ]
+                                        \startTrillSpan
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.transparent = ##t
+                                            c'16
+                                            \stopTrillSpan
+                                        }
+                                    }
+                                    r16
+                                    [
+                                    \vibrato #'(2 4 ) #4  #0.2
+                                    \afterGrace
+                                    ef'''8
+                                    ]
+                                    \startTrillSpan
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        \stopTrillSpan
+                                    }
                                 }
                             }
                         }
@@ -2451,8 +3127,38 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \clef "alto"
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'!
+                                        a'!
+                                    >2
+                                    \f
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Senza vib. } \hspace #0.5 }
+                                    \startTextSpan
+                                    ~
+                                    \afterGrace
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \one-eighth-flat-markup
+                                        af'
+                                        a'
+                                    >2
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        ^ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r4
                                     r2.
                                 }
                             }
@@ -2822,8 +3528,31 @@
                                     r8
                                     ]
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \staff-line-count 5
+                                    \revert Staff.Clef.stencil
+                                    \clef "bass"
+                                    <c, a,>2
+                                    \fff
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III + IV } \line { Senza vib. }  } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    ~
+                                    \afterGrace
+                                    <c, a,>2
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        _ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r4
                                     r2.
                                 }
                             }
@@ -3312,8 +4041,31 @@
                                     r16
                                     ]
                                     r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    \staff-line-count 5
+                                    \revert Staff.Clef.stencil
+                                    \clef "bass"
+                                    <e, b,>2
+                                    \fff
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III + IV } \line { Senza vib. }  } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    ~
+                                    \afterGrace
+                                    <e, b,>2
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.transparent = ##t
+                                        c'16
+                                        _ \stop-on-string
+                                        \stopTextSpan
+                                    }
+                                    r4
                                     r2.
                                 }
                             }
