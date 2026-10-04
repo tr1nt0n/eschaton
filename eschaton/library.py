@@ -297,7 +297,7 @@ def bracket_grace_command(selector=abjad.select.tuplets):
         abjad.attach(
             abjad.LilyPondLiteral(
                 [r"\set fontSize = #-1", r"\revert Staff.Beam.beam-thickness"],
-                site="before",
+                site="absolute_after",
             ),
             tuplet_leaves[-1],
         )

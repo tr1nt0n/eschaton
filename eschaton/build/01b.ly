@@ -2,6 +2,40 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35)))
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+              %! +SCORE
+            - \tweak padding #37
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20 20 37 27 22 25)))
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+              %! +SCORE
+            - \tweak padding #25
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20 20 25 30 23 25 20 20 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -10,6 +44,8 @@
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 21 24 23 23 25 18 24 16 18 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -18,22 +54,8 @@
             \time 3/4
             s1 * 3/4
             \break
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \noBreak
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \break
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \noBreak
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 22 22 26 22 22 22 28 22 22)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -561,8 +583,6 @@
                                         \set stemRightBeamCount = 1
                                         \tweak style #'harmonic
                                         b''32
-                                        \set fontSize = #-1
-                                        \revert Staff.Beam.beam-thickness
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 0
                                         \revert Staff.Stem.stemlet-length
@@ -581,6 +601,8 @@
                                             )
                                         )
                                         ]
+                                        \set fontSize = #-1
+                                        \revert Staff.Beam.beam-thickness
                                     }
                                     \revert TupletNumber.text
                                     r8
@@ -2409,7 +2431,46 @@
                             r2.
                             r2.
                             r2.
-                            r2.
+                            r8
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
+                            \laissezVibrer
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "fff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            r4
+                            \times 4/5
+                            {
+                                r16
+                                <
+                                    \tweak style #'harmonic-mixed
+                                    ef''
+                                    \tweak style #'harmonic-mixed
+                                    a''
+                                    \tweak style #'harmonic-mixed
+                                    b''
+                                    \tweak style #'harmonic-mixed
+                                    ef'''
+                                >4
+                                \laissezVibrer
+                            }
                         }
                     }
                 }
@@ -2518,7 +2579,37 @@
                             r2.
                             r2.
                             r2.
-                            r2.
+                            \times 4/5
+                            {
+                                r8.
+                                [
+                                \ottava 1
+                                <a''' b''' ds'''' e'''' f''''>8
+                                \laissezVibrer
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.4
+                                            #:dynamic "fff"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                ]
+                            }
+                            r4
+                            \times 4/5
+                            {
+                                r16.
+                                [
+                                <a''' b''' ds'''' e'''' f''''>8..
+                                \laissezVibrer
+                                ]
+                                \ottava 0
+                            }
                         }
                     }
                 }
@@ -3107,6 +3198,7 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
+                                    \clef "alto"
                                     r2.
                                     r2.
                                     r2.
@@ -3114,7 +3206,6 @@
                                     r2.
                                     r2.
                                     r4
-                                    \clef "alto"
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \one-eighth-flat-markup
@@ -3517,6 +3608,8 @@
                                     r4
                                     \staff-line-count 5
                                     \revert Staff.Clef.stencil
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                     \clef "bass"
                                     <c, a,>2
                                     \fff
@@ -3539,7 +3632,48 @@
                                         \stopTextSpan
                                     }
                                     r4
-                                    r2.
+                                    \times 4/5
+                                    {
+                                        \staff-line-count 1
+                                        \override Staff.Clef.stencil = ##f
+                                        \clef "percussion"
+                                        r16.
+                                        [
+                                        \tweak style #'cross
+                                        c'16
+                                        \p
+                                        - \tweak padding #3
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
+                                    }
+                                    \times 4/5
+                                    {
+                                        r8
+                                        \tweak style #'cross
+                                        c'32
+                                        ]
+                                    }
+                                    r8
+                                    [
+                                    r32
+                                    \tweak style #'cross
+                                    c'32
+                                    r16
+                                    ]
+                                    r8
+                                    [
+                                    \times 4/5
+                                    {
+                                        r32
+                                        \tweak style #'cross
+                                        c'16
+                                        \tweak style #'cross
+                                        c'16
+                                        \stopTextSpan
+                                        ]
+                                    }
                                 }
                             }
                         }
@@ -4030,6 +4164,8 @@
                                     r4
                                     \staff-line-count 5
                                     \revert Staff.Clef.stencil
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                     \clef "bass"
                                     <e, b,>2
                                     \fff
@@ -4052,7 +4188,50 @@
                                         \stopTextSpan
                                     }
                                     r4
-                                    r2.
+                                    \times 4/5
+                                    {
+                                        \staff-line-count 1
+                                        \override Staff.Clef.stencil = ##f
+                                        \clef "percussion"
+                                        r16
+                                        [
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'cross
+                                        c'16.
+                                        \p
+                                        - \tweak padding #3
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
+                                    }
+                                    \times 4/5
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16.
+                                        \tweak style #'cross
+                                        c'16
+                                        ]
+                                    }
+                                    r8
+                                    [
+                                    \tweak style #'cross
+                                    c'16
+                                    r16
+                                    ]
+                                    r8
+                                    [
+                                    \times 4/5
+                                    {
+                                        \tweak style #'cross
+                                        c'16.
+                                        \tweak style #'cross
+                                        c'16
+                                        \stopTextSpan
+                                        ]
+                                    }
                                 }
                             }
                         }
