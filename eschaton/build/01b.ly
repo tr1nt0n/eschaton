@@ -1521,9 +1521,19 @@
                                             [
                                             \glissando
                                             \revert Staff.Stem.stemlet-length
+                                            \afterGrace
                                             f'''8
-                                            \sustainOff
                                             ]
+                                            \glissando
+                                            {
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                f16
+                                                \sustainOff
+                                            }
                                         }
                                         \context Voice = "vibraphone muting voice"
                                         {
@@ -2938,6 +2948,7 @@
                                         r4
                                         \ottava -1
                                         <ef,, b,,>16
+                                        \laissezVibrer
                                         \sustainOn
                                     }
                                     \afterGrace
@@ -3119,6 +3130,8 @@
                                     }
                                     \times 2/3
                                     {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
                                         r16
                                         \vibrato #'(2 3 5 4 ) #4  #0.2
                                         \afterGrace

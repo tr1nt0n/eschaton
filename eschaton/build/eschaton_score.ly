@@ -6,7 +6,8 @@
 
 \score {
     {
-        \include "01.ly"
+        \include "01a.ly"
+        \include "01b.ly"
         % \include "02.ly"
     }
 }
