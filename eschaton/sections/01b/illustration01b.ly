@@ -802,66 +802,245 @@
                                     r2
                                     r32
                                     [
-                                    \vibrato #'(3 5 ) #5  #0.2
-                                    \afterGrace
                                     ef'''32
                                     \pp
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 3 1 0)
+                                          (1 0 1.5 -3 2 0)
+                                          (2 0 2.5 5 3 0)
+                                          (3 0 3.5 -5 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
                                     r16
-                                    \vibrato #'(4 ) #4  #0.2
-                                    \afterGrace
                                     ef'''16
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 4 1 0)
+                                          (1 0 1.5 -4 2 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
                                         c'16
-                                        \stopTrillSpan
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
                                     r32
-                                    \vibrato #'(2 4 ) #4  #0.2
-                                    \afterGrace
                                     ef'''32
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 4 3 0)
+                                          (3 0 3.5 -4 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
                                         r8
-                                        \vibrato #'(2 1 2 3 ) #3  #0.2
-                                        \afterGrace
                                         ef'''4
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 2 1 0)
+                                              (1 0 1.5 -2 2 0)
+                                              (2 0 2.5 1 3 0)
+                                              (3 0 3.5 -1 4 0)
+                                              (4 0 4.5 2 5 0)
+                                              (5 0 5.5 -2 6 0)
+                                              (6 0 6.5 3 7 0)
+                                              (7 0 7.5 -3 8 0)
+                                         )
+                                         #2
+                                                                \tweak text #tuplet-number::calc-fraction-text
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 5/9
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'4.
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
                                     }
                                     \times 2/3
                                     {
@@ -885,106 +1064,381 @@
                                     \times 5/6
                                     {
                                         r8
-                                        \vibrato #'(5 4 ) #4  #0.2
-                                        \afterGrace
                                         ef'''4
                                         \p
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 5 1 0)
+                                              (1 0 1.5 -5 2 0)
+                                              (2 0 2.5 4 3 0)
+                                              (3 0 3.5 -4 4 0)
+                                         )
+                                         #2
+                                                                \tweak text #tuplet-number::calc-fraction-text
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 5/9
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'4.
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
                                     }
                                     r32
                                     [
-                                    \vibrato #'(2 4 2 1 ) #1  #0.2
-                                    \afterGrace
                                     ef'''16.
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 4 3 0)
+                                          (3 0 3.5 -4 4 0)
+                                          (4 0 4.5 2 5 0)
+                                          (5 0 5.5 -2 6 0)
+                                          (6 0 6.5 1 7 0)
+                                          (7 0 7.5 -1 8 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'16.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
                                     r32
-                                    \vibrato #'(2 3 5 4 2 ) #2  #0.2
-                                    \afterGrace
                                     ef'''16.
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 3 3 0)
+                                          (3 0 3.5 -3 4 0)
+                                          (4 0 4.5 5 5 0)
+                                          (5 0 5.5 -5 6 0)
+                                          (6 0 6.5 4 7 0)
+                                          (7 0 7.5 -4 8 0)
+                                          (8 0 8.5 2 9 0)
+                                          (9 0 9.5 -2 10 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'16.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
                                         r16
                                         [
-                                        \vibrato #'(4 2 1 ) #1  #0.2
-                                        \afterGrace
                                         ef'''8.
-                                        ]
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 4 1 0)
+                                              (1 0 1.5 -4 2 0)
+                                              (2 0 2.5 2 3 0)
+                                              (3 0 3.5 -2 4 0)
+                                              (4 0 4.5 1 5 0)
+                                              (5 0 5.5 -1 6 0)
+                                         )
+                                         #2
+                                                                \tweak text #tuplet-number::calc-fraction-text
+                                        \times 3/4
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8.
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
+                                        ]
                                     }
                                     r32
                                     [
-                                    \vibrato #'(2 3 ) #3  #0.2
-                                    \afterGrace
                                     ef'''16.
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 3 3 0)
+                                          (3 0 3.5 -3 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'16.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
                                         r16
                                         [
-                                        \vibrato #'(5 ) #5  #0.2
-                                        \afterGrace
                                         ef'''8.
-                                        ]
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 5 1 0)
+                                              (1 0 1.5 -5 2 0)
+                                         )
+                                         #2
+                                                                \tweak text #tuplet-number::calc-fraction-text
+                                        \times 3/4
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8.
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
+                                        ]
                                     }
                                 }
                             }
@@ -3005,65 +3459,241 @@
                                     r2
                                     r32
                                     [
-                                    \vibrato #'(5 4 2 ) #2  #0.2
-                                    \afterGrace
                                     ef'''32
                                     \pp
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 5 1 0)
+                                          (1 0 1.5 -5 2 0)
+                                          (2 0 2.5 4 3 0)
+                                          (3 0 3.5 -4 4 0)
+                                          (4 0 4.5 2 5 0)
+                                          (5 0 5.5 -2 6 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
                                     r16
-                                    \vibrato #'(4 2 ) #2  #0.2
-                                    \afterGrace
                                     ef'''16
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 4 1 0)
+                                          (1 0 1.5 -4 2 0)
+                                          (2 0 2.5 2 3 0)
+                                          (3 0 3.5 -2 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
                                         c'16
-                                        \stopTrillSpan
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
                                     r32
-                                    \vibrato #'(1 ) #1  #0.2
-                                    \afterGrace
                                     ef'''32
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 1 1 0)
+                                          (1 0 1.5 -1 2 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     r16
                                     [
-                                    \vibrato #'(2 3 ) #3  #0.2
-                                    \afterGrace
                                     ef'''8.
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 3 3 0)
+                                          (3 0 3.5 -3 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'8.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/4
                                     {
@@ -3108,111 +3738,391 @@
                                     {
                                         r16
                                         [
-                                        \vibrato #'(5 4 2 4 ) #4  #0.2
-                                        \afterGrace
                                         ef'''8.
                                         \p
-                                        ]
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 5 1 0)
+                                              (1 0 1.5 -5 2 0)
+                                              (2 0 2.5 4 3 0)
+                                              (3 0 3.5 -4 4 0)
+                                              (4 0 4.5 2 5 0)
+                                              (5 0 5.5 -2 6 0)
+                                              (6 0 6.5 4 7 0)
+                                              (7 0 7.5 -4 8 0)
+                                         )
+                                         #2
+                                                                \tweak text #tuplet-number::calc-fraction-text
+                                        \times 1/1
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8...
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         r16
                                         [
-                                        \vibrato #'(2 1 ) #1  #0.2
-                                        \afterGrace
                                         ef'''8
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 2 1 0)
+                                              (1 0 1.5 -2 2 0)
+                                              (2 0 2.5 1 3 0)
+                                              (3 0 3.5 -1 4 0)
+                                         )
+                                         #2
+                                                                \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
                                     }
                                     \times 2/3
                                     {
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         r16
-                                        \vibrato #'(2 3 5 4 ) #4  #0.2
-                                        \afterGrace
                                         ef'''8
-                                        ]
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 2 1 0)
+                                              (1 0 1.5 -2 2 0)
+                                              (2 0 2.5 3 3 0)
+                                              (3 0 3.5 -3 4 0)
+                                              (4 0 4.5 5 5 0)
+                                              (5 0 5.5 -5 6 0)
+                                              (6 0 6.5 4 7 0)
+                                              (7 0 7.5 -4 8 0)
+                                         )
+                                         #2
+                                                                \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
+                                        ]
                                     }
                                     r16
                                     [
-                                    \vibrato #'(2 4 2 1 2 ) #2  #0.2
-                                    \afterGrace
                                     ef'''8
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 4 3 0)
+                                          (3 0 3.5 -4 4 0)
+                                          (4 0 4.5 2 5 0)
+                                          (5 0 5.5 -2 6 0)
+                                          (6 0 6.5 1 7 0)
+                                          (7 0 7.5 -1 8 0)
+                                          (8 0 8.5 2 9 0)
+                                          (9 0 9.5 -2 10 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                     \times 2/3
                                     {
                                         r16
                                         [
-                                        \vibrato #'(3 5 4 ) #4  #0.2
-                                        \afterGrace
                                         ef'''8
-                                        ]
-                                        \startTrillSpan
+                                        ^ \markup {
+                                                        \hspace #-2.5
+                                                        \score {
+                                                            \new Staff \with {
+                                                              \remove "Time_signature_engraver"
+                                                            }
+                                                            {
+                                                                \clef "percussion"
+                                                                \override Staff.Clef.stencil = ##f
+                                                                \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                                \override Staff.StaffSymbol.line-count = #3
+                                                                \override Staff.NoteHead.transparent = ##t
+                                                                \override Staff.Stem.stencil = ##f
+                                                                \override Staff.Flag.stencil = ##f
+                                                                \override Staff.Dots.stencil = ##f
+                                                                \override Staff.TupletBracket.stencil = ##f
+                                                                \override Staff.TupletNumber.stencil = ##f
+                                                                \fancy-gliss
+                                           #'(
+                                              (0 0 0.5 3 1 0)
+                                              (1 0 1.5 -3 2 0)
+                                              (2 0 2.5 5 3 0)
+                                              (3 0 3.5 -5 4 0)
+                                              (4 0 4.5 4 5 0)
+                                              (5 0 5.5 -4 6 0)
+                                         )
+                                         #2
+                                                                \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
                                         {
-                                            \once \override Stem.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                            c'16
-                                            \stopTrillSpan
+                                            \once \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.transparent = ##t
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                c'16
+                                            }
                                         }
+                                                            }
+                                                            \layout {
+                                                              ragged-right = ##t
+                                                              indent = 0\cm
+                                                            }
+                                                          }
+                                                        }
+                                        ]
                                     }
                                     r16
                                     [
-                                    \vibrato #'(2 4 ) #4  #0.2
-                                    \afterGrace
                                     ef'''8
-                                    ]
-                                    \startTrillSpan
+                                    ^ \markup {
+                                                    \hspace #-2.5
+                                                    \score {
+                                                        \new Staff \with {
+                                                          \remove "Time_signature_engraver"
+                                                        }
+                                                        {
+                                                            \clef "percussion"
+                                                            \override Staff.Clef.stencil = ##f
+                                                            \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                                                            \override Staff.StaffSymbol.line-count = #3
+                                                            \override Staff.NoteHead.transparent = ##t
+                                                            \override Staff.Stem.stencil = ##f
+                                                            \override Staff.Flag.stencil = ##f
+                                                            \override Staff.Dots.stencil = ##f
+                                                            \override Staff.TupletBracket.stencil = ##f
+                                                            \override Staff.TupletNumber.stencil = ##f
+                                                            \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 2 1 0)
+                                          (1 0 1.5 -2 2 0)
+                                          (2 0 2.5 4 3 0)
+                                          (3 0 3.5 -4 4 0)
+                                     )
+                                     #2
+                                                            \tweak text #tuplet-number::calc-fraction-text
+                                    \times 1/1
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \stopTrillSpan
+                                        \once \override Dots.staff-position = #2
+                                        \afterGrace
+                                        c'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \revert Accidental.stencil
+                                            \revert NoteColumn.glissando-skip
+                                            \revert NoteHead.no-ledgers
+                                            \undo \hide NoteHead
+                                            c'16
+                                        }
                                     }
+                                                        }
+                                                        \layout {
+                                                          ragged-right = ##t
+                                                          indent = 0\cm
+                                                        }
+                                                      }
+                                                    }
+                                    ]
                                 }
                             }
                         }

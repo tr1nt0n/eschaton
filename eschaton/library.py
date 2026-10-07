@@ -679,9 +679,30 @@ def guitar_note_heads(selector):
     return note_heads
 
 
-def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), index=0):
+def vibrato_spanner(
+    instrument="oboe", selector=trinton.logical_ties(pitched=True, grace=False), index=0
+):
     def vibrato(argument):
         selections = selector(argument)
+        container = abjad.Container()
+        components = rmakers.tuplet(
+            [abjad.get.duration(tie) for tie in selections], [(1,)]
+        )
+        container.extend(components)
+
+        for tie in abjad.select.logical_ties(container, pitched=True, grace=False):
+            duration_line_command = trinton.duration_line(
+                selector=trinton.pleaves(),
+                color=False,
+                sustained=False,
+                visible_grace=False,
+                on_beat_graces=False,
+                fraction=None,
+            )
+
+            duration_line_command(tie)
+
+        lily_strings = [abjad.lilypond(component) for component in container]
 
         peak_amounts = [2, 4, 5, 3, 2, 1, 2, 4]
         peak_amounts = trinton.rotated_sequence(peak_amounts, index % len(peak_amounts))
@@ -689,7 +710,9 @@ def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), in
         amplitude_sequence = peak_amounts[::-1]
 
         amplitude_sequence_index = 0
-        for selection, peak_amount in zip(selections, itertools.cycle(peak_amounts)):
+        for selection, lily_string, peak_amount in zip(
+            selections, lily_strings, itertools.cycle(peak_amounts)
+        ):
             amplitudes = []
             rotated_amplitude_sequence = trinton.rotated_sequence(
                 amplitude_sequence, amplitude_sequence_index % len(amplitude_sequence)
@@ -698,40 +721,56 @@ def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), in
                 amplitudes.append(rotated_amplitude_sequence[_])
             amplitude_sequence_index += peak_amount
 
-            amplitudes_string = r"("
-
+            temp_amplitudes = []
             for amplitude in amplitudes:
-                amplitudes_string += rf"{amplitude}"
-                amplitudes_string += " "
+                temp_amplitudes.append(amplitude)
+                temp_amplitudes.append(amplitude * -1)
 
-            amplitudes_string += r")"
+            amplitudes = temp_amplitudes
 
-            vibrato_spanner = abjad.LilyPondLiteral(
-                rf"\vibrato #'{amplitudes_string} #{amplitudes[-1]}  #0.2",
-                site="before",
+            lines = [
+                r"\fancy-gliss",
+                "   #'(",
+            ]
+            for i, amplitude in enumerate(amplitudes):
+                s = f"      ({i} 0 {i}.5 {amplitude} {i + 1} 0)"
+                lines.append(s)
+            lines.append(f" )")
+            lines.append(" #2")
+
+            fancy_gliss = "\n".join(lines)
+
+            markup = abjad.Markup(
+                rf"""\markup {{
+                \hspace #-2.5
+                \score {{
+                    \new Staff \with {{
+                      \remove "Time_signature_engraver"
+                    }}
+                    {{
+                        \clef "percussion"
+                        \override Staff.Clef.stencil = #ly:text-interface::print
+                        \override Staff.Clef.text = {relevant_clef}
+                        \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
+                        \override Staff.StaffSymbol.line-count = #3
+                        \override Staff.NoteHead.transparent = ##t
+                        \override Staff.Stem.stencil = ##f
+                        \override Staff.Flag.stencil = ##f
+                        \override Staff.Dots.stencil = ##f
+                        \override Staff.TupletBracket.stencil = ##f
+                        \override Staff.TupletNumber.stencil = ##f
+                        {fancy_gliss}
+                        {lily_string}
+                    }}
+                    \layout {{
+                      ragged-right = ##t
+                      indent = 0\cm
+                    }}
+                  }}
+                }}"""
             )
 
-            aftergrace_container = abjad.AfterGraceContainer("c'16")
-            abjad.override(
-                abjad.select.leaf(aftergrace_container, 0)
-            ).NoteHead.transparent = True
-            invisible_literal = abjad.LilyPondLiteral(
-                [
-                    r"\once \override Stem.stencil = ##f",
-                    r"\once \override Flag.stencil = ##f",
-                    r"\once \override NoteHead.no-ledgers = ##t",
-                    r"\once \override Accidental.stencil = ##f",
-                ],
-                site="before",
-            )
-            abjad.attach(invisible_literal, abjad.select.leaf(aftergrace_container, 0))
-            abjad.attach(
-                abjad.StopTrillSpan(), abjad.select.leaf(aftergrace_container, 0)
-            )
-
-            abjad.attach(vibrato_spanner, abjad.select.leaf(selection, 0))
-            abjad.attach(abjad.StartTrillSpan(), abjad.select.leaf(selection, 0))
-            abjad.attach(aftergrace_container, abjad.select.leaf(selection, -1))
+            abjad.attach(markup, abjad.select.leaf(selection, 0), direction=abjad.UP)
 
     return vibrato
 
