@@ -679,9 +679,7 @@ def guitar_note_heads(selector):
     return note_heads
 
 
-def vibrato_spanner(
-    instrument="oboe", selector=trinton.logical_ties(pitched=True, grace=False), index=0
-):
+def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), index=0):
     def vibrato(argument):
         selections = selector(argument)
         container = abjad.Container()
@@ -708,6 +706,7 @@ def vibrato_spanner(
         peak_amounts = trinton.rotated_sequence(peak_amounts, index % len(peak_amounts))
 
         amplitude_sequence = peak_amounts[::-1]
+        peak_amounts = [_ * 2 for _ in peak_amounts]
 
         amplitude_sequence_index = 0
         for selection, lily_string, peak_amount in zip(
@@ -718,7 +717,9 @@ def vibrato_spanner(
                 amplitude_sequence, amplitude_sequence_index % len(amplitude_sequence)
             )
             for _ in range(0, peak_amount):
-                amplitudes.append(rotated_amplitude_sequence[_])
+                amplitudes.append(
+                    rotated_amplitude_sequence[_ % len(rotated_amplitude_sequence)]
+                )
             amplitude_sequence_index += peak_amount
 
             temp_amplitudes = []
@@ -750,7 +751,8 @@ def vibrato_spanner(
                     {{
                         \clef "percussion"
                         \override Staff.Clef.stencil = #ly:text-interface::print
-                        \override Staff.Clef.text = {relevant_clef}
+                        \override Staff.Clef.text = \vibrato-clef
+                        \override Staff.Clef.X-extent = ##f
                         \override Staff.StaffSymbol.line-positions = #'(4.75 0 -4.75)
                         \override Staff.StaffSymbol.line-count = #3
                         \override Staff.NoteHead.transparent = ##t

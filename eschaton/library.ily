@@ -196,6 +196,20 @@ guitar-stringing-clef = \markup {
     }
 }
 
+vibrato-clef = \markup {
+    \override #'(font-name . "ekmelos")
+    \fontsize #2
+    \raise #2.25
+    \override #'(baseline-skip . 2.25)
+    {
+        \center-column {
+            \line { \char ##xe282 }
+            \line { \char ##xe261 }
+            \line { \char ##xe280 }
+        }
+    }
+}
+
 % U+E06B
 
 body-clef = \markup {
