@@ -1218,7 +1218,7 @@ trinton.make_music(
     evans.PitchHandler([["c'''''", "b''''", "as''''"]]),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
-        selector=trinton.select_leaves_by_index([0, 3, 4, 8, 9, 11, 12, 16, 17, 20]),
+        selector=trinton.select_leaves_by_index([0, 3, 4, 8, 9, 12, 13, 16, 17, 20]),
     ),
     trinton.ottava_command(
         octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)

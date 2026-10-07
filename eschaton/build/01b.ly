@@ -3126,10 +3126,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >32
+                                    r16.
                                     ]
                                     r16.
                                     [
-                                    r16.
                                     <
                                         \tweak style #'cross
                                         as''''
