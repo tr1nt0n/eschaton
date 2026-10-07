@@ -337,10 +337,11 @@ trinton.make_music(
             [0, 3, 8, -1], pitched=True, grace=False
         ),
     ),
-    trinton.duration_line(
+    trinton.attachment_command(
+        attachments=[abjad.LaissezVibrer()],
         selector=trinton.select_logical_ties_by_index(
-            [3, -3, -2, -1], pitched=True, grace=False
-        )
+            [3, -3, -2, -1], last=True, pitched=True, grace=False
+        ),
     ),
     trinton.noteheads_only(selector=trinton.pleaves(grace=True)),
     trinton.hooked_spanner_command(
@@ -375,7 +376,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=["Slap attack", "+ hold pitch"],
+            string=["Slap attack", "+ sustain pitch"],
             column="\column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
@@ -389,7 +390,7 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=["Slap attack", "+ hold pitch"],
+            string=["Slap attack", "+ sustain pitch"],
             column="\column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
@@ -399,9 +400,9 @@ trinton.make_music(
         padding=16,
         style="dashed-line-with-hook",
         selector=trinton.select_logical_ties_by_index(
-            [-6, -1], first=True, pitched=True
+            [-3, -1], first=True, pitched=True, grace=False
         ),
-        right_padding=0.5,
+        right_padding=15,
     ),
     voice=score["oboe voice"],
 )
@@ -991,7 +992,7 @@ trinton.make_music(
     trinton.hooked_spanner_command(
         string=r"""\markup { \override #'(font-size . -4) { \note {16} #1.75 } }""",
         full_string=True,
-        padding=14,
+        padding=12.5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([10, 13]),
         right_padding=-0.5,
@@ -1024,7 +1025,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([1, 3, 3, 5, 5, 7], grace=False),
         style="solid-line-with-arrow",
         padding=9,
-        right_padding=0,
+        right_padding=-1.5,
         direction=None,
         full_string=True,
         end_hook=True,
@@ -1059,7 +1060,7 @@ trinton.make_music(
             [3, 4, 4, 5], first=True, pitched=True, grace=False
         ),
         style="solid-line-with-arrow",
-        padding=10.5,
+        padding=9,
         right_padding=0,
         direction=None,
         full_string=True,

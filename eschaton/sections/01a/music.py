@@ -783,6 +783,20 @@ trinton.make_music(
 )
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    evans.RhythmHandler(evans.talea([-3, 1, 1, 1, 1, -100], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler([["c'", "df'"], ["b''", "c'''"]]),
+    trinton.continuous_glissando(selector=trinton.pleaves()),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("p"), abjad.LaissezVibrer()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
+    ),
+    voice=score["percussion 1 voice"],
+    beam_meter=True,
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (4, 8)),
     evans.RhythmHandler(
         evans.talea(
@@ -799,13 +813,6 @@ trinton.make_music(
             [1, 3], 5, exclude=[0, 1, 2, 3, 4, 5], pitched=True, grace=False
         ),
         pitch_list=[["c'", "df'", "b'"]],
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("p"),
-        ],
-        selector=trinton.select_leaves_by_index([0], pitched=True),
-        direction=abjad.DOWN,
     ),
     voice=score["percussion 1 voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),

@@ -74,7 +74,7 @@ afterGraceFraction = #(cons 15 16)
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
 
-        \override AccidentalSuggestion.avoid-slur = #'ignore
+        \override AccidentalSuggestion.avoid-slur = #'inside
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
@@ -88,6 +88,8 @@ afterGraceFraction = #(cons 15 16)
         \override Script.layer = 2
         \override Script.whiteout-style = #'outline
         \override Script.whiteout = 1
+        \override Script.avoid-slur = #'inside
+        \override Script.outside-staff-priority = ##f
 
         \override BarLine.hair-thickness = 0.5
         \override BarLine.thick-thickness = #10
@@ -170,7 +172,7 @@ afterGraceFraction = #(cons 15 16)
         \override Tie.height-limit = 6
         \override Tie.thickness = 1.5
 
-        \override TrillSpanner.bound-details.right.padding = #-1
+        % \override TrillSpanner.bound-details.right.padding = #-3
 
         \shape #'((0 . 0) (0.5 . 0) (1 . 0) (2 . 0)) LaissezVibrerTie
         \override LaissezVibrerTie.X-extent = ##f

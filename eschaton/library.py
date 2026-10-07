@@ -679,7 +679,9 @@ def guitar_note_heads(selector):
     return note_heads
 
 
-def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), index=0):
+def vibrato_spanner(
+    selector=trinton.logical_ties(pitched=True, grace=False), index=0, peak_multiplier=2
+):
     def vibrato(argument):
         selections = selector(argument)
         container = abjad.Container()
@@ -706,7 +708,7 @@ def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), in
         peak_amounts = trinton.rotated_sequence(peak_amounts, index % len(peak_amounts))
 
         amplitude_sequence = peak_amounts[::-1]
-        peak_amounts = [_ * 2 for _ in peak_amounts]
+        peak_amounts = [_ * peak_multiplier for _ in peak_amounts]
 
         amplitude_sequence_index = 0
         for selection, lily_string, peak_amount in zip(
@@ -737,13 +739,13 @@ def vibrato_spanner(selector=trinton.logical_ties(pitched=True, grace=False), in
                 s = f"      ({i} 0 {i}.5 {amplitude} {i + 1} 0)"
                 lines.append(s)
             lines.append(f" )")
-            lines.append(" #2")
+            lines.append(" #-2")
 
             fancy_gliss = "\n".join(lines)
 
             markup = abjad.Markup(
                 rf"""\markup {{
-                \hspace #-2.5
+                \hspace #-2.2
                 \score {{
                     \new Staff \with {{
                       \remove "Time_signature_engraver"

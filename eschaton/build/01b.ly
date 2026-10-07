@@ -812,11 +812,10 @@
                                     \times 5/6
                                     {
                                         r8
-                                        \once \override Dots.staff-position = #2
-                                        \afterGrace
                                         ef'''4
+                                        \laissezVibrer
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -857,7 +856,7 @@
                                               (18 0 18.5 2 19 0)
                                               (19 0 19.5 -2 20 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak text #tuplet-number::calc-fraction-text
                                         \tweak edge-height #'(0.7 . 0)
                                         \times 5/9
@@ -890,45 +889,11 @@
                                                             }
                                                           }
                                                         }
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         - \tweak padding #16
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Slap attack } \line { + hold pitch }  } } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Slap attack } \line { + sustain pitch }  } } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpan
-                                        {
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override Dots.staff-position = #2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                              %! abjad.glissando(6)
-                                            \revert Accidental.stencil
-                                              %! abjad.glissando(6)
-                                            \revert NoteColumn.glissando-skip
-                                              %! abjad.glissando(6)
-                                            \revert NoteHead.no-ledgers
-                                              %! abjad.glissando(6)
-                                            \undo \hide NoteHead
-                                            ef'''16
-                                        }
                                         \revert-noteheads
                                     }
                                     \times 2/3
@@ -957,7 +922,7 @@
                                         ef'''4
                                         \p
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -990,7 +955,7 @@
                                               (10 0 10.5 5 11 0)
                                               (11 0 11.5 -5 12 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak text #tuplet-number::calc-fraction-text
                                         \tweak edge-height #'(0.7 . 0)
                                         \times 5/9
@@ -1042,11 +1007,10 @@
                                         r16
                                         \stopTextSpan
                                         [
-                                        \once \override Dots.staff-position = #2
-                                        \afterGrace
                                         ef'''8.
+                                        \laissezVibrer
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -1075,7 +1039,7 @@
                                               (6 0 6.5 2 7 0)
                                               (7 0 7.5 -2 8 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak text #tuplet-number::calc-fraction-text
                                         \times 3/4
                                         {
@@ -1108,53 +1072,18 @@
                                                           }
                                                         }
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         - \tweak padding #16
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Slap attack } \line { + hold pitch }  } } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -0.5
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Slap attack } \line { + sustain pitch }  } } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -15
                                         \startTextSpan
-                                        {
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override Dots.staff-position = #2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                              %! abjad.glissando(6)
-                                            \revert Accidental.stencil
-                                              %! abjad.glissando(6)
-                                            \revert NoteColumn.glissando-skip
-                                              %! abjad.glissando(6)
-                                            \revert NoteHead.no-ledgers
-                                              %! abjad.glissando(6)
-                                            \undo \hide NoteHead
-                                            ef'''16
-                                        }
                                     }
                                     r32
                                     [
-                                    \once \override Dots.staff-position = #2
-                                    \afterGrace
                                     ef'''16.
+                                    \laissezVibrer
                                     ^ \markup {
-                                                    \hspace #-2.5
+                                                    \hspace #-2.2
                                                     \score {
                                                         \new Staff \with {
                                                           \remove "Time_signature_engraver"
@@ -1179,7 +1108,7 @@
                                           (2 0 2.5 2 3 0)
                                           (3 0 3.5 -2 4 0)
                                      )
-                                     #2
+                                     #-2
                                                             \tweak text #tuplet-number::calc-fraction-text
                                     \times 1/1
                                     {
@@ -1212,50 +1141,15 @@
                                                       }
                                                     }
                                     ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    {
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override Dots.staff-position = #2
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(1)
-                                        \hide NoteHead
-                                          %! abjad.glissando(1)
-                                        \override Accidental.stencil = ##f
-                                          %! abjad.glissando(1)
-                                        \override NoteColumn.glissando-skip = ##t
-                                          %! abjad.glissando(1)
-                                        \override NoteHead.no-ledgers = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        ef'''16
-                                    }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
                                         r16
                                         [
-                                        \once \override Dots.staff-position = #2
-                                        \afterGrace
                                         ef'''8.
+                                        \laissezVibrer
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -1284,7 +1178,7 @@
                                               (6 0 6.5 2 7 0)
                                               (7 0 7.5 -2 8 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak text #tuplet-number::calc-fraction-text
                                         \times 3/4
                                         {
@@ -1316,42 +1210,8 @@
                                                             }
                                                           }
                                                         }
+                                        \stopTextSpan
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-                                        {
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override Dots.staff-position = #2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                              %! abjad.glissando(6)
-                                            \revert Accidental.stencil
-                                              %! abjad.glissando(6)
-                                            \revert NoteColumn.glissando-skip
-                                              %! abjad.glissando(6)
-                                            \revert NoteHead.no-ledgers
-                                              %! abjad.glissando(6)
-                                            \undo \hide NoteHead
-                                            ef'''16
-                                            \stopTextSpan
-                                        }
                                         \revert-noteheads
                                     }
                                 }
@@ -2706,6 +2566,7 @@
                             - \tweak padding #9
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 1.5
                             \startTextSpanThree
                             ~
                             <
@@ -2734,6 +2595,7 @@
                             - \tweak padding #9
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 1.5
                             \startTextSpanThree
                             ~
                             \override Staff.Stem.stemlet-length = 0.75
@@ -2794,21 +2656,21 @@
                                 ef'''
                             >8.
                             (
-                            - \tweak padding #10.5
-                            - \abjad-solid-line-with-arrow
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
-                            \startTextSpanThree
-                            - \tweak padding #14
+                            - \tweak padding #12.5
                             - \abjad-dashed-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . -4) { \note {16} #1.75 } } \hspace #0.5 }
                             - \tweak bound-details.right.padding 0.5
                             \startTextSpanOne
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                            \startTextSpanThree
                             \override Staff.Stem.stemlet-length = 0.75
                             <d' g' b' e''>8.
                             - \open
                             \stopTextSpanThree
                             [
-                            - \tweak padding #10.5
+                            - \tweak padding #9
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
                             - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
@@ -3552,7 +3414,7 @@
                                     [
                                     ef'''8.
                                     ^ \markup {
-                                                    \hspace #-2.5
+                                                    \hspace #-2.2
                                                     \score {
                                                         \new Staff \with {
                                                           \remove "Time_signature_engraver"
@@ -3585,7 +3447,7 @@
                                           (10 0 10.5 1 11 0)
                                           (11 0 11.5 -1 12 0)
                                      )
-                                     #2
+                                     #-2
                                                             \tweak text #tuplet-number::calc-fraction-text
                                     \times 1/1
                                     {
@@ -3665,7 +3527,7 @@
                                         ef'''8.
                                         \p
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -3694,7 +3556,7 @@
                                               (6 0 6.5 4 7 0)
                                               (7 0 7.5 -4 8 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak text #tuplet-number::calc-fraction-text
                                         \times 1/1
                                         {
@@ -3754,7 +3616,7 @@
                                     [
                                     ef'''8
                                     ^ \markup {
-                                                    \hspace #-2.5
+                                                    \hspace #-2.2
                                                     \score {
                                                         \new Staff \with {
                                                           \remove "Time_signature_engraver"
@@ -3779,7 +3641,7 @@
                                           (2 0 2.5 4 3 0)
                                           (3 0 3.5 -4 4 0)
                                      )
-                                     #2
+                                     #-2
                                                             \tweak text #tuplet-number::calc-fraction-text
                                     \times 1/1
                                     {
@@ -3818,7 +3680,7 @@
                                         [
                                         ef'''8
                                         ^ \markup {
-                                                        \hspace #-2.5
+                                                        \hspace #-2.2
                                                         \score {
                                                             \new Staff \with {
                                                               \remove "Time_signature_engraver"
@@ -3847,7 +3709,7 @@
                                               (6 0 6.5 3 7 0)
                                               (7 0 7.5 -3 8 0)
                                          )
-                                         #2
+                                         #-2
                                                                 \tweak edge-height #'(0.7 . 0)
                                         \times 2/3
                                         {
@@ -3885,7 +3747,7 @@
                                     [
                                     ef'''8
                                     ^ \markup {
-                                                    \hspace #-2.5
+                                                    \hspace #-2.2
                                                     \score {
                                                         \new Staff \with {
                                                           \remove "Time_signature_engraver"
@@ -3922,7 +3784,7 @@
                                           (14 0 14.5 3 15 0)
                                           (15 0 15.5 -3 16 0)
                                      )
-                                     #2
+                                     #-2
                                                             \tweak text #tuplet-number::calc-fraction-text
                                     \times 1/1
                                     {

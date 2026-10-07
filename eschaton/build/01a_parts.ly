@@ -3261,12 +3261,26 @@
                                     r2
                                     r2.
                                     r2
-                                    r2.
+                                    r8.
+                                    <c' df'>16
+                                    \p
+                                    \glissando
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b'' c'''>16
+                                    [
+                                    \glissando
+                                    <c' df'>16
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    <b'' c'''>16
+                                    \laissezVibrer
+                                    ]
+                                    r16
+                                    r4
                                     r4
                                     \times 4/5
                                     {
                                         <c' df'>4
-                                        _ \p
                                         <c' df'>16
                                         ~
                                     }
