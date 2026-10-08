@@ -584,7 +584,7 @@ def half_note_signifier(
     return attach_markups
 
 
-def bow_contact_staff(selector, reversion_line_count=5):
+def bow_contact_staff(selector, reset=None, reversion_line_count=5):
     def attach_literals(argument):
         selections = selector(argument)
         start_literal = abjad.LilyPondLiteral(
@@ -628,11 +628,14 @@ def bow_contact_staff(selector, reversion_line_count=5):
             site="absolute_after",
         )
 
-        abjad.attach(abjad.Clef("treble"), selections[0])
-        abjad.attach(start_literal, selections[0])
-        abjad.attach(stop_literal, selections[-2])
-        abjad.attach(barline_literal, selections[-1])
-        abjad.attach(line_count_reversion, selections[-1])
+        if reset is None or reset is False:
+            abjad.attach(abjad.Clef("treble"), selections[0])
+            abjad.attach(start_literal, selections[0])
+
+        if reset is None or reset is True:
+            abjad.attach(stop_literal, selections[-2])
+            abjad.attach(barline_literal, selections[-1])
+            abjad.attach(line_count_reversion, selections[-1])
 
     return attach_literals
 
