@@ -395,7 +395,7 @@ def return_section_1_figures(accent=None, index=0, stage=1):
         figure_permutations = new_permutations
 
     if stage == 3:
-        figure_permutations = [[10, 1, -1]]
+        figure_permutations = [[4, 1, -1]]
 
     final_tuplet_list = []
 

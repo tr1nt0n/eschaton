@@ -69,11 +69,197 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r8
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Alto }
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    - \flageolet
+                                    \pp
+                                    [
+                                    (
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b''''16
+                                    - \flageolet
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    )
+                                    ]
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r8
+                                    r8.
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    g''''16
+                                    - \flageolet
+                                    (
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a''''16.
+                                    - \flageolet
+                                    [
+                                    b''''32
+                                    - \flageolet
+                                    ~
+                                    b''''16
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    ]
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a''''32
+                                    [
+                                    g''''16.
+                                    - \flageolet
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16.
+                                    - \flageolet
+                                    )
+                                    ]
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r32
+                                    r4
+                                    r4
+                                    \once \override TupletBracket.stencil = ##f
+                                    \once \override TupletNumber.stencil = ##f
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'2
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 1/1
+                                    {
+                                        \ottava 1
+                                        \set fontSize = #-3
+                                        \once \override Beam.grow-direction = #left
+                                        g''''16 * 1
+                                        - \flageolet
+                                          %! rmakers.beam()
+                                        [
+                                        (
+                                        - \tweak padding #12.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {8} #1.75 } } \hspace #0.5 }
+                                        - \tweak bound-details.right.text \markup {}
+                                        \startTextSpanOne
+                                        a''''16 * 33/32
+                                        - \flageolet
+                                        b''''16 * 37/32
+                                        - \flageolet
+                                        a''''16 * 43/32
+                                        - \flageolet
+                                        g''''16 * 103/64
+                                        - \flageolet
+                                        a''''16 * 119/64
+                                        - \flageolet
+                                          %! rmakers.beam()
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b''''8
+                                    - \flageolet
+                                    \stopTextSpanOne
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''8
+                                    - \flageolet
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''8
+                                    - \flageolet
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''8
+                                    - \flageolet
+                                    ]
+                                    b''''8
+                                    - \flageolet
+                                    )
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r8
+                                    r16
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    - \flageolet
+                                    [
+                                    (
+                                    ~
+                                    g''''16
+                                    \revert Staff.Stem.stemlet-length
+                                    a''''16
+                                    - \flageolet
+                                    ]
+                                    ~
+                                    a''''16
+                                    )
+                                    \ottava 0
+                                    \set fontSize = #-1
+                                    r16
+                                    r16
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    g''''16
+                                    - \flageolet
+                                    (
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g''''16
+                                    [
+                                    a''''16
+                                    - \flageolet
+                                    ~
+                                    a''''16
+                                    \revert Staff.Stem.stemlet-length
+                                    b''''16
+                                    - \flageolet
+                                    )
+                                    ]
+                                    \ottava 0
+                                    \set fontSize = #-1
                                 }
                             }
                         }
@@ -86,8 +272,205 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Oboe }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Ob. }
-                                    r2.
-                                    r2.
+                                    <
+                                        \tweak style #'harmonic
+                                        eqs''
+                                        \tweak style #'harmonic
+                                        bqs''
+                                    >8
+                                    \pp
+                                    - \tweak padding 3.25
+                                    ^ \markup \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) }
+                                    [
+                                    <
+                                        \tweak style #'harmonic
+                                        f''
+                                        \tweak style #'harmonic
+                                        cqf'''
+                                    >16.
+                                    - \tweak padding #11.25
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
+                                    \startTextSpan
+                                    r32
+                                    ]
+                                    r16
+                                    [
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 7/6
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        r32
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak style #'harmonic
+                                            f''
+                                            \tweak style #'harmonic
+                                            cqf'''
+                                        >8
+                                          %! abjad.glissando(7)
+                                        - \abjad-zero-padding-glissando
+                                          %! abjad.glissando(7)
+                                        \glissando
+                                        ~
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        \afterGrace
+                                        <
+                                            \tweak style #'harmonic
+                                            f''
+                                            \tweak style #'harmonic
+                                            cqf'''
+                                        >32
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                              %! abjad.glissando(6)
+                                            \revert Accidental.stencil
+                                              %! abjad.glissando(6)
+                                            \revert NoteColumn.glissando-skip
+                                              %! abjad.glissando(6)
+                                            \revert NoteHead.no-ledgers
+                                              %! abjad.glissando(6)
+                                            \undo \hide NoteHead
+                                            <g'' d'''>16
+                                        }
+                                        r32
+                                        <
+                                            \tweak style #'harmonic
+                                            f''
+                                            \tweak style #'harmonic
+                                            cqf'''
+                                        >8
+                                        r32
+                                        ]
+                                    }
+                                    r32
+                                    [
+                                    <
+                                        \tweak style #'harmonic
+                                        f''
+                                        \tweak style #'harmonic
+                                        cqf'''
+                                    >16.
+                                    ~
+                                    <
+                                        \tweak style #'harmonic
+                                        f''
+                                        \tweak style #'harmonic
+                                        cqf'''
+                                    >16.
+                                    r32
+                                    ]
+                                    r32
+                                    [
+                                    \override Dots.staff-position = #2
+                                    <
+                                        \tweak style #'harmonic
+                                        f''
+                                        \tweak style #'harmonic
+                                        cqf'''
+                                    >16.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    <
+                                        \tweak style #'harmonic
+                                        f''
+                                        \tweak style #'harmonic
+                                        cqf'''
+                                    >16
+                                    {
+                                        \once \override Stem.stencil = ##f
+                                        \once \override Flag.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override Accidental.stencil = ##f
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        <d'' a''>16
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 10/8
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 4
+                                        r64
+                                        \override Dots.staff-position = #2
+                                        \afterGrace
+                                        <
+                                            \tweak style #'harmonic
+                                            f''
+                                            \tweak style #'harmonic
+                                            cqf'''
+                                        >16..
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                            <a'' e'''>16
+                                            \stopTextSpan
+                                        }
+                                        \override Dots.staff-position = #2
+                                        \afterGrace
+                                        <
+                                            \tweak style #'harmonic
+                                            eqs''
+                                            \tweak style #'harmonic
+                                            bqs''
+                                        >16.
+                                        - \tweak padding 3.25
+                                        ^ \markup \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) }
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \once \override Stem.stencil = ##f
+                                            \once \override Flag.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override Accidental.stencil = ##f
+                                            \revert Dots.staff-position
+                                            \once \override NoteHead.transparent = ##t
+                                            <g'' d'''>16
+                                        }
+                                        r32
+                                        ]
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -105,11 +488,161 @@
                             {
                                 \context Voice = "bassclarinet voice"
                                 {
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Bass Clarinet }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Bcl. }
-                                    r2.
-                                    r2.
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''8
+                                    :64
+                                    \pp
+                                    [
+                                    - \tweak padding #8.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rapid, random pressing of buttons + teeth on reed } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpan
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''16.
+                                    :128
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''32
+                                    :256
+                                    - \staccato
+                                    ]
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''32
+                                    :256
+                                    - \staccato
+                                    [
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''32
+                                    :256
+                                    - \staccato
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 7/6
+                                    {
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''32
+                                        :256
+                                        - \staccato
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''8
+                                        :64
+                                        ~
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''32
+                                        :256
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''32
+                                        :256
+                                        - \staccato
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''8
+                                        :64
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''32
+                                        :256
+                                        - \staccato
+                                        ]
+                                    }
+                                    \override Dots.staff-position = #2
+                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                    e'''8
+                                    :64
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.X-extent = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \revert Dots.staff-position
+                                    \once \override NoteHead.transparent = ##t
+                                    c'''32
+                                    :256
+                                    ]
+                                    r32
+                                    \times 2/3
+                                    {
+                                        \override Dots.staff-position = #2
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''4
+                                        :32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.X-extent = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        b''16
+                                        :128
+                                        r16
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        \override Dots.staff-position = #2
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        e'''4
+                                        :32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.X-extent = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \revert Dots.staff-position
+                                        \once \override NoteHead.transparent = ##t
+                                        c'''16
+                                        :128
+                                        r16
+                                        \stopTextSpan
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -458,10 +991,16 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
+                                    \afterGrace
                                     f'16.
-                                    \sustainOff
                                     ]
-                                    \revert Stem.direction
+                                    \glissando
+                                    {
+                                        \once \override Flag.stroke-style = #"grace"
+                                        ef'''16
+                                        \sustainOff
+                                        \revert Stem.direction
+                                    }
                                     r2.
                                     r2.
                                     r2.

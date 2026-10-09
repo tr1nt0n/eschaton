@@ -415,7 +415,7 @@ def multiple_muting(
 
 
 def attach_oboe_double_harmonic_markups(
-    selector, padding=11.25, right_padding=1.5, command="One"
+    selector, padding=11.25, right_padding=1.5, command=""
 ):
     def attach(argument):
         selections = selector(argument)
@@ -491,7 +491,7 @@ def attach_oboe_double_harmonic_markups(
             else:
                 markup = abjad.Markup(markup_string)
                 markup = abjad.bundle(
-                    markup, abjad.Tweak(rf"- \tweak padding {padding}")
+                    markup, abjad.Tweak(rf"- \tweak padding {padding - 8}")
                 )
                 abjad.attach(markup, first_leaf, direction=abjad.UP)
 
@@ -802,8 +802,8 @@ def flute_flageolets(selector=trinton.pleaves(), ametric=True, ottava=True):
 
             abjad.slur(group)
 
-            for leaf in abjad.select.leaves(group):
-                abjad.attach(abjad.Articulation("flageolet"), leaf)
+            for tie in abjad.select.logical_ties(group):
+                abjad.attach(abjad.Articulation("flageolet"), abjad.select.leaf(tie, 0))
 
             if ametric is True:
                 for leaf in all_but_first:
