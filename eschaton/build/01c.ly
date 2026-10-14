@@ -5,15 +5,19 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -52,11 +56,112 @@
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Fl. }
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r8
+                                    r4
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Alto }
+                                    r8
+                                    [
+                                    \times 2/3
+                                    {
+                                        r8
+                                        \tweak style #'la
+                                        b'16
+                                        \p
+                                        ]
+                                        - \tweak padding #11.75
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                        _ (
+                                    }
+                                    \times 2/3
+                                    {
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            \tweak style #'la
+                                            c'32
+                                            [
+                                            \tweak style #'la
+                                            bf'32
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            \tweak style #'la
+                                            d'32
+                                        }
+                                        \revert TupletNumber.text
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        \tweak style #'la
+                                        aqs'16
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'la
+                                        c'16
+                                        )
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16
+                                        \tweak style #'la
+                                        bqs'16
+                                        _ (
+                                        \tweak style #'la
+                                        fqs'16
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \tweak style #'la
+                                        aqs'16
+                                        [
+                                        \tweak style #'la
+                                        gqs'32
+                                        \tweak style #'la
+                                        b'32
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'la
+                                        fqs'32
+                                        )
+                                    }
+                                    r16
+                                    \stopTextSpan
+                                    ]
+                                    r2
+                                    r8.
+                                    \times 2/3
+                                    {
+                                        r4
+                                        \tweak style #'la
+                                        cs'8
+                                        [
+                                        - \tweak padding #9
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                        _ (
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        \tweak style #'la
+                                        fs'8
+                                        ~
+                                        \tweak style #'la
+                                        fs'32
+                                        \tweak style #'la
+                                        b'16.
+                                        )
+                                        ]
+                                        r8
+                                        \stopTextSpan
+                                    }
+                                    r8
                                     \ottava 1
                                     \set fontSize = #-3
                                     \override Staff.Stem.stemlet-length = 0.75
@@ -629,9 +734,130 @@
                                         r16
                                         \stopTextSpan
                                     }
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r8
+                                    [
+                                    \times 2/3
+                                    {
+                                        r8
+                                        \big-half-harmonic
+                                        cs'16
+                                        :128
+                                        \p
+                                        ]
+                                        (
+                                        - \tweak padding #12.25
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                    }
+                                    \times 2/3
+                                    {
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            \big-half-harmonic
+                                            d'32
+                                            :256
+                                            [
+                                            \big-half-harmonic
+                                            c'32
+                                            :256
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            e'32
+                                            :256
+                                        }
+                                        \revert TupletNumber.text
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        bqs16
+                                        :128
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        d'16
+                                        :128
+                                        )
+                                    }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16
+                                        \big-half-harmonic
+                                        dqf'16
+                                        :128
+                                        (
+                                        \big-half-harmonic
+                                        gqs'16
+                                        :128
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \big-half-harmonic
+                                        bqs16.
+                                        :128
+                                        [
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
+                                            aqs32
+                                            :256
+                                            \big-half-harmonic
+                                            cs'32
+                                            :256
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            gqs'32
+                                            :256
+                                            )
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    r16
+                                    \stopTextSpan
+                                    ]
+                                    r2
+                                    r8.
+                                    \times 2/3
+                                    {
+                                        r4
+                                        \big-half-harmonic
+                                        ef'8
+                                        :64
+                                        [
+                                        (
+                                        - \tweak padding #12.25
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        \big-half-harmonic
+                                        af'8
+                                        :64
+                                        \big-half-harmonic
+                                        cs''16.
+                                        :128
+                                        )
+                                        ]
+                                        r8
+                                        \stopTextSpan
+                                        r32
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -1057,8 +1283,144 @@
                                     \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Piano }
                                       %! +SCORE
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Pno. }
-                                    r2.
-                                    r2.
+                                    r8..
+                                    [
+                                    \ottava 2
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    \pp
+                                    ]
+                                    \unaCorda
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    [
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 7/6
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        <
+                                            \tweak style #'cross
+                                            as''''
+                                            \tweak style #'cross
+                                            b''''
+                                            \tweak style #'cross
+                                            c'''''
+                                        >32
+                                        - \accent
+                                        - \stopped
+                                        r8
+                                        r32
+                                        <
+                                            \tweak style #'cross
+                                            as''''
+                                            \tweak style #'cross
+                                            b''''
+                                            \tweak style #'cross
+                                            c'''''
+                                        >32
+                                        - \accent
+                                        - \stopped
+                                        r8
+                                        <as'''' b'''' c'''''>32
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.4
+                                                    #:dynamic "fff"
+                                                    #:hspace -0.2
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        ]
+                                        \sustainOn
+                                    }
+                                    r8
+                                    \sustainOff
+                                    [
+                                    <
+                                        \tweak style #'cross
+                                        as''''
+                                        \tweak style #'cross
+                                        b''''
+                                        \tweak style #'cross
+                                        c'''''
+                                    >32
+                                    - \accent
+                                    - \stopped
+                                    \pp
+                                    r32
+                                    ]
+                                    \times 2/3
+                                    {
+                                        r4
+                                        <as'''' b'''' c'''''>16
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.4
+                                                    #:dynamic "fff"
+                                                    #:hspace -0.2
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
+                                                )
+                                            )
+                                        \sustainOn
+                                        r16
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                        r4
+                                        \sustainOff
+                                        <
+                                            \tweak style #'cross
+                                            as''''
+                                            \tweak style #'cross
+                                            b''''
+                                            \tweak style #'cross
+                                            c'''''
+                                        >16
+                                        - \accent
+                                        - \stopped
+                                        \pp
+                                        \treCorde
+                                        \ottava 0
+                                        r16
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -1123,10 +1485,45 @@
                             {
                                 \context Voice = "viola voice"
                                 {
+                                    \staff-line-count 1
+                                    \override Staff.Clef.stencil = ##f
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
-                                    r2.
+                                    \clef "percussion"
+                                    \tweak style #'cross
+                                    c'8
+                                    \pp
+                                    [
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    \tweak style #'cross
+                                    c'16.
+                                    r32
+                                    ]
+                                    r16
+                                    [
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 7/6
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        r32
+                                        \tweak style #'cross
+                                        c'8
+                                        ~
+                                        \tweak style #'cross
+                                        c'32
+                                        r32
+                                        \tweak style #'cross
+                                        c'8
+                                        \stopTextSpan
+                                        r32
+                                        ]
+                                    }
                                     r2.
                                     r2.
                                     r2.

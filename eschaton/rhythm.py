@@ -419,7 +419,10 @@ def return_section_1_figures(accent=None, index=0, stage=1):
                         new_tuplet.append(_)
                 if accent == "short":
                     if _ != 1:
-                        new_integer = _ * -1
+                        if _ > 0:
+                            new_integer = _ * -1
+                        else:
+                            new_integer = _
                         new_tuplet.append(new_integer)
                     else:
                         new_tuplet.append(_)
