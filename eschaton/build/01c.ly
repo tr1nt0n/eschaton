@@ -1297,7 +1297,7 @@
                             \times 2/3
                             {
                                 r4
-                                <fs bf cs' g' b'>8
+                                <as cs' fs' g' b'>8
                                 :64
                                 - \tweak padding #10
                                 - \abjad-dashed-line-with-hook
@@ -1309,7 +1309,7 @@
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 5/6
                             {
-                                <fs bf cs' g' b'>4
+                                <as cs' fs' g' b'>4
                                 :32
                                 r8
                                 \stopTextSpan
