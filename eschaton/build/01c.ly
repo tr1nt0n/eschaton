@@ -64,10 +64,10 @@
                                     {
                                         r8
                                         \tweak style #'la
-                                        b'16
+                                        bf'16
                                         \p
                                         ]
-                                        - \tweak padding #11.75
+                                        - \tweak padding #11.5
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1
@@ -80,24 +80,24 @@
                                         \times 2/3
                                         {
                                             \tweak style #'la
-                                            c'32
+                                            d'32
                                             [
                                             \tweak style #'la
-                                            bf'32
+                                            aqs'32
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             \tweak style #'la
-                                            d'32
+                                            c'32
                                         }
                                         \revert TupletNumber.text
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         \tweak style #'la
-                                        aqs'16
+                                        bqs'16
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         \tweak style #'la
-                                        c'16
+                                        fqs'16
                                         )
                                     }
                                     \times 2/3
@@ -106,26 +106,26 @@
                                         \set stemRightBeamCount = 2
                                         r16
                                         \tweak style #'la
-                                        bqs'16
+                                        aqs'16
                                         _ (
                                         \tweak style #'la
-                                        fqs'16
+                                        gqs'16
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
                                         \tweak style #'la
-                                        aqs'16
+                                        b'16
                                         [
                                         \tweak style #'la
-                                        gqs'32
+                                        fqs'32
                                         \tweak style #'la
-                                        b'32
+                                        cs'32
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         \tweak style #'la
-                                        fqs'32
+                                        fs'32
                                         )
                                     }
                                     r16
@@ -137,9 +137,9 @@
                                     {
                                         r4
                                         \tweak style #'la
-                                        cs'8
+                                        b'8
                                         [
-                                        - \tweak padding #9
+                                        - \tweak padding #10
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1
@@ -150,12 +150,12 @@
                                     \times 5/6
                                     {
                                         \tweak style #'la
-                                        fs'8
+                                        g'8
                                         ~
                                         \tweak style #'la
-                                        fs'32
+                                        g'32
                                         \tweak style #'la
-                                        b'16.
+                                        bqs'16.
                                         )
                                         ]
                                         r8
@@ -1237,9 +1237,83 @@
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
                             r2.
                             r2.
-                            r2.
-                            r2.
-                            r2.
+                            r4
+                            r8
+                            [
+                            \times 2/3
+                            {
+                                r8
+                                <a bf d' b' c''>16
+                                :128
+                                \p
+                                ]
+                                - \tweak padding #15.5
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg., MST } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 1
+                                \startTextSpan
+                                ~
+                            }
+                            \times 2/3
+                            {
+                                \times 2/3
+                                {
+                                    <a bf d' b' c''>16
+                                    :128
+                                    [
+                                    <fs c' d' b'>32
+                                    :256
+                                    ~
+                                }
+                                <fs c' d' b'>8
+                                :64
+                            }
+                            \times 2/3
+                            {
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 2
+                                r16
+                                <a bf fs' b'>8
+                                :64
+                                ]
+                                ~
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 6/5
+                            {
+                                <a bf fs' b'>16.
+                                :128
+                                [
+                                \set stemLeftBeamCount = 2
+                                \set stemRightBeamCount = 1
+                                <f cs' fs' gs' b'>16
+                                :128
+                            }
+                            r16
+                            \stopTextSpan
+                            ]
+                            r2
+                            r8.
+                            \times 2/3
+                            {
+                                r4
+                                <fs bf cs' g' b'>8
+                                :64
+                                - \tweak padding #10
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg., MSP } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 1
+                                \startTextSpan
+                                ~
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 5/6
+                            {
+                                <fs bf cs' g' b'>4
+                                :32
+                                r8
+                                \stopTextSpan
+                            }
                             r2.
                             r2.
                             r2.
