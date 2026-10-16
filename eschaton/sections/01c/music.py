@@ -99,6 +99,16 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index([0], first=True),
         direction=abjad.UP,
     ),
+    library.smorzando(
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+        angles=16,
+    ),
+    library.smorzando(
+        selector=trinton.select_logical_ties_by_index(
+            [12], first=True, pitched=True, grace=False
+        ),
+        angles=9,
+    ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
             string=r"Air",
@@ -108,7 +118,7 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=11.5,
+        padding=14.5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([3, 16]),
         right_padding=-1,
@@ -122,10 +132,10 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=10,
+        padding=13,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([20, 24]),
-        right_padding=-1,
+        right_padding=0,
     ),
     voice=score["altoflute voice"],
     preprocessor=trinton.fuse_eighths_preprocessor((3, 3, 5, 7)),
@@ -437,6 +447,23 @@ trinton.make_music(
     ),
     voice=score["oboe voice"],
     preprocessor=trinton.fuse_sixteenths_preprocessor((5, 7, 7, 5)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 5)),
+    evans.RhythmHandler(evans.talea([-5, 19, 12, -100], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["ef'''"]),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
+    library.vibrato_spanner(
+        selector=trinton.logical_ties(pitched=True, grace=False),
+        index=18,
+        peak_multiplier=8,
+    ),
+    voice=score["oboe voice"],
 )
 
 # clarinet music
@@ -893,6 +920,30 @@ trinton.make_music(
         ),
     ),
     voice=score["piano 1 voice"],
+)
+
+# violin music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 5)),
+    evans.RhythmHandler(evans.talea([-5, 19, 12, -100], 32)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["ef'''", "eqf'''"]),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
+    library.vibrato_spanner(
+        selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
+        index=17,
+        peak_multiplier=8,
+    ),
+    library.vibrato_spanner(
+        selector=trinton.select_logical_ties_by_index([1], pitched=True, grace=False),
+        index=18,
+        peak_multiplier=6,
+    ),
+    voice=score["violin voice"],
 )
 
 # viola music
