@@ -21,21 +21,28 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
+            \pageBreak
         }
         \tag #'group1
         {
@@ -296,14 +303,6 @@
                                                         {
                                                             \char ##xe611
                                                         }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe610
-                                                            }
-                                                            \hspace #-0.77
-                                                            {
-                                                                \char ##xe611
-                                                            }
                                                             \hspace #-0.77
                                                             {
                                                                 \char ##xe610
@@ -1334,9 +1333,120 @@
                                         \stopTextSpan
                                         r32
                                     }
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r16
+                                    [
+                                    \override TupletNumber.text = \markup { 3:2 }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16
+                                        \big-half-harmonic
+                                        a'16
+                                        :128
+                                        \pp
+                                        (
+                                        - \tweak padding #4.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        dqf''16
+                                        :128
+                                    }
+                                    \revert TupletNumber.text
+                                    \big-half-harmonic
+                                    bqf'16
+                                    :128
+                                    ]
+                                    ~
+                                    \big-half-harmonic
+                                    bqf'8
+                                    :64
+                                    [
+                                    \big-half-harmonic
+                                    c''8
+                                    :64
+                                    )
+                                    ]
+                                    r4
+                                    \stopTextSpan
+                                    r8.
+                                    [
+                                    \big-half-harmonic
+                                    bf'16
+                                    :128
+                                    ]
+                                    (
+                                    - \tweak padding #4.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpan
+                                    ~
+                                    \big-half-harmonic
+                                    bf'16
+                                    :128
+                                    [
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
+                                            b'32
+                                            :256
+                                            \big-half-harmonic
+                                            c''32
+                                            :256
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            bqf'32
+                                            :256
+                                        }
+                                        \revert TupletNumber.text
+                                        \big-half-harmonic
+                                        bf'16.
+                                        :128
+                                        ]
+                                    }
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        cqs''16
+                                        :128
+                                        )
+                                        [
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        r16.
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        cqs''16.
+                                        :128
+                                        (
+                                        \big-half-harmonic
+                                        bqf'16
+                                        :128
+                                        )
+                                    }
+                                    r8.
+                                    \stopTextSpan
+                                    ]
+                                    r4
                                     r2.
                                     r2.
                                 }
@@ -1692,9 +1802,107 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 80% }
+                                    r16
+                                    [
+                                    \override TupletNumber.text = \markup { 3:2 }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16
+                                        - \tweak padding #9
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                        b16
+                                        :128
+                                        \pp
+                                        (
+                                        \sustainOn
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        g16
+                                        :128
+                                    }
+                                    \revert TupletNumber.text
+                                    c'16
+                                    :128
+                                    ]
+                                    ~
+                                    c'8
+                                    :64
+                                    [
+                                    a8
+                                    :64
+                                    )
+                                    \sustainOff
+                                    ]
+                                    r4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 10% }
+                                    \stopTextSpan
+                                    r8.
+                                    [
+                                    bf16
+                                    :128
+                                    ]
+                                    (
+                                    - \tweak padding #8
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor ON } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpan
+                                    \sustainOn
+                                    ~
+                                    bf16
+                                    :128
+                                    [
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        af32
+                                        :256
+                                        a32
+                                        :256
+                                        bf32
+                                        :256
+                                        a16
+                                        :128
+                                        ]
+                                    }
+                                    \times 4/5
+                                    {
+                                        af16
+                                        :128
+                                        )
+                                        \sustainOff
+                                        [
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        r16.
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        b16
+                                        :128
+                                        (
+                                        \sustainOn
+                                        a16.
+                                        :128
+                                        )
+                                        \sustainOff
+                                    }
+                                    r8.
+                                    \stopTextSpan
+                                    ]
+                                    r4
                                     r2.
                                     r2.
                                 }
@@ -2319,9 +2527,127 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    r4
+                                    r16
+                                    [
+                                    \override TupletNumber.text = \markup { 3:2 }
+                                    \times 2/3
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        r16
+                                        \staff-line-count 5
+                                        \big-half-harmonic
+                                        \revert Staff.Clef.stencil
+                                        \clef "alto"
+                                        bqs16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \pp
+                                        - \tweak padding #13.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1
+                                        \startTextSpan
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        aqf16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                    }
+                                    \revert TupletNumber.text
+                                    \big-half-harmonic
+                                    bf16
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ]
+                                    ~
+                                    \big-half-harmonic
+                                    bf8
+                                    [
+                                    \big-half-harmonic
+                                    af8
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
+                                    ]
+                                    r4
+                                    \stopTextSpan
+                                    r8.
+                                    [
+                                    \big-half-harmonic
+                                    a16
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ]
+                                    - \tweak padding #15.25
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpan
+                                    ~
+                                    \big-half-harmonic
+                                    a16
+                                    [
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \times 2/3
+                                        {
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
+                                            bf32
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            \big-half-harmonic
+                                            aqf32
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            \big-half-harmonic
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            af32
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                        }
+                                        \revert TupletNumber.text
+                                        \big-half-harmonic
+                                        bqf16.
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        ]
+                                    }
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        bqf16.
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        [
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        r16
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        aqf16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        cqs'16.
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                    }
+                                    r8.
+                                    \stopTextSpan
+                                    ]
+                                    r4
                                     r2.
                                     r2.
                                 }
