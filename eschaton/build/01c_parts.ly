@@ -2,41 +2,78 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 25 25 25 30 22 30 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 25 25 25 30 30 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 30 30 30 30 30 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #16
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20 20 27 32 24 20 20 28)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #16
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 23 30 30 34 28 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #22
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+            \pageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #40
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
@@ -1998,11 +2035,140 @@
                                 r8
                                 \stopTextSpan
                             }
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
+                            r4
+                            r16
+                            [
+                            \times 2/3
+                            {
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 2
+                                r16
+                                <gs c' g' as' b'>8
+                                :64
+                                \pp
+                                - \tweak padding #12
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
+                                - \tweak bound-details.right.padding 1.5
+                                \startTextSpanThree
+                                - \tweak padding #15.25
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                                \startTextSpanOne
+                                ~
+                            }
+                            <gs c' g' as' b'>16
+                            :128
+                            ]
+                            ~
+                            <gs c' g' as' b'>8
+                            :64
+                            [
+                            <gs a as'>8
+                            :64
+                            \stopTextSpanThree
+                            ]
+                            r4
+                            r8.
+                            [
+                            <gs a as'>16
+                            :128
+                            ]
+                            - \tweak padding #11.25
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP }
+                            - \tweak bound-details.right.padding 1.5
+                            \startTextSpanThree
+                            ~
+                            <gs a as'>16
+                            :128
+                            [
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 6/5
+                            {
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 2
+                                <gs a as'>16
+                                :128
+                                <a as' b'>16.
+                                :128
+                                ]
+                                ~
+                            }
+                            \times 4/5
+                            {
+                                <a as' b'>16
+                                :128
+                                \stopTextSpanThree
+                                [
+                                r16.
+                            }
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
+                            :64
+                            ]
+                            - \tweak padding #8
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { SP } \hspace #0.5 }
+                            \startTextSpanThree
+                            ~
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2
+                            :32
+                            ~
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2.
+                            :32
+                            ~
+                            \afterGrace
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2.
+                            :32
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.transparent = ##t
+                                c'16
+                                \stopTextSpanOne
+                                \stopTextSpanThree
+                            }
                         }
                     }
                 }

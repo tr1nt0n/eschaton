@@ -8,6 +8,7 @@
     {
         \include "01a.ly"
         \include "01b.ly"
+        \include "01c.ly"
         % \include "02.ly"
     }
     % \midi{}
