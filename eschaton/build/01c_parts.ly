@@ -14,17 +14,9 @@
             \time 3/4
             s1 * 3/4
             \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 30 30 30 30 30 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #16
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
@@ -1532,76 +1524,60 @@
                                     \revert Staff.Stem.stemlet-length
                                     <c' df' a' b'>16
                                     ]
-                                    \once \override TupletBracket.stencil = ##f
-                                    \once \override TupletNumber.stencil = ##f
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'2.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 1/1
+                                    \times 4/5
                                     {
-                                        \once \override Beam.grow-direction = #right
-                                        <c' df' a' b'>64 * 63/16
+                                        <c' df' a' b'>16
                                         [
-                                        <c' df' a' b'>64 * 31/8
-                                        <c' df' a' b'>64 * 15/4
-                                        <c' df' a' b'>64 * 7/2
-                                        <c' df' a' b'>64 * 13/4
-                                        <c' df' a' b'>64 * 3
-                                        <c' df' a' b'>64 * 43/16
-                                        <c' df' a' b'>64 * 39/16
-                                        <c' df' a' b'>64 * 35/16
-                                        <c' df' a' b'>64 * 2
-                                        <c' df' a' b'>64 * 29/16
-                                        <c' df' a' b'>64 * 13/8
-                                        <c' df' a' b'>64 * 3/2
-                                        <c' df' a' b'>64 * 23/16
-                                        <c' df' a' b'>64 * 21/16
-                                        <c' df' a' b'>64 * 5/4
-                                        <c' df' a' b'>64 * 19/16
-                                        <c' df' a' b'>64 * 9/8
-                                        <c' df' a' b'>64 * 17/16
-                                        <c' df' a' b'>64 * 17/16
-                                        <c' df' a' b'>64 * 1
-                                        <c' df' a' b'>64 * 1
-                                        <c' df' a' b'>64 * 1
-                                        <c' df' a' b'>64 * 1
-                                        ]
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        <c' df' a' b'>16
                                     }
-                                    \revert TupletNumber.text
-                                    r2.
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        <c' df' a' b'>32
+                                    }
+                                    \times 4/5
+                                    {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        ]
+                                        ~
+                                    }
+                                    <c' df' a' b'>8
+                                    r4
+                                    - \coda
                                     r2.
                                     r2.
                                     r2.

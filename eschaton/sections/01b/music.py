@@ -22,46 +22,65 @@ score = library.eschaton_score(time_signatures)
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (3,)),
-    evans.RhythmHandler(evans.talea([1], 64)),
-    trinton.replace_with_rhythm_selection(
-        rhythmhandler=evans.RhythmHandler(
-            evans.accelerando([(1, 64), (1, 16), (1, 64)])
-        ),
-        selector=trinton.select_leaves_by_index(list(range(24, 48))),
+    evans.RhythmHandler(
+        evans.tuplet(
+            [
+                (
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                ),
+                (1, 1, 1, 1, 1),
+                (1, 1, 1, 1),
+                (1, 1, 1),
+            ],
+            treat_tuplets=False,
+        )
     ),
-    trinton.invisible_tuplet_brackets(),
-    library.flute_flageolets(
-        selector=trinton.pleaves(exclude=list(range(24, 37))), ottava=False
+    trinton.call_rmaker(
+        rmaker=rmakers.duration_bracket, selector=trinton.select_tuplets_by_index([0])
     ),
     library.flute_flageolets(
-        selector=trinton.select_leaves_by_index(list(range(24, 37))),
+        selector=trinton.select_tuplets_by_index([0]), ottava=False
+    ),
+    library.flute_flageolets(
+        selector=trinton.select_tuplets_by_index([1, 2, 3]),
         ametric=False,
         ottava=False,
     ),
-    trinton.call_rmaker(rmaker=rmakers.beam, selector=abjad.select.tuplets),
-    library.left_beam(),
+    trinton.call_rmaker(
+        rmaker=rmakers.beam, selector=trinton.select_tuplets_by_index([1, 2, 3])
+    ),
+    trinton.treat_tuplets(selector=trinton.select_tuplets_by_index([2])),
     trinton.ottava_command(
         octave=1, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
     ),
     trinton.attachment_command(
         attachments=[abjad.Dynamic("pp")], selector=trinton.select_leaves_by_index([0])
     ),
-    trinton.spanner_command(
-        strings=[
-            r"""\markup { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } }""",
-            r"\markup {}",
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [24, -1], first=True, pitched=True, grace=False
-        ),
-        style="solid-line-with-arrow",
-        padding=12.5,
-        right_padding=4,
-        direction=None,
-        full_string=True,
-        command="One",
-    ),
     voice=score["altoflute voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor((3, 1, 1, 1)),
 )
 
 trinton.make_music(
@@ -1108,40 +1127,70 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 5)),
     evans.RhythmHandler(
-        evans.talea([-6, 6, -7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 16),
-    ),
-    trinton.replace_with_rhythm_selection(
-        rhythmhandler=evans.RhythmHandler(
-            evans.accelerando([(1, 64), (1, 16), (1, 64)])
-        ),
-        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+        evans.tuplet([(-1,), (1,), (1, 1, 1, 1, 1), (1, 1, 1), (-1,), (1, 1, 1, 1, 1)]),
     ),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    evans.PitchHandler(["es''''", "f''''"]),
+    evans.PitchHandler(
+        [
+            ["es''''", "f''''"],
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+            "es''''",
+            "f''''",
+        ]
+    ),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves
+    # ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
-        selector=trinton.select_leaves_by_index([0, 12, 13, -1], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 8, 9, -1], pitched=True),
     ),
-    trinton.call_rmaker(rmaker=rmakers.beam, selector=abjad.select.tuplets),
-    library.left_beam(),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([3, 10, 14, -1]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=2),
+        ],
+        selector=trinton.select_leaves_by_index([7, 8]),
+    ),
+    trinton.tremolo_command(selector=trinton.select_leaves_by_index([0], pitched=True)),
     trinton.ottava_command(
         octave=1,
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-    ),
-    trinton.spanner_command(
-        strings=[
-            r"""\markup { \override #'(font-size . 2) { "rit. to ~" } \override #'(font-size . -4) { \note {16} #1.75 } }""",
-            r"\markup {}",
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 12], first=True, pitched=True, grace=False
-        ),
-        style="solid-line-with-arrow",
-        padding=14.5,
-        right_padding=0,
-        direction=None,
-        full_string=True,
-        command="One",
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
@@ -1152,7 +1201,7 @@ trinton.make_music(
             string_only=True,
         ),
         full_string=True,
-        padding=10.5,
+        padding=11,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
         right_padding=3,
@@ -1162,7 +1211,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     voice=score["harp voice"],
-    beam_meter=True,
+    preprocessor=trinton.fuse_sixteenths_preprocessor((6, 2, 2, 2, 7, 1000)),
 )
 
 trinton.make_music(

@@ -785,6 +785,7 @@ def vibrato_spanner(
 def flute_flageolets(selector=trinton.pleaves(), ametric=True, ottava=True):
     def attach(argument):
         selections = selector(argument)
+        selections = abjad.select.leaves(selections)
 
         selection_groups = abjad.select.group_by_contiguity(selections)
 
