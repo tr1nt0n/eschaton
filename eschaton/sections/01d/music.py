@@ -46,6 +46,47 @@ trinton.make_music(
     beam_meter=True,
 )
 
+# oboe music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    evans.RhythmHandler(evans.talea([-3, 5, -1, 3], 8)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    pitch.pitch_section_1_oboe_double_harmonics(
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.pleaves(grace=False)
+    ),
+    library.attach_oboe_double_harmonic_markups(
+        selector=trinton.pleaves(), right_padding=0
+    ),
+    trinton.aftergrace_command(
+        invisible=True, selector=trinton.logical_ties(pitched=True, grace=False)
+    ),
+    trinton.pitch_with_selector_command(
+        [["g''", "d'''"], ["c''", "g''"]], selector=trinton.pleaves(grace=True)
+    ),
+    trinton.continuous_glissando(
+        zero_padding=True,
+        selector=trinton.pleaves(),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Dynamic("p"),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.detach_command(
+        detachments=[abjad.StopTextSpan], selector=trinton.pleaves()
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.StopTextSpan()],
+        selector=trinton.select_leaves_by_index([-1], pitched=True),
+    ),
+    voice=score["oboe voice"],
+)
+
 # clarinet music
 
 trinton.make_music(
@@ -98,6 +139,46 @@ trinton.make_music(
     voice=score["bassclarinet voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1,)),
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    evans.RhythmHandler(evans.talea([-1, 3, -2, 5], 8)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["e'''"]),
+    trinton.change_notehead_command(notehead="highest", selector=trinton.pleaves()),
+    trinton.aftergrace_command(
+        invisible=True, selector=trinton.logical_ties(pitched=True, grace=False)
+    ),
+    trinton.pitch_with_selector_command(
+        ["c'''", "g'''"], selector=trinton.pleaves(grace=True)
+    ),
+    trinton.continuous_glissando(
+        zero_padding=True,
+        selector=trinton.pleaves(),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Dynamic("p"),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Rapid, random pressing of buttons + teeth on reed",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=8.5,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=2,
+    ),
+    trinton.tremolo_command(selector=trinton.pleaves(grace=False)),
+    voice=score["bassclarinet voice"],
 )
 
 # guitar music
@@ -867,7 +948,7 @@ trinton.remove_redundant_time_signatures(score=score)
 
 # breaking
 
-for measure in [1]:
+for measure in [1, 3, 5]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -877,7 +958,7 @@ for measure in [1]:
         voice=score["Global Context"],
     )
 
-for measure in [2]:
+for measure in [2, 4, 6]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
