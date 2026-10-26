@@ -293,6 +293,7 @@
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Perc. I }
                                     <c' df'>4
+                                    - \accent
                                     _ \accent
                                     _ \mp
                                     - \tweak stencil #constante-hairpin
@@ -310,9 +311,55 @@
                                     r4
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    \times 4/5
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <c' df' a' b'>16
+                                        \pp
+                                        [
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        \revert Staff.Stem.stemlet-length
+                                        <c' df' a' b'>16
+                                        ]
+                                    }
+                                    \times 4/6
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <c' df' a' b'>16
+                                        [
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        <c' df' a' b'>16
+                                        \<
+                                        <c' df' a' b'>16
+                                        \revert Staff.Stem.stemlet-length
+                                        <c' df' a' b'>16
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 8/7
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        <c' df' a' b'>32
+                                        [
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        <c' df' a' b'>32
+                                        \revert Staff.Stem.stemlet-length
+                                        <c' df' a' b'>32
+                                        ]
+                                    }
+                                    <c' df' a' b'>2.
+                                    :32
+                                    \arpeggio
+                                    \ff
+                                    ~
+                                    <c' df' a' b'>2.
+                                    :32
                                     r2.
                                     r2.
                                     r2.
@@ -368,7 +415,7 @@
                                             \once \override NoteHead.transparent = ##t
                                             \voiceOne
                                             c'8
-                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Motor 100% }
+                                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \center-column { \line { Motor } \line { 100% }  } }
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override RepeatTie.transparent = ##t
@@ -456,9 +503,82 @@
                                     \oneVoice
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
-                                    r2.
+                                    \override Dots.staff-position = #2
+                                    \override Stem.direction = #DOWN
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f16
+                                    \pp
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \sustainOn
+                                    f'''16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Staff.Stem.stemlet-length
+                                    ef'''16
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \times 4/5
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        c'16
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        ef'''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        ef'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \<
+                                        ef'''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Staff.Stem.stemlet-length
+                                        af'16
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/6
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        ef'''16
+                                        [
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        d''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        ef'''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        ef'''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        \revert Staff.Stem.stemlet-length
+                                        b''16
+                                        ]
+                                        \revert Stem.direction
+                                    }
+                                    <a'' b'' d''' ef'''>2.
+                                    :32
+                                    \arpeggio
+                                    \ff
+                                    ~
+                                    <a'' b'' d''' ef'''>2.
+                                    :32
+                                    \sustainOff
                                     r2.
                                     r2.
                                     r2.
@@ -483,9 +603,157 @@
                               %! +SCORE
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
                             r2.
-                            r2.
-                            r2.
-                            r2.
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >2
+                            :32
+                            \pp
+                            (
+                            - \tweak padding #10
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \tremolo-stretto \hspace #0.5 }
+                            \startTextSpanTwo
+                            - \tweak padding #13.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 1.5
+                            \startTextSpanOne
+                            - \tweak padding #16.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                            \startTextSpanThree
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
+                            :64
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            <d' g' b' e''>8
+                            :64
+                            - \open
+                            ]
+                            <
+                                \tweak style #'harmonic-mixed
+                                ef''
+                                \tweak style #'harmonic-mixed
+                                a''
+                                \tweak style #'harmonic-mixed
+                                b''
+                                \tweak style #'harmonic-mixed
+                                ef'''
+                            >4
+                            :32
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
+                            :64
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            <d' g' b' e''>8
+                            :64
+                            - \open
+                            ]
+                            <
+                                \tweak style #'harmonic-mixed
+                                ef''
+                                \tweak style #'harmonic-mixed
+                                a''
+                                \tweak style #'harmonic-mixed
+                                b''
+                                \tweak style #'harmonic-mixed
+                                ef'''
+                            >4
+                            :32
+                            \stopTextSpanOne
+                            \stopTextSpanTwo
+                            - \tweak padding #10
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . -4) { \note {4} #1.75 } } \hspace #0.5 }
+                            \startTextSpanTwo
+                            - \tweak padding #13.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                            \startTextSpanOne
+                            ~
+                            <
+                                \tweak style #'harmonic-mixed
+                                ef''
+                                \tweak style #'harmonic-mixed
+                                a''
+                                \tweak style #'harmonic-mixed
+                                b''
+                                \tweak style #'harmonic-mixed
+                                ef'''
+                            >4
+                            :32
+                            \override Staff.Stem.stemlet-length = 0.75
+                            <d' g' b' e''>8
+                            :64
+                            - \open
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            <
+                                \tweak style #'harmonic
+                                ef''
+                                \tweak style #'harmonic
+                                a''
+                                \tweak style #'harmonic
+                                b''
+                                \tweak style #'harmonic
+                                ef'''
+                            >8
+                            :64
+                            ]
+                            ~
+                            \afterGrace
+                            <
+                                \tweak style #'harmonic-mixed
+                                ef''
+                                \tweak style #'harmonic-mixed
+                                a''
+                                \tweak style #'harmonic-mixed
+                                b''
+                                \tweak style #'harmonic-mixed
+                                ef'''
+                            >4
+                            :32
+                            )
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.transparent = ##t
+                                c'16
+                                \stopTextSpanOne
+                                \stopTextSpanThree
+                                \stopTextSpanTwo
+                            }
                             r2.
                             r2.
                             r2.
@@ -510,9 +778,83 @@
                               %! +SCORE
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Hp. }
                             r2.
-                            r2.
-                            r2.
-                            r2.
+                            \ottava 1
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''8
+                            \pp
+                            [
+                            - \tweak padding #11
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ triangle beater between strings } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -3
+                            \startTextSpan
+                            \revert Staff.Stem.stemlet-length
+                            f''''8
+                            ]
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                es''''8
+                                [
+                                \revert Staff.Stem.stemlet-length
+                                f''''16.
+                                ]
+                                ~
+                            }
+                            \times 2/3
+                            {
+                                f''''16
+                                es''''4
+                                f''''16
+                                ~
+                            }
+                            \times 4/5
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f''''8.
+                                [
+                                \revert Staff.Stem.stemlet-length
+                                es''''8
+                                ]
+                                ~
+                            }
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            f''''8
+                            ]
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            f''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            es''''8
+                            ]
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            f''''8
+                            ]
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            f''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            es''''8
+                            ]
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            f''''8
+                            \stopTextSpan
+                            ]
+                            \ottava 0
                             r2.
                             r2.
                             r2.
