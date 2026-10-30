@@ -162,8 +162,46 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r2.
-                                    r2.
+                                    \ottava 1
+                                    \set fontSize = #-3
+                                    g''''4
+                                    - \flageolet
+                                    \pp
+                                    (
+                                    a''''4
+                                    - \flageolet
+                                    ~
+                                    \times 2/3
+                                    {
+                                        a''''16
+                                        b''''4
+                                        - \flageolet
+                                        ~
+                                        b''''16
+                                        ~
+                                    }
+                                    \times 4/5
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b''''8.
+                                        [
+                                        \revert Staff.Stem.stemlet-length
+                                        a''''8
+                                        - \flageolet
+                                        ]
+                                        ~
+                                    }
+                                    a''''4
+                                    ~
+                                    \times 2/3
+                                    {
+                                        a''''4
+                                        g''''8
+                                        - \flageolet
+                                        )
+                                        \ottava 0
+                                        \set fontSize = #-1
+                                    }
                                     r2.
                                     r2.
                                     r2.
@@ -975,12 +1013,127 @@
                             r2.
                             r2.
                             r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
+                            r8.
+                            \tweak style #'harmonic
+                            ef'''16
+                            \pp
+                            (
+                            - \tweak padding #9
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Half directly on bridge, half on string } \hspace #0.5 }
+                            \startTextSpanThree
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                \tweak style #'harmonic
+                                ef'''8.
+                                [
+                                \revert Staff.Stem.stemlet-length
+                                \tweak style #'harmonic
+                                b''32
+                                ]
+                                ~
+                            }
+                            \tweak style #'harmonic-mixed
+                            b''4
+                            ~
+                            \times 4/5
+                            {
+                                \tweak style #'harmonic
+                                b''16
+                                \tweak style #'harmonic-mixed
+                                a''4
+                                ~
+                            }
+                            \tweak style #'harmonic-mixed
+                            a''4
+                            e''4
+                            - \open
+                            ~
+                            e''2
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            e''16
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'harmonic
+                            ef''8.
+                            ]
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                \tweak style #'harmonic
+                                ef''16
+                                [
+                                \tweak style #'harmonic
+                                a''8
+                                ~
+                                \revert Staff.Stem.stemlet-length
+                                \tweak style #'harmonic
+                                a''32
+                                ]
+                                ~
+                            }
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'harmonic
+                            a''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            g'8
+                            - \open
+                            ]
+                            ~
+                            g'4
+                            \tweak style #'harmonic
+                            b''2
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'harmonic
+                            b''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'harmonic
+                            ef'''8
+                            ]
+                            ~
+                            \tweak style #'harmonic-mixed
+                            ef'''4
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'harmonic
+                            ef'''8.
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            b'16
+                            - \open
+                            ]
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b'8.
+                                [
+                                \revert Staff.Stem.stemlet-length
+                                \afterGrace
+                                \tweak style #'harmonic
+                                ef'''32
+                                )
+                                ]
+                                {
+                                    \once \override Stem.stencil = ##f
+                                    \once \override Flag.stencil = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.transparent = ##t
+                                    c'16
+                                    \stopTextSpanThree
+                                }
+                            }
                         }
                     }
                 }
@@ -1076,12 +1229,100 @@
                             r2.
                             r2.
                             r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
+                            r16
+                            \ottava 1
+                            es''''8.
+                            \pp
+                            - \tweak padding #11
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ triangle beater between strings } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -3
+                            \startTextSpan
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                es''''16
+                                [
+                                f''''8
+                                ~
+                                \revert Staff.Stem.stemlet-length
+                                f''''32
+                                ]
+                                ~
+                            }
+                            \override Staff.Stem.stemlet-length = 0.75
+                            f''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            es''''8
+                            ]
+                            ~
+                            es''''4
+                            f''''2
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            f''''8
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            es''''8
+                            ]
+                            ~
+                            es''''4
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''8.
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            f''''16
+                            ]
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f''''8.
+                                [
+                                \revert Staff.Stem.stemlet-length
+                                es''''32
+                                ]
+                                ~
+                            }
+                            es''''4
+                            ~
+                            \times 4/5
+                            {
+                                es''''16
+                                f''''4
+                                ~
+                            }
+                            f''''4
+                            es''''2
+                            ~
+                            es''''4
+                            ~
+                            \override Staff.Stem.stemlet-length = 0.75
+                            es''''16
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            f''''8.
+                            ]
+                            ~
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \times 8/7
+                            {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f''''16
+                                [
+                                es''''8
+                                ~
+                                \revert Staff.Stem.stemlet-length
+                                es''''32
+                                \stopTextSpan
+                                ]
+                                \ottava 0
+                            }
                         }
                     }
                 }

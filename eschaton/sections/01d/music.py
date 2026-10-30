@@ -46,6 +46,32 @@ trinton.make_music(
     beam_meter=True,
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    evans.RhythmHandler(
+        evans.talea(
+            [8],
+            32,
+            extra_counts=[0, -1, -2, -3, -4, -5],
+        )
+    ),
+    trinton.treat_tuplets(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    library.flute_flageolets(
+        selector=trinton.pleaves(),
+        ametric=False,
+        # ottava=False,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    voice=score["altoflute voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor((1,)),
+    beam_meter=True,
+)
+
 # oboe music
 
 trinton.make_music(
@@ -275,6 +301,120 @@ trinton.make_music(
     beam_meter=True,
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 15)),
+    evans.RhythmHandler(
+        evans.talea(
+            [
+                -6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+            ],
+            32,
+            extra_counts=[
+                0,
+                -1,
+                -2,
+                -3,
+                -4,
+                -5,
+                -6,
+                -7,
+                -8,
+                -9,
+                -10,
+                -11,
+                -12,
+                -13,
+                -14,
+                -15,
+                -16,
+                -17,
+            ],
+        )
+    ),
+    trinton.treat_tuplets(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    evans.PitchHandler(
+        ["ef'''", "b''", "a''", "e''", "ef''", "a''", "g'", "b''", "ef'''", "b'"]
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("open")],
+        selector=trinton.patterned_tie_index_selector(
+            [3, 6, 9], 10, first=True, pitched=True, grace=False
+        ),
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
+        selector=trinton.patterned_tie_index_selector(
+            [0, 1, 2, 4, 5, 7, 8], 10, pitched=True, grace=False
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartSlur(), abjad.StopSlur()],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
+    ),
+    trinton.aftergrace_command(
+        invisible=True,
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"Half directly on bridge, half on string",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=9,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=0,
+        command="Three",
+    ),
+    voice=score["guitar voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor((1,)),
+    beam_meter=True,
+)
+
 # harp music
 
 trinton.make_music(
@@ -306,6 +446,101 @@ trinton.make_music(
                 -4,
                 -4,
                 -4,
+            ],
+        )
+    ),
+    evans.PitchHandler(["es''''", "f''''"]),
+    trinton.treat_tuplets(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.ottava_command(
+        octave=1,
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string=r"w/ triangle beater between strings",
+            column="\center-column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=11,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        right_padding=3,
+    ),
+    voice=score["harp voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor((1,)),
+    beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 15)),
+    evans.RhythmHandler(
+        evans.talea(
+            [
+                -2,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+            ],
+            32,
+            extra_counts=[
+                0,
+                -1,
+                -2,
+                -3,
+                -4,
+                -5,
+                -6,
+                -7,
+                -8,
+                -9,
+                -10,
+                -11,
+                -12,
+                -13,
+                -14,
+                -15,
+                -16,
+                -17,
             ],
         )
     ),
