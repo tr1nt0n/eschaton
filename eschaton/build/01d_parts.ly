@@ -21,6 +21,12 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #18
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
@@ -29,38 +35,39 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35)))
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-              %! +SCORE
-        %%% - \tweak padding #40
-              %! +SCORE
-        %%% - \tweak transparent ##t
-              %! +SCORE
-        %%% ^ \markup { S }
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \pageBreak
         }
         \tag #'group1
         {

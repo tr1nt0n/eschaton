@@ -1183,7 +1183,7 @@ trinton.remove_redundant_time_signatures(score=score)
 
 # breaking
 
-for measure in [1, 3, 5]:
+for measure in [1, 3, 5, 7, 9, 11, 13]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1193,7 +1193,7 @@ for measure in [1, 3, 5]:
         voice=score["Global Context"],
     )
 
-for measure in [2, 4, 6]:
+for measure in [2, 4, 6, 8, 10, 12, 14]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1213,41 +1213,41 @@ for measure in [2, 4, 6]:
 #         voice=score["Global Context"],
 #     )
 #
-# for measure in [8, 10]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
+for measure in [15]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
 
 # spacing
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (9,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35)))",
-                site="absolute_before",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        tag=abjad.Tag("+SCORE"),
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (9,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35)))",
+#                 site="absolute_before",
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([0]),
+#         tag=abjad.Tag("+SCORE"),
+#     ),
+#     voice=score["Global Context"],
+# )
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (9,)),
+    lambda _: trinton.select_target(_, (5,)),
     trinton.attachment_command(
         attachments=[
             abjad.bundle(
                 abjad.Markup(r"\markup { S }"),
                 r"- \tweak transparent ##t",
-                r"- \tweak padding #40",
+                r"- \tweak padding #18",
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
