@@ -2,22 +2,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \noBreak
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \break
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \noBreak
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 3/4
-            s1 * 3/4
-            \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35 35 35 35)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -28,10 +14,13 @@
               %! +SCORE
         %%% ^ \markup { S }
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 12 15 38 22 16 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -40,6 +29,9 @@
             \time 3/4
             s1 * 3/4
             \break
+            \noPageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 14 16 18)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -48,6 +40,25 @@
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20)))
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #25
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+            \break
+            \noPageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 18 23 22 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -56,6 +67,25 @@
             \time 3/4
             s1 * 3/4
             \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 22 22 22 22)))
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding #15
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 3/4
+            s1 * 3/4
+            \break
+            \noPageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 26)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -64,9 +94,13 @@
             \time 3/4
             s1 * 3/4
             \break
+            \noPageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 26)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+            \bar "||"
             \pageBreak
         }
         \tag #'group1
@@ -215,110 +249,8 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r4
-                                    r8
-                                    \override Dots.staff-position = #2
-                                    <
-                                        \tweak style #'harmonic
-                                        eqs''
-                                        \tweak style #'harmonic
-                                        bqs''
-                                    >8
-                                    \p
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    - \tweak padding #11.25
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
-                                    \startTextSpan
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    <
-                                        \tweak style #'harmonic-mixed
-                                        eqs''
-                                        \tweak style #'harmonic-mixed
-                                        bqs''
-                                    >4
-                                    ~
-                                    \afterGrace
-                                    <
-                                        \tweak style #'harmonic-mixed
-                                        eqs''
-                                        \tweak style #'harmonic-mixed
-                                        bqs''
-                                    >4
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        <g'' d'''>16
-                                    }
-                                    r8
-                                    \override Dots.staff-position = #2
-                                    <
-                                        \tweak style #'harmonic
-                                        eqs''
-                                        \tweak style #'harmonic
-                                        bqs''
-                                    >8
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \afterGrace
-                                    <
-                                        \tweak style #'harmonic-mixed
-                                        eqs''
-                                        \tweak style #'harmonic-mixed
-                                        bqs''
-                                    >4
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        <c'' g''>16
-                                        \stopTextSpan
-                                    }
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -414,104 +346,8 @@
                                     r2.
                                     r2.
                                     r2.
-                                    r8
-                                    \override Dots.staff-position = #2
-                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                    e'''8
-                                    :64
-                                    \p
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    - \tweak padding #8.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rapid, random pressing of buttons + teeth on reed } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    ~
-                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                    \afterGrace
-                                    e'''4
-                                    :32
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        c'''16
-                                    }
-                                    r4
-                                    \override Dots.staff-position = #2
-                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                    e'''2
-                                    :32
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    ~
-                                    \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.stem-attachment = #'(0 . 0.75)
-                                    \once \override Staff.AccidentalPlacement.right-padding = #0.6
-                                    \afterGrace
-                                    e'''8
-                                    :64
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        g'''16
-                                        \stopTextSpan
-                                    }
-                                    r8
+                                    r2.
+                                    r2.
                                     r2.
                                     r2.
                                     r2.
@@ -579,7 +415,6 @@
                                         <c' df' a' b'>16
                                         <c' df' a' b'>16
                                         <c' df' a' b'>16
-                                        \<
                                         <c' df' a' b'>16
                                         \revert Staff.Stem.stemlet-length
                                         <c' df' a' b'>16
@@ -603,7 +438,6 @@
                                     <c' df' a' b'>2.
                                     :32
                                     \arpeggio
-                                    \ff
                                     ~
                                     <c' df' a' b'>2.
                                     :32
@@ -783,7 +617,6 @@
                                         ef'16
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         ef'''16
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -821,7 +654,6 @@
                                     <a'' b'' d''' ef'''>2.
                                     :32
                                     \arpeggio
-                                    \ff
                                     ~
                                     <a'' b'' d''' ef'''>2.
                                     :32
