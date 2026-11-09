@@ -10,7 +10,7 @@
         \include "01b.ly"
         \include "01c.ly"
         \include "01d.ly"
-        % \include "02.ly"
+        \include "02.ly"
     }
     % \midi{}
 }

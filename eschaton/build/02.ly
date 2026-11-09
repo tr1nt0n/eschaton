@@ -15,8 +15,6 @@
             s1 * 1/2
             \break
             \noPageBreak
-              %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2 12 16 15 15 15)))
             \time 3/8
             s1 * 3/8
             \noBreak
@@ -25,15 +23,31 @@
             s1 * 3/8
             \break
             \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 20 25 22 31 23 25 25 25)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/8
             s1 * 3/8
+              %! +SCORE
+            - \tweak padding #15
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \noBreak
             \time 5/8
             s1 * 5/8
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 26 26 28 35 30 30)))
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+            - \tweak padding #18
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \noBreak
             \time 2/8
             s1 * 1/4
@@ -852,72 +866,152 @@
                             r2
                             r4.
                             r4.
+                            \clef "bass"
                             r4.
+                            ^ \markup { \harp-pedal "-v-|^v-^" }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 12/11
                             {
-                                c'64
-                                c'32.
+                                ef,64
+                                :512
+                                \mp
+                                [
+                                (
+                                - \tweak padding #17
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bisbig. very close to frame } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 2.5
+                                \startTextSpan
+                                \set stemLeftBeamCount = 3
+                                \set stemRightBeamCount = 1
+                                cs32.
+                                :256
+                                )
                                 \override TupletNumber.text = \markup { 3:2 }
                                 \times 2/3
                                 {
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 3
                                     r32
-                                    c'32
-                                    c'32
+                                    d32
+                                    :256
+                                    (
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    cs32
+                                    :256
                                 }
                                 \revert TupletNumber.text
-                                c'32.
+                                ef,32.
+                                :256
+                                ]
                             }
                             \times 8/11
                             {
-                                c'16.
-                                c'8
-                                c'16.
+                                b,16.
+                                :128
+                                [
+                                cs8
+                                :64
+                                b,16.
+                                :128
+                                )
                                 r32
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 12/11
                             {
-                                c'16
-                                c'64
-                                c'64
-                                c'64
-                                c'64
-                                c'32.
+                                ef,16
+                                :128
+                                [
+                                (
+                                cs64
+                                \stopTextSpan
+                                b,64
+                                cs64
+                                b,64
+                                d32.
+                                )
+                                ]
                             }
                             \times 2/3
                             {
                                 r32
-                                c'16
+                                [
+                                af,16
+                                :128
+                                (
+                                - \tweak padding #14
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bisbig. very close to frame } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 2.5
+                                \startTextSpan
                             }
                             \times 2/3
                             {
-                                c'8
-                                c'16
+                                cs8
+                                :64
+                                \set stemLeftBeamCount = 2
+                                \set stemRightBeamCount = 1
+                                b,16
+                                :128
                             }
                             \times 2/3
                             {
-                                c'32
-                                c'16
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 3
+                                fs32
+                                :256
+                                af16
+                                :128
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16.
+                                g16.
+                                :128
+                                )
+                                [
                                 r16
-                                c'16.
+                                \stopTextSpan
+                                \set stemLeftBeamCount = 2
+                                \set stemRightBeamCount = 1
+                                \clef "treble"
+                                b16.
+                                (
                             }
-                            c'32.
-                            c'64
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 3
+                            fs'32.
+                            cs''64
+                            ]
                             ~
-                            c'64
-                            c'32.
+                            cs''64
+                            [
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            fs''32.
+                            :256
+                            - \tweak padding #11
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Bisbig. } \line { very close to frame }  } } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 2.5
+                            \startTextSpan
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16
-                                c'16.
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 2
+                                b''16
+                                :128
+                                g''16.
+                                :128
+                                )
                                 r16.
+                                \stopTextSpan
+                                ]
                             }
                               %! +SCORE
                             \once \override MultiMeasureRest.transparent = ##t
