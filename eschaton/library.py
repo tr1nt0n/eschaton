@@ -274,6 +274,26 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def twist_bow_glissandi(partitions=[2], selector=trinton.logical_ties(pitched=True)):
+    def glissandi(argument):
+        selections = selector(argument)
+        partitioned_selections = abjad.select.partition_by_counts(
+            selections,
+            partitions,
+            cyclic=True,
+            overhang=True,
+        )
+
+        glissando_command = trinton.continuous_glissando(
+            zero_padding=True, selector=trinton.pleaves()
+        )
+
+        for partition in partitioned_selections:
+            glissando_command(partition)
+
+    return glissandi
+
+
 def bracket_grace_command(selector=abjad.select.tuplets):
     def grace_command(argument):
         selections = selector(argument)
@@ -683,7 +703,10 @@ def guitar_note_heads(selector):
 
 
 def vibrato_spanner(
-    selector=trinton.logical_ties(pitched=True, grace=False), index=0, peak_multiplier=2
+    selector=trinton.logical_ties(pitched=True, grace=False),
+    index=0,
+    peak_multiplier=2,
+    hspace=-2.2,
 ):
     def vibrato(argument):
         selections = selector(argument)
@@ -695,9 +718,9 @@ def vibrato_spanner(
 
         for tie in abjad.select.logical_ties(container, pitched=True, grace=False):
             duration_line_command = trinton.duration_line(
-                selector=trinton.pleaves(),
+                selector=trinton.logical_ties(pitched=True, grace=False),
                 color=False,
-                sustained=False,
+                sustained=True,
                 visible_grace=False,
                 on_beat_graces=False,
                 fraction=None,
@@ -748,7 +771,7 @@ def vibrato_spanner(
 
             markup = abjad.Markup(
                 rf"""\markup {{
-                \hspace #-2.2
+                \hspace #{hspace}
                 \score {{
                     \new Staff \with {{
                       \remove "Time_signature_engraver"
