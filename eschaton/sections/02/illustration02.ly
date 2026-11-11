@@ -458,16 +458,18 @@
                                     r4.
                                     \big-half-harmonic
                                     dqs'8.
+                                    :64
                                     \p
                                     [
                                     (
-                                    - \tweak padding #7
+                                    - \tweak padding #8
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1.5
                                     \startTextSpan
                                     \big-half-harmonic
                                     cs'8.
+                                    :64
                                     )
                                     ]
                                     \override TupletNumber.text = \markup { 3:2 }
@@ -477,11 +479,13 @@
                                         [
                                         \big-half-harmonic
                                         d'16
+                                        :128
                                         (
                                         \big-half-harmonic
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         c'16
+                                        :128
                                     }
                                     \revert TupletNumber.text
                                     \times 4/5
@@ -511,9 +515,10 @@
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         gqs'16.
-                                        - \tweak padding #10
+                                        :128
+                                        - \tweak padding #12.5
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 2.5
                                         \startTextSpan
                                         _ (
@@ -522,14 +527,18 @@
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
                                     bqs'32.
+                                    :256
                                     \big-half-harmonic
                                     aqs'32.
+                                    :256
                                     \big-half-harmonic
                                     cs''32
+                                    :256
                                     ]
                                     ~
                                     \big-half-harmonic
                                     cs''16
+                                    :128
                                     [
                                     gqs''32.
                                     \stopTextSpan
@@ -547,11 +556,12 @@
                                     ]
                                     \big-half-harmonic
                                     af'8
+                                    :64
                                     [
                                     (
-                                    - \tweak padding #4.5
+                                    - \tweak padding #5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
                                     \startTextSpan
                                     \override TupletNumber.text = \markup { 3:2 }
@@ -559,16 +569,20 @@
                                     {
                                         \big-half-harmonic
                                         cs''32
+                                        :256
                                         \big-half-harmonic
                                         a'32
+                                        :256
                                         \big-half-harmonic
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         dqf''32
+                                        :256
                                     }
                                     \revert TupletNumber.text
                                     \big-half-harmonic
                                     bqf'16
+                                    :128
                                     )
                                     \stopTextSpan
                                     ]

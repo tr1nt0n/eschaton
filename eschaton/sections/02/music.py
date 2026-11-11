@@ -551,8 +551,8 @@ trinton.make_music(
     ),
     # trinton.annotate_leaves_locally(
     #     # selector=trinton.logical_ties(first=True, pitched=True, grace=False)
-    #     selector=abjad.select.leaves
-    #     # selector=trinton.pleaves(grace=False)
+    #     # selector=abjad.select.leaves
+    #     selector=trinton.pleaves(grace=False)
     # ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
@@ -605,42 +605,42 @@ trinton.make_music(
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=r"1/2 air",
+            string=r"1/2 air + fluttertongue",
             column="\center-column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
             string_only=True,
         ),
         full_string=True,
-        padding=7,
+        padding=8,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([0, 5]),
         right_padding=-1.5,
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=r"1/2 air",
+            string=r"1/2 air + fluttertongue",
             column="\center-column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
             string_only=True,
         ),
         full_string=True,
-        padding=10,
+        padding=12.5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([10, 15]),
         right_padding=-2.5,
     ),
     trinton.hooked_spanner_command(
         string=trinton.boxed_markup(
-            string=r"1/2 air",
+            string=r"1/2 air + fluttertongue",
             column="\center-column",
             font_name="Bodoni72 Book Italic",
             fontsize=0,
             string_only=True,
         ),
         full_string=True,
-        padding=4.5,
+        padding=5,
         style="dashed-line-with-hook",
         selector=trinton.select_leaves_by_index([20, -1]),
         right_padding=4,
@@ -648,6 +648,9 @@ trinton.make_music(
     trinton.change_notehead_command(
         notehead="half-harmonic",
         selector=trinton.pleaves(exclude=[4, 5, 6, 7, 13, 14, 15, 16], grace=False),
+    ),
+    trinton.tremolo_command(
+        selector=trinton.pleaves(exclude=[4, 5, 6, 7, 13, 14, 15, 16], grace=False)
     ),
     voice=score["bassclarinet voice"],
 )
