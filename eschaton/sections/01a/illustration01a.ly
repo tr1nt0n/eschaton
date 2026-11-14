@@ -2129,7 +2129,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r32
                                     r32
                                     <
@@ -2155,7 +2155,7 @@
                                         \tweak style #'harmonic
                                         bqs''
                                     >16
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     ]
                                     <
                                         \tweak style #'harmonic
@@ -2168,7 +2168,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r32
                                     <
                                         \tweak style #'harmonic
@@ -2184,7 +2184,7 @@
                                         \tweak style #'harmonic
                                         cqf'''
                                     >16.
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     [
                                     <
                                         \tweak style #'harmonic
@@ -2196,7 +2196,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     ~
                                     <
                                         \tweak style #'harmonic
@@ -2247,7 +2247,7 @@
                                         \tweak style #'harmonic
                                         bqs''
                                     >16.
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         f''
@@ -2258,7 +2258,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r16
                                     ]
                                     r16
@@ -2276,7 +2276,7 @@
                                         \tweak style #'harmonic
                                         cqf'''
                                     >32
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         eqs''
@@ -2287,7 +2287,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r32
                                     ]
                                     r16
@@ -2321,7 +2321,7 @@
                                         \tweak style #'harmonic
                                         bqs''
                                     >16
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         f''
@@ -2332,7 +2332,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r32
                                     ]
                                     r16
@@ -2366,7 +2366,7 @@
                                         \tweak style #'harmonic
                                         cqf'''
                                     >16
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         eqs''
@@ -2378,7 +2378,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r16.
                                     [
                                     <
@@ -2394,7 +2394,7 @@
                                         \tweak style #'harmonic
                                         bqs''
                                     >32
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         f''
@@ -2406,7 +2406,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five)) (lh . ()) (rh . ())) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     r32
                                     [
                                     <
@@ -2415,7 +2415,7 @@
                                         \tweak style #'harmonic
                                         cqf'''
                                     >16
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     <
                                         \tweak style #'harmonic
                                         eqs''
@@ -2426,7 +2426,7 @@
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(size . .6) { \woodwind-diagram #'oboe #'((cc . (oneRT1h two three four five sixRT1h)) (lh . ()) (rh . (ees))) } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1.5
-                                    \startTextSpanOne
+                                    \startTextSpan
                                     ~
                                     <
                                         \tweak style #'harmonic
@@ -2451,7 +2451,7 @@
                                         \tweak style #'harmonic
                                         bqs''
                                     >16.
-                                    \stopTextSpanOne
+                                    \stopTextSpan
                                     r32
                                     ]
                                 }
@@ -2548,7 +2548,7 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''16.
                                         :128
                                         \p
@@ -2559,10 +2559,10 @@
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1
                                         \startTextSpan
-                                        \big-half-harmonic
+                                        \half-air
                                         d'16.
                                         :128
-                                        \big-half-harmonic
+                                        \half-air
                                         c''16
                                         :128
                                         ]
@@ -2570,14 +2570,14 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         e'16
                                         :128
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         bqs'16.
                                         :128
-                                        \big-half-harmonic
+                                        \half-air
                                         d'16.
                                         :128
                                         )
@@ -2588,16 +2588,16 @@
                                     {
                                         r32
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         dqf''32
                                         :256
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         gqs'32
                                         :256
                                     }
                                     \revert TupletNumber.text
-                                    \big-half-harmonic
+                                    \half-air
                                     bqs'16
                                     :128
                                     )

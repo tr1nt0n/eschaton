@@ -442,18 +442,18 @@
                                     r4.
                                     r4.
                                     r4.
-                                    \big-half-harmonic
+                                    \half-air
                                     dqs'8.
                                     :64
                                     \p
                                     [
                                     (
-                                    - \tweak padding #8
+                                    - \tweak padding #8.25
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1.5
                                     \startTextSpan
-                                    \big-half-harmonic
+                                    \half-air
                                     cs'8.
                                     :64
                                     )
@@ -463,11 +463,11 @@
                                     {
                                         r16
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         d'16
                                         :128
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         c'16
@@ -497,32 +497,32 @@
                                     {
                                         r16
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         gqs'16.
                                         :128
-                                        - \tweak padding #12.5
+                                        - \tweak padding #12.75
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 2.5
                                         \startTextSpan
                                         _ (
                                     }
-                                    \big-half-harmonic
+                                    \half-air
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
                                     bqs'32.
                                     :256
-                                    \big-half-harmonic
+                                    \half-air
                                     aqs'32.
                                     :256
-                                    \big-half-harmonic
+                                    \half-air
                                     cs''32
                                     :256
                                     ]
                                     ~
-                                    \big-half-harmonic
+                                    \half-air
                                     cs''16
                                     :128
                                     [
@@ -540,12 +540,12 @@
                                     )
                                     r32.
                                     ]
-                                    \big-half-harmonic
+                                    \half-air
                                     af'8
                                     :64
                                     [
                                     (
-                                    - \tweak padding #5
+                                    - \tweak padding #5.25
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
@@ -553,20 +553,20 @@
                                     \override TupletNumber.text = \markup { 3:2 }
                                     \times 2/3
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         a'32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         dqf''32
                                         :256
                                     }
                                     \revert TupletNumber.text
-                                    \big-half-harmonic
+                                    \half-air
                                     bqf'16
                                     :128
                                     )

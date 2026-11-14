@@ -1225,7 +1225,7 @@
                                     \times 2/3
                                     {
                                         r8
-                                        \big-half-harmonic
+                                        \half-air
                                         cs'16
                                         :128
                                         \p
@@ -1242,26 +1242,26 @@
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
-                                            \big-half-harmonic
+                                            \half-air
                                             d'32
                                             :256
                                             [
-                                            \big-half-harmonic
+                                            \half-air
                                             c'32
                                             :256
-                                            \big-half-harmonic
+                                            \half-air
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             e'32
                                             :256
                                         }
                                         \revert TupletNumber.text
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         bqs16
                                         :128
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         d'16
@@ -1273,11 +1273,11 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         r16
-                                        \big-half-harmonic
+                                        \half-air
                                         dqf'16
                                         :128
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         gqs'16
                                         :128
                                         ]
@@ -1285,22 +1285,22 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         bqs16.
                                         :128
                                         [
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
-                                            \big-half-harmonic
+                                            \half-air
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 3
                                             aqs32
                                             :256
-                                            \big-half-harmonic
+                                            \half-air
                                             cs'32
                                             :256
-                                            \big-half-harmonic
+                                            \half-air
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             gqs'32
@@ -1317,7 +1317,7 @@
                                     \times 2/3
                                     {
                                         r4
-                                        \big-half-harmonic
+                                        \half-air
                                         ef'8
                                         :64
                                         [
@@ -1331,10 +1331,10 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         af'8
                                         :64
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''16.
                                         :128
                                         )
@@ -1352,7 +1352,7 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         r16
-                                        \big-half-harmonic
+                                        \half-air
                                         a'16
                                         :128
                                         \pp
@@ -1362,23 +1362,23 @@
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpan
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         dqf''16
                                         :128
                                     }
                                     \revert TupletNumber.text
-                                    \big-half-harmonic
+                                    \half-air
                                     bqf'16
                                     :128
                                     ]
                                     ~
-                                    \big-half-harmonic
+                                    \half-air
                                     bqf'8
                                     :64
                                     [
-                                    \big-half-harmonic
+                                    \half-air
                                     c''8
                                     :64
                                     )
@@ -1387,7 +1387,7 @@
                                     \stopTextSpan
                                     r8.
                                     [
-                                    \big-half-harmonic
+                                    \half-air
                                     bf'16
                                     :128
                                     ]
@@ -1398,7 +1398,7 @@
                                     - \tweak bound-details.right.padding 1.5
                                     \startTextSpan
                                     ~
-                                    \big-half-harmonic
+                                    \half-air
                                     bf'16
                                     :128
                                     [
@@ -1408,12 +1408,12 @@
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
-                                            \big-half-harmonic
+                                            \half-air
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 3
                                             b'32
                                             :256
-                                            \big-half-harmonic
+                                            \half-air
                                             c''32
                                             :256
                                             \set stemLeftBeamCount = 3
@@ -1437,7 +1437,7 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         cqs''16.
@@ -1448,7 +1448,7 @@
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpan
-                                        \big-half-harmonic
+                                        \half-air
                                         bqf'16
                                         :128
                                         )

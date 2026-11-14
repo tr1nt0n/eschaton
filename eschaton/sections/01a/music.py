@@ -681,8 +681,9 @@ trinton.make_music(
         ),
         # direction=abjad.DOWN,
     ),
-    trinton.change_notehead_command(
-        notehead="half-harmonic", selector=trinton.pleaves(grace=False)
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\half-air", site="before")],
+        selector=trinton.pleaves(grace=False),
     ),
     trinton.tremolo_command(selector=trinton.pleaves(grace=False)),
     trinton.attachment_command(

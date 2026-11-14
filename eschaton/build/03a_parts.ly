@@ -35,17 +35,31 @@
             s1 * 1/2
             \break
             \pageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 35 35)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+        %%% - \tweak padding #15
+              %! +SCORE
+        %%% - \tweak transparent ##t
+              %! +SCORE
+        %%% ^ \markup { S }
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 30 22 22)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/80)
             \time 2/8
             s1 * 1/4
+              %! +SCORE
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
         }
         \tag #'group1
         {
@@ -79,93 +93,670 @@
                                     \times 3/4
                                     {
                                         r16.
-                                        c'16
+                                        ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bass }
+                                        [
+                                        \tweak style #'la
+                                        af'16
+                                        \pp
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        - \tweak padding #12
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2.5
+                                        \startTextSpan
                                         r16.
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        c'16
-                                        c'16.
-                                        c'16.
+                                        \tweak style #'la
+                                        b'16
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        [
+                                        _ (
+                                        \tweak style #'la
+                                        a'16.
+                                        \tweak style #'la
+                                        cs'16.
+                                        ]
                                     }
-                                    c'32.
+                                    \tweak style #'la
+                                    bf'32.
+                                    )
+                                    [
                                     r32.
-                                    c'32
+                                    \tweak style #'la
+                                    b'32
+                                    - \tweak X-extent ##f
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
                                         r32
+                                        [
+                                        \tweak style #'la
                                         c'32
-                                        c'64
-                                        c'32
+                                        \stopTextSpan
+                                        _ (
+                                        b'64
+                                        \mp
+                                        bf'32
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
-                                        c'64
+                                        c''64
+                                        )
+                                        [
                                         r32
-                                        c'32
+                                        \tweak style #'la
+                                        b'32
+                                        \pp
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        - \tweak padding #11.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
                                         r32
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
-                                        c'32
-                                        c'32
-                                        c'32
-                                        c'64
+                                        \tweak style #'la
+                                        d'32
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        [
+                                        _ (
+                                        \tweak style #'la
+                                        a'32
+                                        \tweak style #'la
+                                        cs'32
+                                        \tweak style #'la
+                                        af'64
+                                        )
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         r16
-                                        c'32
+                                        [
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        \tweak style #'la
+                                        ef'32
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
                                     }
                                     \times 2/3
                                     {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
                                         r16
-                                        c'32
+                                        \tweak style #'la
+                                        af'32
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        \stopTextSpan
+                                        ]
                                     }
                                     \times 2/3
                                     {
-                                        c'16
-                                        c'8
+                                        cs''16
+                                        \mp
+                                        [
+                                        ^ (
+                                        bf'8
+                                        )
+                                        ]
                                     }
                                     \times 2/3
                                     {
-                                        c'8
-                                        c'16
+                                        \tweak style #'la
+                                        ef'8
+                                        \pp
+                                        - \tweak X-extent ##f
+                                        - \tweak padding 0
+                                        ^ \markup {
+                                                    \hspace #-0.5
+                                                    \override #'(font-name . "ekmelos")
+                                                    \fontsize #7
+                                                    {
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                    }
+                                                }
+                                        [
+                                        - \tweak padding #11.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -9
+                                        \startTextSpan
+                                        _ (
+                                        \tweak style #'la
+                                        af'16
+                                        )
+                                        \stopTextSpan
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         r32
-                                        c'16
+                                        [
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        f''16
+                                        \mp
+                                        ^ (
                                     }
                                     \times 2/3
                                     {
-                                        c'32
-                                        c'16
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        ef''32
+                                        g''16
+                                        ]
                                     }
-                                    c'32
-                                    c'16
-                                    c'32
+                                    ef''32
+                                    )
+                                    [
+                                    \tweak style #'la
+                                    f'16
+                                    \pp
+                                    - \tweak X-extent ##f
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    - \tweak padding #13.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -4
+                                    \startTextSpan
+                                    _ (
+                                    \tweak style #'la
+                                    e'32
+                                    )
+                                    ]
                                     r32
-                                    c'64
-                                    c'64
-                                    c'64
-                                    c'64
+                                    [
+                                    \tweak style #'la
+                                    fs'64
+                                    - \tweak X-extent ##f
+                                    - \tweak padding 0
+                                    ^ \markup {
+                                                \hspace #-0.5
+                                                \override #'(font-name . "ekmelos")
+                                                \fontsize #7
+                                                {
+                                                    {
+                                                        \char ##xe610
+                                                    }
+                                                    \hspace #-0.77
+                                                    {
+                                                        \char ##xe611
+                                                    }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
+                                                }
+                                            }
+                                    _ (
+                                    \tweak style #'la
+                                    e'64
+                                    \tweak style #'la
+                                    f'64
+                                    \tweak style #'la
+                                    ef'64
                                     ~
-                                    c'64
-                                    c'64
+                                    \tweak style #'la
+                                    ef'64
+                                    \tweak style #'la
+                                    g'64
+                                    ]
                                     \times 2/3
                                     {
-                                        c'16
+                                        \tweak style #'la
+                                        ef'16
+                                        )
+                                        [
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 2
                                             r16
-                                            c'16
-                                            c'16
+                                            \tweak style #'la
+                                            f'16
+                                            - \tweak X-extent ##f
+                                            - \tweak padding 0
+                                            ^ \markup {
+                                                        \hspace #-0.5
+                                                        \override #'(font-name . "ekmelos")
+                                                        \fontsize #7
+                                                        {
+                                                            {
+                                                                \char ##xe610
+                                                            }
+                                                            \hspace #-0.77
+                                                            {
+                                                                \char ##xe611
+                                                            }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe610
+                                                                }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe611
+                                                                }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe610
+                                                                }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe611
+                                                                }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe610
+                                                                }
+                                                                \hspace #-0.77
+                                                                {
+                                                                    \char ##xe611
+                                                                }
+                                                        }
+                                                    }
+                                            _ (
+                                            \tweak style #'la
+                                            fs'16
+                                            )
+                                            \stopTextSpan
+                                            ]
                                         }
                                         \revert TupletNumber.text
                                     }
@@ -183,7 +774,7 @@
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Ob. }
                                     r32
                                     [
-                                    \big-half-harmonic
+                                    \half-air
                                     dqf'''32
                                     \pp
                                     - \tweak X-extent ##f
@@ -211,12 +802,12 @@
                                                 }
                                             }
                                     (
-                                    - \tweak padding #10.5
+                                    - \tweak padding #10.75
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -2
                                     \startTextSpan
-                                    \big-half-harmonic
+                                    \half-air
                                     a''32
                                     )
                                     r32
@@ -226,7 +817,7 @@
                                     {
                                         r16.
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''16.
                                         - \tweak X-extent ##f
                                         - \tweak padding 0
@@ -269,7 +860,7 @@
                                                     }
                                                 }
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         af''32
                                         )
                                         ]
@@ -279,7 +870,7 @@
                                     {
                                         r32
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         ef'''16.
                                         - \tweak X-extent ##f
                                         - \tweak padding 0
@@ -330,7 +921,7 @@
                                                     }
                                                 }
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         gqs'''16.
                                         )
                                         ]
@@ -339,7 +930,7 @@
                                     [
                                     \times 2/3
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         cs'''16
@@ -385,9 +976,9 @@
                                                 }
                                         (
                                         ~
-                                        \big-half-harmonic
+                                        \half-air
                                         cs'''64
-                                        \big-half-harmonic
+                                        \half-air
                                         aqs''64
                                         )
                                         \stopTextSpan
@@ -399,7 +990,7 @@
                                     \mp
                                     ~
                                     dqs'''8
-                                    \big-half-harmonic
+                                    \half-air
                                     \afterGrace
                                     gqs''2
                                     \pp
@@ -515,7 +1106,7 @@
                                                         }
                                                 }
                                             }
-                                    - \tweak padding #7.5
+                                    - \tweak padding #7.75
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -2
@@ -567,11 +1158,11 @@
                                     \times 8/7
                                     {
                                         r4
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''8.
                                         :64
                                         \pp
-                                        - \tweak padding #12
+                                        - \tweak padding #12.25
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -1.5
@@ -582,7 +1173,7 @@
                                     {
                                         r16.
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         d''16.
                                         :128
                                         r16
@@ -591,26 +1182,26 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         c'''16.
                                         :128
                                         [
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         e''16
                                         :128
-                                        \big-half-harmonic
+                                        \half-air
                                         bqs'16.
                                         :128
                                         ]
                                     }
-                                    \big-half-harmonic
+                                    \half-air
                                     d'32
                                     :256
                                     )
                                     [
                                     r32.
-                                    \big-half-harmonic
+                                    \half-air
                                     dqf'32.
                                     :256
                                     ]
@@ -619,7 +1210,7 @@
                                     {
                                         r32
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         gqs'32
                                         :256
                                         \stopTextSpan
@@ -636,11 +1227,11 @@
                                         )
                                         [
                                         r32
-                                        \big-half-harmonic
+                                        \half-air
                                         gqs'64
                                         :512
                                         \pp
-                                        - \tweak padding #14.5
+                                        - \tweak padding #14.75
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -1.5
@@ -651,18 +1242,18 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         ef'64
                                         :512
                                         [
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         af'32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         cs''32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         a'32
                                         :256
                                         )
@@ -672,7 +1263,7 @@
                                     {
                                         r32
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         dqf'16
@@ -683,7 +1274,7 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         r16
-                                        \big-half-harmonic
+                                        \half-air
                                         bqf32
                                         :256
                                         \stopTextSpan
@@ -701,18 +1292,18 @@
                                     }
                                     \times 4/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         b16
                                         :128
                                         \pp
                                         [
                                         (
-                                        - \tweak padding #12.5
+                                        - \tweak padding #12.75
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -1.5
                                         \startTextSpan
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         c'32
@@ -724,11 +1315,11 @@
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 3
                                             r32
-                                            \big-half-harmonic
+                                            \half-air
                                             bqf32
                                             :256
                                             (
-                                            \big-half-harmonic
+                                            \half-air
                                             bf32
                                             :256
                                             ]
@@ -737,7 +1328,7 @@
                                     }
                                     \times 4/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         cqs'32
                                         :256
                                         )
@@ -755,14 +1346,14 @@
                                         )
                                         [
                                         r32
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 4
                                         \set stemRightBeamCount = 1
                                         c'64
                                         :512
                                         \pp
                                         (
-                                        - \tweak padding #11.5
+                                        - \tweak padding #11.75
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -2
@@ -770,52 +1361,52 @@
                                     }
                                     \times 4/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         cqs'32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         d'64
                                         :512
-                                        \big-half-harmonic
+                                        \half-air
                                         cs'64
                                         :512
-                                        \big-half-harmonic
+                                        \half-air
                                         c'64
                                         :512
                                         ]
                                     }
                                     \times 4/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         d'32
                                         :256
                                         )
                                         [
                                         r32
-                                        \big-half-harmonic
+                                        \half-air
                                         cqs'16
                                         :128
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         eqf32
                                         :256
                                         ]
                                     }
                                     \times 4/5
                                     {
-                                        \big-half-harmonic
+                                        \half-air
                                         b64
                                         :512
                                         [
-                                        \big-half-harmonic
+                                        \half-air
                                         ef'32
                                         :256
-                                        \big-half-harmonic
+                                        \half-air
                                         bf64
                                         :512
-                                        \big-half-harmonic
+                                        \half-air
                                         \set stemLeftBeamCount = 4
                                         \set stemRightBeamCount = 1
                                         f64
@@ -827,11 +1418,11 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         r32
-                                        \big-half-harmonic
+                                        \half-air
                                         aqs64
                                         :512
                                         (
-                                        \big-half-harmonic
+                                        \half-air
                                         ef'32
                                         :256
                                         )
@@ -1442,48 +2033,109 @@
                                     r8
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'32
+                                        \big-half-harmonic
+                                        \clef "bass"
+                                        e32
+                                        \pp
+                                        ^ \punta-to-talon
+                                        [
+                                        - \tweak padding #7.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 2.5
+                                        \startTextSpan
+                                        ^ (
+                                        \big-half-harmonic
+                                        dqf32
+                                        )
                                         r64
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'16
-                                        c'16
+                                        \big-half-harmonic
+                                        dqs32
+                                        ^ \talon-to-punta
+                                        [
+                                        ^ (
+                                        \big-half-harmonic
+                                        c16
+                                        )
+                                        ef16
+                                        \mp
+                                        \stopTextSpan
+                                        ]
+                                        ^ (
                                     }
                                     \times 4/5
                                     {
-                                        c'16
-                                        c'16
-                                        c'32
+                                        b16
+                                        [
+                                        cs'16
+                                        )
+                                        \big-half-harmonic
+                                        bqf32
+                                        \pp
+                                        ^ \punta-to-talon
+                                        ]
+                                        - \tweak padding #10
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 2.5
+                                        \startTextSpan
+                                        _ (
                                     }
                                     \times 4/5
                                     {
                                         r64
-                                        c'32
-                                        c'64
-                                        c'64
+                                        [
+                                        \big-half-harmonic
+                                        ef32
+                                        \big-half-harmonic
+                                        cqs64
+                                        \big-half-harmonic
+                                        cqs64
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'64
-                                        c'64
-                                        c'32
+                                        \big-half-harmonic
+                                        b,64
+                                        [
+                                        \big-half-harmonic
+                                        c64
+                                        \big-half-harmonic
+                                        bf,32
+                                        )
                                         r64
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'16
-                                        c'32
-                                        c'32
+                                        \big-half-harmonic
+                                        d32
+                                        ^ \talon-to-punta
+                                        [
+                                        ^ (
+                                        \big-half-harmonic
+                                        aqs16
+                                        \big-half-harmonic
+                                        c32
+                                        \big-half-harmonic
+                                        bqs,32
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'32
+                                        \big-half-harmonic
+                                        fqs32
+                                        [
+                                        \big-half-harmonic
+                                        aqs32
+                                        )
                                         r64
+                                        \stopTextSpan
+                                        ]
                                     }
                                 }
                             }

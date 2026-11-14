@@ -337,6 +337,26 @@ big-half-harmonic = {
     \once \override NoteHead.font-size = #2.5
 }
 
+% U+F67C
+
+half-air = {
+    \once \override NoteHead.stencil =
+        #(lambda (grob)
+            (let
+                ((dur (ly:grob-property grob 'duration-log)))
+                (if (<= dur 1)
+                    (grob-interpret-markup grob (markup #:ekmelos-char #xf67c))
+                    (if (> dur 1)
+                        (grob-interpret-markup grob (markup #:ekmelos-char #xf67c))
+                    )
+                )
+            )
+        )
+    % \once \override NoteHead.font-size = #0.5
+}
+
+
+
 #(define-markup-command (double-box layout props text) (markup?)
   #:properties ((inter-box-padding 0.4)
                 (box-padding 0.6))
