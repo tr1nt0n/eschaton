@@ -560,121 +560,283 @@
                                     \times 6/7
                                     {
                                         r4
-                                        c'8.
+                                        dqs'''8.
+                                        \mp
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
                                         r4
-                                        c'8.
+                                        \big-half-harmonic
+                                        cs''8.
+                                        :64
+                                        \pp
+                                        - \tweak padding #12
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1.5
+                                        \startTextSpan
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
                                         r16.
-                                        c'16.
+                                        [
+                                        \big-half-harmonic
+                                        d''16.
+                                        :128
                                         r16
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        c'16.
-                                        c'16
-                                        c'16.
+                                        \big-half-harmonic
+                                        c'''16.
+                                        :128
+                                        [
+                                        (
+                                        \big-half-harmonic
+                                        e''16
+                                        :128
+                                        \big-half-harmonic
+                                        bqs'16.
+                                        :128
+                                        ]
                                     }
-                                    c'32
+                                    \big-half-harmonic
+                                    d'32
+                                    :256
+                                    )
+                                    [
                                     r32.
-                                    c'32.
+                                    \big-half-harmonic
+                                    dqf'32.
+                                    :256
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
                                         r32
-                                        c'32
-                                        c'32
-                                        c'64
+                                        [
+                                        \big-half-harmonic
+                                        gqs'32
+                                        :256
+                                        \stopTextSpan
+                                        bqs'32
+                                        \mp
+                                        (
+                                        aqs'64
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
-                                        c'32
+                                        cs'32
+                                        )
+                                        [
                                         r32
-                                        c'64
+                                        \big-half-harmonic
+                                        gqs'64
+                                        :512
+                                        \pp
+                                        - \tweak padding #14.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1.5
+                                        \startTextSpan
                                         r32
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
-                                        c'64
-                                        c'32
-                                        c'32
-                                        c'32
+                                        \big-half-harmonic
+                                        ef'64
+                                        :512
+                                        [
+                                        (
+                                        \big-half-harmonic
+                                        af'32
+                                        :256
+                                        \big-half-harmonic
+                                        cs''32
+                                        :256
+                                        \big-half-harmonic
+                                        a'32
+                                        :256
+                                        )
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         r32
-                                        c'16
+                                        [
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        dqf'16
+                                        :128
                                     }
                                     \times 2/3
                                     {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
                                         r16
-                                        c'32
+                                        \big-half-harmonic
+                                        bqf32
+                                        :256
+                                        \stopTextSpan
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         c'8
-                                        c'16
+                                        \mp
+                                        [
+                                        (
+                                        bf16
+                                        )
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'16
+                                        \big-half-harmonic
+                                        b16
+                                        :128
+                                        \pp
+                                        [
+                                        (
+                                        - \tweak padding #12.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1.5
+                                        \startTextSpan
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
                                         c'32
+                                        :256
+                                        )
                                         \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
                                             r32
-                                            c'32
-                                            c'32
+                                            \big-half-harmonic
+                                            bqf32
+                                            :256
+                                            (
+                                            \big-half-harmonic
+                                            bf32
+                                            :256
+                                            ]
                                         }
                                         \revert TupletNumber.text
                                     }
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'16
-                                        c'16
+                                        \big-half-harmonic
+                                        cqs'32
+                                        :256
+                                        )
+                                        \stopTextSpan
+                                        [
+                                        cqs'16
+                                        \mp
+                                        (
+                                        bqf16
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'32
+                                        dqs'32
+                                        )
+                                        [
                                         r32
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 4
+                                        \set stemRightBeamCount = 1
                                         c'64
+                                        :512
+                                        \pp
+                                        (
+                                        - \tweak padding #11.5
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 air + fluttertongue } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
                                     }
                                     \times 4/5
                                     {
-                                        c'32
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        cqs'32
+                                        :256
+                                        \big-half-harmonic
+                                        d'64
+                                        :512
+                                        \big-half-harmonic
+                                        cs'64
+                                        :512
+                                        \big-half-harmonic
                                         c'64
-                                        c'64
-                                        c'64
+                                        :512
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'32
+                                        \big-half-harmonic
+                                        d'32
+                                        :256
+                                        )
+                                        [
                                         r32
-                                        c'16
-                                        c'32
+                                        \big-half-harmonic
+                                        cqs'16
+                                        :128
+                                        (
+                                        \big-half-harmonic
+                                        eqf32
+                                        :256
+                                        ]
                                     }
                                     \times 4/5
                                     {
-                                        c'64
-                                        c'32
-                                        c'64
-                                        c'64
+                                        \big-half-harmonic
+                                        b64
+                                        :512
+                                        [
+                                        \big-half-harmonic
+                                        ef'32
+                                        :256
+                                        \big-half-harmonic
+                                        bf64
+                                        :512
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 4
+                                        \set stemRightBeamCount = 1
+                                        f64
+                                        :512
+                                        )
                                     }
                                     \times 4/5
                                     {
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
                                         r32
-                                        c'64
-                                        c'32
+                                        \big-half-harmonic
+                                        aqs64
+                                        :512
+                                        (
+                                        \big-half-harmonic
+                                        ef'32
+                                        :256
+                                        )
+                                        \stopTextSpan
+                                        ]
                                     }
                                 }
                             }
@@ -820,75 +982,166 @@
                             r8
                             r8.
                             r8
-                            c'2
+                            ef'''2
+                            :32
+                            \pp
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 2.5
+                            \startTextSpanOne
+                            - \tweak padding #7.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Ord. } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP }
+                            - \tweak bound-details.right.padding 7.5
+                            \startTextSpanTwo
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 6/7
                             {
                                 r4
-                                c'8.
+                                \stopTextSpanOne
+                                \stopTextSpanTwo
+                                af''8.
+                                \mp
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 8/7
                             {
                                 r8.
-                                c'4
+                                f'4
+                                :32
+                                \pp
+                                - \tweak padding #12
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 1
+                                \startTextSpanTwo
+                                - \tweak padding #15
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                                - \tweak bound-details.right.padding 1.5
+                                \startTextSpanOne
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
                                 r16
-                                c'16.
+                                [
+                                ef'16.
+                                :128
                                 r16.
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 3/4
                             {
-                                c'16.
-                                c'16.
-                                c'16
+                                g'16.
+                                :128
+                                [
+                                (
+                                ef''16.
+                                :128
+                                \stopTextSpanTwo
+                                - \tweak padding #12
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { ST } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP }
+                                - \tweak bound-details.right.padding 1
+                                \startTextSpanTwo
+                                f'16
+                                :128
+                                ]
                             }
-                            c'32.
+                            e'32.
+                            :256
+                            )
+                            [
                             r64
                             r64
-                            c'32.
+                            fs32.
+                            :256
+                            ]
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 8/7
                             {
                                 r64
-                                c'32
-                                c'32
-                                c'32
+                                \stopTextSpanTwo
+                                [
+                                e'32
+                                :256
+                                f'32
+                                \mp
+                                \stopTextSpanOne
+                                ef''32
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 8/7
                             {
-                                c'32
+                                g'32
+                                [
                                 r32
-                                c'32
+                                ef'32
+                                :256
+                                \pp
+                                - \tweak padding #13.5
+                                - \abjad-solid-line-with-arrow
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP } \hspace #0.5 }
+                                - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST }
+                                - \tweak bound-details.right.padding 1
+                                \startTextSpanTwo
+                                - \tweak padding #16.5
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Rasg. } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -4
+                                \startTextSpanOne
                                 r64
+                                ]
                             }
                             \tweak text #tuplet-number::calc-fraction-text
                             \times 8/7
                             {
-                                c'32
-                                c'32
-                                c'64
-                                c'32
+                                f32
+                                :256
+                                [
+                                (
+                                fs32
+                                :256
+                                ef'64
+                                :512
+                                e'32
+                                :256
+                                )
+                                ]
                             }
                             \times 2/3
                             {
                                 r16
-                                c'32
+                                [
+                                \set stemLeftBeamCount = 3
+                                \set stemRightBeamCount = 1
+                                cs''32
+                                :256
                             }
                             \times 2/3
                             {
+                                \set stemLeftBeamCount = 1
+                                \set stemRightBeamCount = 3
                                 r32
-                                c'16
+                                fs''16
+                                :128
+                                \stopTextSpanOne
+                                \stopTextSpanTwo
+                                ]
                             }
                             \times 2/3
                             {
-                                c'8
-                                c'16
+                                ef''8
+                                \mp
+                                [
+                                f'16
+                                ]
                             }
                             r4.
                             r4
@@ -994,15 +1247,16 @@
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vn. }
                                     r32
                                     [
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST + flaut. } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 2
-                                    \startTextSpan
                                     \big-half-harmonic
                                     a''32
                                     \pp
+                                    ^ \punta-to-talon
                                     (
+                                    - \tweak padding #10.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 2
+                                    \startTextSpan
                                     \big-half-harmonic
                                     cs'''32
                                     )
@@ -1015,6 +1269,7 @@
                                         [
                                         \big-half-harmonic
                                         af'''16.
+                                        ^ \talon-to-punta
                                         (
                                         \big-half-harmonic
                                         ef'''32
@@ -1028,6 +1283,7 @@
                                         [
                                         \big-half-harmonic
                                         gqs''16.
+                                        ^ \punta-to-talon
                                         (
                                         \big-half-harmonic
                                         cs'''16.
@@ -1042,6 +1298,7 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         aqs''16
+                                        ^ \talon-to-punta
                                         (
                                         ~
                                         \big-half-harmonic
@@ -1061,9 +1318,10 @@
                                     \big-half-harmonic
                                     eqs''2
                                     \pp
-                                    - \tweak padding #4.5
+                                    ^ \punta-to-talon
+                                    - \tweak padding #7
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST + flaut. } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 2
                                     \startTextSpan
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -1082,9 +1340,10 @@
                                         \afterGrace
                                         dqs'8.
                                         \pp
-                                        - \tweak padding #7
+                                        ^ \talon-to-punta
+                                        - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST + flaut. } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -1
                                         \startTextSpan
                                         {
