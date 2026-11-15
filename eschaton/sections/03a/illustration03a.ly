@@ -1522,12 +1522,12 @@
                                     {
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
-                                        cs'16
+                                        cs''16
                                         :128
                                         - \stopped
                                         (
                                         ~
-                                        cs'64
+                                        cs''64
                                         :512
                                         bf'64
                                         :512

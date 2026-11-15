@@ -836,7 +836,9 @@ trinton.make_music(
     ),
     trinton.octavation(
         octave=1,
-        selector=trinton.select_logical_ties_by_index([2], pitched=True, grace=False),
+        selector=trinton.select_logical_ties_by_index(
+            [2, 6], pitched=True, grace=False
+        ),
     ),
     # trinton.annotate_leaves_locally(
     #     selector=abjad.select.leaves
