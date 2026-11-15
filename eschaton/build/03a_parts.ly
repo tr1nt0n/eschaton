@@ -263,6 +263,14 @@
                                                         {
                                                             \char ##xe611
                                                         }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
                                                 }
                                             }
                                     ]

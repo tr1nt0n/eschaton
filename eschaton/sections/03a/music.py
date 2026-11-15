@@ -442,7 +442,7 @@ trinton.make_music(
             first=True,
             grace=False,
         ),
-        angles=2,
+        angles=3,
         padding=0,
         direction=abjad.UP,
     ),
