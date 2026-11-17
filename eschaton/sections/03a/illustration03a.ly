@@ -1566,96 +1566,234 @@
                             {
                                 \context Voice = "percussion 2 voice"
                                 {
-                                    \staff-line-count 1
-                                      %! +SCORE
-                                    \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
-                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Percussion II }
-                                      %! +SCORE
-                                    \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Perc. II }
-                                    \clef "percussion"
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    \ff
-                                    ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Slapstick }
-                                    r16
-                                    r8
-                                    r16
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r8
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r16
-                                    r8
-                                    r16
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r8
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r16
-                                    \tweak style #'cross
-                                    c'16
-                                    - \marcato
-                                    ~
-                                    \tweak style #'cross
-                                    c'16
-                                    r8.
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r4
-                                    \tweak style #'cross
-                                    c'8
-                                    - \marcato
-                                    r4.
-                                    \times 4/5
-                                    {
-                                        r16
-                                        \tweak style #'cross
-                                        c'16
-                                        - \marcato
-                                        r4.
-                                        \tweak style #'cross
-                                        c'16
-                                        - \marcato
-                                        r16
-                                    }
-                                    \times 4/5
-                                    {
-                                        r8.
-                                        \tweak style #'cross
-                                        c'16
-                                        - \marcato
-                                        r4
-                                        r16
-                                        \tweak style #'cross
-                                        c'16
-                                        - \marcato
-                                    }
-                                    r4
-                                    r32
-                                    \tweak style #'cross
-                                    c'16
-                                    - \marcato
-                                    r32
-                                    r16.
-                                    \tweak style #'cross
-                                    c'32
-                                    - \marcato
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 8/7
-                                    {
-                                        r8.
-                                        \tweak style #'cross
-                                        c'32
-                                        - \marcato
-                                    }
+                                    <<
+                                        \context Voice = "percussion 2 voice temp 1"
+                                        {
+                                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Percussion II }
+                                              %! +SCORE
+                                            \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Perc. II }
+                                            \voiceOne
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            \mp
+                                            - \tweak padding #15
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Bristle-stick tremolo: Place LH brush bristles on key } \line { RH brush tremolo between bristles on key and handle on LH brush's handle. }  } } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -2
+                                            \startTextSpanOne
+                                            r16
+                                            r8
+                                            r16
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r8
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r16
+                                            r8
+                                            r16
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r8
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r16
+                                            ef'''16
+                                            :128
+                                            - \marcato
+                                            ~
+                                            ef'''16
+                                            :128
+                                            r8.
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r4
+                                            ef'''8
+                                            :64
+                                            - \marcato
+                                            r4.
+                                            \times 4/5
+                                            {
+                                                r16
+                                                ef'''8
+                                                - \marcato
+                                                r4
+                                                r16
+                                                ef'''8
+                                                - \marcato
+                                            }
+                                            \times 4/5
+                                            {
+                                                r8.
+                                                ef'''8
+                                                - \marcato
+                                                r4
+                                                ef'''16
+                                                - \marcato
+                                            }
+                                            r4
+                                            r32
+                                            ef'''16.
+                                            - \marcato
+                                            ~
+                                            ef'''32
+                                            r16
+                                            ef'''32
+                                            - \marcato
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 8/7
+                                            {
+                                                r8.
+                                                ef'''32
+                                                - \marcato
+                                                \stopTextSpanOne
+                                            }
+                                        }
+                                        \context Voice = "handle voice"
+                                        {
+                                            \override Voice.NoteHead.no-ledgers = ##t
+                                            \voiceTwo
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r8
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r8
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r8
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r8
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \tweak style #'cross
+                                            a16
+                                            :128
+                                            ~
+                                            \tweak style #'cross
+                                            a16
+                                            :128
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r8.
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r4
+                                            \tweak style #'cross
+                                            a8
+                                            :64
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r4.
+                                            \once \override TupletBracket.stencil = ##f
+                                            \once \override TupletNumber.stencil = ##f
+                                            \times 4/5
+                                            {
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r16
+                                                \tweak style #'cross
+                                                a8
+                                                :64
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r4
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r16
+                                                \tweak style #'cross
+                                                a8
+                                                :64
+                                            }
+                                            \once \override TupletBracket.stencil = ##f
+                                            \once \override TupletNumber.stencil = ##f
+                                            \times 4/5
+                                            {
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r8.
+                                                \tweak style #'cross
+                                                a8
+                                                :64
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r4
+                                                \tweak style #'cross
+                                                a16
+                                                :128
+                                            }
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r4
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r32
+                                            \tweak style #'cross
+                                            a16.
+                                            :128
+                                            ~
+                                            \tweak style #'cross
+                                            a32
+                                            :256
+                                            \once \override Dots.transparent = ##t
+                                            \once \override Rest.transparent = ##t
+                                            r16
+                                            \tweak style #'cross
+                                            a32
+                                            :256
+                                            \once \override TupletBracket.stencil = ##f
+                                            \once \override TupletNumber.stencil = ##f
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 8/7
+                                            {
+                                                \once \override Dots.transparent = ##t
+                                                \once \override Rest.transparent = ##t
+                                                r8.
+                                                \tweak style #'cross
+                                                a32
+                                                :256
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                 }
                             }
                         }
@@ -1913,9 +2051,11 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
-                                    \ff
+                                    \arpeggio
+                                    \mp
                                     r16
                                     r8
                                     r16
@@ -1927,8 +2067,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     r8
                                     <
                                         \tweak style #'cross
@@ -1938,8 +2080,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     r16
                                     r8
                                     r16
@@ -1951,8 +2095,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     r8
                                     <
                                         \tweak style #'cross
@@ -1962,8 +2108,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     r16
                                     <
                                         \tweak style #'cross
@@ -1973,8 +2121,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >16
+                                    :128
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     \sustainOn
                                     ~
                                     <
@@ -1985,6 +2135,7 @@
                                         \tweak style #'cross
                                         c'''''
                                     >16
+                                    :128
                                     r8.
                                     \sustainOff
                                     <
@@ -1995,8 +2146,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     \sustainOn
                                     r4
                                     \sustainOff
@@ -2008,8 +2161,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     \sustainOn
                                     r4.
                                     \sustainOff
@@ -2023,8 +2178,10 @@
                                             \tweak style #'cross
                                             c'''''
                                         >8
+                                        :64
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         r4
                                         <
                                             \tweak style #'cross
@@ -2034,8 +2191,10 @@
                                             \tweak style #'cross
                                             c'''''
                                         >8
+                                        :64
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         r8
                                     }
                                     \times 4/5
@@ -2048,8 +2207,10 @@
                                             \tweak style #'cross
                                             c'''''
                                         >8
+                                        :64
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         r4
                                         <
                                             \tweak style #'cross
@@ -2059,8 +2220,10 @@
                                             \tweak style #'cross
                                             c'''''
                                         >8
+                                        :64
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         r8
                                     }
                                     <
@@ -2071,8 +2234,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >8
+                                    :64
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     r16
                                     <
                                         \tweak style #'cross
@@ -2082,8 +2247,10 @@
                                         \tweak style #'cross
                                         c'''''
                                     >16
+                                    :128
                                     - \marcato
                                     - \stopped
+                                    \arpeggio
                                     ~
                                     <
                                         \tweak style #'cross
@@ -2093,6 +2260,7 @@
                                         \tweak style #'cross
                                         c'''''
                                     >16
+                                    :128
                                     r8.
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
@@ -2105,8 +2273,10 @@
                                             \tweak style #'cross
                                             c'''''
                                         >16
+                                        :128
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         r32
                                         <
                                             \tweak style #'cross
@@ -2115,11 +2285,12 @@
                                             b''''
                                             \tweak style #'cross
                                             c'''''
-                                        >16
+                                        >8
+                                        :64
                                         - \marcato
                                         - \stopped
+                                        \arpeggio
                                         \ottava 0
-                                        r16
                                     }
                                 }
                             }
@@ -2316,7 +2487,7 @@
                                     \tweak style #'cross
                                     c'8
                                     - \marcato
-                                    \ff
+                                    \mp
                                     - \tweak padding 3.5
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ standard bow }
                                     - \tweak padding #3.75
@@ -2370,7 +2541,7 @@
                                         \stopTextSpan
                                     }
                                     r4.
-                                    \times 4/5
+                                    \times 8/9
                                     {
                                         r32
                                         \staff-line-count 1
@@ -2379,52 +2550,56 @@
                                         \override Staff.Clef.stencil = ##f
                                         \clef "percussion"
                                         \tweak style #'cross
-                                        c'16.
+                                        c'8
                                         - \marcato
                                         - \tweak padding #3.75
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -2
                                         \startTextSpan
-                                        r4
+                                        r8..
                                         r16
                                         \tweak style #'cross
-                                        c'16
+                                        c'8
                                         - \marcato
-                                        r8
                                     }
                                     \times 4/5
                                     {
                                         r16.
                                         \tweak style #'cross
-                                        c'32
+                                        c'8
                                         - \marcato
-                                        r4
+                                        r8
+                                        r32
                                         r8
                                         \tweak style #'cross
-                                        c'16
+                                        c'8
                                         - \marcato
-                                        r16
                                     }
                                     r8
                                     r32
                                     \tweak style #'cross
-                                    c'16
+                                    c'16.
                                     - \marcato
-                                    r32
-                                    r16.
+                                    ~
+                                    \tweak style #'cross
+                                    c'32
+                                    r16
                                     \tweak style #'cross
                                     c'32
                                     - \marcato
-                                    r8
+                                    ~
+                                    \tweak style #'cross
+                                    c'16.
+                                    r32
                                     r8
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
                                         \tweak style #'cross
-                                        c'32
+                                        c'16
                                         - \marcato
-                                        r16
+                                        r32
                                         \tweak style #'cross
                                         c'64
                                         - \marcato
