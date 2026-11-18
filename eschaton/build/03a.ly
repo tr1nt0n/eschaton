@@ -3,7 +3,7 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (4 30 25 25 30 25 25 25)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (4 25 34 22 19 24 19 21 21)))
             \time 5/16
             s1 * 5/16
             - \tweak padding 17
@@ -22,16 +22,8 @@
             \time 5/16
             s1 * 5/16
             \break
-              %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 30 30 30 30 30 30)))
             \time 4/8
             s1 * 1/2
-              %! +SCORE
-            - \tweak padding #20
-              %! +SCORE
-            - \tweak transparent ##t
-              %! +SCORE
-            ^ \markup { S }
             \noBreak
             \time 3/8
             s1 * 3/8
@@ -39,31 +31,15 @@
             \time 4/8
             s1 * 1/2
             \break
-              %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 33 20 32 22 25 20 20 25 25)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
-              %! +SCORE
-            - \tweak padding #12
-              %! +SCORE
-            - \tweak transparent ##t
-              %! +SCORE
-            ^ \markup { S }
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
-              %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 30 25 25 25 25 25)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
-              %! +SCORE
-            - \tweak padding #17
-              %! +SCORE
-            - \tweak transparent ##t
-              %! +SCORE
-            ^ \markup { S }
               %! +SCORE
             \set Score.proportionalNotationDuration = #(ly:make-moment 1/80)
             \time 2/8
@@ -133,7 +109,7 @@
                                                             }
                                                     }
                                                 }
-                                        - \tweak padding #12
+                                        - \tweak padding #13.25
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Air } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -2.5
@@ -247,6 +223,14 @@
                                                     {
                                                         \char ##xe611
                                                     }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe610
+                                                        }
+                                                        \hspace #-0.77
+                                                        {
+                                                            \char ##xe611
+                                                        }
                                                         \hspace #-0.77
                                                         {
                                                             \char ##xe610
@@ -1561,9 +1545,8 @@
                                             \voiceOne
                                             ef'''8
                                             :64
-                                            - \marcato
-                                            \mp
-                                            - \tweak padding #15
+                                            \p
+                                            - \tweak padding #14
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Bristle-stick tremolo: Place LH brush bristles on key } \line { RH brush tremolo between bristles on key and handle on LH brush's handle. }  } } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
@@ -1573,71 +1556,57 @@
                                             r16
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r8
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r16
                                             r8
                                             r16
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r8
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r16
                                             ef'''16
                                             :128
-                                            - \marcato
                                             ~
                                             ef'''16
                                             :128
                                             r8.
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r4
                                             ef'''8
                                             :64
-                                            - \marcato
                                             r4.
                                             \times 4/5
                                             {
                                                 r16
                                                 ef'''8
-                                                - \marcato
                                                 r4
                                                 r16
                                                 ef'''8
-                                                - \marcato
                                             }
                                             \times 4/5
                                             {
                                                 r8.
                                                 ef'''8
-                                                - \marcato
                                                 r4
                                                 ef'''16
-                                                - \marcato
                                             }
                                             r4
                                             r32
                                             ef'''16.
-                                            - \marcato
                                             ~
                                             ef'''32
                                             r16
                                             ef'''32
-                                            - \marcato
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 8/7
                                             {
                                                 r8.
                                                 ef'''32
-                                                - \marcato
                                                 \stopTextSpanOne
                                             }
                                         }
@@ -1982,34 +1951,97 @@
                             r8.
                             r8
                             r8.
-                            r8
+                            - \tweak padding #8.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ drum stick } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1.5
+                            \startTextSpan
+                            r16.
+                            \once \override NoteHead.X-offset = 0
+                            \once \override Staff.Accidental.stencil = ##f
+                            \once \override Voice.Glissando.thickness = #8.25
+                            \once \override NoteHead.duration-log = 2
+                            \ottava -1
+                            \clef "bass"
+                            <
+                                \tweak style #'la
+                                a,,
+                                \tweak style #'la
+                                b,,
+                                \tweak style #'la
+                                c,
+                                \tweak style #'la
+                                d,
+                                \tweak style #'la
+                                e,
+                            >32
+                            - \coda
+                            - \marcato
+                            \fff
+                            \stopTextSpan
+                            \ottava 0
                             r8.
                             r8
                             r2
-                            r4.
-                            r2
-                            r2
-                            \ottava -1
-                            \clef "bass"
-                            \afterGrace
-                            <ds,, ef,,>4.
-                            \f
-                            - \tweak padding #4.5
+                            r4
+                            - \tweak padding #8.5
                             - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ bows } \hspace #0.5 }
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ drum stick } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1.5
                             \startTextSpan
-                            {
-                                \once \override Stem.stencil = ##f
-                                \once \override Flag.stencil = ##f
-                                \once \override NoteHead.no-ledgers = ##t
-                                \once \override Accidental.stencil = ##f
-                                \once \override NoteHead.transparent = ##t
-                                c'16
-                                _ \stop-on-string
-                                \stopTextSpan
-                            }
-                            r8
+                            r16.
+                            \once \override NoteHead.X-offset = 0
+                            \once \override Staff.Accidental.stencil = ##f
+                            \once \override Voice.Glissando.thickness = #8.25
+                            \once \override NoteHead.duration-log = 2
+                            \ottava -1
+                            <
+                                \tweak style #'la
+                                a,,
+                                \tweak style #'la
+                                b,,
+                                \tweak style #'la
+                                c,
+                                \tweak style #'la
+                                d,
+                                \tweak style #'la
+                                e,
+                            >32
+                            - \coda
+                            - \marcato
+                            \fff
+                            \stopTextSpan
                             \ottava 0
+                            r2
+                            r2
+                            \once \override NoteHead.X-offset = 0
+                            \once \override Staff.Accidental.stencil = ##f
+                            \once \override Voice.Glissando.thickness = #8.25
+                            \once \override NoteHead.duration-log = 2
+                            \ottava -1
+                            <
+                                \tweak style #'la
+                                a,,
+                                \tweak style #'la
+                                b,,
+                                \tweak style #'la
+                                c,
+                                \tweak style #'la
+                                d,
+                                \tweak style #'la
+                                e,
+                            >32
+                            - \coda
+                            - \marcato
+                            \fff
+                            - \tweak padding #9.75
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ drum stick } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -15
+                            \startTextSpan
+                            \ottava 0
+                            r4...
+                            \stopTextSpan
                             r2
                             r4
                         }
@@ -2038,10 +2070,9 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
-                                    \mp
+                                    \p
                                     r16
                                     r8
                                     r16
@@ -2054,7 +2085,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     r8
@@ -2067,7 +2097,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     r16
@@ -2082,7 +2111,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     r8
@@ -2095,7 +2123,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     r16
@@ -2108,7 +2135,6 @@
                                         c'''''
                                     >16
                                     :128
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     \sustainOn
@@ -2133,7 +2159,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     \sustainOn
@@ -2148,7 +2173,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     \sustainOn
@@ -2165,7 +2189,6 @@
                                             c'''''
                                         >8
                                         :64
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         r4
@@ -2178,7 +2201,6 @@
                                             c'''''
                                         >8
                                         :64
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         r8
@@ -2194,7 +2216,6 @@
                                             c'''''
                                         >8
                                         :64
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         r4
@@ -2207,7 +2228,6 @@
                                             c'''''
                                         >8
                                         :64
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         r8
@@ -2221,7 +2241,6 @@
                                         c'''''
                                     >8
                                     :64
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     r16
@@ -2234,7 +2253,6 @@
                                         c'''''
                                     >16
                                     :128
-                                    - \marcato
                                     - \stopped
                                     \arpeggio
                                     ~
@@ -2260,7 +2278,6 @@
                                             c'''''
                                         >16
                                         :128
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         r32
@@ -2273,7 +2290,6 @@
                                             c'''''
                                         >8
                                         :64
-                                        - \marcato
                                         - \stopped
                                         \arpeggio
                                         \ottava 0
@@ -2433,24 +2449,25 @@
                                         }
                                     }
                                     r2
-                                    \afterGrace
-                                    <a'! aqs'!>4.
-                                    \f
-                                    - \tweak padding #7.25
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "percussion"
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
+                                    \fff
+                                    - \tweak padding #7.5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Senza vib. } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -15
                                     \startTextSpan
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        _ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    r4...
+                                    \stopTextSpan
                                     r2
                                     r4
                                 }
@@ -2472,13 +2489,13 @@
                                     \clef "percussion"
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
-                                    \mp
-                                    - \tweak padding 3.5
+                                    :64
+                                    \p
+                                    - \tweak padding 4.75
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ standard bow }
-                                    - \tweak padding #3.75
+                                    - \tweak padding #3.25
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on the bridge } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -1
                                     \startTextSpan
                                     r16
@@ -2486,37 +2503,38 @@
                                     r16
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     r8
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     r16
                                     r8
                                     r16
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     r8
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     r16
                                     \tweak style #'cross
                                     c'16
-                                    - \marcato
+                                    :128
                                     ~
                                     \tweak style #'cross
                                     c'16
+                                    :128
                                     r8.
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     r4
                                     \afterGrace
                                     \tweak style #'cross
                                     c'8
-                                    - \marcato
+                                    :64
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
@@ -2527,7 +2545,7 @@
                                         \stopTextSpan
                                     }
                                     r4.
-                                    \times 8/9
+                                    \times 4/5
                                     {
                                         r32
                                         \staff-line-count 1
@@ -2537,46 +2555,49 @@
                                         \clef "percussion"
                                         \tweak style #'cross
                                         c'8
-                                        - \marcato
-                                        - \tweak padding #3.75
+                                        :64
+                                        - \tweak padding #3.25
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on side of bridge } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { CLB on the bridge } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -2
                                         \startTextSpan
                                         r8..
                                         r16
                                         \tweak style #'cross
                                         c'8
-                                        - \marcato
+                                        :64
+                                        r16
                                     }
                                     \times 4/5
                                     {
                                         r16.
                                         \tweak style #'cross
                                         c'8
-                                        - \marcato
+                                        :64
                                         r8
                                         r32
                                         r8
                                         \tweak style #'cross
                                         c'8
-                                        - \marcato
+                                        :64
                                     }
                                     r8
                                     r32
                                     \tweak style #'cross
                                     c'16.
-                                    - \marcato
+                                    :128
                                     ~
                                     \tweak style #'cross
                                     c'32
+                                    :256
                                     r16
                                     \tweak style #'cross
                                     c'32
-                                    - \marcato
+                                    :256
                                     ~
                                     \tweak style #'cross
                                     c'16.
+                                    :128
                                     r32
                                     r8
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -2584,11 +2605,11 @@
                                     {
                                         \tweak style #'cross
                                         c'16
-                                        - \marcato
+                                        :128
                                         r32
                                         \tweak style #'cross
                                         c'64
-                                        - \marcato
+                                        :512
                                         \stopTextSpan
                                     }
                                 }
@@ -2603,81 +2624,59 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vc. }
-                                    \clef "bass"
                                     r8.
-                                    r8
-                                    r8.
-                                    r8
-                                    \override Dots.staff-position = #2
-                                    \tweak style #'slash
-                                    d8.
-                                    - \tenuto
-                                    - \twist-bow
-                                    \p
-                                    (
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    - \tweak padding #6.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Twist on IV } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -4
-                                    \startTextSpan
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    \tweak style #'slash
-                                    d16
-                                    [
-                                    \revert Dots.staff-position
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    \tweak style #'slash
-                                    aqs16
-                                    )
-                                    \stopTextSpan
-                                    ]
-                                    r8.
-                                    r8
-                                    r2
-                                    r4.
-                                    r2
-                                    r2
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { w/ standard bow }
-                                    \afterGrace
-                                    <c, a,>4.
+                                    r8
+                                    r8.
+                                    r8
+                                    r8.
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r16.
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "percussion"
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
+                                    \fff
+                                    \stopTextSpan
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    r8.
+                                    r8
+                                    r2
+                                    r4
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r16.
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
+                                    \fff
+                                    \stopTextSpan
+                                    r2
+                                    r2
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
                                     \fff
                                     - \tweak padding #7.5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III + IV } \line { Senza vib. }  } } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -15
                                     \startTextSpan
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        _ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
+                                    r4...
+                                    \stopTextSpan
                                     r2
                                     r4
                                 }
@@ -2697,106 +2696,61 @@
                                     r8
                                     r8.
                                     r8
-                                    \override Dots.staff-position = #2
-                                    \once \override Staff.Clef.X-extent = ##f
-                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
-                                    \override Accidental.stencil = ##f
-                                    \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
-                                    \override Staff.Clef.stencil = #ly:text-interface::print
-                                    \override Staff.Clef.text = \bow-clef
-                                    \override Glissando.bound-details.left.padding = #0.5
-                                    \override Glissando.bound-details.right.padding = #0.5
-                                    \override Staff.NoteHead.no-ledgers = ##t
-                                    \staff-line-count 3
-                                    \override Staff.StaffSymbol.line-positions = #'(9 0 -9)
-                                    \clef "treble"
-                                    c'''8.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "fff"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    (
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
-                                    - \tweak padding #8.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { Bowing the side of the bridge } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -4
-                                    \startTextSpan
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'''16
-                                    [
-                                    \revert Dots.staff-position
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    \revert Staff.Stem.stemlet-length
-                                    g''16
-                                    )
-                                    \stopTextSpan
-                                    ]
-                                    \revert Accidental.stencil
-                                    \revert Staff.Clef.stencil
-                                    \revert Glissando.bound-details.left.padding
-                                    \revert Glissando.bound-details.right.padding
-                                    \revert Staff.NoteHead.no-ledgers
-                                    \revert Staff.StaffSymbol.line-positions
-                                    \staff-line-count 5
                                     r8.
-                                    \revert Staff.BarLine.bar-extent
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r16.
+                                    \staff-line-count 4
+                                    \override Staff.Clef.stencil = #ly:text-interface::print
+                                    \override Staff.Clef.text = \stringing-clef
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "percussion"
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
+                                    \fff
+                                    \stopTextSpan
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    r8.
                                     r8
                                     r2
-                                    r4.
+                                    r4
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    r16.
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
+                                    \fff
+                                    \stopTextSpan
                                     r2
                                     r2
-                                    \clef "bass"
-                                    \afterGrace
-                                    <e, b,>4.
+                                    <g b d' f'>32
+                                    - \coda
+                                    - \marcato
                                     \fff
                                     - \tweak padding #7.5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { III + IV } \line { Senza vib. }  } } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { 1/2 CLB + MST } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -15
                                     \startTextSpan
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        _ \stop-on-string
-                                        \stopTextSpan
-                                    }
-                                    r8
+                                    r4...
+                                    \stopTextSpan
+                                    \revert Staff.Clef.stencil
                                     r8
                                     \times 4/5
                                     {
+                                        \staff-line-count 5
                                         \big-half-harmonic
+                                        \clef "bass"
                                         e32
                                         \pp
                                         ^ \punta-to-talon
