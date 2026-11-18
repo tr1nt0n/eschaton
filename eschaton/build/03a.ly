@@ -22,8 +22,16 @@
             \time 5/16
             s1 * 5/16
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 18 27 28 20 20 20 16 20)))
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+            - \tweak padding #16
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
             \noBreak
             \time 3/8
             s1 * 3/8
@@ -31,15 +39,25 @@
             \time 4/8
             s1 * 1/2
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0 30 30 30 20 20 20 16 20 20)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 30 30 25 25 25 25)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/8
             s1 * 1/2
+              %! +SCORE
+            - \tweak padding #20
+              %! +SCORE
+            - \tweak transparent ##t
+              %! +SCORE
+            ^ \markup { S }
               %! +SCORE
             \set Score.proportionalNotationDuration = #(ly:make-moment 1/80)
             \time 2/8
@@ -1546,7 +1564,7 @@
                                             ef'''8
                                             :64
                                             \p
-                                            - \tweak padding #14
+                                            - \tweak padding #15.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #0 { \column { \line { Bristle-stick tremolo: Place LH brush bristles on key } \line { RH brush tremolo between bristles on key and handle on LH brush's handle. }  } } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
@@ -1584,29 +1602,37 @@
                                             {
                                                 r16
                                                 ef'''8
+                                                :64
                                                 r4
                                                 r16
                                                 ef'''8
+                                                :64
                                             }
                                             \times 4/5
                                             {
                                                 r8.
                                                 ef'''8
+                                                :64
                                                 r4
                                                 ef'''16
+                                                :128
                                             }
                                             r4
                                             r32
                                             ef'''16.
+                                            :128
                                             ~
                                             ef'''32
+                                            :256
                                             r16
                                             ef'''32
+                                            :256
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 8/7
                                             {
                                                 r8.
                                                 ef'''32
+                                                :256
                                                 \stopTextSpanOne
                                             }
                                         }
@@ -2744,12 +2770,14 @@
                                     \startTextSpan
                                     r4...
                                     \stopTextSpan
-                                    \revert Staff.Clef.stencil
                                     r8
                                     \times 4/5
                                     {
                                         \staff-line-count 5
                                         \big-half-harmonic
+                                        \revert Staff.Clef.stencil
+                                        \once \override Staff.Clef.X-extent = ##f
+                                        \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                         \clef "bass"
                                         e32
                                         \pp
