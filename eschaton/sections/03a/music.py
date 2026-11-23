@@ -2166,60 +2166,6 @@ trinton.make_music(
 #     voice=score["Global Context"],
 # )
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (11,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/80)",
-                site="before",
-            ),
-            abjad.LilyPondLiteral(
-                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
-                site="absolute_after",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        tag=abjad.Tag("+SCORE"),
-    ),
-    voice=score["Global Context"],
-)
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (8,)),
-#     trinton.attachment_command(
-#         attachments=[abjad.LilyPondLiteral([r"\magnifyStaff #7/8"], site="before")],
-#         selector=trinton.select_leaves_by_index([0]),
-#     ),
-#     voice=score["cello 2 voice temp"],
-# )
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (10,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral([r"\magnifyStaff #1"], site="absolute_after")
-#         ],
-#         selector=trinton.select_leaves_by_index([-1], grace=False),
-#     ),
-#     voice=score["cello lower voice"],
-# )
-#
-# for voice_name in ["violin 1 bow voice", "violin 4 voice", "viola 2 voice temp 2"]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (8, 10)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral([r"\magnifyStaff #7/8"], site="before")],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral([r"\magnifyStaff #1"], site="absolute_after")
-#             ],
-#             selector=trinton.select_leaves_by_index([-1]),
-#         ),
-#         voice=score[voice_name],
-#     )
 
 # barlines
 
@@ -2388,6 +2334,25 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0]),
         tag=abjad.Tag("+SCORE"),
         direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/80)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+                site="absolute_after",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
     ),
     voice=score["Global Context"],
 )

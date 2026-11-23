@@ -9,18 +9,30 @@ from eschaton import library
 from eschaton import meter
 
 
-def rhythm_1(stage, selector=trinton.logical_ties(pitched=True, grace=False)):
+def rhythm_1(
+    stage, selector=trinton.logical_ties(pitched=True, grace=False), invert_rest=False
+):
     def make_rhythm_1(argument):
         subdivisions = selector(argument)
         tuplet_durations = [
             abjad.get.duration(_, preprolated=True) for _ in subdivisions
         ]
         if stage == 1:
-            tuplet_ratio = (-1, 1)
+            if invert_rest is True:
+                tuplet_ratio = (1, -1)
+            else:
+                tuplet_ratio = (-1, 1)
+
         if stage == 2:
-            tuplet_ratio = (-1, 2)
+            if invert_rest is True:
+                tuplet_ratio = (2, -1)
+            else:
+                tuplet_ratio = (-1, 2)
         if stage == 3:
-            tuplet_ratio = (-1, 3)
+            if invert_rest is True:
+                tuplet_ratio = (3, -1)
+            else:
+                tuplet_ratio = (-1, 3)
 
         container = abjad.Container()
         tuplets = rmakers.tuplet(tuplet_durations, [tuplet_ratio])
