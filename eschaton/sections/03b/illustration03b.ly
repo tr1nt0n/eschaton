@@ -123,8 +123,12 @@
                                         c'8.
                                         c'4
                                     }
-                                    c'8.
-                                    c'8.
+                                    c'8
+                                    ~
+                                    c'16
+                                    c'16
+                                    ~
+                                    c'8
                                     \override TupletNumber.text = \markup { 3:2 }
                                     \times 2/3
                                     {
@@ -199,30 +203,14 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Oboe }
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Ob. }
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
+                                    r2
+                                    r4.
+                                    r2
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4
+                                    r4.
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
                                     {
@@ -318,8 +306,12 @@
                                         c'32
                                     }
                                     c'8
-                                    c'8.
-                                    c'8.
+                                    c'8
+                                    ~
+                                    c'16
+                                    c'16
+                                    ~
+                                    c'8
                                     c'16.
                                     c'32
                                     ~
@@ -420,16 +412,15 @@
                                     ~
                                     c'32
                                     r16.
-                                    r32
-                                    r32
-                                    c'16
-                                    ~
-                                    c'64
-                                    c'64
-                                    ~
-                                    c'16
                                     r16
-                                    r16.
+                                    c'16
+                                    ~
+                                    c'64
+                                    c'64
+                                    ~
+                                    c'16
+                                    r32
+                                    r8
                                     c'32
                                     c'32
                                     r16
@@ -446,7 +437,8 @@
                                     c'32
                                     ~
                                     c'16
-                                    r8.
+                                    r16
+                                    r8
                                     c'16
                                     c'16
                                     r8
@@ -462,7 +454,8 @@
                                     c'32
                                     ~
                                     c'16
-                                    r8.
+                                    r16
+                                    r8
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
                                     {
@@ -528,19 +521,11 @@
                                     r16
                                     c'16
                                     r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4
+                                    r4.
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
                                     {
@@ -588,42 +573,18 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Guitar }
                               %! +SCORE
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Guit. }
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
+                            r2
+                            r4.
+                            r2
+                            r4.
+                            r4
+                            r4.
+                            r4
+                            r4.
+                            r4..
+                            r4..
+                            r4.
+                            r4
                         }
                     }
                 }
@@ -636,42 +597,18 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Harp }
                               %! +SCORE
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Hp. }
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
-                            r8
+                            r2
+                            r4.
+                            r2
+                            r4.
+                            r4
+                            r4.
+                            r4
+                            r4.
+                            r4..
+                            r4..
+                            r4.
+                            r4
                         }
                     }
                 }
@@ -696,38 +633,23 @@
                                     c'16
                                     r8
                                     c'16
-                                    r8.
+                                    r16
+                                    r8
                                     c'16
                                     r16
-                                    r8.
-                                    c'16
+                                    r8
                                     r16
-                                    r8.
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
+                                    c'16
+                                    r4
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4..
+                                    r4..
+                                    r4.
+                                    r4
                                 }
                             }
                         }
@@ -737,42 +659,18 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
-                                    r8
+                                    r2
+                                    r4.
+                                    r2
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4
+                                    r4.
+                                    r4..
+                                    r4..
+                                    r4.
+                                    r4
                                 }
                             }
                         }
@@ -839,14 +737,17 @@
                                     c'16
                                     ~
                                     c'32
-                                    r8..
+                                    r16.
+                                    r8
                                     c'16
                                     c'16
                                     r8
                                     c'8
                                     ~
                                     c'16
-                                    c'8.
+                                    c'16
+                                    ~
+                                    c'8
                                     r4.
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -895,13 +796,14 @@
                                       %! +SCORE
                                     \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Vla. }
                                     c'16
-                                    r8.
-                                    c'16
-                                    r8.
                                     r16
+                                    r8
                                     c'16
                                     r16
-                                    r8.
+                                    r8
+                                    r16
+                                    c'16
+                                    r4
                                     c'16
                                     r16
                                     c'16

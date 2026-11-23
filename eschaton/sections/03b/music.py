@@ -351,10 +351,29 @@ trinton.change_time_signatures(
     ],
 )
 
-trinton.rewrite_meter_without_splitting(target=score)
+for voice_name in [
+    "altoflute voice",
+    "oboe voice",
+    "bassclarinet voice",
+    "percussion 1 voice",
+    "percussion 2 voice",
+    "guitar voice",
+    "harp voice",
+    "piano 1 voice",
+    "piano 2 voice",
+    "violin voice",
+    "viola voice",
+    "cello voice",
+    "contrabass voice",
+]:
+
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (1, 9)),
+        trinton.rewrite_meter_command(boundary_depth=-1),
+        voice=score[voice_name],
+    )
 
 # pitching and attachments
-
 
 # globals
 
