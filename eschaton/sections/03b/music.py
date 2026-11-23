@@ -375,6 +375,14 @@ for voice_name in [
 
 # pitching and attachments
 
+# viola pitching
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (5,)),
+#     trinton.respell_tuplets_by_hand(tuplets=[1], multipliers=[(5, 4)], as_markup=True),
+#     voice=score["viola voice"]
+# )
+
 # globals
 
 # title

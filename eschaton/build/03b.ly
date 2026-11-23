@@ -115,14 +115,12 @@
                                     c'16
                                     ~
                                     c'8
-                                    \override TupletNumber.text = \markup { 3:2 }
                                     \times 2/3
                                     {
                                         r8
                                         c'8
                                         c'8
                                     }
-                                    \revert TupletNumber.text
                                     \times 8/11
                                     {
                                         c'8
@@ -150,14 +148,13 @@
                                     {
                                         c'16..
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 5/6
                                         {
                                             r16
                                             c'16
                                             c'16
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -204,14 +201,13 @@
                                         c'8
                                         ~
                                         c'32
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -248,14 +244,12 @@
                                         \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Bcl. }
                                         c'16.
                                         c'16.
-                                        \override TupletNumber.text = \markup { 3:2 }
-                                        \times 4/6
+                                        \times 2/3
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
@@ -318,14 +312,12 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/7
                                     {
-                                        \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
                                             c'16
                                             c'16
                                             c'16
                                         }
-                                        \revert TupletNumber.text
                                         c'8
                                         c'8.
                                     }
@@ -343,14 +335,13 @@
                                         c'8
                                         ~
                                         c'32
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -449,14 +440,13 @@
                                         ~
                                         c'32
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -519,14 +509,13 @@
                                         ~
                                         c'32
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -742,14 +731,13 @@
                                         c'8
                                         ~
                                         c'32
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -802,14 +790,12 @@
                                     {
                                         c'32.
                                         c'32.
-                                        \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
@@ -826,14 +812,12 @@
                                     }
                                     \times 4/5
                                     {
-                                        \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
                                             c'16
                                             c'16
                                             c'16
                                         }
-                                        \revert TupletNumber.text
                                         c'8.
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -853,14 +837,13 @@
                                     {
                                         c'16..
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 5/6
                                         {
                                             r16
                                             c'16
                                             c'16
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -958,14 +941,13 @@
                                     {
                                         c'16..
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 5/6
                                         {
                                             r16
                                             c'16
                                             c'16
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12
@@ -1006,14 +988,12 @@
                                         c'16
                                         ~
                                         c'64
-                                        \override TupletNumber.text = \markup { 3:2 }
                                         \times 2/3
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/7
@@ -1085,14 +1065,13 @@
                                         ~
                                         c'32
                                         c'16..
-                                        \override TupletNumber.text = \markup { 3:2 }
+                                        \tweak text #tuplet-number::calc-fraction-text
                                         \times 7/6
                                         {
                                             r32
                                             c'32
                                             c'32
                                         }
-                                        \revert TupletNumber.text
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 14/12

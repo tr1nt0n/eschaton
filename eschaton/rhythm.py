@@ -288,11 +288,6 @@ def rhythm_5(
                     )
                     rmakers.rewrite_dots(tuplet)
                     trinton.respell_tuplets(tuplet, rewrite_brackets=False)
-                    for actual_tuplet in abjad.select.tuplets(tuplet):
-                        if actual_tuplet.multiplier != (2, 3):
-                            abjad.override(
-                                actual_tuplet
-                            ).TupletNumber.text = r"\markup { 3:2 }"
                     abjad.mutate.replace(tie, tuplet)
 
         if stage == 1:
@@ -320,9 +315,21 @@ def rhythm_5(
         rmakers.rewrite_dots(abjad.select.tuplets(container))
         rmakers.rewrite_sustained(abjad.select.tuplets(container))
         rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
-        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        for tuplet in abjad.select.tuplets(container):
+            prolation = tuplet.implied_prolation
+            numerator = prolation.denominator
+            denominator = prolation.numerator
+            if (
+                isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet)
+                and numerator == 3
+                and denominator == 2
+            ):
+                pass
+            else:
+                trinton.respell_tuplets([tuplet], rewrite_brackets=False)
         rmakers.trivialize(abjad.select.tuplets(container))
         rmakers.extract_trivial(abjad.select.tuplets(container))
+
         rhythm_selections = abjad.mutate.eject_contents(container)
         abjad.mutate.replace(argument, rhythm_selections)
 
