@@ -274,6 +274,35 @@ def write_short_instrument_names(score):
 # notation tools
 
 
+def moaning_graces(selector=trinton.pleaves(grace=False)):
+    def graces(argument):
+        selections = selector(argument)
+        grace_groups = abjad.select.group_by_contiguity(selections)
+
+        aftergrace_command = trinton.aftergrace_command(
+            slash=True,
+            selector=trinton.select_logical_ties_by_index(
+                [-1], pitched=True, grace=False
+            ),
+        )
+
+        for grace_group in grace_groups:
+            aftergrace_command(grace_group)
+
+    return graces
+
+
+def contiguous_slurs(selector=trinton.pleaves()):
+    def graces(argument):
+        selections = selector(argument)
+        grace_groups = abjad.select.group_by_contiguity(selections)
+
+        for grace_group in grace_groups:
+            abjad.slur(grace_group)
+
+    return graces
+
+
 def twist_bow_glissandi(partitions=[2], selector=trinton.logical_ties(pitched=True)):
     def glissandi(argument):
         selections = selector(argument)

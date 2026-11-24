@@ -979,117 +979,834 @@
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 8/7
                                     {
+                                        \big-half-harmonic
                                         \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Contrabass }
                                           %! +SCORE
                                     %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Cb. }
-                                        c'16
+                                        \clef "bass"
+                                        gqs16
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
+                                        [
+                                        - \tweak padding #7
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpan
                                         ~
-                                        c'64
-                                        c'16
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 4
+                                        \set stemRightBeamCount = 2
+                                        gqs64
+                                        \big-half-harmonic
+                                        b16
+                                        ^ \punta-to-talon
+                                        ^ (
                                         ~
-                                        c'64
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 4
+                                        \set stemRightBeamCount = 1
+                                        b64
                                         \times 2/3
                                         {
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
                                             r32
-                                            c'32
-                                            c'32
+                                            \big-half-harmonic
+                                            fqs32
+                                            \big-half-harmonic
+                                            cs32
+                                            )
+                                            \stopTextSpan
+                                            ]
                                         }
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/7
                                     {
-                                        c'8
-                                        c'8
+                                        fs,8
+                                        - \accent
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
+                                        \mf
+                                        [
+                                        - \tweak padding #11.25
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { IV } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpanOne
+                                        b,8
+                                        - \accent
+                                        ^ \punta-to-talon
                                         ~
-                                        c'32
-                                        c'8
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 1
+                                        b,32
+                                        g,8
+                                        - \accent
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
                                         ~
-                                        c'32
+                                        g,32
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/7
                                     {
-                                        c'8
+                                        bqs,8
+                                        - \accent
+                                        ^ \punta-to-talon
                                         ~
-                                        c'32
+                                        bqs,32
+                                        \stopTextSpanOne
+                                        ]
                                         r8
                                         r32
-                                        c'8
+                                        \big-half-harmonic
+                                        aqf8
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
+                                        \pp
+                                        [
+                                        - \tweak padding #11.25
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MST } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding 1.5
+                                        \startTextSpanTwo
                                     }
-                                    c'32.
-                                    c'32.
-                                    c'32
+                                    \big-half-harmonic
+                                    bf32.
+                                    ^ \punta-to-talon
+                                    ^ (
+                                    \big-half-harmonic
+                                    af32.
+                                    \big-half-harmonic
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    a32
+                                    )
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        c'16
-                                        c'16.
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        bf16
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
+                                        ^ (
+                                        \big-half-harmonic
+                                        aqf16.
+                                        )
+                                        ]
                                         r16.
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 3/4
                                     {
-                                        c'16.
-                                        c'32
-                                        c'32
-                                        c'32
-                                        c'16
+                                        \big-half-harmonic
+                                        af16.
+                                        ^ \punta-to-talon
+                                        [
+                                        ^ (
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 3
+                                        \set stemRightBeamCount = 2
+                                        bqf32
+                                        )
+                                        \big-half-harmonic
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 3
+                                        bqf32
+                                        - \tweak padding #0.75
+                                        ^ \talon-to-punta
+                                        \stopTextSpanTwo
+                                        - \tweak padding #11.25
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #0 \box \line { MSP } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -2
+                                        \startTextSpanTwo
+                                        ^ (
+                                        \big-half-harmonic
+                                        aqf32
+                                        \big-half-harmonic
+                                        cqs'16
+                                        )
+                                        \stopTextSpanTwo
+                                        ]
                                     }
-                                    c'16
-                                    c'16
-                                    r16
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 7/6
-                                    {
-                                        c'8
-                                        c'8
-                                        r8
-                                    }
-                                    \times 2/3
-                                    {
-                                        c'8
-                                        c'8
-                                        r8
-                                    }
-                                    c'8
-                                    ~
-                                    c'8
-                                    c'8
-                                    ~
-                                    c'8
-                                    r4
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 14/12
-                                    {
-                                        c'8
-                                        ~
-                                        c'32
-                                        c'16..
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 7/6
+                                    <<
+                                        \context Voice = "ricochet 1 lower voice"
                                         {
-                                            r32
-                                            c'32
-                                            c'32
+                                            \override Dots.staff-position = #2
+                                            \override Voice.TupletBracket.direction = #UP
+                                            \voiceTwo
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                eqs,
+                                                \tweak style #'harmonic
+                                                f,
+                                            >16
+                                            ^ \markup 0
+                                            [
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            \afterGrace
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                fs,
+                                                \tweak style #'harmonic
+                                                g,
+                                            >16
+                                            ^ \markup 1
+                                            ]
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                \revert Dots.staff-position
+                                                \once \override Flag.stroke-style = #"grace"
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    eqs,
+                                                    \tweak style #'harmonic
+                                                    f,
+                                                >16
+                                                )
+                                            }
+                                            r16
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/6
+                                            {
+                                                \override Dots.staff-position = #2
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    eqs,
+                                                    \tweak style #'harmonic
+                                                    f,
+                                                >8
+                                                ^ \markup 2
+                                                [
+                                                (
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                \afterGrace
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    fs,
+                                                    \tweak style #'harmonic
+                                                    g,
+                                                >8
+                                                ^ \markup 3
+                                                ]
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    \revert Dots.staff-position
+                                                    \once \override Flag.stroke-style = #"grace"
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        eqs,
+                                                        \tweak style #'harmonic
+                                                        f,
+                                                    >16
+                                                    )
+                                                }
+                                                r8
+                                            }
+                                            \times 2/3
+                                            {
+                                                \override Dots.staff-position = #2
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    fs,
+                                                    \tweak style #'harmonic
+                                                    g,
+                                                >8
+                                                ^ \markup 4
+                                                [
+                                                (
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                \afterGrace
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    b,
+                                                    \tweak style #'harmonic
+                                                    cqs
+                                                >8
+                                                ^ \markup 5
+                                                ]
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    \revert Dots.staff-position
+                                                    \once \override Flag.stroke-style = #"grace"
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        fs,
+                                                        \tweak style #'harmonic
+                                                        g,
+                                                    >16
+                                                    )
+                                                }
+                                                r8
+                                            }
+                                            \override Dots.staff-position = #2
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                fs,
+                                                \tweak style #'harmonic
+                                                g,
+                                            >8
+                                            ^ \markup 6
+                                            (
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            ~
+                                              %! abjad.glissando(1)
+                                            \hide NoteHead
+                                              %! abjad.glissando(1)
+                                            \override Accidental.stencil = ##f
+                                              %! abjad.glissando(1)
+                                            \override NoteColumn.glissando-skip = ##t
+                                              %! abjad.glissando(1)
+                                            \override NoteHead.no-ledgers = ##t
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                fs,
+                                                \tweak style #'harmonic
+                                                g,
+                                            >8
+                                            [
+                                              %! abjad.glissando(6)
+                                            \revert Accidental.stencil
+                                              %! abjad.glissando(6)
+                                            \revert NoteColumn.glissando-skip
+                                              %! abjad.glissando(6)
+                                            \revert NoteHead.no-ledgers
+                                              %! abjad.glissando(6)
+                                            \undo \hide NoteHead
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                b,
+                                                \tweak style #'harmonic
+                                                cqs
+                                            >8
+                                            ^ \markup 7
+                                            ]
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            ~
+                                              %! abjad.glissando(1)
+                                            \hide NoteHead
+                                              %! abjad.glissando(1)
+                                            \override Accidental.stencil = ##f
+                                              %! abjad.glissando(1)
+                                            \override NoteColumn.glissando-skip = ##t
+                                              %! abjad.glissando(1)
+                                            \override NoteHead.no-ledgers = ##t
+                                            \afterGrace
+                                            <
+                                                \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                \tweak Accidental.font-size #-2.5
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-2.5
+                                                \tweak style #'harmonic
+                                                b,
+                                                \tweak style #'harmonic
+                                                cqs
+                                            >8
+                                            {
+                                                \revert Dots.staff-position
+                                                \once \override Flag.stroke-style = #"grace"
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    fs,
+                                                    \tweak style #'harmonic
+                                                    g,
+                                                >16
+                                                )
+                                            }
+                                            r4
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 14/12
+                                            {
+                                                \override Dots.staff-position = #2
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    g,
+                                                    \tweak style #'harmonic
+                                                    aqf,
+                                                >8
+                                                ^ \markup 8
+                                                [
+                                                (
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                ~
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    g,
+                                                    \tweak style #'harmonic
+                                                    aqf,
+                                                >32
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                \afterGrace
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    a,
+                                                    \tweak style #'harmonic
+                                                    bf,
+                                                >16..
+                                                ^ \markup 9
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    \revert Dots.staff-position
+                                                    \once \override Flag.stroke-style = #"grace"
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        dqs
+                                                        \tweak style #'harmonic
+                                                        e
+                                                    >16
+                                                    )
+                                                }
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 7/6
+                                                {
+                                                    r32
+                                                    \override Dots.staff-position = #2
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        e
+                                                        \tweak style #'harmonic
+                                                        fqs
+                                                    >32
+                                                    ^ \markup 10
+                                                    (
+                                                    - \abjad-zero-padding-glissando
+                                                    \glissando
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        fs
+                                                        \tweak style #'harmonic
+                                                        gs
+                                                    >32
+                                                    ^ \markup 11
+                                                    ]
+                                                    - \abjad-zero-padding-glissando
+                                                    \glissando
+                                                }
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 14/12
+                                            {
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    eqs
+                                                    \tweak style #'harmonic
+                                                    fs
+                                                >16..
+                                                ^ \markup 12
+                                                [
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    gs
+                                                    \tweak style #'harmonic
+                                                    a
+                                                >16..
+                                                ^ \markup 13
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    fs
+                                                    \tweak style #'harmonic
+                                                    g
+                                                >8
+                                                ^ \markup 14
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                ~
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    fs
+                                                    \tweak style #'harmonic
+                                                    g
+                                                >32
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                \afterGrace
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    bqf
+                                                    \tweak style #'harmonic
+                                                    c'
+                                                >8..
+                                                ^ \markup 15
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    \revert Dots.staff-position
+                                                    \once \override Flag.stroke-style = #"grace"
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        a
+                                                        \tweak style #'harmonic
+                                                        bqf
+                                                    >16
+                                                    )
+                                                }
+                                                r4
+                                                r16
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                <
+                                                    \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                    \tweak Accidental.font-size #-2.5
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-2.5
+                                                    \tweak style #'harmonic
+                                                    cqs'
+                                                    \tweak style #'harmonic
+                                                    d'
+                                                >8..
+                                                ^ \markup 16
+                                                (
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    \revert Dots.staff-position
+                                                    \once \override Flag.stroke-style = #"grace"
+                                                    <
+                                                        \tweak Accidental.color #(x11-color 'LightSlateBlue)
+                                                        \tweak Accidental.font-size #-2.5
+                                                        \tweak color #(x11-color 'LightSlateBlue)
+                                                        \tweak font-size #-2.5
+                                                        \tweak style #'harmonic
+                                                        fs'
+                                                        \tweak style #'harmonic
+                                                        g'
+                                                    >16
+                                                    )
+                                                    \revert Voice.TupletBracket.direction
+                                                }
+                                            }
                                         }
-                                    }
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 14/12
-                                    {
-                                        c'16..
-                                        c'16..
-                                        c'8
-                                        ~
-                                        c'32
-                                    }
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 5/6
-                                    {
-                                        c'8..
-                                        r4
-                                        r16
-                                        c'8..
-                                    }
+                                        \context Voice = "ricochet 1 upper voice"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 1/1
+                                            {
+                                                \my-hack-slash
+                                                \override Voice.TupletNumber.stencil = ##f
+                                                \override Voice.TupletBracket.stencil = ##f
+                                                \voiceOne
+                                                \once \override Beam.grow-direction = #right
+                                                c'64 * 15/8
+                                                [
+                                                c'64 * 21/16
+                                                c'64 * 13/16
+                                                ]
+                                            }
+                                            c'16
+                                            r16
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/6
+                                            {
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 1/1
+                                                {
+                                                    \my-hack-slash
+                                                    \once \override Beam.grow-direction = #right
+                                                    c'64 * 15/4
+                                                    [
+                                                    c'64 * 21/8
+                                                    c'64 * 13/8
+                                                    ]
+                                                }
+                                                c'8
+                                                r8
+                                            }
+                                            \times 2/3
+                                            {
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 1/1
+                                                {
+                                                    \my-hack-slash
+                                                    \once \override Beam.grow-direction = #right
+                                                    c'64 * 15/4
+                                                    [
+                                                    c'64 * 21/8
+                                                    c'64 * 13/8
+                                                    ]
+                                                }
+                                                c'8
+                                                r8
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 1/1
+                                            {
+                                                \my-hack-slash
+                                                \once \override Beam.grow-direction = #right
+                                                c'64 * 15/2
+                                                [
+                                                c'64 * 21/4
+                                                c'64 * 13/4
+                                                ]
+                                            }
+                                            c'8
+                                            ~
+                                            c'8
+                                            r4
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 14/12
+                                            {
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 1/1
+                                                {
+                                                    \my-hack-slash
+                                                    \once \override Beam.grow-direction = #right
+                                                    c'64 * 1
+                                                    [
+                                                    c'64 * 15/16
+                                                    c'64 * 15/16
+                                                    c'64 * 7/8
+                                                    c'64 * 13/16
+                                                    c'64 * 11/16
+                                                    c'64 * 5/8
+                                                    c'64 * 9/16
+                                                    c'64 * 9/16
+                                                    c'64 * 1/2
+                                                    c'64 * 7/16
+                                                    c'64 * 7/16
+                                                    c'64 * 7/16
+                                                    c'64 * 3/8
+                                                    c'64 * 3/8
+                                                    c'64 * 7/16
+                                                    ]
+                                                }
+                                                c'16..
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 7/6
+                                                {
+                                                    r32
+                                                    \tweak text #tuplet-number::calc-fraction-text
+                                                    \times 1/1
+                                                    {
+                                                        \my-hack-slash
+                                                        \once \override Beam.grow-direction = #right
+                                                        c'64 * 15/16
+                                                        [
+                                                        c'64 * 11/16
+                                                        c'64 * 3/8
+                                                        ]
+                                                    }
+                                                    c'32
+                                                }
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 14/12
+                                            {
+                                                c'16..
+                                                c'16..
+                                                c'8
+                                                ~
+                                                c'32
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                c'8..
+                                                r4
+                                                r16
+                                                \tweak text #tuplet-number::calc-fraction-text
+                                                \times 1/1
+                                                {
+                                                    \my-hack-slash
+                                                    \once \override Beam.grow-direction = #right
+                                                    c'64 * 1
+                                                    [
+                                                    c'64 * 1
+                                                    c'64 * 15/16
+                                                    c'64 * 15/16
+                                                    c'64 * 7/8
+                                                    c'64 * 13/16
+                                                    c'64 * 13/16
+                                                    c'64 * 3/4
+                                                    c'64 * 11/16
+                                                    c'64 * 5/8
+                                                    c'64 * 5/8
+                                                    c'64 * 9/16
+                                                    c'64 * 1/2
+                                                    c'64 * 1/2
+                                                    c'64 * 1/2
+                                                    c'64 * 7/16
+                                                    c'64 * 7/16
+                                                    c'64 * 7/16
+                                                    c'64 * 7/16
+                                                    c'64 * 3/8
+                                                    c'64 * 3/8
+                                                    c'64 * 3/8
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                 }
                             }
                         }

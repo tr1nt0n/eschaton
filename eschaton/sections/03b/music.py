@@ -375,13 +375,245 @@ for voice_name in [
 
 # pitching and attachments
 
-# viola pitching
+
+# contrabass pitching
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.PitchHandler(
+        pitch.return_material_5_pitches(index=10, guitar=False, harp=False)
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            list(range(0, 4)), pitched=True, grace=False
+        ),
+    ),
+    trinton.octavation(
+        octave=-2,
+        selector=trinton.select_logical_ties_by_index(
+            list(range(4, 8)), pitched=True, grace=False
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            list(range(8, 18)), pitched=True, grace=False
+        ),
+    ),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves
+    #     # selector=trinton.pleaves(grace=False),
+    #     # selector=trinton.logical_ties(first=True, pitched=True, grace=False)
+    # ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([0, 6, 7, 13, 16, 21, 23, 27]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=4, right=2),
+            abjad.BeamCount(left=4, right=1),
+            abjad.BeamCount(left=1, right=3),
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=3, right=2),
+            abjad.BeamCount(left=2, right=3),
+        ],
+        selector=trinton.select_leaves_by_index([1, 3, 4, 9, 19, 20, 24, 25]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [2, 5, 14, 16, 17, 18, 19, 20, 21, 23], pitched=True
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.change_notehead_command(
+        notehead="half-harmonic",
+        selector=trinton.logical_ties(exclude=[4, 5, 6, 7], pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.bundle(
+                    abjad.Articulation("talon-to-punta"),
+                    abjad.Tweak(r"- \tweak padding #0.75"),
+                ),
+                abjad.Articulation("punta-to-talon"),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [0, 2, 6, 7, 9, 11, 13, 14, 17, 19, 21], pitched=True
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(">")],
+        selector=trinton.select_logical_ties_by_index(
+            [4, 5, 6, 7], pitched=True, first=True, grace=False
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="IV",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=11.25,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([6, 12], pitched=True),
+        right_padding=2,
+        command="One",
+    ),
+    trinton.hooked_spanner_command(
+        string=trinton.boxed_markup(
+            string="MST",
+            column="\column",
+            font_name="Bodoni72 Book Italic",
+            fontsize=0,
+            string_only=True,
+        ),
+        full_string=True,
+        padding=7,
+        style="dashed-line-with-hook",
+        selector=trinton.select_leaves_by_index([0, 6]),
+        right_padding=2,
+    ),
+    trinton.spanner_command(
+        strings=[
+            trinton.boxed_markup(
+                string=r"MST",
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=True,
+            ),
+            trinton.boxed_markup(
+                string=r"MSP",
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=0,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([16, 25, 25, 27]),
+        style="solid-line-with-arrow",
+        padding=11.25,
+        right_padding=-1.5,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="Two",
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("mf"), abjad.Dynamic("pp")],
+        selector=trinton.select_logical_ties_by_index([4, 8], first=True, pitched=True),
+    ),
+    voice=score["contrabass voice"],
+)
 #
 # trinton.make_music(
-#     lambda _: trinton.select_target(_, (5,)),
-#     trinton.respell_tuplets_by_hand(tuplets=[1], multipliers=[(5, 4)], as_markup=True),
-#     voice=score["viola voice"]
+#     lambda _: trinton.select_target(_, (4, 9)),
+#     trinton.IntermittentVoiceHandler(
+#         evans.RhythmHandler(
+#             evans.tuplet(
+#                 [
+#                     (1, -2, 1, -1),
+#                     (1, -2, 1, -1),
+#                     (2, -1, 2, -3),
+#                     (1, -2),
+#                     (1, -3),
+#                     (-1, 2, -5, 2),
+#                     (-3, 2, -4, 1),
+#                     (-9, 4, -2, 1),
+#                     (-6, 1),
+#                 ]
+#             )
+#         ),
+#         direction=abjad.DOWN,
+#         voice_name="ricochet voice",
+#         temp_name="temp 1",
+#         preprocessor=trinton.fuse_eighths_preprocessor((5, 5, 4, 3, 4, 4, 4, 4, 2)),
+#     ),
+#     voice=score["contrabass voice"]
 # )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 9)),
+    rhythm.harmonic_glissando_ricochet(
+        ricochet_selector=trinton.select_logical_ties_by_index(
+            [0, 2, 4, 6, 8, 10, 16], pitched=True, grace=False
+        )
+    ),
+    voice=score["contrabass voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 9)),
+    library.moaning_graces(),
+    library.contiguous_slurs(),
+    evans.PitchHandler(
+        [
+            ["eqs,", "f,"],
+            ["fs,", "g,"],
+            ["eqs,", "f,"],
+            ["eqs,", "f,"],
+            ["fs,", "g,"],
+            ["eqs,", "f,"],
+            ["fs,", "g,"],
+            ["b,", "cqs"],
+            ["fs,", "g,"],
+            ["fs,", "g,"],
+            ["b,", "cqs"],
+            ["fs,", "g,"],
+            ["g,", "aqf,"],
+            ["a,", "bf,"],
+            ["dqs", "e"],
+            ["e", "fqs"],
+            ["fs", "gs"],
+            ["eqs", "fs"],
+            ["gs", "a"],
+            ["fs", "g"],
+            ["bqf", "c'"],
+            ["a", "bqf"],
+            ["cqs'", "d'"],
+            ["fs'", "g'"],
+        ],
+    ),
+    trinton.annotate_leaves_locally(
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False)
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 3, 4, 6, 7, 10, 11, 14, 19, 20, 23], grace=False
+        ),
+    ),
+    trinton.continuous_glissando(selector=trinton.pleaves(), zero_padding=True),
+    library.multiple_muting(),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\override Voice.TupletBracket.direction = #UP", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\revert Voice.TupletBracket.direction", site="absolute_after"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+    ),
+    voice=score["ricochet 1 lower voice"],
+)
 
 # globals
 

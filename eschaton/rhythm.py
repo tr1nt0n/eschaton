@@ -336,6 +336,94 @@ def rhythm_5(
     return make_rhythm_5
 
 
+def harmonic_glissando_ricochet(
+    selector=abjad.select.components,
+    ricochet_selector=trinton.logical_ties(pitched=True, grace=False),
+    voice_label=1,
+):
+    def ricochet(argument):
+        original_voice = abjad.Voice(name=f"ricochet {voice_label} lower voice")
+        abjad.mutate.wrap(abjad.mutate.copy(argument), original_voice)
+
+        copied_selections = abjad.mutate.copy(argument)
+
+        ricochet_voice = abjad.Voice(name=f"ricochet {voice_label} upper voice")
+        abjad.mutate.wrap(copied_selections, ricochet_voice)
+
+        ricochets = ricochet_selector(ricochet_voice)
+
+        # first, turn everything that's not been selected into skips
+
+        # then, tuplet the rest
+
+        for ricochet in ricochets:
+            ricochet_duration = abjad.get.duration(ricochet, preprolated=True)
+
+            starting_denominator = ricochet_duration.denominator * 2
+            ending_denominator = starting_denominator * 5
+            ending_denominator = ending_denominator / 2
+
+            # fix this to be no bigger than a sixteenth note
+            accelerando = rmakers.accelerando(
+                [ricochet_duration],
+                [(1, starting_denominator), (1, ending_denominator), (1, 64)],
+            )
+
+            container = abjad.Container()
+            container.extend(accelerando)
+
+            if isinstance(ricochet, abjad.Chord):
+                first_notehead = ricochet.note_heads[-1]
+                ricochet_pitch = first_notehead.written_pitch
+            else:
+                ricochet_leaves = abjad.select.leaves(ricochet)
+                ricochet_pitch = ricochet_leaves[0].written_pitch.name
+
+            pitch_handler = evans.PitchHandler(pitch_list=[ricochet_pitch])
+            pitch_handler(container)
+
+            abjad.beam(abjad.select.leaves(container))
+            abjad.override(
+                abjad.select.leaf(container, 0)
+            ).Beam.grow_direction = abjad.RIGHT
+            abjad.attach(
+                abjad.LilyPondLiteral(r"\my-hack-slash", site="before"),
+                abjad.select.leaf(container, 0),
+            )
+            # abjad.attach(abjad.Markup(r"\markup \fontsize -1, { ricochet }"), abjad.select.leaf(container, 0), direction=abjad.UP)
+
+            rhythm_selections = abjad.mutate.eject_contents(container)
+
+            abjad.mutate.replace(ricochet, rhythm_selections)
+
+        abjad.attach(
+            abjad.LilyPondLiteral(r"\voiceOne", site="before"),
+            abjad.select.leaf(ricochet_voice, 0),
+        )
+        abjad.attach(
+            abjad.LilyPondLiteral(r"\voiceTwo", site="before"),
+            abjad.select.leaf(original_voice, 0),
+        )
+        invisible_tuplets_literal = abjad.LilyPondLiteral(
+            [
+                r"\override Voice.TupletNumber.stencil = ##f",
+                r"\override Voice.TupletBracket.stencil = ##f",
+                r"\override Voice.Rest.transparent = ##t",
+            ],
+            site="before",
+        )
+        abjad.attach(invisible_tuplets_literal, abjad.select.leaf(ricochet_voice, 0))
+
+        voice_container = abjad.Container(simultaneous=True)
+        abjad.mutate.wrap(original_voice, voice_container)
+        voice_container.append(ricochet_voice)
+        abjad.attach(abjad.LilyPondLiteral(r"\oneVoice", site="after"), voice_container)
+
+        abjad.mutate.replace(argument, voice_container)
+
+    return ricochet
+
+
 def return_section_1_bow_speed_talea(index):
     talea = []
 
